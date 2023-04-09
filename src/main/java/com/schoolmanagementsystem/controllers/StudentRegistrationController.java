@@ -11,6 +11,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ResourceBundle;
 
 public class StudentRegistrationController implements Initializable {
@@ -61,7 +64,6 @@ public class StudentRegistrationController implements Initializable {
     private  Button cross;
 
     public DatePicker getDob() {
-        System.out.println(dob);
         return dob;
     }
 
@@ -80,12 +82,14 @@ public class StudentRegistrationController implements Initializable {
         } else if (gender.getValue() == null || classNumber.getValue() == null || section.getValue() == null || dob.getValue() == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (Controller.validateNum(roll.getText().toString()) || Controller.validateNum(id.getText().toString()) || Controller.validateNum(contact.getText().toString()) || contact.getText().toString().length() != 11) {
+        } else if (Controller.validateNum(roll.getText().toString()) || Controller.validateNum(id.getText().toString()) || Controller.validateNum(contact.getText().toString()) || contact.getText().toString().length() != 11 || Controller.validateDate(dob)) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
-            wrongInput.setText("Congratulation. You have successfully Registered");
-            cross.setVisible(true);
+            if (Controller.handleAlert()) {
+                wrongInput.setText("Congratulation. You have successfully Registered");
+                cross.setVisible(true);
+            }
         }
     }
 

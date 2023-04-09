@@ -105,6 +105,7 @@ public class HomeController implements Initializable {
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("School Management System");
     }
 
     public void studReg(ActionEvent actionEvent) throws IOException {
