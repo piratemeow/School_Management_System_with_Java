@@ -1,5 +1,7 @@
 package com.schoolmanagementsystem.controllers;
 
+import com.schoolmanagementsystem.database.StudentCRUD;
+import com.schoolmanagementsystem.users.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -8,12 +10,9 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class StudentRegistrationController implements Initializable {
@@ -75,7 +74,7 @@ public class StudentRegistrationController implements Initializable {
         cross.setVisible(false);
     }
 
-    public void submitHandler() {
+    public void submitHandler() throws SQLException {
         if(id.getText().isEmpty() || sname.getText().isEmpty() || fname.getText().isEmpty() || mname.getText().isEmpty() || roll.getText().isEmpty() || contact.getText().isEmpty() || address.getText().isEmpty()) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
@@ -89,6 +88,10 @@ public class StudentRegistrationController implements Initializable {
             if (Controller.handleAlert()) {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
+
+                Student st = new Student(sname.getText().toString(),Integer.parseInt(id.getText().toString()),contact.getText().toString(),address.getText().toString(),dob.getValue(),gender.getValue().toString(),fname.getText().toString(),mname.getText().toString(),"Islam",Integer.parseInt(classNumber.getValue().toString()),section.getValue().toString(),Integer.parseInt(roll.getText().toString()));
+                StudentCRUD stCrud = new StudentCRUD();
+                stCrud.addStudent(st);
             }
         }
     }

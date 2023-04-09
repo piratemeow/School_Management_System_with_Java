@@ -26,20 +26,21 @@ public class loginController {
 
     @FXML
     void getId(ActionEvent event) {
-        id = loginid.getText();
+        id = loginid.getText().toString();
 
     }
 
     @FXML
     void getPass(ActionEvent event) {
 
-        pass = loginpass.getText();
+        pass = loginpass.getText().toString();
 
     }
 
     @FXML
     void loginVerify(ActionEvent event) {
 
+        id = loginid.getText().toString();
         if (id.equals("Imran"))
         {
             System.out.println("Yes");

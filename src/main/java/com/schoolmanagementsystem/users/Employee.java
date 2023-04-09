@@ -1,15 +1,24 @@
 package com.schoolmanagementsystem.users;
 
+import java.time.LocalDate;
+
 public class Employee extends People {
     private String designation;
     private String marital;
     private int salary;
-    private String joining_date;
+    private LocalDate joining_date;
     private String pass;
 
 
     Employee() {
         super();
+    }
+
+    public Employee(String name, int id, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion, String designation, String marital, String pass) {
+        super(name, id, contact, address, date_of_birth, gender, father, mother, religion);
+        this.designation = designation;
+        this.marital = marital;
+        this.pass = pass;
     }
 
     public void setDesignation(String designation) {
@@ -24,7 +33,7 @@ public class Employee extends People {
         this.salary = salary;
     }
 
-    public void setJoinigdate(String joining_date) {
+    public void setJoinigdate(LocalDate joining_date) {
         this.joining_date = joining_date;
     }
 
@@ -44,7 +53,7 @@ public class Employee extends People {
         return this.salary;
     }
 
-    public String getJoiningdate() {
+    public LocalDate getJoiningdate() {
         return this.joining_date;
     }
 

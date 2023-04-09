@@ -1,17 +1,31 @@
 package com.schoolmanagementsystem.users;
 
+import java.time.LocalDate;
+
 public class People {
     private String name;
     private int id;
     private String contact;
     private String address;
-    private String date_of_birth;
+    private LocalDate date_of_birth;
     private String gender;
     private String father;
     private String mother;
     private String religion;
 
-    People()
+    public People(String name, int id, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion) {
+        this.name = name;
+        this.id = id;
+        this.contact = contact;
+        this.address = address;
+        this.date_of_birth = date_of_birth;
+        this.gender = gender;
+        this.father = father;
+        this.mother = mother;
+        this.religion = religion;
+    }
+
+    public People()
     {
 
     }
@@ -35,7 +49,7 @@ public class People {
         this.address = address;
     }
 
-    public void setDateofbirth(String date_of_birth)
+    public void setDateofbirth(LocalDate date_of_birth)
     {
         this.date_of_birth = date_of_birth;
     }
@@ -80,7 +94,7 @@ public class People {
         return this.address;
     }
 
-    public String getDateofbirth()
+    public LocalDate getDateofbirth()
     {
         return this.date_of_birth;
     }

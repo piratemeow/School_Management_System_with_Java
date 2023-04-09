@@ -1,5 +1,9 @@
 package com.schoolmanagementsystem.controllers;
 
+import com.schoolmanagementsystem.database.EmployeeCRUD;
+import com.schoolmanagementsystem.database.StudentCRUD;
+import com.schoolmanagementsystem.users.Employee;
+import com.schoolmanagementsystem.users.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -12,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class EmployeeRegistrationController implements Initializable {
@@ -69,7 +74,7 @@ public class EmployeeRegistrationController implements Initializable {
         cross.setVisible(false);
     }
 
-    public void submitHandler() {
+    public void submitHandler() throws SQLException {
         if(id.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty() || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty() || address.getText().isEmpty()) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
@@ -83,6 +88,10 @@ public class EmployeeRegistrationController implements Initializable {
             if (Controller.handleAlert()) {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
+
+                Employee emp = new Employee(ename.getText().toString(),Integer.parseInt(id.getText().toString()),contact.getText().toString(),address.getText().toString(),dob.getValue(),gender.getValue().toString(),fname.getText().toString(),mname.getText().toString(),"Islam",designation.getValue().toString(),marital.getValue().toString(),password.getText().toString());
+                EmployeeCRUD empCrud = new EmployeeCRUD();
+                empCrud.addEmployee(emp);
             }
         }
     }
