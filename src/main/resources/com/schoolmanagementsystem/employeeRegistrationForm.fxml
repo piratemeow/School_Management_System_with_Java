@@ -263,7 +263,7 @@
             </StackPane>
 
             <StackPane.margin>
-                <Insets bottom="10" left="400" right="10" top="10" />
+                <Insets bottom="10" left="300" right="10" top="10" />
             </StackPane.margin>
         </StackPane>
     </children>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<!--<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.loginController">-->
+<!--   <children>-->
+<!--      <ImageView fitHeight="393.0" fitWidth="601.0" pickOnBounds="true" preserveRatio="true">-->
+<!--         <StackPane.margin>-->
+<!--            <Insets />-->
+<!--         </StackPane.margin>-->
+<!--         <image>-->
+<!--            <Image url="@image/login_background.png" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <TextField fx:id="loginid" maxHeight="24.0" maxWidth="202.4" promptText="ID">-->
+<!--         <StackPane.margin>-->
+<!--            <Insets left="200.0" right="200.0" top="50.0" />-->
+<!--         </StackPane.margin>-->
+<!--         <cursor>-->
+<!--            <Cursor fx:constant="HAND" />-->
+<!--         </cursor>-->
+<!--         <effect>-->
+<!--            <InnerShadow />-->
+<!--         </effect>-->
+<!--      </TextField>-->
+<!--      <Button fx:id="loginbutton" maxHeight="31.2" maxWidth="60.0" mnemonicParsing="false" onAction="#loginVerify" style="-fx-background-color: #FFB900;" text="login" textFill="#152fb1">-->
+<!--         <StackPane.margin>-->
+<!--            <Insets bottom="-50.0" left="-10.0" top="200.0" />-->
+<!--         </StackPane.margin>-->
+<!--         <font>-->
+<!--            <Font size="16.0" />-->
+<!--         </font>-->
+<!--         <effect>-->
+<!--            <InnerShadow />-->
+<!--         </effect>-->
+<!--         <cursor>-->
+<!--            <Cursor fx:constant="HAND" />-->
+<!--         </cursor>-->
+<!--      </Button>-->
+<!--      <Label fx:id="loginlable" maxHeight="26.4" maxWidth="220.0" prefHeight="26.0" prefWidth="210.0">-->
+<!--         <StackPane.margin>-->
+<!--            <Insets left="-230.0" right="-232.0" top="-30.0" />-->
+<!--         </StackPane.margin>-->
+<!--         <padding>-->
+<!--            <Insets bottom="10.0" right="220.0" />-->
+<!--         </padding>-->
+<!--      </Label>-->
+<!--      <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">-->
+<!--         <StackPane.margin>-->
+<!--            <Insets top="-200.0" />-->
+<!--         </StackPane.margin>-->
+<!--         <image>-->
+<!--            <Image url="@image/lock.jpeg" />-->
+<!--         </image>-->
+<!--      </ImageView>-->
+<!--      <PasswordField fx:id="loginpass" maxHeight="24.0" maxWidth="202.4" promptText="Password">-->
+<!--         <StackPane.margin>-->
+<!--            <Insets left="200.0" right="200.0" top="150.0" />-->
+<!--         </StackPane.margin>-->
+<!--         <cursor>-->
+<!--            <Cursor fx:constant="HAND" />-->
+<!--         </cursor>-->
+<!--         <effect>-->
+<!--            <InnerShadow />-->
+<!--         </effect>-->
+<!--      </PasswordField>-->
+<!--   </children>-->
+<!--</StackPane>-->
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.loginController">
+   <children>
+      <AnchorPane fx:id="hm" prefHeight="700.0" prefWidth="1200">
+         <fx:include source="home.fxml"/>
+      </AnchorPane>
+      <StackPane fx:id="loginpage" prefHeight="680.0" prefWidth="630">
+         <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+               <ImageView fitHeight="393.0" fitWidth="601.0" pickOnBounds="true" preserveRatio="true">
+                  <StackPane.margin>
+                     <Insets />
+                  </StackPane.margin>
+                  <image>
+                     <Image url="@image/login_background.png" />
+                  </image>
+               </ImageView>
+               <TextField fx:id="loginid" maxHeight="24.0" maxWidth="202.4" promptText="ID">
+                  <StackPane.margin>
+                     <Insets left="200.0" right="200.0" top="50.0" />
+                  </StackPane.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+                  <effect>
+                     <InnerShadow />
+                  </effect>
+               </TextField>
+               <Button fx:id="loginbutton" maxHeight="31.2" maxWidth="60.0" mnemonicParsing="false" onAction="#loginVerify" style="-fx-background-color: #FFB900;" text="login" textFill="#152fb1">
+                  <StackPane.margin>
+                     <Insets bottom="-50.0" left="-10.0" top="200.0" />
+                  </StackPane.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+                  <effect>
+                     <InnerShadow />
+                  </effect>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Label fx:id="loginlable" maxHeight="26.4" maxWidth="220.0" prefHeight="26.0" prefWidth="210.0">
+                  <StackPane.margin>
+                     <Insets left="-230.0" right="-232.0" top="-30.0" />
+                  </StackPane.margin>
+                  <padding>
+                     <Insets bottom="10.0" right="220.0" />
+                  </padding>
+               </Label>
+               <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                  <StackPane.margin>
+                     <Insets top="-200.0" />
+                  </StackPane.margin>
+                  <image>
+                     <Image url="@image/lock.jpeg" />
+                  </image>
+               </ImageView>
+               <PasswordField fx:id="loginpass" maxHeight="24.0" maxWidth="202.4" promptText="Password">
+                  <StackPane.margin>
+                     <Insets left="200.0" right="200.0" top="150.0" />
+                  </StackPane.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+                  <effect>
+                     <InnerShadow />
+                  </effect>
+               </PasswordField>
+            </children>
+         </StackPane>
+         <StackPane.margin>
+            <Insets left="300" right="10" top="10" bottom="10" />
+         </StackPane.margin>
+      </StackPane>
+   </children>
+</StackPane>
