@@ -4,30 +4,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.Font?>
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
 <children>
     <AnchorPane fx:id="hm" prefHeight="620.0" prefWidth="1000">
         <fx:include source="home.fxml" />
@@ -231,7 +218,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="LAURENCE REN" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label prefHeight="20.0" prefWidth="266.0" text="LAURENCE REN" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -262,7 +249,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="TEN" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label prefHeight="20.0" prefWidth="242.0" text="TEN" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -293,7 +280,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="MATH" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label prefHeight="20.0" prefWidth="250.0" text="MATH" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -324,7 +311,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="DHAKA" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label prefHeight="20.0" prefWidth="244.0" text="DHAKA" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -355,7 +342,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="TEACHER" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label prefHeight="20.0" prefWidth="257.0" text="TEACHER" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -417,7 +404,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="01/01/2001" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label prefHeight="20.0" prefWidth="247.0" text="01/01/2001" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -479,7 +466,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="ISLAM" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label prefHeight="20.0" prefWidth="248.0" text="ISLAM" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -541,7 +528,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="UNITED STATES" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label prefHeight="20.0" prefWidth="254.0" text="UNITED STATES" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>

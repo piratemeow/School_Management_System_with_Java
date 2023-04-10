@@ -39,79 +39,79 @@
                             <Image url="@image/registrationBackground.jpeg" />
                         </image>
                     </ImageView>
-                    <Label text="Designation :">
+                    <Label minWidth="169.6" text="Designation :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-363.0" top="-90.0" />
+                            <Insets left="-330.0" top="-90.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Employee Name :">
+                    <Label minWidth="169.6" text="Employee Name :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-324.0" top="-155.0" />
+                            <Insets left="-330.0" top="-155.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Marital Status :">
+                    <Label minWidth="169.6" text="Marital Status :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-343.0" top="-25.0" />
+                            <Insets left="-330.0" top="-25.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Password :">
+                    <Label minWidth="169.6" text="Password :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-388.0" top="37.0" />
+                            <Insets left="-330.0" top="37.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Address :">
+                    <Label minWidth="169.6" text="Address :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-405.0" top="425.0" />
+                            <Insets left="-330.0" top="425.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Date Of Birth :">
+                    <Label minWidth="169.6" text="Date Of Birth :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-355.0" top="360.0" />
+                            <Insets left="-330.0" top="360.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Gender :">
+                    <Label minWidth="169.6" text="Gender :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-412.0" top="295.0" />
+                            <Insets left="-330.0" top="295.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Mother's Name :">
+                    <Label minWidth="169.6" text="Mother's Name :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-335.0" top="230.0" />
+                            <Insets left="-330.0" top="230.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Father's Name :">
+                    <Label minWidth="169.6" text="Father's Name :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-340.0" top="165.0" />
+                            <Insets left="-330.0" top="165.0" />
                         </StackPane.margin>
                     </Label>
-                    <Label text="Contact Number :">
+                    <Label minWidth="169.6" text="Contact Number :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
@@ -251,12 +251,12 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </TextField>
-                    <Label text="Religion : ">
+                    <Label minWidth="169.6" text="Religion : ">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-400.0" top="100.0" />
+                            <Insets left="-330.0" top="100.0" />
                         </StackPane.margin>
                     </Label>
                 </children>
