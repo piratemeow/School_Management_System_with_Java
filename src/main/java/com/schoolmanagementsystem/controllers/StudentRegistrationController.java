@@ -81,7 +81,7 @@ public class StudentRegistrationController implements Initializable {
         } else if (gender.getValue() == null || classNumber.getValue() == null || section.getValue() == null || dob.getValue() == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (Controller.validateNum(roll.getText().toString()) || Controller.validateNum(id.getText().toString()) || Controller.validateNum(contact.getText().toString()) || contact.getText().toString().length() != 11 || Controller.validateDate(dob)) {
+        } else if (Controller.validateNum(roll.getText()) || Controller.validateNum(id.getText()) || Controller.validateNum(contact.getText()) || contact.getText().length() != 11 || Controller.validateDate(dob)) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
@@ -89,7 +89,7 @@ public class StudentRegistrationController implements Initializable {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
 
-                Student st = new Student(sname.getText().toString(),Integer.parseInt(id.getText().toString()),contact.getText().toString(),address.getText().toString(),dob.getValue(),gender.getValue().toString(),fname.getText().toString(),mname.getText().toString(),"Islam",Integer.parseInt(classNumber.getValue().toString()),section.getValue().toString(),Integer.parseInt(roll.getText().toString()));
+                Student st = new Student(sname.getText(),Integer.parseInt(id.getText()), contact.getText(), address.getText(),dob.getValue(), gender.getValue(), fname.getText(), mname.getText(),"Islam",Integer.parseInt(classNumber.getValue().toString()), section.getValue(),Integer.parseInt(roll.getText()));
                 StudentCRUD stCrud = new StudentCRUD();
                 stCrud.addStudent(st);
             }

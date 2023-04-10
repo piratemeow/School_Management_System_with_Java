@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuButton?>
@@ -9,24 +10,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.HomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.HomeController">
    <left>
-      <AnchorPane prefHeight="700.0" prefWidth="234.0" style="-fx-background-color: #ADD8E6;" BorderPane.alignment="CENTER">
+      <AnchorPane maxHeight="620.0" maxWidth="234.0" prefHeight="620.0" prefWidth="234.0" style="-fx-background-color: #ADD8E6;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="home" layoutX="32.0" layoutY="14.0" maxHeight="35" maxWidth="60" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleHome" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Home" textFill="WHITE">
+            <Button fx:id="home" layoutX="32.0" layoutY="96.0" maxHeight="35" maxWidth="60" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHome" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Home" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <MenuButton fx:id="profile" layoutX="32.0" layoutY="66.0" mnemonicParsing="false" onMouseClicked="#handleProfile" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Profile" textFill="WHITE">
+            <MenuButton fx:id="profile" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Profile" textFill="WHITE">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                 <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile" text="Student" />
+                 <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile" text="Teacher" />
+                 <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile" text="Staff" />
               </items>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <MenuButton fx:id="reg" layoutX="32.0" layoutY="119.0" mnemonicParsing="false" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Register" textFill="WHITE">
+            <MenuButton fx:id="reg" layoutX="32.0" layoutY="205.0" mnemonicParsing="false" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Register" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#studReg" text="Student" />
                   <MenuItem mnemonicParsing="false" onAction="#emplyReg" text="Employee" />
@@ -35,12 +37,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <Button fx:id="login" layoutX="32.0" layoutY="172.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleLogin" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Log in" textFill="WHITE">
+            <Button fx:id="login" layoutX="32.0" layoutY="261.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Log in" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <MenuButton fx:id="result" layoutX="32.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#handleResult" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Result" textFill="WHITE">
+            <MenuButton fx:id="result" layoutX="32.0" layoutY="316.0" mnemonicParsing="false" onMouseClicked="#handleResult" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Result" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -49,7 +51,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <MenuButton fx:id="routine" layoutX="32.0" layoutY="283.0" mnemonicParsing="false" onMouseClicked="#handleRoutine" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Routine" textFill="WHITE">
+            <MenuButton fx:id="routine" layoutX="34.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#handleRoutine" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Routine" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -58,12 +60,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MenuButton>
-            <Button fx:id="notice" layoutX="32.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleNotice" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Notice" textFill="WHITE">
+            <Button fx:id="notice" layoutX="32.0" layoutY="425.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleNotice" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Notice" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <MenuButton fx:id="other" layoutX="32.0" layoutY="398.0" mnemonicParsing="false" onMouseClicked="#handleOthers" popupSide="TOP" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Others" textFill="WHITE">
+            <MenuButton fx:id="other" layoutX="30.0" layoutY="477.0" maxHeight="35.0" maxWidth="80.0" mnemonicParsing="false" onMouseClicked="#handleOthers" prefHeight="35.0" style="-fx-background-color: #1E90FF;" styleClass="borderless-button" text="Others" textFill="WHITE" AnchorPane.bottomAnchor="138.19999999999993" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="125.2" AnchorPane.topAnchor="477.0">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -71,14 +73,17 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
             </MenuButton>
          </children>
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="686.0" prefWidth="988.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="620.0" prefWidth="988.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="368.0" fitWidth="954.0" layoutX="192.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" scaleX="1.7" scaleY="2.0">
+            <ImageView fitHeight="368.0" fitWidth="954.0" layoutX="96.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" scaleX="1.33" scaleY="1.68">
                <image>
                   <Image url="@image/home.jpeg" />
                </image>

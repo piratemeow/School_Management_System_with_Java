@@ -11,9 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -46,52 +43,64 @@ public class HomeController implements Initializable {
     @FXML
     private MenuButton routine;
 
-
-    @FXML
-    void handleHome(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/home.fxml"));
+    void loadPage(boolean isMenuButton, String str, ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(str));
         Parent root = fxmlLoader.load();
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        if(isMenuButton){
+            stage = (Stage)((MenuItem)event.getSource()).getParentPopup().getOwnerWindow();
+        }
+        else{
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        }
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML
-    void handleLogin(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/login.fxml"));
-        Parent root = fxmlLoader.load();
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    @FXML
+    void handleHome(ActionEvent event) throws IOException {
+        loadPage(false,"/com/schoolmanagementsystem/home.fxml",event);
     }
 
     @FXML
-    void handleNotice(MouseEvent event) {
-
+    void handleLogin(ActionEvent event) throws IOException {
+        loadPage(false,"/com/schoolmanagementsystem/login.fxml",event);
     }
 
     @FXML
-    void handleOthers(MouseEvent event) {
+    void handleNotice(ActionEvent event) {
 
     }
 
     @FXML
-    void handleProfile(MouseEvent event) {
-
-    }
-
-
-    @FXML
-    void handleResult(MouseEvent event) {
+    void handleOthers(ActionEvent event) {
 
     }
 
     @FXML
-    void handleRoutine(MouseEvent event) {
+    void handleStudentProfile(ActionEvent event) throws IOException {
+        loadPage(true,"/com/schoolmanagementsystem/student.fxml",event);
+    }
+
+    @FXML
+    void handleTeacherProfile(ActionEvent event) throws IOException {
+        loadPage(true,"/com/schoolmanagementsystem/teacher.fxml",event);
+    }
+
+    @FXML
+    void handleStaffProfile(ActionEvent event) throws IOException {
+        loadPage(true,"/com/schoolmanagementsystem/staff.fxml",event);
+    }
+
+
+    @FXML
+    void handleResult(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleRoutine(ActionEvent event) {
 
     }
 
@@ -115,23 +124,11 @@ public class HomeController implements Initializable {
     }
 
     public void studReg(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/studentRegistrationForm.fxml"));
-        Parent root = fxmlLoader.load();
-
-        stage = (Stage)((MenuItem)actionEvent.getSource()).getParentPopup().getOwnerWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        loadPage(true,"/com/schoolmanagementsystem/studentRegistrationForm.fxml",actionEvent);
     }
 
     public void emplyReg(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/employeeRegistrationForm.fxml"));
-        Parent root = fxmlLoader.load();
-
-        stage = (Stage)((MenuItem)actionEvent.getSource()).getParentPopup().getOwnerWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        loadPage(true,"/com/schoolmanagementsystem/employeeRegistrationForm.fxml",actionEvent);
     }
 
     @Override

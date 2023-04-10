@@ -81,7 +81,7 @@ public class EmployeeRegistrationController implements Initializable {
         } else if (gender.getValue() == null || marital.getValue() == null || designation.getValue() == null || dob.getValue() == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (Controller.validateNum(id.getText().toString()) || Controller.validateNum(contact.getText().toString()) || contact.getText().toString().length() != 11 || Controller.validateDate(dob)) {
+        } else if (Controller.validateNum(id.getText()) || Controller.validateNum(contact.getText()) || contact.getText().length() != 11 || Controller.validateDate(dob)) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
@@ -89,7 +89,7 @@ public class EmployeeRegistrationController implements Initializable {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
 
-                Employee emp = new Employee(ename.getText().toString(),Integer.parseInt(id.getText().toString()),contact.getText().toString(),address.getText().toString(),dob.getValue(),gender.getValue().toString(),fname.getText().toString(),mname.getText().toString(),"Islam",designation.getValue().toString(),marital.getValue().toString(),password.getText().toString());
+                Employee emp = new Employee(ename.getText(),Integer.parseInt(id.getText()), contact.getText(), address.getText(),dob.getValue(), gender.getValue(), fname.getText(), mname.getText(),"Islam", designation.getValue(), marital.getValue(), password.getText());
                 EmployeeCRUD empCrud = new EmployeeCRUD();
                 empCrud.addEmployee(emp);
             }
