@@ -40,8 +40,8 @@ public class Controller {
     public static boolean handleAlert() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Alert");
-        alert.setHeaderText("You are about to regiter.");
-        alert.setContentText("Are you sure to pproceed ?");
+        alert.setHeaderText("You are about to register.");
+        alert.setContentText("Are you sure to proceed ?");
 
         if (alert.showAndWait().get() == ButtonType.OK) {
             return true;

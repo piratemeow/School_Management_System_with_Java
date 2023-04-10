@@ -1,6 +1,7 @@
 package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.EmployeeCRUD;
+import com.schoolmanagementsystem.database.LoginCRUD;
 import com.schoolmanagementsystem.database.StudentCRUD;
 import com.schoolmanagementsystem.users.Employee;
 import com.schoolmanagementsystem.users.Student;
@@ -92,6 +93,9 @@ public class EmployeeRegistrationController implements Initializable {
                 Employee emp = new Employee(ename.getText(), contact.getText(), address.getText(),dob.getValue(), gender.getValue(), fname.getText(), mname.getText(),religion.getText(), designation.getValue(), marital.getValue(), password.getText());
                 EmployeeCRUD empCrud = new EmployeeCRUD();
                 empCrud.addEmployee(emp);
+
+                LoginCRUD loginCRUD = new LoginCRUD();
+                loginCRUD.addNewLoginInfo(emp);
             }
         }
     }

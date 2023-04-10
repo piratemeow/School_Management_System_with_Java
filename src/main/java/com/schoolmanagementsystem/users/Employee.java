@@ -21,6 +21,10 @@ public class Employee extends People {
         this.pass = pass;
     }
 
+    public String getPass() {
+        return pass;
+    }
+
     public void setDesignation(String designation) {
         this.designation = designation;
     }

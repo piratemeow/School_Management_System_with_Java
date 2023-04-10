@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -110,7 +111,14 @@ public class HomeController implements Initializable {
         stage = new Stage();
     }
 
+//    public Stage getStage() {
+//        return stage;
+//    }
+
     public Stage getStage() {
+        String url = getClass().getResource("/com/schoolmanagementsystem/image/icon.png").toExternalForm();
+        Image icon = new Image(url);
+        stage.getIcons().add(icon);
         return stage;
     }
 
