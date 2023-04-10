@@ -11,7 +11,7 @@ public class StudentCRUD {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
-        String insertQuery = "INSERT INTO studentInfo (studentID, name, class, roll, section, fatherName, motherName, address, dateOfBirth, gender, contactNumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO studentInfo (studentID, name, class, roll, section, fatherName, motherName, address, dateOfBirth, gender, contactNumber, religion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = con.prepareStatement(insertQuery);
 
@@ -29,6 +29,7 @@ public class StudentCRUD {
         statement.setDate(9, sqlDate);
         statement.setString(10, st.getGender());
         statement.setString(11, st.getContact());
+        statement.setString(12, st.getReligion());
 
         statement.executeUpdate();
     }

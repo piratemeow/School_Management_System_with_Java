@@ -39,20 +39,12 @@
                             <Image url="@image/registrationBackground.jpeg" />
                         </image>
                     </ImageView>
-                    <Label text="Employee ID :">
-                        <StackPane.margin>
-                            <Insets left="-355.0" top="-155.0" />
-                        </StackPane.margin>
-                        <font>
-                            <Font name="System Bold" size="17.0" />
-                        </font>
-                    </Label>
                     <Label text="Designation :">
                         <font>
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-363.0" top="-25.0" />
+                            <Insets left="-363.0" top="-90.0" />
                         </StackPane.margin>
                     </Label>
                     <Label text="Employee Name :">
@@ -60,7 +52,7 @@
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-324.0" top="-90.0" />
+                            <Insets left="-324.0" top="-155.0" />
                         </StackPane.margin>
                     </Label>
                     <Label text="Marital Status :">
@@ -68,7 +60,7 @@
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-343.0" top="37.0" />
+                            <Insets left="-343.0" top="-25.0" />
                         </StackPane.margin>
                     </Label>
                     <Label text="Password :">
@@ -76,7 +68,7 @@
                             <Font name="System Bold" size="17.0" />
                         </font>
                         <StackPane.margin>
-                            <Insets left="-388.0" top="100.0" />
+                            <Insets left="-388.0" top="37.0" />
                         </StackPane.margin>
                     </Label>
                     <Label text="Address :">
@@ -127,17 +119,9 @@
                             <Insets left="-330.0" top="490.0" />
                         </StackPane.margin>
                     </Label>
-                    <TextField fx:id="id" maxHeight="25.0" maxWidth="340.0" promptText="Enter your ID">
-                        <StackPane.margin>
-                            <Insets left="220.0" right="85.0" top="-155.0" />
-                        </StackPane.margin>
-                        <cursor>
-                            <Cursor fx:constant="HAND" />
-                        </cursor>
-                    </TextField>
                     <TextField fx:id="ename" maxHeight="25.0" maxWidth="295.0" promptText="Enter your name">
                         <StackPane.margin>
-                            <Insets left="250.0" right="85.0" top="-90.0" />
+                            <Insets left="250.0" right="85.0" top="-155.0" />
                         </StackPane.margin>
                         <cursor>
                             <Cursor fx:constant="HAND" />
@@ -185,7 +169,7 @@
                     </ChoiceBox>
                     <ChoiceBox fx:id="marital" maxHeight="24.0" maxWidth="315.0" prefWidth="365.0">
                         <StackPane.margin>
-                            <Insets left="145.0" top="37.0" />
+                            <Insets left="145.0" top="-25.0" />
                         </StackPane.margin>
                         <cursor>
                             <Cursor fx:constant="HAND" />
@@ -193,7 +177,7 @@
                     </ChoiceBox>
                     <Label text="Employee Registration Form" textFill="#2e0984">
                         <StackPane.margin>
-                            <Insets top="-590.0" />
+                            <Insets top="-585.0" />
                         </StackPane.margin>
                         <font>
                             <Font name="System Bold" size="20.0" />
@@ -234,7 +218,7 @@
                     </Label>
                     <ChoiceBox fx:id="designation" maxHeight="24.0" maxWidth="335.0" prefWidth="150.0">
                         <StackPane.margin>
-                            <Insets left="125.0" top="-25.0" />
+                            <Insets left="125.0" top="-90.0" />
                         </StackPane.margin>
                         <cursor>
                             <Cursor fx:constant="HAND" />
@@ -242,7 +226,7 @@
                     </ChoiceBox>
                     <PasswordField fx:id="password" maxHeight="24.0" maxWidth="350.4" promptText="Enter your password">
                         <StackPane.margin>
-                            <Insets left="195.0" right="85.0" top="100.0" />
+                            <Insets left="195.0" right="85.0" top="37.0" />
                         </StackPane.margin>
                         <cursor>
                             <Cursor fx:constant="HAND" />
@@ -259,6 +243,22 @@
                             <InnerShadow />
                         </effect>
                     </Button>
+                    <TextField fx:id="religion" maxHeight="24.0" maxWidth="370.4" promptText="Enter your religion">
+                        <StackPane.margin>
+                            <Insets left="175.0" right="85.0" top="100.0" />
+                        </StackPane.margin>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </TextField>
+                    <Label text="Religion : ">
+                        <font>
+                            <Font name="System Bold" size="17.0" />
+                        </font>
+                        <StackPane.margin>
+                            <Insets left="-400.0" top="100.0" />
+                        </StackPane.margin>
+                    </Label>
                 </children>
             </StackPane>
             <StackPane.margin>

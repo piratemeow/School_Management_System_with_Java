@@ -13,9 +13,8 @@ public class People {
     private String mother;
     private String religion;
 
-    public People(String name, int id, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion) {
+    public People(String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion) {
         this.name = name;
-        this.id = id;
         this.contact = contact;
         this.address = address;
         this.date_of_birth = date_of_birth;

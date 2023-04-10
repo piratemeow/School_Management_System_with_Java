@@ -36,7 +36,7 @@ public class StudentRegistrationController implements Initializable {
     private ChoiceBox<String> gender;
 
     @FXML
-    private TextField id;
+    private TextField religion;
 
     @FXML
     private TextField mname;
@@ -75,13 +75,13 @@ public class StudentRegistrationController implements Initializable {
     }
 
     public void submitHandler() throws SQLException {
-        if(id.getText().isEmpty() || sname.getText().isEmpty() || fname.getText().isEmpty() || mname.getText().isEmpty() || roll.getText().isEmpty() || contact.getText().isEmpty() || address.getText().isEmpty()) {
+        if(religion.getText().isEmpty() || sname.getText().isEmpty() || fname.getText().isEmpty() || mname.getText().isEmpty() || roll.getText().isEmpty() || contact.getText().isEmpty() || address.getText().isEmpty()) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else if (gender.getValue() == null || classNumber.getValue() == null || section.getValue() == null || dob.getValue() == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (Controller.validateNum(roll.getText()) || Controller.validateNum(id.getText()) || Controller.validateNum(contact.getText()) || contact.getText().length() != 11 || Controller.validateDate(dob)) {
+        } else if (Controller.validateNum(roll.getText()) || Controller.validateNum(contact.getText()) || contact.getText().length() != 11 || Controller.validateDate(dob)) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
@@ -89,7 +89,7 @@ public class StudentRegistrationController implements Initializable {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
 
-                Student st = new Student(sname.getText(),Integer.parseInt(id.getText()), contact.getText(), address.getText(),dob.getValue(), gender.getValue(), fname.getText(), mname.getText(),"Islam",Integer.parseInt(classNumber.getValue().toString()), section.getValue(),Integer.parseInt(roll.getText()));
+                Student st = new Student(sname.getText(), contact.getText(), address.getText(),dob.getValue(), gender.getValue(), fname.getText(), mname.getText(),religion.getText(),Integer.parseInt(classNumber.getValue().toString()), section.getValue(),Integer.parseInt(roll.getText()));
                 StudentCRUD stCrud = new StudentCRUD();
                 stCrud.addStudent(st);
             }

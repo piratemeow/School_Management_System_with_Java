@@ -43,7 +43,7 @@ public class EmployeeRegistrationController implements Initializable {
     private ChoiceBox<String> gender;
 
     @FXML
-    private TextField id;
+    private TextField religion;
 
     @FXML
     private ChoiceBox<String> marital;
@@ -75,13 +75,13 @@ public class EmployeeRegistrationController implements Initializable {
     }
 
     public void submitHandler() throws SQLException {
-        if(id.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty() || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty() || address.getText().isEmpty()) {
+        if(religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty() || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty() || address.getText().isEmpty()) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else if (gender.getValue() == null || marital.getValue() == null || designation.getValue() == null || dob.getValue() == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (Controller.validateNum(id.getText()) || Controller.validateNum(contact.getText()) || contact.getText().length() != 11 || Controller.validateDate(dob)) {
+        } else if (Controller.validateNum(contact.getText()) || contact.getText().length() != 11 || Controller.validateDate(dob)) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
@@ -89,7 +89,7 @@ public class EmployeeRegistrationController implements Initializable {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
 
-                Employee emp = new Employee(ename.getText(),Integer.parseInt(id.getText()), contact.getText(), address.getText(),dob.getValue(), gender.getValue(), fname.getText(), mname.getText(),"Islam", designation.getValue(), marital.getValue(), password.getText());
+                Employee emp = new Employee(ename.getText(), contact.getText(), address.getText(),dob.getValue(), gender.getValue(), fname.getText(), mname.getText(),religion.getText(), designation.getValue(), marital.getValue(), password.getText());
                 EmployeeCRUD empCrud = new EmployeeCRUD();
                 empCrud.addEmployee(emp);
             }

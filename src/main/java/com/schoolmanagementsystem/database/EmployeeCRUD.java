@@ -14,7 +14,7 @@ public class EmployeeCRUD {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
-        String insertQuery = "INSERT INTO employeeInfo (employeeID, name, profession, fatherName, motherName, maritalStatus, address, dateOfBirth, joiningDate, gender, contactNumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO employeeInfo (employeeID, name, profession, fatherName, motherName, maritalStatus, address, dateOfBirth, joiningDate, gender, contactNumber, religion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = con.prepareStatement(insertQuery);
 
@@ -35,6 +35,7 @@ public class EmployeeCRUD {
         statement.setDate(9, joinDate);
         statement.setString(10, emp.getGender());
         statement.setString(11, emp.getContact());
+        statement.setString(12, emp.getReligion());
 
         statement.executeUpdate();
     }
