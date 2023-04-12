@@ -37,11 +37,11 @@ public class Controller {
         return false;
     }
 
-    public static boolean handleAlert() {
+    public static boolean handleAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Alert");
         alert.setHeaderText("You are about to register.");
-        alert.setContentText("Are you sure to proceed ?");
+        alert.setContentText(message);
 
         if (alert.showAndWait().get() == ButtonType.OK) {
             return true;

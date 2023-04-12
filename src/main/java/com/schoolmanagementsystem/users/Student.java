@@ -12,8 +12,8 @@ public class Student extends People {
         super();
     }
 
-    public Student(String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion, int clas, String section, int roll) {
-        super(name, contact, address, date_of_birth, gender, father, mother, religion);
+    public Student(int id, String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion, int clas, String section, int roll) {
+        super(id, name, contact, address, date_of_birth, gender, father, mother, religion);
         this.clas = clas;
         this.section = section;
         this.roll = roll;

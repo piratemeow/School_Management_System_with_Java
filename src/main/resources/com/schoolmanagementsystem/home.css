@@ -1,0 +1,45 @@
+.button {
+  -fx-background-color: #007bff;
+  -fx-text-fill: #fff;
+  -fx-font-size: 13px;
+  -fx-font-weight: bold;
+  -fx-padding: 10px;
+  -fx-border-radius: 5px;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
+}
+
+.button:hover {
+  -fx-background-color: #0056b3;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 2, 0, 0, 1);
+}
+
+.menu-button {
+  -fx-background-color: #007bff;
+  -fx-text-fill: #fff;
+  -fx-font-size: 13px;
+  -fx-font-weight: bold;
+  -fx-padding: 10px;
+  -fx-border-radius: 5px;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
+}
+
+.menu-button:hover {
+  -fx-background-color: #0056b3;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 2, 0, 0, 1);
+}
+
+.menu-button .arrow {
+  -fx-background-color: #baaaaa;
+}
+
+.menu-button .label {
+  -fx-padding: 0 5px;
+}
+
+.menu-button .text {
+  -fx-fill: #fff;
+}
+
+.menu-button .menu-item .text {
+  -fx-fill: #000;
+}

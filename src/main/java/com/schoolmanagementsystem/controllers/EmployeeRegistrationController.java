@@ -18,6 +18,8 @@ import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.Year;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class EmployeeRegistrationController implements Initializable {
@@ -59,7 +61,7 @@ public class EmployeeRegistrationController implements Initializable {
     private Button register;
 
     @FXML
-    private  Button cross;
+    private Button cross;
 
     @FXML
     private ImageView studImg;
@@ -69,28 +71,42 @@ public class EmployeeRegistrationController implements Initializable {
 
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        gender.getItems().addAll("Male","Female");
+        gender.getItems().addAll("Male", "Female");
         marital.getItems().addAll("Married", "Unmarried");
-        designation.getItems().addAll("Teacher","Others");
+        designation.getItems().addAll("Teacher", "Others");
         cross.setVisible(false);
     }
 
     public void submitHandler() throws SQLException {
-        if(religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty() || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty() || address.getText().isEmpty()) {
+        if (religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty()
+                || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty()
+                || address.getText().isEmpty()) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (gender.getValue() == null || marital.getValue() == null || designation.getValue() == null || dob.getValue() == null) {
+        } else if (gender.getValue() == null || marital.getValue() == null || designation.getValue() == null
+                || dob.getValue() == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (Controller.validateNum(contact.getText()) || contact.getText().length() != 11 || Controller.validateDate(dob)) {
+        } else if (Controller.validateNum(contact.getText()) || contact.getText().length() != 11
+                || Controller.validateDate(dob)) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
-            if (Controller.handleAlert()) {
+            int year = Year.now().getValue();
+
+            Random rand = new Random();
+
+            int id = 1000 * year + rand.nextInt(100, 999);
+            String message = "Your id is " + id + "\nPlease remember this id for further access.";
+
+            if (Controller.handleAlert(message)) {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
 
-                Employee emp = new Employee(ename.getText(), contact.getText(), address.getText(),dob.getValue(), gender.getValue(), fname.getText(), mname.getText(),religion.getText(), designation.getValue(), marital.getValue(), password.getText());
+                Employee emp = new Employee(id, ename.getText(), contact.getText(), address.getText(), dob.getValue(),
+                        gender.getValue(), fname.getText(), mname.getText(), religion.getText(), designation.getValue(),
+                        marital.getValue(), password.getText());
+
                 EmployeeCRUD empCrud = new EmployeeCRUD();
                 empCrud.addEmployee(emp);
 
@@ -101,11 +117,10 @@ public class EmployeeRegistrationController implements Initializable {
     }
 
     public void handleCross() {
-        if(cross.isVisible()) {
+        if (cross.isVisible()) {
             cross.setVisible(false);
             wrongInput.setText("");
-        }
-        else {
+        } else {
             cross.setVisible(true);
         }
     }

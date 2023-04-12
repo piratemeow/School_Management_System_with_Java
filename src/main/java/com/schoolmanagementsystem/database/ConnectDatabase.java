@@ -7,7 +7,7 @@ public class ConnectDatabase {
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "20NS01";
 
-    private Connection con;
+    private final Connection con;
 
     public ConnectDatabase() {
         try {

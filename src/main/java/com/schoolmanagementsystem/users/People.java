@@ -13,7 +13,8 @@ public class People {
     private String mother;
     private String religion;
 
-    public People(String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion) {
+    public People(int id, String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion) {
+        this.id = id;
         this.name = name;
         this.contact = contact;
         this.address = address;
