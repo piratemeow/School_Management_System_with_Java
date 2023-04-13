@@ -17,8 +17,8 @@ public class Main extends Application{
         HomeController controller = new HomeController();
         try {
             controller.loadFXML();
-//            controller.getStage().show();
-            Platform.runLater(() -> controller.getStage().show());
+            controller.getStage().show();
+//            Platform.runLater(() -> controller.getStage().show());
         } catch (IOException e) {
             e.printStackTrace();
         }

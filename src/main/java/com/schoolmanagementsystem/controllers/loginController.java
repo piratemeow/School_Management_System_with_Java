@@ -1,70 +1,18 @@
-//package com.schoolmanagementsystem.controllers;
-//
-//import javafx.event.ActionEvent;
-//import javafx.fxml.FXML;
-//import javafx.scene.control.Button;
-//import javafx.scene.control.Label;
-//import javafx.scene.control.PasswordField;
-//import javafx.scene.control.TextField;
-//import javafx.scene.input.InputMethodEvent;
-//
-//public class loginController {
-//
-//    @FXML
-//    private Button loginbutton;
-//
-//    @FXML
-//    private TextField loginid;
-//
-//    @FXML
-//    private Label loginlable;
-//
-//    @FXML
-//    private PasswordField loginpass;
-//
-//    private String id,pass;
-//
-//    @FXML
-//    void getId(ActionEvent event) {
-//        id = loginid.getText();
-//
-//    }
-//
-//    @FXML
-//    void getPass(ActionEvent event) {
-//
-//        pass = loginpass.getText();
-//
-//    }
-//
-//    @FXML
-//    void loginVerify(ActionEvent event) {
-//
-//        id = loginid.getText();
-//        if (id.equals("Imran"))
-//        {
-//            System.out.println("Yes");
-//        }
-//
-//    }
-//
-//}
-
-
 package com.schoolmanagementsystem.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import com.schoolmanagementsystem.users.LoginValidator;
-import javafx.scene.input.InputMethodEvent;
 
-public class loginController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
-
+public class loginController implements Initializable {
 
     @FXML
     private Button loginbutton;
@@ -73,7 +21,7 @@ public class loginController {
     private TextField loginid;
 
     @FXML
-    private Label loginlable;
+    private Label loggable;
 
     @FXML
     private PasswordField loginpass;
@@ -81,21 +29,31 @@ public class loginController {
     private int id;
     private String pass;
 
+    public loginController() {
+    }
+
+    public loginController(int id, String pass) {
+        this.id = id;
+        this.pass = pass;
+    }
+
     @FXML
     void loginVerify(ActionEvent event) {
 
         id = Integer.parseInt(loginid.getText());
         pass = loginpass.getText();
 
-        loginController login = new loginController();
-        login.pass = pass;
-        login.id = id;
+        loginController login = new loginController(id, pass);
 
         try {
-            LoginValidator.log(login);
+            int ans = LoginValidator.log(login);
+            if(ans == 0) {
+                loggable.setText("Invalid Id. Register first");
+            } else if (ans == 1) {
+                loggable.setText("Invalid password. Try again");
+            }
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e);
         }
 
@@ -109,14 +67,9 @@ public class loginController {
     public String getPass() {
         return pass;
     }
-//    public int id_validity()
-//    {
-//        return id;
-//    }
-//
-//    public String pas_validity()
-//    {
-//        return pass;
-//    }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

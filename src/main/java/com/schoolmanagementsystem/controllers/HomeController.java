@@ -111,10 +111,6 @@ public class HomeController implements Initializable {
         stage = new Stage();
     }
 
-//    public Stage getStage() {
-//        return stage;
-//    }
-
     public Stage getStage() {
         String url = getClass().getResource("/com/schoolmanagementsystem/image/icon.png").toExternalForm();
         Image icon = new Image(url);

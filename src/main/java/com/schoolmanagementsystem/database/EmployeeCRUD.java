@@ -3,6 +3,9 @@ package com.schoolmanagementsystem.database;
 import com.schoolmanagementsystem.users.Employee;
 import com.schoolmanagementsystem.users.Student;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -10,11 +13,11 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class EmployeeCRUD {
-    public void addEmployee(Employee emp) throws SQLException {
+    public void addEmployee(Employee emp, String imgPath) throws SQLException, FileNotFoundException {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
-        String insertQuery = "INSERT INTO employeeInfo (employeeID, name, profession, fatherName, motherName, maritalStatus, address, dateOfBirth, joiningDate, gender, contactNumber, religion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO employeeInfo (employeeID, name, profession, fatherName, motherName, maritalStatus, address, dateOfBirth, joiningDate, gender, contactNumber, religion, profilePicture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = con.prepareStatement(insertQuery);
 
@@ -36,6 +39,11 @@ public class EmployeeCRUD {
         statement.setString(10, emp.getGender());
         statement.setString(11, emp.getContact());
         statement.setString(12, emp.getReligion());
+
+        FileInputStream fis = null;
+        File file = new File(imgPath); // the path to the image file
+        fis = new FileInputStream(file);
+        statement.setBinaryStream(13, fis, (int) file.length());
 
         statement.executeUpdate();
     }

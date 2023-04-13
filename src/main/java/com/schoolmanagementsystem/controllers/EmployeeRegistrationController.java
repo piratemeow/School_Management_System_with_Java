@@ -5,6 +5,7 @@ import com.schoolmanagementsystem.database.LoginCRUD;
 import com.schoolmanagementsystem.database.StudentCRUD;
 import com.schoolmanagementsystem.users.Employee;
 import com.schoolmanagementsystem.users.Student;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,7 +16,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.Year;
@@ -24,6 +27,10 @@ import java.util.ResourceBundle;
 
 public class EmployeeRegistrationController implements Initializable {
 
+    private String imgPath;
+    private Stage stage;
+    @FXML
+    Button imgButton;
     @FXML
     private TextField address;
 
@@ -64,7 +71,7 @@ public class EmployeeRegistrationController implements Initializable {
     private Button cross;
 
     @FXML
-    private ImageView studImg;
+    private ImageView Img;
 
     @FXML
     private Label wrongInput;
@@ -77,7 +84,7 @@ public class EmployeeRegistrationController implements Initializable {
         cross.setVisible(false);
     }
 
-    public void submitHandler() throws SQLException {
+    public void submitHandler() throws SQLException, FileNotFoundException {
         if (religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty()
                 || address.getText().isEmpty()) {
@@ -108,7 +115,7 @@ public class EmployeeRegistrationController implements Initializable {
                         marital.getValue(), password.getText());
 
                 EmployeeCRUD empCrud = new EmployeeCRUD();
-                empCrud.addEmployee(emp);
+                empCrud.addEmployee(emp, imgPath);
 
                 LoginCRUD loginCRUD = new LoginCRUD();
                 loginCRUD.addNewLoginInfo(emp);
@@ -123,6 +130,10 @@ public class EmployeeRegistrationController implements Initializable {
         } else {
             cross.setVisible(true);
         }
+    }
+
+    public void handleImgUpload(ActionEvent actionEvent) {
+        imgPath = Controller.uploadImage(stage, Img, imgButton);
     }
 
 }

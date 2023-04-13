@@ -2,6 +2,7 @@ package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.StudentCRUD;
 import com.schoolmanagementsystem.users.Student;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -9,8 +10,13 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.Year;
@@ -18,6 +24,12 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class StudentRegistrationController implements Initializable {
+
+    private Stage stage;
+
+    private String imgPath;
+    @FXML
+    Button imgButton;
 
     @FXML
     private TextField address;
@@ -56,7 +68,7 @@ public class StudentRegistrationController implements Initializable {
     private TextField sname;
 
     @FXML
-    private ImageView studImg;
+    private ImageView Img;
 
     @FXML
     private Label wrongInput;
@@ -76,7 +88,7 @@ public class StudentRegistrationController implements Initializable {
         cross.setVisible(false);
     }
 
-    public void submitHandler() throws SQLException {
+    public void submitHandler() throws SQLException, FileNotFoundException {
         if (religion.getText().isEmpty() || sname.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || roll.getText().isEmpty() || contact.getText().isEmpty()
                 || address.getText().isEmpty()) {
@@ -108,7 +120,7 @@ public class StudentRegistrationController implements Initializable {
                         gender.getValue(), fname.getText(), mname.getText(), religion.getText(), clas,
                         section.getValue(), Integer.parseInt(roll.getText()));
                 StudentCRUD stCrud = new StudentCRUD();
-                stCrud.addStudent(st);
+                stCrud.addStudent(st, imgPath);
             }
         }
     }
@@ -120,5 +132,9 @@ public class StudentRegistrationController implements Initializable {
         } else {
             cross.setVisible(true);
         }
+    }
+
+    public void handleImgUpload(ActionEvent actionEvent) {
+        imgPath = Controller.uploadImage(stage, Img, imgButton);
     }
 }
