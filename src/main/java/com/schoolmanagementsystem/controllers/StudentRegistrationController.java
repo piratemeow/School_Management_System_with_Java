@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -23,7 +24,7 @@ import java.time.Year;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-public class StudentRegistrationController implements Initializable {
+public class StudentRegistrationController extends Controller implements Initializable {
 
     private Stage stage;
 
@@ -91,15 +92,15 @@ public class StudentRegistrationController implements Initializable {
     public void submitHandler() throws SQLException, FileNotFoundException {
         if (religion.getText().isEmpty() || sname.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || roll.getText().isEmpty() || contact.getText().isEmpty()
-                || address.getText().isEmpty()) {
+                || address.getText().isEmpty() || imgPath == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else if (gender.getValue() == null || classNumber.getValue() == null || section.getValue() == null
                 || dob.getValue() == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (Controller.validateNum(roll.getText()) || Controller.validateNum(contact.getText())
-                || contact.getText().length() != 11 || Controller.validateDate(dob)) {
+        } else if (validateNum(roll.getText()) || validateNum(contact.getText())
+                || contact.getText().length() != 11 || validateDate(dob)) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
@@ -110,9 +111,11 @@ public class StudentRegistrationController implements Initializable {
             Random rand = new Random();
 
             int id = 100000 * year + 10000 * clas + rand.nextInt(1000, 9999);
-            String message = "Your id is " + id + "\nPlease remember this id for further access.";
 
-            if (Controller.handleAlert(message)) {
+            String message1 = "You are about to register.";
+            String message2 = "Your id is " + id + "\nPlease remember this id for further access.";
+
+            if (handleAlert(message1,message2)) {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
 
@@ -135,6 +138,6 @@ public class StudentRegistrationController implements Initializable {
     }
 
     public void handleImgUpload(ActionEvent actionEvent) {
-        imgPath = Controller.uploadImage(stage, Img, imgButton);
+        imgPath = uploadImage(stage, Img, imgButton);
     }
 }

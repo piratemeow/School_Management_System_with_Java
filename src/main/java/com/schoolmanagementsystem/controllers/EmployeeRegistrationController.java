@@ -25,7 +25,7 @@ import java.time.Year;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-public class EmployeeRegistrationController implements Initializable {
+public class EmployeeRegistrationController extends Controller implements Initializable {
 
     private String imgPath;
     private Stage stage;
@@ -80,22 +80,22 @@ public class EmployeeRegistrationController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         gender.getItems().addAll("Male", "Female");
         marital.getItems().addAll("Married", "Unmarried");
-        designation.getItems().addAll("Teacher", "Others");
+        designation.getItems().addAll("Teacher", "Staff");
         cross.setVisible(false);
     }
 
     public void submitHandler() throws SQLException, FileNotFoundException {
         if (religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty()
-                || address.getText().isEmpty()) {
+                || address.getText().isEmpty() || imgPath == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else if (gender.getValue() == null || marital.getValue() == null || designation.getValue() == null
                 || dob.getValue() == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
-        } else if (Controller.validateNum(contact.getText()) || contact.getText().length() != 11
-                || Controller.validateDate(dob)) {
+        } else if (validateNum(contact.getText()) || contact.getText().length() != 11
+                || validateDate(dob)) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
@@ -104,9 +104,10 @@ public class EmployeeRegistrationController implements Initializable {
             Random rand = new Random();
 
             int id = 1000 * year + rand.nextInt(100, 999);
-            String message = "Your id is " + id + "\nPlease remember this id for further access.";
+            String message1 = "You are about to register.";
+            String message2 = "Your id is " + id + "\nPlease remember this id for further access.";
 
-            if (Controller.handleAlert(message)) {
+            if (handleAlert(message1,message2)) {
                 wrongInput.setText("Congratulation. You have successfully Registered");
                 cross.setVisible(true);
 
@@ -133,7 +134,7 @@ public class EmployeeRegistrationController implements Initializable {
     }
 
     public void handleImgUpload(ActionEvent actionEvent) {
-        imgPath = Controller.uploadImage(stage, Img, imgButton);
+        imgPath = uploadImage(stage, Img, imgButton);
     }
 
 }

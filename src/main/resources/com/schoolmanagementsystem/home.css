@@ -5,12 +5,12 @@
   -fx-font-weight: bold;
   -fx-padding: 10px;
   -fx-border-radius: 5px;
-  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
+  -fx-effect: innershadow(gaussian, rgba(0,0,0,0.5), 2, 1, 0, 0);
 }
 
 .button:hover {
   -fx-background-color: #0056b3;
-  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 2, 0, 0, 1);
+  -fx-effect: dropshadow(three-pass-box, #006400, 10, 0.5, 0, 0);
 }
 
 .menu-button {
@@ -20,12 +20,12 @@
   -fx-font-weight: bold;
   -fx-padding: 10px;
   -fx-border-radius: 5px;
-  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
+  -fx-effect: innershadow(gaussian, rgba(0,0,0,0.5), 2, 1, 0, 0);
 }
 
 .menu-button:hover {
   -fx-background-color: #0056b3;
-  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 2, 0, 0, 1);
+  -fx-effect: dropshadow(three-pass-box, #006400, 10, 0.5, 0, 0);
 }
 
 .menu-button .arrow {
@@ -42,4 +42,13 @@
 
 .menu-button .menu-item .text {
   -fx-fill: #000;
+}
+
+#borderpane {
+  -fx-background-color: #b2beb5;
+}
+
+#vbox {
+  -fx-background-color: #ADD8E6;
+  -fx-effect: dropshadow(three-pass-box, #000000, 10, 0.5, 0, 0);
 }
