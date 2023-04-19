@@ -1,6 +1,7 @@
 package com.schoolmanagementsystem.database;
 
 import com.schoolmanagementsystem.users.Employee;
+import com.schoolmanagementsystem.users.Staff;
 import com.schoolmanagementsystem.users.Student;
 
 import java.io.File;
@@ -12,12 +13,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class EmployeeCRUD {
-    public void addEmployee(Employee emp, String imgPath) throws SQLException, FileNotFoundException {
+public class StaffCRUD {
+    public void addStaff(Staff emp, String imgPath) throws SQLException, FileNotFoundException {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
-        String insertQuery = "INSERT INTO employeeInfo (employeeID, name, profession, fatherName, motherName, maritalStatus, address, dateOfBirth, joiningDate, gender, contactNumber, religion, profilePicture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO employeeInfo (employeeID, name, profession, fatherName, motherName, address, dateOfBirth, joiningDate, gender, contactNumber, religion, profilePicture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = con.prepareStatement(insertQuery);
 
@@ -32,18 +33,17 @@ public class EmployeeCRUD {
         statement.setString(3, emp.getDesignation());
         statement.setString(4, emp.getFather());
         statement.setString(5, emp.getMother());
-        statement.setString(6, emp.getMaritalstatus());
-        statement.setString(7, emp.getAdderss());
-        statement.setDate(8, sqlDate);
-        statement.setDate(9, joinDate);
-        statement.setString(10, emp.getGender());
-        statement.setString(11, emp.getContact());
-        statement.setString(12, emp.getReligion());
+        statement.setString(6, emp.getAdderss());
+        statement.setDate(7, sqlDate);
+        statement.setDate(8, joinDate);
+        statement.setString(9, emp.getGender());
+        statement.setString(10, emp.getContact());
+        statement.setString(11, emp.getReligion());
 
         FileInputStream fis = null;
         File file = new File(imgPath); // the path to the image file
         fis = new FileInputStream(file);
-        statement.setBinaryStream(13, fis, (int) file.length());
+        statement.setBinaryStream(12, fis, (int) file.length());
 
         statement.executeUpdate();
     }

@@ -13,15 +13,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Controller {
 
@@ -55,34 +56,18 @@ public class Controller {
     protected Stage stage;
 
     @FXML
-    void emplyReg(ActionEvent event) throws IOException {
-        loadPage("menuButton","/com/schoolmanagementsystem/employeeRegistrationForm.fxml",event);
+    void teacherReg(ActionEvent event) throws IOException {
+        loadPage("menuButton", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml",event);
+    }
+
+    @FXML
+    void staffReg(ActionEvent event) throws IOException {
+        loadPage("menuButton", "/com/schoolmanagementsystem/staffRegistrationForm.fxml",event);
     }
 
     @FXML
     void handleHome(ActionEvent event) throws IOException {
         loadPage("button","/com/schoolmanagementsystem/home.fxml",event);
-
-
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/home.fxml"));
-//        Parent root = fxmlLoader.load();
-//
-//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        HomeController controller = fxmlLoader.getController();
-//
-//        System.out.println(loginController.getLoggedInPerson());
-//
-//        if(Objects.equals(loginController.getLoggedInPerson(), "Teacher")) {
-////            controller.login.setText("Log out");
-////            controller.reg.setVisible(false);
-////            controller.reg.setManaged(false);
-////            VBox.getVgrow(controller.login);
-//        }
-//
-//        Scene scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
-
     }
 
     @FXML
@@ -222,6 +207,7 @@ public class Controller {
         alert.setHeaderText(message1);
         alert.setContentText(message2);
 
+
         if (alert.showAndWait().get() == ButtonType.OK) {
             return true;
         }
@@ -229,6 +215,77 @@ public class Controller {
         return false;
     }
 
+//    public AtomicReference<String> passwordInputAlert() {
+//        AtomicReference<String> pass = new AtomicReference<>("");
+//        TextInputDialog dialog = new TextInputDialog("");
+//        dialog.setTitle("Enter Password");
+//        dialog.setHeaderText("For security enter the password of admin.");
+//
+//        PasswordField passwordField = new PasswordField();
+//        passwordField.setPromptText("Enter Password");
+//        dialog.getDialogPane().setContent(passwordField);
+//
+//        // Show the dialog and wait for the user's response
+//        dialog.showAndWait().ifPresent(password -> pass.set(passwordField.getText()));
+//        return pass;
+//    }
+
+
+    public Pair<String, String> passwordInputAlert() {
+
+        Dialog<Pair<String, String>> dialog = new Dialog<>();
+        dialog.setTitle("Verification");
+        dialog.setHeaderText("Select your role and \nenter password of admin for security:");
+
+// Set the button types
+        ButtonType loginButtonType = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(loginButtonType, ButtonType.CANCEL);
+
+// Create ChoiceBox with teacher and staff options
+        ChoiceBox<String> roleChoice = new ChoiceBox<>();
+        roleChoice.getItems().addAll("Teacher", "Staff");
+        roleChoice.setValue("Teacher");
+
+// Create PasswordField
+        PasswordField passwordField = new PasswordField();
+        passwordField.setPromptText("Password of the admin");
+
+// Create VBox layout and add ChoiceBox and PasswordField
+        VBox vBox = new VBox(10);
+        vBox.getChildren().addAll(roleChoice, passwordField);
+
+// Set the VBox layout as the dialog's content
+        dialog.getDialogPane().setContent(vBox);
+
+// Convert the result to a pair of role and password
+//        String[] ans = new String[2];
+//
+//        dialog.setResultConverter(dialogButton -> {
+//            if (dialogButton == loginButtonType) {
+//                ans[0] = roleChoice.getValue();
+//                ans[1] = passwordField.getText();
+//
+//            }
+//            return null;
+//        });
+//
+//// Wait for the user to close the dialog
+//        Optional<Pair<String, String>> result = dialog.showAndWait();
+//
+//        return ans;
+
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == loginButtonType) {
+                return new Pair<>(roleChoice.getValue(), passwordField.getText());
+            }
+            return null;
+        });
+
+        // Wait for the user to close the dialog
+        Optional<Pair<String, String>> result = dialog.showAndWait();
+
+        return result.orElse(null);
+    }
     public String uploadImage(Stage stage, ImageView Img, Button imgButton) {
         String imagePath = "";
         FileChooser fileChooser = new FileChooser();

@@ -1,22 +1,20 @@
 package com.schoolmanagementsystem.controllers;
 
+import com.schoolmanagementsystem.database.ConnectDatabase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+
+import javafx.scene.control.*;
 import com.schoolmanagementsystem.users.LoginValidator;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -104,7 +102,44 @@ public class loginController extends Controller implements Initializable {
 //        loggedInPerson = "";
     }
 
-    public void handleLink(ActionEvent actionEvent) throws IOException {
-        controller.loadPage("hyperLink","/com/schoolmanagementsystem/employeeRegistrationForm.fxml",actionEvent);
+    public void handleLink(ActionEvent actionEvent) throws IOException, SQLException {
+        loggable.setText("");
+        String adminPassword = "";
+        String role = "";
+
+        Pair<String, String> result = passwordInputAlert();
+        if(result != null && result.getKey() != null && result.getValue() != null) {
+            adminPassword = String.valueOf(result.getValue());
+            role = String.valueOf(result.getKey());
+        }
+
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String query = "SELECT * FROM loginInfo WHERE userType = ?";
+
+        PreparedStatement statement = con.prepareStatement(query);
+
+        statement.setString(1, "Admin");
+
+        ResultSet r = statement.executeQuery();
+
+        String correctPass = null;
+
+        if (r.next()){
+            correctPass = r.getString("password");
+        }
+
+        if(Objects.equals(adminPassword, correctPass)){
+            if(role == "Teacher") {
+                controller.loadPage("hyperLink", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml", actionEvent);
+            }
+            else {
+                controller.loadPage("hyperLink", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", actionEvent);
+            }
+        }else {
+//            handleAlert("Incorrect password", "Without correct password you cannot register");
+            loggable.setText("Invalid password. Try again");
+        }
     }
 }

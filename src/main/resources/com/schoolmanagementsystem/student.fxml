@@ -69,7 +69,8 @@
                   <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#studReg" text="Student" />
-                        <MenuItem mnemonicParsing="false" onAction="#emplyReg" text="Employee" />
+                        <MenuItem mnemonicParsing="false" onAction="#teacherReg" text="Teacher" />
+                        <MenuItem mnemonicParsing="false" onAction="#staffReg" text="Staff" />
                      </items>
                      <cursor>
                         <Cursor fx:constant="HAND" />

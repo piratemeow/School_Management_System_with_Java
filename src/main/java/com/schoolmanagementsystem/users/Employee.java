@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 public class Employee extends People {
     private String designation;
-    private String marital;
     private int salary;
     private LocalDate joining_date;
     private String pass;
@@ -14,10 +13,9 @@ public class Employee extends People {
         super();
     }
 
-    public Employee(int id, String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion, String designation, String marital, String pass) {
+    public Employee(int id, String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion, String designation, String pass) {
         super(id, name, contact, address, date_of_birth, gender, father, mother, religion);
         this.designation = designation;
-        this.marital = marital;
         this.pass = pass;
     }
 
@@ -29,9 +27,6 @@ public class Employee extends People {
         this.designation = designation;
     }
 
-    public void setMaritalsatus(String marital) {
-        this.marital = marital;
-    }
 
     public void setSalary(int salary) {
         this.salary = salary;
@@ -47,10 +42,6 @@ public class Employee extends People {
 
     public String getDesignation() {
         return this.designation;
-    }
-
-    public String getMaritalstatus() {
-        return this.marital;
     }
 
     public int getSalary() {

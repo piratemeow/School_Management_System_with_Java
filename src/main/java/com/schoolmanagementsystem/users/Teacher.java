@@ -1,5 +1,7 @@
 package com.schoolmanagementsystem.users;
 
+import java.time.LocalDate;
+
 public class Teacher extends Employee {
     private String subject;
     private int[] clas = new int[10];
@@ -28,6 +30,11 @@ public class Teacher extends Employee {
     {
         this.section[isec] = sec;
         isec++;
+    }
+
+    public Teacher(int id, String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion, String designation, String pass, String subject) {
+        super(id, name, contact, address, date_of_birth, gender, father, mother, religion, designation, pass);
+        this.subject = subject;
     }
 
     public String getSubject()
