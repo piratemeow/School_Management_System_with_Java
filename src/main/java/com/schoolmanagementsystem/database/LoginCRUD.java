@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 public class LoginCRUD {
 
-    public void addNewLoginInfo(Employee emp) throws SQLException {
+    public void addNewLoginInfo(Employee emp, String userType) throws SQLException {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
@@ -20,7 +20,7 @@ public class LoginCRUD {
 
         // set values for the insert query
         statement.setInt(1, emp.getId());
-        statement.setString(2, emp.getDesignation());
+        statement.setString(2, userType);
         statement.setString(3, emp.getPass());
 
         statement.executeUpdate();

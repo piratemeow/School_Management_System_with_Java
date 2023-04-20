@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 
 import javafx.scene.control.*;
 import com.schoolmanagementsystem.users.LoginValidator;
+import javafx.scene.input.KeyEvent;
 import javafx.util.Pair;
 
 import java.io.IOException;
@@ -22,6 +23,15 @@ public class loginController extends Controller implements Initializable {
 
     private static String loggedInPerson;
 
+    private static int loggedInID;
+
+    public static int getLoggedInID() {
+        return loggedInID;
+    }
+
+    public static void setLoggedInID(int loggedInID) {
+        loginController.loggedInID = loggedInID;
+    }
 
     private Controller controller;
     @FXML
@@ -131,7 +141,8 @@ public class loginController extends Controller implements Initializable {
         }
 
         if(Objects.equals(adminPassword, correctPass)){
-            if(role == "Teacher") {
+
+            if(Objects.equals(role, "Teacher")) {
                 controller.loadPage("hyperLink", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml", actionEvent);
             }
             else {
@@ -141,5 +152,10 @@ public class loginController extends Controller implements Initializable {
 //            handleAlert("Incorrect password", "Without correct password you cannot register");
             loggable.setText("Invalid password. Try again");
         }
+    }
+
+    @FXML
+    void inputChange(KeyEvent keyEvent) {
+        loggable.setText("");
     }
 }

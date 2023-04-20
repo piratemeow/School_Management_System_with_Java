@@ -1,4 +1,5 @@
 package com.schoolmanagementsystem.controllers;
+import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.LoginCRUD;
 import com.schoolmanagementsystem.database.StaffCRUD;
 import com.schoolmanagementsystem.users.Staff;
@@ -16,6 +17,9 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Year;
 import java.util.Random;
@@ -98,7 +102,25 @@ public class StaffRegistrationController extends Controller implements Initializ
 
             Random rand = new Random();
 
-            int id = 1000 * year + rand.nextInt(100, 999);
+            int id;
+
+            while(true){
+
+                ConnectDatabase db = new ConnectDatabase();
+                Connection con = db.getCon();
+
+                String query = "SELECT * FROM loginInfo WHERE ID = ?";
+                id = 1000 * year + rand.nextInt(100, 999);
+
+                PreparedStatement statement = con.prepareStatement(query);
+                statement.setInt(1, id);
+
+                ResultSet r = statement.executeQuery();
+
+                if (!r.next()) {
+                    break;
+                }
+            }
             String message1 = "You are about to register.";
             String message2 = "Your id is " + id + "\nPlease remember this id for further access.";
 
@@ -114,7 +136,7 @@ public class StaffRegistrationController extends Controller implements Initializ
                 staffCrud.addStaff(staff, imgPath);
 
                 LoginCRUD loginCRUD = new LoginCRUD();
-                loginCRUD.addNewLoginInfo(staff);
+                loginCRUD.addNewLoginInfo(staff, "Staff");
             }
         }
     }

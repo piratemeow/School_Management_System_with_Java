@@ -38,6 +38,7 @@ public class LoginValidator{
                 return 1;
             }
             else {
+                loginController.setLoggedInID(r2.getInt("ID"));
                 loginController.setLoggedInPerson(r2.getString("userType"));
                 return 2;
             }

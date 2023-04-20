@@ -45,19 +45,27 @@
                         <VBox.margin>
                             <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
                         </VBox.margin></Button>
-                    <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
-                        <items>
-                            <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile" text="Student" />
-                            <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile" text="Teacher" />
-                            <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile" text="Staff" />
-                        </items>
+<!--                    <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">-->
+<!--                        <items>-->
+<!--                            <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile" text="Student" />-->
+<!--                            <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile" text="Teacher" />-->
+<!--                            <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile" text="Staff" />-->
+<!--                        </items>-->
+<!--                        <cursor>-->
+<!--                            <Cursor fx:constant="HAND" />-->
+<!--                        </cursor>-->
+<!--                        <VBox.margin>-->
+<!--                            <Insets bottom="7.0" left="55.0" top="7.0" />-->
+<!--                        </VBox.margin>-->
+<!--                    </MenuButton>-->
+                    <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
                         <cursor>
                             <Cursor fx:constant="HAND" />
                         </cursor>
                         <VBox.margin>
-                            <Insets bottom="7.0" left="55.0" top="7.0" />
+                            <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
                         </VBox.margin>
-                    </MenuButton>
+                    </Button>
                     <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
                         <items>
                             <MenuItem mnemonicParsing="false" onAction="#studReg" text="Student" />
@@ -152,12 +160,8 @@
                                 <Insets top="30.0" />
                             </VBox.margin>
                             <children>
-                                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@image/profilepic.png" />
-                                    </image>
-                                </ImageView>
-                                <Label text="LAURENCE REN" textFill="WHITE">
+                                <ImageView fx:id="profilePic" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                                <Label fx:id="nam" text="LAURENCE REN" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -165,7 +169,7 @@
                                         <Insets top="10.0" />
                                     </VBox.margin>
                                 </Label>
-                                <Label alignment="CENTER" text="USERID: 123456" textFill="#c3baba">
+                                <Label fx:id="usrID" alignment="CENTER" text="USERID: 123456" textFill="#c3baba">
                                     <font>
                                         <Font size="11.0" />
                                     </font>
@@ -341,7 +345,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="266.0" text="LAURENCE REN" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="teacherName" prefHeight="20.0" prefWidth="266.0" text="LAURENCE REN" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -403,7 +407,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="250.0" text="MATH" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="subTeacher" prefHeight="20.0" prefWidth="250.0" text="MATH" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -434,7 +438,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="244.0" text="DHAKA" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="designation" prefHeight="20.0" prefWidth="257.0" text="DHAKA" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -465,7 +469,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="257.0" text="TEACHER" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="fname" prefHeight="20.0" prefWidth="257.0" text="TEACHER" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -496,7 +500,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="01/05/2021" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="mname" prefHeight="20.0" prefWidth="251.0" text="01/05/2021" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -527,7 +531,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="247.0" text="01/01/2001" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="dob" prefHeight="20.0" prefWidth="247.0" text="01/01/2001" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -558,7 +562,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="MALE" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="joinDate" prefHeight="20.0" prefWidth="278.0" text="MALE" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -589,7 +593,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="248.0" text="ISLAM" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="religion" prefHeight="20.0" prefWidth="248.0" text="ISLAM" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -620,7 +624,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="01234567891" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="gender" prefHeight="20.0" prefWidth="265.0" text="01234567891" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -651,7 +655,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="254.0" text="UNITED STATES" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="address" prefHeight="20.0" prefWidth="254.0" text="UNITED STATES" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
@@ -684,7 +688,7 @@
                                                         <Insets left="10.0" />
                                                     </padding>
                                                 </Label>
-                                                <Label prefHeight="20.0" prefWidth="111.0" text="01234567891" textFill="WHITE" GridPane.columnIndex="1">
+                                                <Label fx:id="conNum" prefHeight="20.0" prefWidth="292.0" text="01234567891" textFill="WHITE" GridPane.columnIndex="1">
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>

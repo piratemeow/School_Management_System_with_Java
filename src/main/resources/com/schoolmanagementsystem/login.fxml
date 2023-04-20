@@ -45,19 +45,27 @@
                   <VBox.margin>
                      <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
                   </VBox.margin></Button>
-               <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
-                  <items>
-                     <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile" text="Student" />
-                     <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile" text="Teacher" />
-                     <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile" text="Staff" />
-                  </items>
+<!--               <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">-->
+<!--                  <items>-->
+<!--                     <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile" text="Student" />-->
+<!--                     <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile" text="Teacher" />-->
+<!--                     <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile" text="Staff" />-->
+<!--                  </items>-->
+<!--                  <cursor>-->
+<!--                     <Cursor fx:constant="HAND" />-->
+<!--                  </cursor>-->
+<!--                  <VBox.margin>-->
+<!--                     <Insets bottom="7.0" left="55.0" top="7.0" />-->
+<!--                  </VBox.margin>-->
+<!--               </MenuButton>-->
+               <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
                   <VBox.margin>
-                     <Insets bottom="7.0" left="55.0" top="7.0" />
+                     <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
                   </VBox.margin>
-               </MenuButton>
+               </Button>
                <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
                   <items>
                      <MenuItem mnemonicParsing="false" onAction="#studReg" text="Student" />
@@ -156,7 +164,7 @@
                   <Image url="@image/login_background.png" />
                </image>
             </ImageView>
-            <TextField fx:id="loginid" maxHeight="24.0" maxWidth="202.4" promptText="ID">
+            <TextField fx:id="loginid" maxHeight="24.0" maxWidth="202.4" onKeyPressed="#inputChange" promptText="ID">
                <StackPane.margin>
                   <Insets left="200.0" right="200.0" top="50.0" />
                </StackPane.margin>
@@ -194,7 +202,7 @@
                   <Image url="@image/lock.jpeg" />
                </image>
             </ImageView>
-            <PasswordField fx:id="loginpass" maxHeight="24.0" maxWidth="202.4" promptText="Password">
+            <PasswordField fx:id="loginpass" maxHeight="24.0" maxWidth="202.4" onKeyPressed="#inputChange" promptText="Password">
                <StackPane.margin>
                   <Insets left="200.0" right="200.0" top="150.0" />
                </StackPane.margin>

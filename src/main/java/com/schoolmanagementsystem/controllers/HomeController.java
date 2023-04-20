@@ -1,6 +1,7 @@
 
 package com.schoolmanagementsystem.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -13,6 +14,5 @@ public class HomeController extends Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
 
 }

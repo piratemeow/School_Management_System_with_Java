@@ -1,5 +1,6 @@
 package com.schoolmanagementsystem.controllers;
 
+import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.TeacherCRUD;
 import com.schoolmanagementsystem.database.LoginCRUD;
 import com.schoolmanagementsystem.users.Employee;
@@ -18,6 +19,9 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Year;
 import java.util.Random;
@@ -99,8 +103,26 @@ public class TeacherRegistrationController extends Controller implements Initial
             int year = Year.now().getValue();
 
             Random rand = new Random();
+            int id;
 
-            int id = 1000 * year + rand.nextInt(100, 999);
+            while(true){
+
+                ConnectDatabase db = new ConnectDatabase();
+                Connection con = db.getCon();
+
+                String query = "SELECT * FROM loginInfo WHERE ID = ?";
+                id = 1000 * year + rand.nextInt(100, 999);
+
+                PreparedStatement statement = con.prepareStatement(query);
+                statement.setInt(1, id);
+
+                ResultSet r = statement.executeQuery();
+
+                if (!r.next()) {
+                    break;
+                }
+            }
+
             String message1 = "You are about to register.";
             String message2 = "Your id is " + id + "\nPlease remember this id for further access.";
 
@@ -116,7 +138,7 @@ public class TeacherRegistrationController extends Controller implements Initial
                 teacherCrud.addTeacher(teacher, imgPath);
 
                 LoginCRUD loginCRUD = new LoginCRUD();
-                loginCRUD.addNewLoginInfo(teacher);
+                loginCRUD.addNewLoginInfo(teacher, "Teacher");
             }
         }
     }

@@ -42,24 +42,34 @@
                             </cursor>
                             <VBox.margin>
                                 <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
-                            </VBox.margin></Button>
-                        <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
-                            <items>
-                                <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile" text="Student" />
-                                <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile" text="Teacher" />
-                                <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile" text="Staff" />
-                            </items>
+                            </VBox.margin>
+                        </Button>
+<!--                        <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">-->
+<!--                            <items>-->
+<!--                                <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile" text="Student" />-->
+<!--                                <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile" text="Teacher" />-->
+<!--                                <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile" text="Staff" />-->
+<!--                            </items>-->
+<!--                            <cursor>-->
+<!--                                <Cursor fx:constant="HAND" />-->
+<!--                            </cursor>-->
+<!--                            <VBox.margin>-->
+<!--                                <Insets bottom="7.0" left="55.0" top="7.0" />-->
+<!--                            </VBox.margin>-->
+<!--                        </MenuButton>-->
+                        <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="7.0" left="55.0" top="7.0" />
+                                <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
                             </VBox.margin>
-                        </MenuButton>
+                        </Button>
                         <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#studReg" text="Student" />
-                                <MenuItem mnemonicParsing="false" onAction="#emplyReg" text="Employee" />
+                                <MenuItem mnemonicParsing="false" onAction="#teacherReg" text="Teacher" />
+                                <MenuItem mnemonicParsing="false" onAction="#staffReg" text="Staff" />
                             </items>
                             <cursor>
                                 <Cursor fx:constant="HAND" />
@@ -162,11 +172,11 @@
                         <cursor>
                            <Cursor fx:constant="HAND" />
                         </cursor></Button>
-                     <Label layoutX="28.0" layoutY="204.0" text="Enter ID : ">
+                     <Label fx:id="inputLabel" layoutX="28.0" layoutY="204.0" text="Enter ID : ">
                         <font>
                            <Font name="System Bold" size="13.0" />
                         </font></Label>
-                     <TextField fx:id="input" layoutX="109.0" layoutY="200.0" maxHeight="24.0" maxWidth="154.0" prefHeight="24.0" prefWidth="154.0">
+                     <TextField fx:id="input" layoutX="109.0" layoutY="200.0" maxHeight="24.0" maxWidth="154.0" onKeyPressed="#inputChange" prefHeight="24.0" prefWidth="154.0">
                         <cursor>
                            <Cursor fx:constant="HAND" />
                         </cursor>

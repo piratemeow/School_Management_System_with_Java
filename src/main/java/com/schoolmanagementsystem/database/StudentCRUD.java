@@ -40,7 +40,5 @@ public class StudentCRUD {
         statement.setBinaryStream(13, fis, (int) file.length());
 
         statement.executeUpdate();
-
-        statement.executeUpdate();
     }
 }

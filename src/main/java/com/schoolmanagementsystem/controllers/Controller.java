@@ -15,13 +15,21 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Controller {
@@ -39,7 +47,7 @@ public class Controller {
     protected MenuButton other;
 
     @FXML
-    protected MenuButton profile;
+    protected Button profile;
 
     @FXML
     protected MenuButton reg;
@@ -57,12 +65,22 @@ public class Controller {
 
     @FXML
     void teacherReg(ActionEvent event) throws IOException {
-        loadPage("menuButton", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml",event);
+        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+            handleAlert("Registration Alert", "Only Admin has the right to add new teacher");
+        }
+        else {
+            loadPage("menuButton", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml", event);
+        }
     }
 
     @FXML
     void staffReg(ActionEvent event) throws IOException {
-        loadPage("menuButton", "/com/schoolmanagementsystem/staffRegistrationForm.fxml",event);
+        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+            handleAlert("Registration Alert", "Only Admin has the right to add new staff");
+        }
+        else {
+            loadPage("menuButton", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", event);
+        }
     }
 
     @FXML
@@ -108,27 +126,50 @@ public class Controller {
     }
 
     @FXML
-    void handleStaffProfile(ActionEvent event) throws IOException {
-        loadPage("menuButton","/com/schoolmanagementsystem/staff.fxml",event);
+    void handleProfile(ActionEvent actionEvent) throws IOException, SQLException {
+        if(loginController.getLoggedInPerson() == null) {
+            handleAlert("Alert", "Log in first to view your profile.");
+        }
+        else if(loginController.getLoggedInPerson().equals("Teacher")){
+            TeacherProfileController cont = new TeacherProfileController();
+            cont.handleTeacherProfile(actionEvent, loginController.getLoggedInID());
+        }
+        else if(loginController.getLoggedInPerson().equals("Staff")){
+            StaffProfileController cont = new StaffProfileController();
+            cont.handleStaffProfile(actionEvent, loginController.getLoggedInID());
+        }
+        else if(loginController.getLoggedInPerson().equals("Admin")){
+            loadPage("button", "/com/schoolmanagementsystem/chooseProfile.fxml", actionEvent);
+        }
     }
 
-    @FXML
-    void handleStudentProfile(ActionEvent event) throws IOException {
-        loadPage("menuButton","/com/schoolmanagementsystem/student.fxml",event);
-    }
+//    @FXML
+//    public void handleStaffProfile(ActionEvent event) throws IOException {
+//        loadPage("button","/com/schoolmanagementsystem/staff.fxml",event);
+//    }
 
-    @FXML
-    void handleTeacherProfile(ActionEvent event) throws IOException {
-        loadPage("menuButton","/com/schoolmanagementsystem/teacher.fxml",event);
-    }
+//    @FXML
+//    public void handleStudentProfile(ActionEvent event) throws IOException {
+//        loadPage("button","/com/schoolmanagementsystem/student.fxml",event);
+//    }
+
+//    @FXML
+//    public void handleTeacherProfile(ActionEvent event) throws IOException {
+//        loadPage("button","/com/schoolmanagementsystem/teacher.fxml",event);
+//    }
 
     @FXML
     void studReg(ActionEvent event) throws IOException {
-        loadPage("menuButton","/com/schoolmanagementsystem/studentRegistrationForm.fxml",event);
+        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+            handleAlert("Registration Alert", "Only Admin has the right to add new student");
+        }
+        else {
+            loadPage("menuButton", "/com/schoolmanagementsystem/studentRegistrationForm.fxml", event);
+        }
     }
 
 
-    void loadPage(String buttonType, String str, ActionEvent event) throws IOException {
+    public FXMLLoader loadPage(String buttonType, String str, ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(str));
         Parent root = fxmlLoader.load();
 
@@ -172,6 +213,8 @@ public class Controller {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+        return fxmlLoader;
     }
     public boolean validateNum(String str) {
         for (int i = 0; i < str.length(); i++) {
@@ -215,64 +258,26 @@ public class Controller {
         return false;
     }
 
-//    public AtomicReference<String> passwordInputAlert() {
-//        AtomicReference<String> pass = new AtomicReference<>("");
-//        TextInputDialog dialog = new TextInputDialog("");
-//        dialog.setTitle("Enter Password");
-//        dialog.setHeaderText("For security enter the password of admin.");
-//
-//        PasswordField passwordField = new PasswordField();
-//        passwordField.setPromptText("Enter Password");
-//        dialog.getDialogPane().setContent(passwordField);
-//
-//        // Show the dialog and wait for the user's response
-//        dialog.showAndWait().ifPresent(password -> pass.set(passwordField.getText()));
-//        return pass;
-//    }
-
-
     public Pair<String, String> passwordInputAlert() {
 
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Verification");
         dialog.setHeaderText("Select your role and \nenter password of admin for security:");
 
-// Set the button types
         ButtonType loginButtonType = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
         dialog.getDialogPane().getButtonTypes().addAll(loginButtonType, ButtonType.CANCEL);
 
-// Create ChoiceBox with teacher and staff options
         ChoiceBox<String> roleChoice = new ChoiceBox<>();
         roleChoice.getItems().addAll("Teacher", "Staff");
         roleChoice.setValue("Teacher");
 
-// Create PasswordField
         PasswordField passwordField = new PasswordField();
         passwordField.setPromptText("Password of the admin");
 
-// Create VBox layout and add ChoiceBox and PasswordField
         VBox vBox = new VBox(10);
         vBox.getChildren().addAll(roleChoice, passwordField);
 
-// Set the VBox layout as the dialog's content
         dialog.getDialogPane().setContent(vBox);
-
-// Convert the result to a pair of role and password
-//        String[] ans = new String[2];
-//
-//        dialog.setResultConverter(dialogButton -> {
-//            if (dialogButton == loginButtonType) {
-//                ans[0] = roleChoice.getValue();
-//                ans[1] = passwordField.getText();
-//
-//            }
-//            return null;
-//        });
-//
-//// Wait for the user to close the dialog
-//        Optional<Pair<String, String>> result = dialog.showAndWait();
-//
-//        return ans;
 
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == loginButtonType) {
@@ -308,5 +313,15 @@ public class Controller {
         }
 
         return imagePath;
+    }
+
+    public Image createImageFromByteArray(byte[] data) throws IOException {
+        if (data != null) {
+            try (InputStream is = new ByteArrayInputStream(data)) {
+                return new Image(is);
+            }
+        } else {
+            return null;
+        }
     }
 }
