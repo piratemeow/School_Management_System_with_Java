@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
@@ -59,8 +60,15 @@ public class StudentProfileController extends Controller{
     @FXML
     private Label usrID;
 
+    @FXML
+    private Label update;
+
+    @FXML
+    private ImageView updateIcon;
+
     public void handleStudentProfile(ActionEvent event, int id) throws IOException, SQLException {
 //        loadPage("button","/com/schoolmanagementsystem/student.fxml",event);
+        Controller.requiredID = id;
 
         FXMLLoader fxmlLoader = loadPage("button","/com/schoolmanagementsystem/student.fxml",event);
 
@@ -113,5 +121,10 @@ public class StudentProfileController extends Controller{
 //
 //            controller.profilePic.setStyle("-fx-border-radius: " + clip.getRadius() + "px;");
         }
+    }
+
+    public void handleUpdate(MouseEvent mouseEvent) throws IOException, SQLException {
+        StudentRegistrationController controller = new StudentRegistrationController();
+        controller.updateHelp(mouseEvent);
     }
 }

@@ -25,4 +25,17 @@ public class LoginCRUD {
 
         statement.executeUpdate();
     }
+
+    public void updateLoginInfo(Employee emp, String userType) throws SQLException {
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String updateQuery = "UPDATE loginInfo SET password = ? WHERE ID = ?";
+        PreparedStatement statement = con.prepareStatement(updateQuery);
+
+        statement.setInt(2, emp.getId());
+        statement.setString(1, emp.getPass());
+
+        statement.executeUpdate();
+    }
 }

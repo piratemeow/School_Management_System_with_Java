@@ -88,6 +88,7 @@ public class ChooseProfileController extends Controller implements Initializable
         else if(type.equals("employee")){
             type = r.getString("userType");
         }
+        Controller.requiredID = ID;
 
         if(Objects.equals(type, "Teacher")) {
             TeacherProfileController cont = new TeacherProfileController();

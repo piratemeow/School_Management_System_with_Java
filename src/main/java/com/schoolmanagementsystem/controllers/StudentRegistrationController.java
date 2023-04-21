@@ -4,7 +4,9 @@ import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.StudentCRUD;
 import com.schoolmanagementsystem.users.Student;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -13,17 +15,20 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.Year;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -81,6 +86,10 @@ public class StudentRegistrationController extends Controller implements Initial
     @FXML
     private Button cross;
 
+    @FXML
+    private Label heading;
+
+
     public DatePicker getDob() {
         return dob;
     }
@@ -93,10 +102,11 @@ public class StudentRegistrationController extends Controller implements Initial
         cross.setVisible(false);
     }
 
-    public void submitHandler() throws SQLException, FileNotFoundException {
+    public void submitHandler(ActionEvent event) throws SQLException, IOException {
+
         if (religion.getText().isEmpty() || sname.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || roll.getText().isEmpty() || contact.getText().isEmpty()
-                || address.getText().isEmpty() || imgPath == null) {
+                || address.getText().isEmpty()) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else if (gender.getValue() == null || classNumber.getValue() == null || section.getValue() == null
@@ -105,6 +115,9 @@ public class StudentRegistrationController extends Controller implements Initial
             cross.setVisible(true);
         } else if (validateNum(roll.getText()) || validateNum(contact.getText())
                 || contact.getText().length() != 11 || validateDate(dob)) {
+            wrongInput.setText("Incorrect Input. Please give correct information");
+            cross.setVisible(true);
+        } else if (!Controller.isUpdate && imgPath == null) {
             wrongInput.setText("Incorrect Input. Please give correct information");
             cross.setVisible(true);
         } else {
@@ -116,37 +129,63 @@ public class StudentRegistrationController extends Controller implements Initial
 
             int id;
 
-            while(true){
+            if(!Controller.isUpdate) {
+                while (true) {
 
-                ConnectDatabase db = new ConnectDatabase();
-                Connection con = db.getCon();
+                    ConnectDatabase db = new ConnectDatabase();
+                    Connection con = db.getCon();
 
-                String query = "SELECT * FROM loginInfo WHERE ID = ?";
-                id = 100000 * year + 10000 * clas + rand.nextInt(1000, 9999);
+                    String query = "SELECT * FROM studentInfo WHERE studentID = ?";
+                    id = 100000 * year + 10000 * clas + rand.nextInt(1000, 9999);
 
-                PreparedStatement statement = con.prepareStatement(query);
-                statement.setInt(1, id);
+                    PreparedStatement statement = con.prepareStatement(query);
+                    statement.setInt(1, id);
 
-                ResultSet r = statement.executeQuery();
+                    ResultSet r = statement.executeQuery();
 
-                if (!r.next()) {
-                    break;
+                    if (!r.next()) {
+                        break;
+                    }
                 }
+            }
+            else {
+                id = Controller.requiredID;
             }
 
             String message1 = "You are about to register.";
             String message2 = "Your id is " + id + "\nPlease remember this id for further access.";
 
-            if (handleAlert(message1,message2)) {
-                wrongInput.setText("Congratulation. You have successfully Registered");
-                cross.setVisible(true);
+            if(!Controller.isUpdate) {
+                if (handleAlert(message1, message2)) {
+                    wrongInput.setText("Congratulation. You have successfully Registered");
+                    cross.setVisible(true);
 
-                Student st = new Student(id, sname.getText(), contact.getText(), address.getText(), dob.getValue(),
-                        gender.getValue(), fname.getText(), mname.getText(), religion.getText(), clas,
-                        section.getValue(), Integer.parseInt(roll.getText()));
-                StudentCRUD stCrud = new StudentCRUD();
-                stCrud.addStudent(st, imgPath);
+                    Student st = new Student(id, sname.getText(), contact.getText(), address.getText(), dob.getValue(),
+                            gender.getValue(), fname.getText(), mname.getText(), religion.getText(), clas,
+                            section.getValue(), Integer.parseInt(roll.getText()));
+                    StudentCRUD stCrud = new StudentCRUD();
+                    stCrud.addStudent(st, imgPath);
+                }
+            } else {
+                message1 = "The data will be permanently updated.";
+                message2 = "Are you sure to proceed ?";
+
+                if (handleAlert(message1, message2)) {
+                    wrongInput.setText("Congratulation. The profile is updated successfully.");
+                    cross.setVisible(true);
+
+                    Student st = new Student(id, sname.getText(), contact.getText(), address.getText(), dob.getValue(),
+                            gender.getValue(), fname.getText(), mname.getText(), religion.getText(), clas,
+                            section.getValue(), Integer.parseInt(roll.getText()));
+                    StudentCRUD stCrud = new StudentCRUD();
+                    stCrud.updateStudent(st, imgPath);
+
+                    StudentProfileController cont = new StudentProfileController();
+                    cont.handleStudentProfile(event, Controller.requiredID);
+                }
+
             }
+
         }
     }
 
@@ -162,4 +201,54 @@ public class StudentRegistrationController extends Controller implements Initial
     public void handleImgUpload(ActionEvent actionEvent) {
         imgPath = uploadImage(stage, Img, imgButton);
     }
+
+    public void updateHelp(Event event) throws IOException, SQLException {
+
+        Controller.isUpdate = true;
+
+        FXMLLoader fxmlLoader = loadPage("label", "/com/schoolmanagementsystem/studentRegistrationForm.fxml", event);
+
+        StudentRegistrationController controller = fxmlLoader.getController();
+
+        controller.heading.setText("Information Update Form");
+        controller.register.setText("Update");
+
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String query = "SELECT * FROM studentInfo WHERE studentID = ?";
+
+        PreparedStatement statement = con.prepareStatement(query);
+
+        statement.setInt(1, Controller.requiredID);
+
+        ResultSet r = statement.executeQuery();
+        byte[] imageData;
+
+        if(r.next()) {
+            controller.sname.setText(r.getString("name"));
+            controller.classNumber.setValue(r.getInt("class"));
+            controller.roll.setText(String.valueOf(r.getInt("roll")));
+            controller.fname.setText(r.getString("fatherName"));
+            controller.mname.setText(r.getString("motherName"));
+            controller.dob.setValue(LocalDate.parse(String.valueOf(r.getDate("dateOfBirth"))));
+            controller.section.setValue(r.getString("section"));
+            controller.religion.setText(r.getString("religion"));
+            controller.gender.setValue(r.getString("gender"));
+            controller.address.setText(r.getString("address"));
+            controller.contact.setText(r.getString("contactNumber"));
+
+            imageData = r.getBytes("profilePicture");
+        } else {
+            imageData = null;
+        }
+
+        Image image = createImageFromByteArray(imageData);
+
+        if(image != null) {
+            controller.Img.setImage(image);
+        }
+        controller.imgButton.setVisible(true);
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.schoolmanagementsystem.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -27,6 +28,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -63,8 +65,13 @@ public class Controller {
 
     protected Stage stage;
 
+    protected static boolean isUpdate;
+
+    protected static int requiredID;
+
     @FXML
     void teacherReg(ActionEvent event) throws IOException {
+        Controller.isUpdate = false;
         if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             handleAlert("Registration Alert", "Only Admin has the right to add new teacher");
         }
@@ -75,11 +82,23 @@ public class Controller {
 
     @FXML
     void staffReg(ActionEvent event) throws IOException {
+        Controller.isUpdate = false;
         if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             handleAlert("Registration Alert", "Only Admin has the right to add new staff");
         }
         else {
             loadPage("menuButton", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", event);
+        }
+    }
+
+    @FXML
+    void studReg(ActionEvent event) throws IOException {
+        Controller.isUpdate = false;
+        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+            handleAlert("Registration Alert", "Only Admin has the right to add new student");
+        }
+        else {
+            loadPage("menuButton", "/com/schoolmanagementsystem/studentRegistrationForm.fxml", event);
         }
     }
 
@@ -158,18 +177,8 @@ public class Controller {
 //        loadPage("button","/com/schoolmanagementsystem/teacher.fxml",event);
 //    }
 
-    @FXML
-    void studReg(ActionEvent event) throws IOException {
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
-            handleAlert("Registration Alert", "Only Admin has the right to add new student");
-        }
-        else {
-            loadPage("menuButton", "/com/schoolmanagementsystem/studentRegistrationForm.fxml", event);
-        }
-    }
 
-
-    public FXMLLoader loadPage(String buttonType, String str, ActionEvent event) throws IOException {
+    public FXMLLoader loadPage(String buttonType, String str, Event event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(str));
         Parent root = fxmlLoader.load();
 
@@ -181,6 +190,9 @@ public class Controller {
         }
         else if(Objects.equals(buttonType, "hyperLink")){
             stage = (Stage)((Hyperlink)event.getSource()).getScene().getWindow();
+        }
+        else if(Objects.equals(buttonType, "label")) {
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         }
 
         Controller controller = fxmlLoader.getController();

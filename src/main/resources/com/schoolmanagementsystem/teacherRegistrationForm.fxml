@@ -295,7 +295,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </ChoiceBox>
-                    <Label text="Teacher Registration Form" textFill="#2e0984">
+                    <Label fx:id="heading" text="Teacher Registration Form" textFill="#2e0984">
                         <StackPane.margin>
                             <Insets top="-585.0" />
                         </StackPane.margin>
@@ -314,7 +314,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </DatePicker>
-                    <Button fx:id="register" mnemonicParsing="false" onMouseClicked="#submitHandler" style="-fx-background-color: #FFB900;" text="Register" textFill="#2e0984">
+                    <Button fx:id="register" mnemonicParsing="false" onAction="#submitHandler" style="-fx-background-color: #FFB900;" text="Register" textFill="#2e0984">
                         <StackPane.margin>
                             <Insets top="567.0" />
                         </StackPane.margin>
@@ -390,14 +390,14 @@
                             <DropShadow />
                         </effect>
                     </Button>
-               <PasswordField fx:id="sub" maxHeight="24.0" maxWidth="350.4" promptText="Enter your subject">
+               <TextField fx:id="sub" maxHeight="24.0" maxWidth="370.4" promptText="Enter your subject">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
                   <StackPane.margin>
-                     <Insets left="200.0" right="85.0" top="-25.0" />
+                     <Insets left="175.0" right="85.0" top="-25.0" />
                   </StackPane.margin>
-               </PasswordField>
+               </TextField>
                 </children>
             </StackPane>
             <StackPane.margin>

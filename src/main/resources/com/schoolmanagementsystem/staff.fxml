@@ -252,26 +252,55 @@
                                         <Insets />
                                     </VBox.margin>
                                 </HBox>
+<!--                                <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">-->
+<!--                                    <children>-->
+<!--                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                                            <image>-->
+<!--                                                <Image url="@image/NOTI.png" />-->
+<!--                                            </image>-->
+<!--                                            <HBox.margin>-->
+<!--                                                <Insets left="20.0" />-->
+<!--                                            </HBox.margin>-->
+<!--                                        </ImageView>-->
+<!--                                        <Label prefHeight="42.0" prefWidth="146.0" text="Notice" textFill="#fcfcfc">-->
+<!--                                            <font>-->
+<!--                                                <Font size="18.0" />-->
+<!--                                            </font>-->
+<!--                                            <padding>-->
+<!--                                                <Insets left="15.0" />-->
+<!--                                            </padding>-->
+<!--                                        </Label>-->
+<!--                                    </children>-->
+<!--                                </HBox>-->
+
                                 <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
                                     <children>
-                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="updateIcon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@image/NOTI.png" />
+                                                <Image url="@image/update.jpg" />
                                             </image>
                                             <HBox.margin>
                                                 <Insets left="20.0" />
                                             </HBox.margin>
                                         </ImageView>
-                                        <Label prefHeight="42.0" prefWidth="146.0" text="Notice" textFill="#fcfcfc">
+                                        <Label fx:id="update" onMouseClicked="#handleUpdate" prefHeight="42.0" prefWidth="146.0" text="Update" textFill="#fcfcfc">
                                             <font>
                                                 <Font size="18.0" />
                                             </font>
                                             <padding>
                                                 <Insets left="15.0" />
                                             </padding>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
                                         </Label>
                                     </children>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
                                 </HBox>
+
+
                             </children>
                             <VBox.margin>
                                 <Insets top="20.0" />

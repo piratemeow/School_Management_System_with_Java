@@ -1,12 +1,14 @@
 package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.ConnectDatabase;
+import com.schoolmanagementsystem.database.TeacherCRUD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
@@ -112,5 +114,10 @@ public class TeacherProfileController extends Controller {
 //
 //            controller.profilePic.setStyle("-fx-border-radius: " + clip.getRadius() + "px;");
         }
+    }
+
+    public void handleUpdate(MouseEvent mouseEvent) throws IOException, SQLException {
+        TeacherRegistrationController controller = new TeacherRegistrationController();
+        controller.updateHelp(mouseEvent);
     }
 }

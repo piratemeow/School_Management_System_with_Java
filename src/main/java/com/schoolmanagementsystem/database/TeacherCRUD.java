@@ -1,6 +1,7 @@
 package com.schoolmanagementsystem.database;
 
 import com.schoolmanagementsystem.users.Employee;
+import com.schoolmanagementsystem.users.Staff;
 import com.schoolmanagementsystem.users.Teacher;
 
 import java.io.File;
@@ -44,6 +45,49 @@ public class TeacherCRUD {
         File file = new File(imgPath); // the path to the image file
         fis = new FileInputStream(file);
         statement.setBinaryStream(13, fis, (int) file.length());
+
+        statement.executeUpdate();
+    }
+
+    public void updateTeacher(Teacher emp, String imgPath) throws SQLException, FileNotFoundException {
+
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String updateQuery;
+
+        if(imgPath != null) {
+            updateQuery = "UPDATE employeeInfo SET name = ?, profession = ?, fatherName = ?, motherName = ?, address = ?, dateOfBirth = ?, gender = ?, contactNumber = ?, religion = ?, subject = ?, profilePicture = ? WHERE employeeID = ?";
+        } else {
+            updateQuery = "UPDATE employeeInfo SET name = ?, profession = ?, fatherName = ?, motherName = ?, address = ?, dateOfBirth = ?, gender = ?, contactNumber = ?, religion = ?, subject = ? WHERE employeeID = ?";
+        }
+        PreparedStatement statement = con.prepareStatement(updateQuery);
+
+        java.sql.Date sqlDate = java.sql.Date.valueOf(emp.getDateofbirth());
+
+        if(imgPath != null) {
+            statement.setInt(12, emp.getId());
+        } else {
+            statement.setInt(11, emp.getId());
+        }
+
+        statement.setString(1, emp.getName());
+        statement.setString(2, emp.getDesignation());
+        statement.setString(3, emp.getFather());
+        statement.setString(4, emp.getMother());
+        statement.setString(5, emp.getAdderss());
+        statement.setDate(6, sqlDate);
+        statement.setString(7, emp.getGender());
+        statement.setString(8, emp.getContact());
+        statement.setString(9, emp.getReligion());
+        statement.setString(10, emp.getSubject());
+
+        if(imgPath != null) {
+            FileInputStream fis = null;
+            File file = new File(imgPath); // the path to the image file
+            fis = new FileInputStream(file);
+            statement.setBinaryStream(11, fis, (int) file.length());
+        }
 
         statement.executeUpdate();
     }

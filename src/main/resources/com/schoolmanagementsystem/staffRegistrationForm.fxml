@@ -303,7 +303,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </ChoiceBox>
-                    <Label text="Staff Registration Form" textFill="#2e0984">
+                    <Label fx:id="heading" text="Staff Registration Form" textFill="#2e0984">
                         <StackPane.margin>
                             <Insets top="-585.0" />
                         </StackPane.margin>
@@ -322,7 +322,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </DatePicker>
-                    <Button fx:id="register" mnemonicParsing="false" onMouseClicked="#submitHandler" style="-fx-background-color: #FFB900;" text="Register" textFill="#2e0984">
+                    <Button fx:id="register" mnemonicParsing="false" onAction="#submitHandler" style="-fx-background-color: #FFB900;" text="Register" textFill="#2e0984">
                         <StackPane.margin>
                             <Insets top="567.0" />
                         </StackPane.margin>
@@ -394,6 +394,9 @@
                   <StackPane.margin>
                      <Insets left="230.0" right="85.0" top="-90.0" />
                   </StackPane.margin>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
                </TextField>
                 </children>
             </StackPane>
