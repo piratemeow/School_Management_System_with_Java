@@ -125,8 +125,14 @@ public class Controller {
     }
 
     @FXML
-    void handleNotice(MouseEvent event) {
-
+    void handleNotice(Event event) throws IOException, SQLException {
+        if(loginController.getLoggedInPerson() == null){
+            handleAlert("Alert", "Log in first to view your profile.");
+        }
+        else {
+            NoticeController cont = new NoticeController();
+            cont.handleNoticePage(event);
+        }
     }
 
     @FXML

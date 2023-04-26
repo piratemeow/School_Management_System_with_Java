@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.*;
-import com.schoolmanagementsystem.users.LoginValidator;
+import com.schoolmanagementsystem.models.LoginValidator;
 import javafx.scene.input.KeyEvent;
 import javafx.util.Pair;
 
