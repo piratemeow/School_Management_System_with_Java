@@ -15,13 +15,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -89,7 +84,6 @@ public class StudentRegistrationController extends Controller implements Initial
     @FXML
     private Label heading;
 
-
     public DatePicker getDob() {
         return dob;
     }
@@ -129,7 +123,7 @@ public class StudentRegistrationController extends Controller implements Initial
 
             int id;
 
-            if(!Controller.isUpdate) {
+            if (!Controller.isUpdate) {
                 while (true) {
 
                     ConnectDatabase db = new ConnectDatabase();
@@ -147,15 +141,14 @@ public class StudentRegistrationController extends Controller implements Initial
                         break;
                     }
                 }
-            }
-            else {
+            } else {
                 id = Controller.requiredID;
             }
 
             String message1 = "You are about to register.";
             String message2 = "Your id is " + id + "\nPlease remember this id for further access.";
 
-            if(!Controller.isUpdate) {
+            if (!Controller.isUpdate) {
                 if (handleAlert(message1, message2)) {
                     wrongInput.setText("Congratulation. You have successfully Registered");
                     cross.setVisible(true);
@@ -225,7 +218,7 @@ public class StudentRegistrationController extends Controller implements Initial
         ResultSet r = statement.executeQuery();
         byte[] imageData;
 
-        if(r.next()) {
+        if (r.next()) {
             controller.sname.setText(r.getString("name"));
             controller.classNumber.setValue(r.getInt("class"));
             controller.roll.setText(String.valueOf(r.getInt("roll")));
@@ -245,7 +238,7 @@ public class StudentRegistrationController extends Controller implements Initial
 
         Image image = createImageFromByteArray(imageData);
 
-        if(image != null) {
+        if (image != null) {
             controller.Img.setImage(image);
         }
         controller.imgButton.setVisible(true);

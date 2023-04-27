@@ -4,12 +4,10 @@ import com.schoolmanagementsystem.database.ConnectDatabase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,7 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class StaffProfileController extends Controller{
+public class StaffProfileController extends Controller {
 
     @FXML
     private Label staffName;
@@ -65,7 +63,7 @@ public class StaffProfileController extends Controller{
     private ImageView updateIcon;
 
     public void handleStaffProfile(ActionEvent event, int id) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = loadPage("button","/com/schoolmanagementsystem/staff.fxml",event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/staff.fxml", event);
 
         StaffProfileController controller = fxmlLoader.getController();
 
@@ -81,7 +79,7 @@ public class StaffProfileController extends Controller{
 
         byte[] imageData;
 
-        if(r.next()) {
+        if (r.next()) {
             controller.staffName.setText(r.getString("name").toUpperCase());
             controller.designation.setText(r.getString("profession").toUpperCase());
             controller.fname.setText(r.getString("fatherName").toUpperCase());
@@ -96,24 +94,25 @@ public class StaffProfileController extends Controller{
             controller.usrID.setText("ID : " + r.getInt("employeeID"));
 
             imageData = r.getBytes("profilePicture");
-        }
-        else {
+        } else {
             imageData = null;
         }
         // Convert the byte array to an Image
         Image image = createImageFromByteArray(imageData);
 
-        if(image != null) {
+        if (image != null) {
             controller.profilePic.setImage(image);
 
-//            Circle clip = new Circle();
-//            clip.setCenterX(controller.profilePic.getFitWidth() / 2);
-//            clip.setCenterY(controller.profilePic.getFitHeight() / 2 - 15);
-//            clip.setRadius(Math.min(controller.profilePic.getFitWidth(), controller.profilePic.getFitHeight()) / 2 - 15);
-//
-//            controller.profilePic.setClip(clip);
-//
-//            controller.profilePic.setStyle("-fx-border-radius: " + clip.getRadius() + "px;");
+            // Circle clip = new Circle();
+            // clip.setCenterX(controller.profilePic.getFitWidth() / 2);
+            // clip.setCenterY(controller.profilePic.getFitHeight() / 2 - 15);
+            // clip.setRadius(Math.min(controller.profilePic.getFitWidth(),
+            // controller.profilePic.getFitHeight()) / 2 - 15);
+            //
+            // controller.profilePic.setClip(clip);
+            //
+            // controller.profilePic.setStyle("-fx-border-radius: " + clip.getRadius() +
+            // "px;");
         }
     }
 

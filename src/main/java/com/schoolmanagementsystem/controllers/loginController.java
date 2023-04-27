@@ -53,7 +53,6 @@ public class loginController extends Controller implements Initializable {
         return loggedInPerson;
     }
 
-
     public static void setLoggedInPerson(String loggedInPerson) {
         loginController.loggedInPerson = loggedInPerson;
     }
@@ -66,7 +65,7 @@ public class loginController extends Controller implements Initializable {
         this.id = id;
         this.pass = pass;
         loginController.loggedInPerson = null;
-//        controller = new Controller();
+        // controller = new Controller();
     }
 
     @FXML
@@ -77,7 +76,7 @@ public class loginController extends Controller implements Initializable {
 
         loginController login = new loginController(id, pass);
 
-        if(loginController.loggedInPerson == null) {
+        if (loginController.loggedInPerson == null) {
             try {
                 int ans = LoginValidator.log(login);
                 if (ans == 0) {
@@ -91,8 +90,7 @@ public class loginController extends Controller implements Initializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-        else{
+        } else {
             loginController.setLoggedInPerson(null);
             controller.handleHome(event);
         }
@@ -109,7 +107,7 @@ public class loginController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        loggedInPerson = "";
+        // loggedInPerson = "";
     }
 
     public void handleLink(ActionEvent actionEvent) throws IOException, SQLException {
@@ -118,7 +116,7 @@ public class loginController extends Controller implements Initializable {
         String role = "";
 
         Pair<String, String> result = passwordInputAlert();
-        if(result != null && result.getKey() != null && result.getValue() != null) {
+        if (result != null && result.getKey() != null && result.getValue() != null) {
             adminPassword = String.valueOf(result.getValue());
             role = String.valueOf(result.getKey());
         }
@@ -136,20 +134,21 @@ public class loginController extends Controller implements Initializable {
 
         String correctPass = null;
 
-        if (r.next()){
+        if (r.next()) {
             correctPass = r.getString("password");
         }
 
-        if(Objects.equals(adminPassword, correctPass)){
+        if (Objects.equals(adminPassword, correctPass)) {
 
-            if(Objects.equals(role, "Teacher")) {
-                controller.loadPage("hyperLink", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml", actionEvent);
-            }
-            else {
+            if (Objects.equals(role, "Teacher")) {
+                controller.loadPage("hyperLink", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml",
+                        actionEvent);
+            } else {
                 controller.loadPage("hyperLink", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", actionEvent);
             }
-        }else {
-//            handleAlert("Incorrect password", "Without correct password you cannot register");
+        } else {
+            // handleAlert("Incorrect password", "Without correct password you cannot
+            // register");
             loggable.setText("Invalid password. Try again");
         }
     }

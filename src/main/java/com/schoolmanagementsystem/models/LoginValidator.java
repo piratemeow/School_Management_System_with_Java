@@ -8,9 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginValidator{
+public class LoginValidator {
 
-    public static int log(loginController login) throws SQLException{
+    public static int log(loginController login) throws SQLException {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
@@ -26,18 +26,14 @@ public class LoginValidator{
         ResultSet r1 = statement1.executeQuery();
         ResultSet r2 = statement2.executeQuery();
 
-        if (!r1.next())
-        {
-//            login.getLoggable().setText("Invalid Id. Register first");
+        if (!r1.next()) {
+            // login.getLoggable().setText("Invalid Id. Register first");
             return 0;
-        }
-        else
-        {
-            if(!r2.next()) {
-//                login.getLoggable().setText("Invalid password. Try again");
+        } else {
+            if (!r2.next()) {
+                // login.getLoggable().setText("Invalid password. Try again");
                 return 1;
-            }
-            else {
+            } else {
                 loginController.setLoggedInID(r2.getInt("ID"));
                 loginController.setLoggedInPerson(r2.getString("userType"));
                 return 2;

@@ -48,21 +48,19 @@ public class ChooseProfileController extends Controller implements Initializable
     public void handleOk(ActionEvent actionEvent) throws IOException, SQLException {
         String id = input.getText();
         String type = "";
-        if(id.length() == 7) {
+        if (id.length() == 7) {
             type = "employee";
-        }
-        else if(id.length() == 9){
+        } else if (id.length() == 9) {
             type = "Student";
-        }
-        else{
+        } else {
             invalid.setVisible(true);
             return;
         }
-//        if(type.equals("student")) {
-//            StudentProfileController cont = new StudentProfileController();
-//            cont.handleStudentProfile(actionEvent);
-//            return;
-//        }
+        // if(type.equals("student")) {
+        // StudentProfileController cont = new StudentProfileController();
+        // cont.handleStudentProfile(actionEvent);
+        // return;
+        // }
         int ID = Integer.parseInt(id);
 
         ConnectDatabase db = new ConnectDatabase();
@@ -70,10 +68,9 @@ public class ChooseProfileController extends Controller implements Initializable
 
         String query;
 
-        if(type.equals("Student")) {
+        if (type.equals("Student")) {
             query = "SELECT * FROM studentInfo WHERE studentID = ?";
-        }
-        else {
+        } else {
             query = "SELECT * FROM loginInfo WHERE ID = ?";
         }
         PreparedStatement statement = con.prepareStatement(query);
@@ -84,21 +81,18 @@ public class ChooseProfileController extends Controller implements Initializable
         if (!r.next()) {
             invalid.setVisible(true);
             return;
-        }
-        else if(type.equals("employee")){
+        } else if (type.equals("employee")) {
             type = r.getString("userType");
         }
         Controller.requiredID = ID;
 
-        if(Objects.equals(type, "Teacher")) {
+        if (Objects.equals(type, "Teacher")) {
             TeacherProfileController cont = new TeacherProfileController();
             cont.handleTeacherProfile(actionEvent, ID);
-        }
-        else if(Objects.equals(type, "Student")) {
+        } else if (Objects.equals(type, "Student")) {
             StudentProfileController cont = new StudentProfileController();
             cont.handleStudentProfile(actionEvent, ID);
-        }
-        else {
+        } else {
             StaffProfileController cont = new StaffProfileController();
             cont.handleStaffProfile(actionEvent, ID);
         }

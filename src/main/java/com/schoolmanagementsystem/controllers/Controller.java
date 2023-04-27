@@ -58,7 +58,7 @@ public class Controller {
     private MenuButton result;
 
     @FXML
-    protected MenuButton routine;
+    protected Button routine;
 
     @FXML
     protected VBox vbox;
@@ -68,6 +68,8 @@ public class Controller {
     protected static boolean isUpdate;
 
     protected static int requiredID;
+
+    protected static boolean routineFlag;
 
     @FXML
     void teacherReg(ActionEvent event) throws IOException {
@@ -146,8 +148,15 @@ public class Controller {
     }
 
     @FXML
-    void handleRoutine(MouseEvent event) {
-
+    void handleRoutine(Event event) throws SQLException, IOException {
+        if(loginController.getLoggedInPerson() == null){
+            handleAlert("Alert", "Log in first to view routine.");
+        }
+        else {
+            Controller.routineFlag = true;
+            RoutineController cont = new RoutineController();
+            cont.handleRoutinePage(event);
+        }
     }
 
     @FXML

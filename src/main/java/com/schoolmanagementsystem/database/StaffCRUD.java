@@ -1,8 +1,6 @@
 package com.schoolmanagementsystem.database;
 
-import com.schoolmanagementsystem.users.Employee;
 import com.schoolmanagementsystem.users.Staff;
-import com.schoolmanagementsystem.users.Student;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,6 +14,7 @@ import java.time.LocalDate;
 public class StaffCRUD {
 
     private PreparedStatement statement;
+
     public void addStaff(Staff emp, String imgPath) throws SQLException, FileNotFoundException {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
@@ -40,7 +39,7 @@ public class StaffCRUD {
         statement.setString(10, emp.getContact());
         statement.setString(11, emp.getReligion());
 
-        if(imgPath != null) {
+        if (imgPath != null) {
             FileInputStream fis = null;
             File file = new File(imgPath); // the path to the image file
             fis = new FileInputStream(file);
@@ -57,7 +56,7 @@ public class StaffCRUD {
 
         String updateQuery;
 
-        if(imgPath != null) {
+        if (imgPath != null) {
             updateQuery = "UPDATE employeeInfo SET name = ?, profession = ?, fatherName = ?, motherName = ?, address = ?, dateOfBirth = ?, gender = ?, contactNumber = ?, religion = ?, profilePicture = ? WHERE employeeID = ?";
         } else {
             updateQuery = "UPDATE employeeInfo SET name = ?, profession = ?, fatherName = ?, motherName = ?, address = ?, dateOfBirth = ?, gender = ?, contactNumber = ?, religion = ? WHERE employeeID = ?";
@@ -66,7 +65,7 @@ public class StaffCRUD {
 
         java.sql.Date sqlDate = java.sql.Date.valueOf(emp.getDateofbirth());
 
-        if(imgPath != null) {
+        if (imgPath != null) {
             statement.setInt(11, emp.getId());
         } else {
             statement.setInt(10, emp.getId());
@@ -82,7 +81,7 @@ public class StaffCRUD {
         statement.setString(8, emp.getContact());
         statement.setString(9, emp.getReligion());
 
-        if(imgPath != null) {
+        if (imgPath != null) {
             FileInputStream fis = null;
             File file = new File(imgPath); // the path to the image file
             fis = new FileInputStream(file);

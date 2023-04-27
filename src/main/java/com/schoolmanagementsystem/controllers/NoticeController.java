@@ -61,9 +61,9 @@ public class NoticeController extends Controller implements Initializable {
         NoticeController.lastNotice = lastNotice;
     }
 
-    public void handleNoticePage (Event event) throws IOException, SQLException {
+    public void handleNoticePage(Event event) throws IOException, SQLException {
 
-        FXMLLoader fxmlLoader = loadPage("button","/com/schoolmanagementsystem/notice.fxml",event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/notice.fxml", event);
 
         NoticeController controller = fxmlLoader.getController();
 
@@ -72,24 +72,23 @@ public class NoticeController extends Controller implements Initializable {
 
         String query;
         PreparedStatement statement;
-        if(NoticeController.currentNotice == 0) {
+        if (NoticeController.currentNotice == 0) {
             query = "SELECT * FROM notice ORDER BY noticeID DESC LIMIT 1;";
             statement = con.prepareStatement(query);
-        }
-        else {
+        } else {
             query = "SELECT * FROM notice WHERE noticeID = ?";
             statement = con.prepareStatement(query);
-            statement.setInt(1,NoticeController.currentNotice);
+            statement.setInt(1, NoticeController.currentNotice);
         }
 
         ResultSet r = statement.executeQuery();
 
-        if(r.next()) {
+        if (r.next()) {
             controller.titleLabel.setText(r.getString("title"));
             controller.noticeLabel.setText(r.getString("description"));
             controller.date.setText(String.valueOf(r.getDate("issueDate")));
             NoticeController.currentNotice = r.getInt("noticeID");
-            if(NoticeController.lastNotice == 0) {
+            if (NoticeController.lastNotice == 0) {
                 NoticeController.lastNotice = r.getInt("noticeID");
             }
         }
@@ -116,7 +115,7 @@ public class NoticeController extends Controller implements Initializable {
     @FXML
     void handleAdd(MouseEvent event) throws IOException, SQLException {
 
-        if(NoticeController.cancelFlag) {
+        if (NoticeController.cancelFlag) {
             NoticeController.cancelFlag = false;
             handleNoticePage(event);
             return;
@@ -151,7 +150,7 @@ public class NoticeController extends Controller implements Initializable {
     @FXML
     void handleEdit(MouseEvent event) throws SQLException, IOException {
 
-        if(NoticeController.cancelFlag) {
+        if (NoticeController.cancelFlag) {
             NoticeController.cancelFlag = false;
             handleNoticePage(event);
             return;
@@ -181,7 +180,7 @@ public class NoticeController extends Controller implements Initializable {
 
         ResultSet r = statement.executeQuery();
 
-        if(r.next()) {
+        if (r.next()) {
             title.setText(r.getString("title"));
             noticeInput.setText(r.getString("description"));
             date.setText(String.valueOf(r.getDate("issueDate")));
@@ -205,9 +204,9 @@ public class NoticeController extends Controller implements Initializable {
 
         Notice notice;
 
-        if(Objects.equals(text, "DONE")) {
-            notice = new Notice(title.getText(),noticeInput.getText());
-            if(NoticeController.updateFlag) {
+        if (Objects.equals(text, "DONE")) {
+            notice = new Notice(title.getText(), noticeInput.getText());
+            if (NoticeController.updateFlag) {
                 NoticeController.updateFlag = false;
                 crud.updateNotice(notice);
             } else {
@@ -216,7 +215,7 @@ public class NoticeController extends Controller implements Initializable {
                 NoticeController.currentNotice = NoticeController.lastNotice;
             }
         } else {
-            if(handleAlert("This notice will be deleted permanently", "Are you sure to proceed?")) {
+            if (handleAlert("This notice will be deleted permanently", "Are you sure to proceed?")) {
                 crud.deleteNotice();
                 NoticeController.lastNotice -= 1;
                 NoticeController.currentNotice = NoticeController.lastNotice;

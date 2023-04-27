@@ -100,18 +100,26 @@
                             <Insets bottom="7.0" left="55.0" top="7.0" />
                         </VBox.margin>
                     </MenuButton>
-                    <MenuButton fx:id="routine" layoutX="55.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
-                        <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                            <MenuItem mnemonicParsing="false" text="Action 2" />
-                        </items>
+<!--                    <MenuButton fx:id="routine" layoutX="55.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">-->
+<!--                        <items>-->
+<!--                            <MenuItem mnemonicParsing="false" text="Action 1" />-->
+<!--                            <MenuItem mnemonicParsing="false" text="Action 2" />-->
+<!--                        </items>-->
+<!--                        <cursor>-->
+<!--                            <Cursor fx:constant="HAND" />-->
+<!--                        </cursor>-->
+<!--                        <VBox.margin>-->
+<!--                            <Insets bottom="7.0" left="55.0" top="7.0" />-->
+<!--                        </VBox.margin>-->
+<!--                    </MenuButton>-->
+                    <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
                         <cursor>
                             <Cursor fx:constant="HAND" />
                         </cursor>
                         <VBox.margin>
                             <Insets bottom="7.0" left="55.0" top="7.0" />
                         </VBox.margin>
-                    </MenuButton>
+                    </Button>
                     <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleNotice" prefHeight="44.0" prefWidth="109.0" text="Notice" textFill="WHITE">
                         <cursor>
                             <Cursor fx:constant="HAND" />

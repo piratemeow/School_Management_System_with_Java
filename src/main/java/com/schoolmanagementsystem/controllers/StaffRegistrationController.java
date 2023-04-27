@@ -1,10 +1,9 @@
 package com.schoolmanagementsystem.controllers;
+
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.LoginCRUD;
 import com.schoolmanagementsystem.database.StaffCRUD;
-import com.schoolmanagementsystem.database.StudentCRUD;
 import com.schoolmanagementsystem.users.Staff;
-import com.schoolmanagementsystem.users.Student;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -20,7 +19,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -95,61 +93,67 @@ public class StaffRegistrationController extends Controller implements Initializ
 
     public void submitHandler(ActionEvent event) throws SQLException, IOException {
 
-//        if (religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty()
-//                || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty()
-//                || address.getText().isEmpty() || designation.getText().isEmpty() || imgPath == null) {
-//            wrongInput.setText("Incorrect Input. Please give correct information");
-//            cross.setVisible(true);
-//        } else if (gender.getValue() == null || marital.getValue() == null
-//                || dob.getValue() == null) {
-//            wrongInput.setText("Incorrect Input. Please give correct information");
-//            cross.setVisible(true);
-//        } else if (validateNum(contact.getText()) || contact.getText().length() != 11
-//                || validateDate(dob)) {
-//            wrongInput.setText("Incorrect Input. Please give correct information");
-//            cross.setVisible(true);
-//        } else {
-//            int year = Year.now().getValue();
-//
-//            Random rand = new Random();
-//
-//            int id;
-//
-//            while(true){
-//
-//                ConnectDatabase db = new ConnectDatabase();
-//                Connection con = db.getCon();
-//
-//                String query = "SELECT * FROM loginInfo WHERE ID = ?";
-//                id = 1000 * year + rand.nextInt(100, 999);
-//
-//                PreparedStatement statement = con.prepareStatement(query);
-//                statement.setInt(1, id);
-//
-//                ResultSet r = statement.executeQuery();
-//
-//                if (!r.next()) {
-//                    break;
-//                }
-//            }
-//            String message1 = "You are about to register.";
-//            String message2 = "Your id is " + id + "\nPlease remember this id for further access.";
-//
-//            if (handleAlert(message1,message2)) {
-//                wrongInput.setText("Congratulation. You have successfully Registered");
-//                cross.setVisible(true);
-//
-//                Staff staff = new Staff(id, ename.getText(), contact.getText(), address.getText(), dob.getValue(),
-//                        gender.getValue(), fname.getText(), mname.getText(), religion.getText(), designation.getText(),
-//                        password.getText());
-//
-//                StaffCRUD staffCrud = new StaffCRUD();
-//                staffCrud.addStaff(staff, imgPath);
-//
-//                LoginCRUD loginCRUD = new LoginCRUD();
-//                loginCRUD.addNewLoginInfo(staff, "Staff");
-//            }
-//        }
+        // if (religion.getText().isEmpty() || ename.getText().isEmpty() ||
+        // fname.getText().isEmpty()
+        // || mname.getText().isEmpty() || password.getText().isEmpty() ||
+        // contact.getText().isEmpty()
+        // || address.getText().isEmpty() || designation.getText().isEmpty() || imgPath
+        // == null) {
+        // wrongInput.setText("Incorrect Input. Please give correct information");
+        // cross.setVisible(true);
+        // } else if (gender.getValue() == null || marital.getValue() == null
+        // || dob.getValue() == null) {
+        // wrongInput.setText("Incorrect Input. Please give correct information");
+        // cross.setVisible(true);
+        // } else if (validateNum(contact.getText()) || contact.getText().length() != 11
+        // || validateDate(dob)) {
+        // wrongInput.setText("Incorrect Input. Please give correct information");
+        // cross.setVisible(true);
+        // } else {
+        // int year = Year.now().getValue();
+        //
+        // Random rand = new Random();
+        //
+        // int id;
+        //
+        // while(true){
+        //
+        // ConnectDatabase db = new ConnectDatabase();
+        // Connection con = db.getCon();
+        //
+        // String query = "SELECT * FROM loginInfo WHERE ID = ?";
+        // id = 1000 * year + rand.nextInt(100, 999);
+        //
+        // PreparedStatement statement = con.prepareStatement(query);
+        // statement.setInt(1, id);
+        //
+        // ResultSet r = statement.executeQuery();
+        //
+        // if (!r.next()) {
+        // break;
+        // }
+        // }
+        // String message1 = "You are about to register.";
+        // String message2 = "Your id is " + id + "\nPlease remember this id for further
+        // access.";
+        //
+        // if (handleAlert(message1,message2)) {
+        // wrongInput.setText("Congratulation. You have successfully Registered");
+        // cross.setVisible(true);
+        //
+        // Staff staff = new Staff(id, ename.getText(), contact.getText(),
+        // address.getText(), dob.getValue(),
+        // gender.getValue(), fname.getText(), mname.getText(), religion.getText(),
+        // designation.getText(),
+        // password.getText());
+        //
+        // StaffCRUD staffCrud = new StaffCRUD();
+        // staffCrud.addStaff(staff, imgPath);
+        //
+        // LoginCRUD loginCRUD = new LoginCRUD();
+        // loginCRUD.addNewLoginInfo(staff, "Staff");
+        // }
+        // }
 
         if (religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty()
@@ -172,7 +176,7 @@ public class StaffRegistrationController extends Controller implements Initializ
 
             int id;
 
-            if(!Controller.isUpdate) {
+            if (!Controller.isUpdate) {
                 while (true) {
 
                     ConnectDatabase db = new ConnectDatabase();
@@ -190,22 +194,22 @@ public class StaffRegistrationController extends Controller implements Initializ
                         break;
                     }
                 }
-            }
-            else {
+            } else {
                 id = Controller.requiredID;
             }
 
             String message1 = "You are about to register.";
             String message2 = "Your id is " + id + "\nPlease remember this id for further access.";
 
-            if(!Controller.isUpdate) {
+            if (!Controller.isUpdate) {
                 if (handleAlert(message1, message2)) {
                     wrongInput.setText("Congratulation. You have successfully Registered");
                     cross.setVisible(true);
 
                     Staff staff = new Staff(id, ename.getText(), contact.getText(), address.getText(), dob.getValue(),
-                        gender.getValue(), fname.getText(), mname.getText(), religion.getText(), designation.getText(),
-                        password.getText());
+                            gender.getValue(), fname.getText(), mname.getText(), religion.getText(),
+                            designation.getText(),
+                            password.getText());
 
                     StaffCRUD staffCrud = new StaffCRUD();
                     staffCrud.addStaff(staff, imgPath);
@@ -222,8 +226,9 @@ public class StaffRegistrationController extends Controller implements Initializ
                     cross.setVisible(true);
 
                     Staff staff = new Staff(id, ename.getText(), contact.getText(), address.getText(), dob.getValue(),
-                        gender.getValue(), fname.getText(), mname.getText(), religion.getText(), designation.getText(),
-                        password.getText());
+                            gender.getValue(), fname.getText(), mname.getText(), religion.getText(),
+                            designation.getText(),
+                            password.getText());
 
                     StaffCRUD staffCrud = new StaffCRUD();
                     staffCrud.updateStaff(staff, imgPath);
@@ -276,7 +281,7 @@ public class StaffRegistrationController extends Controller implements Initializ
         ResultSet r = statement.executeQuery();
         byte[] imageData;
 
-        if(r.next()) {
+        if (r.next()) {
             controller.ename.setText(r.getString("name"));
             controller.marital.setValue("Unmarried");
             controller.fname.setText(r.getString("fatherName"));
@@ -301,13 +306,13 @@ public class StaffRegistrationController extends Controller implements Initializ
 
         ResultSet r2 = statement2.executeQuery();
 
-        if(r2.next()) {
+        if (r2.next()) {
             controller.password.setText(r2.getString("password"));
         }
 
         Image image = createImageFromByteArray(imageData);
 
-        if(image != null) {
+        if (image != null) {
             controller.Img.setImage(image);
         }
         controller.imgButton.setVisible(true);
