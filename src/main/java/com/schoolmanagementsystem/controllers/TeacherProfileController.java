@@ -1,7 +1,11 @@
 package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.ConnectDatabase;
+import com.schoolmanagementsystem.database.LoginCRUD;
+import com.schoolmanagementsystem.database.StudentCRUD;
+import com.schoolmanagementsystem.database.TeacherCRUD;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -59,7 +63,19 @@ public class TeacherProfileController extends Controller {
     @FXML
     private Label usrID;
 
-    public void handleTeacherProfile(ActionEvent event, int id) throws IOException, SQLException {
+    @FXML
+    private Label update;
+
+    @FXML
+    private ImageView updateIcon;
+
+    @FXML
+    private Label delete;
+
+    @FXML
+    private ImageView deleteIcon;
+
+    public void handleTeacherProfile(Event event, int id) throws IOException, SQLException {
         // loadPage("button","/com/schoolmanagementsystem/teacher.fxml",event);
 
         FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/teacher.fxml", event);
@@ -119,5 +135,16 @@ public class TeacherProfileController extends Controller {
     public void handleUpdate(MouseEvent mouseEvent) throws IOException, SQLException {
         TeacherRegistrationController controller = new TeacherRegistrationController();
         controller.updateHelp(mouseEvent);
+    }
+
+    public void handleDelete(MouseEvent mouseEvent) throws IOException, SQLException {
+        if(handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
+            TeacherCRUD crud = new TeacherCRUD();
+            crud.deleteTeacher(Controller.requiredID);
+
+            LoginCRUD loginCRUD = new LoginCRUD();
+            loginCRUD.deleteLoginInfo(Controller.requiredID);
+            handleTeacherProfile(mouseEvent, Controller.requiredID);
+        }
     }
 }

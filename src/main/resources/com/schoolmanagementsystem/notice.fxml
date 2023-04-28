@@ -315,7 +315,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </TextArea>
-                        <Label fx:id="noticeLabel" alignment="CENTER" prefHeight="389.0" prefWidth="730.0" styleClass="darker" stylesheets="@notice.css" text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" textFill="WHITE">
+                        <Label fx:id="noticeLabel" alignment="CENTER" prefHeight="389.0" prefWidth="730.0" styleClass="darker" stylesheets="@notice.css" text="a" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font>

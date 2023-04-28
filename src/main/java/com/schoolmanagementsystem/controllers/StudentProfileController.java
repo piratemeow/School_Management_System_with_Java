@@ -1,7 +1,9 @@
 package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.ConnectDatabase;
+import com.schoolmanagementsystem.database.StudentCRUD;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -65,7 +67,13 @@ public class StudentProfileController extends Controller {
     @FXML
     private ImageView updateIcon;
 
-    public void handleStudentProfile(ActionEvent event, int id) throws IOException, SQLException {
+    @FXML
+    private Label delete;
+
+    @FXML
+    private ImageView deleteIcon;
+
+    public void handleStudentProfile(Event event, int id) throws IOException, SQLException {
         // loadPage("button","/com/schoolmanagementsystem/student.fxml",event);
         Controller.requiredID = id;
 
@@ -127,4 +135,13 @@ public class StudentProfileController extends Controller {
         StudentRegistrationController controller = new StudentRegistrationController();
         controller.updateHelp(mouseEvent);
     }
+
+    public void handleDelete(MouseEvent mouseEvent) throws IOException, SQLException {
+        if(handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
+            StudentCRUD crud = new StudentCRUD();
+            crud.deleteStudent(Controller.requiredID);
+            handleStudentProfile(mouseEvent, Controller.requiredID);
+        }
+    }
+
 }

@@ -35,6 +35,7 @@ public class ChooseProfileController extends Controller implements Initializable
     private Button self;
 
     public void handleSelf(ActionEvent actionEvent) throws IOException, SQLException {
+        Controller.requiredID = loginController.getLoggedInID();
         StaffProfileController cont = new StaffProfileController();
         cont.handleStaffProfile(actionEvent, loginController.getLoggedInID());
     }

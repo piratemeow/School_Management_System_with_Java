@@ -91,4 +91,16 @@ public class StaffCRUD {
         statement.executeUpdate();
     }
 
+    public void deleteStaff(int id) throws SQLException {
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String deleteQuery = "DELETE FROM employeeInfo WHERE employeeID = ?";
+
+        PreparedStatement statement = con.prepareStatement(deleteQuery);
+
+        statement.setInt(1, id);
+        statement.executeUpdate();
+    }
+
 }

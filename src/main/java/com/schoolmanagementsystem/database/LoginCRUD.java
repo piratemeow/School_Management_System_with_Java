@@ -36,4 +36,16 @@ public class LoginCRUD {
 
         statement.executeUpdate();
     }
+
+    public void deleteLoginInfo(int id) throws SQLException {
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String deleteQuery = "DELETE FROM loginInfo WHERE ID = ?";
+
+        PreparedStatement statement = con.prepareStatement(deleteQuery);
+
+        statement.setInt(1, id);
+        statement.executeUpdate();
+    }
 }

@@ -1,7 +1,11 @@
 package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.ConnectDatabase;
+import com.schoolmanagementsystem.database.LoginCRUD;
+import com.schoolmanagementsystem.database.StaffCRUD;
+import com.schoolmanagementsystem.database.StudentCRUD;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -62,7 +66,13 @@ public class StaffProfileController extends Controller {
     @FXML
     private ImageView updateIcon;
 
-    public void handleStaffProfile(ActionEvent event, int id) throws IOException, SQLException {
+    @FXML
+    private Label delete;
+
+    @FXML
+    private ImageView deleteIcon;
+
+    public void handleStaffProfile(Event event, int id) throws IOException, SQLException {
         FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/staff.fxml", event);
 
         StaffProfileController controller = fxmlLoader.getController();
@@ -119,5 +129,16 @@ public class StaffProfileController extends Controller {
     public void handleUpdate(MouseEvent mouseEvent) throws IOException, SQLException {
         StaffRegistrationController controller = new StaffRegistrationController();
         controller.updateHelp(mouseEvent);
+    }
+
+    public void handleDelete(MouseEvent mouseEvent) throws IOException, SQLException {
+        if(handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
+            StaffCRUD crud = new StaffCRUD();
+            crud.deleteStaff(Controller.requiredID);
+
+            LoginCRUD loginCRUD = new LoginCRUD();
+            loginCRUD.deleteLoginInfo(Controller.requiredID);
+            handleStaffProfile(mouseEvent, Controller.requiredID);
+        }
     }
 }

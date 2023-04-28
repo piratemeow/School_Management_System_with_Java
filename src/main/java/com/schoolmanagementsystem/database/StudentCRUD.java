@@ -1,5 +1,6 @@
 package com.schoolmanagementsystem.database;
 
+import com.schoolmanagementsystem.controllers.Controller;
 import com.schoolmanagementsystem.users.Student;
 
 import java.io.File;
@@ -92,6 +93,18 @@ public class StudentCRUD {
             statement.setBinaryStream(12, fis, (int) file.length());
         }
 
+        statement.executeUpdate();
+    }
+
+    public void deleteStudent(int id) throws SQLException {
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String deleteQuery = "DELETE FROM studentInfo WHERE studentID = ?";
+
+        PreparedStatement statement = con.prepareStatement(deleteQuery);
+
+        statement.setInt(1, id);
         statement.executeUpdate();
     }
 }
