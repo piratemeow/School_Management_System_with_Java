@@ -20,6 +20,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class RoutineController extends Controller implements Initializable {
@@ -379,6 +380,10 @@ public class RoutineController extends Controller implements Initializable {
             controller.editButton.setText("APPLY CHANGE");
         } else {
             controller.editButton.setText("EDIT ROUTINE");
+        }
+
+        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+            controller.editButton.setVisible(false);
         }
 
         ConnectRoutineDB db = new ConnectRoutineDB();

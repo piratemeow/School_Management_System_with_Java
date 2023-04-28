@@ -119,6 +119,9 @@ public class Controller {
             String m2 = "Your current session will be over. \nFor further use you need to log in again.";
             if(handleAlert(m1,m2)){
                 loginController.setLoggedInPerson(null);
+                loginController.setLoggedInID(0);
+                RoutineController.setSelectedClass(0);
+                RoutineController.setSelectedSection(null);
                 handleHome(event);
             }
         }

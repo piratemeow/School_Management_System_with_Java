@@ -67,6 +67,12 @@ public class NoticeController extends Controller implements Initializable {
 
         NoticeController controller = fxmlLoader.getController();
 
+        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+            controller.add.setVisible(false);
+            controller.edit.setVisible(false);
+            controller.done.setVisible(false);
+        }
+
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
@@ -84,9 +90,9 @@ public class NoticeController extends Controller implements Initializable {
         ResultSet r = statement.executeQuery();
 
         if (r.next()) {
-            controller.titleLabel.setText(r.getString("title"));
+            controller.titleLabel.setText("Title: " + r.getString("title"));
             controller.noticeLabel.setText(r.getString("description"));
-            controller.date.setText(String.valueOf(r.getDate("issueDate")));
+            controller.date.setText("Issue Date: " + String.valueOf(r.getDate("issueDate")));
             NoticeController.currentNotice = r.getInt("noticeID");
             if (NoticeController.lastNotice == 0) {
                 NoticeController.lastNotice = r.getInt("noticeID");
@@ -183,7 +189,7 @@ public class NoticeController extends Controller implements Initializable {
         if (r.next()) {
             title.setText(r.getString("title"));
             noticeInput.setText(r.getString("description"));
-            date.setText(String.valueOf(r.getDate("issueDate")));
+            date.setText("Issue Date: " + String.valueOf(r.getDate("issueDate")));
         }
 
         NoticeController.updateFlag = true;

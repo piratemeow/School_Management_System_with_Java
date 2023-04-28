@@ -18,6 +18,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class StaffProfileController extends Controller {
 
@@ -76,6 +77,17 @@ public class StaffProfileController extends Controller {
         FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/staff.fxml", event);
 
         StaffProfileController controller = fxmlLoader.getController();
+
+        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+            controller.updateIcon.setVisible(false);
+            controller.updateIcon.setManaged(false);
+            controller.update.setVisible(false);
+            controller.update.setManaged(false);
+            controller.deleteIcon.setVisible(false);
+            controller.deleteIcon.setManaged(false);
+            controller.delete.setVisible(false);
+            controller.delete.setManaged(false);
+        }
 
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
