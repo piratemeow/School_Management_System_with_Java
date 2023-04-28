@@ -45,20 +45,26 @@
                             </cursor>
                             <VBox.margin>
                                 <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
-                            </VBox.margin></Button>
-<!--                        <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">-->
-<!--                            <items>-->
-<!--                                <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile" text="Student" />-->
-<!--                                <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile" text="Teacher" />-->
-<!--                                <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile" text="Staff" />-->
-<!--                            </items>-->
-<!--                            <cursor>-->
-<!--                                <Cursor fx:constant="HAND" />-->
-<!--                            </cursor>-->
-<!--                            <VBox.margin>-->
-<!--                                <Insets bottom="7.0" left="55.0" top="7.0" />-->
-<!--                            </VBox.margin>-->
-<!--                        </MenuButton>-->
+                            </VBox.margin>
+                        </Button>
+                        <!--                        <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0"
+                        maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false"
+                        prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">-->
+                        <!--                            <items>-->
+                        <!--                                <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile"
+                        text="Student" />-->
+                        <!--                                <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile"
+                        text="Teacher" />-->
+                        <!--                                <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile"
+                        text="Staff" />-->
+                        <!--                            </items>-->
+                        <!--                            <cursor>-->
+                        <!--                                <Cursor fx:constant="HAND" />-->
+                        <!--                            </cursor>-->
+                        <!--                            <VBox.margin>-->
+                        <!--                                <Insets bottom="7.0" left="55.0" top="7.0" />-->
+                        <!--                            </VBox.margin>-->
+                        <!--                        </MenuButton>-->
                         <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
@@ -100,18 +106,21 @@
                                 <Insets bottom="7.0" left="55.0" top="7.0" />
                             </VBox.margin>
                         </MenuButton>
-<!--                        <MenuButton fx:id="routine" layoutX="55.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">-->
-<!--                            <items>-->
-<!--                                <MenuItem mnemonicParsing="false" text="Action 1" />-->
-<!--                                <MenuItem mnemonicParsing="false" text="Action 2" />-->
-<!--                            </items>-->
-<!--                            <cursor>-->
-<!--                                <Cursor fx:constant="HAND" />-->
-<!--                            </cursor>-->
-<!--                            <VBox.margin>-->
-<!--                                <Insets bottom="7.0" left="55.0" top="7.0" />-->
-<!--                            </VBox.margin>-->
-<!--                        </MenuButton>-->
+                        <!--                        <MenuButton fx:id="routine" layoutX="55.0" layoutY="430.0"
+                        maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#handleRoutine" prefHeight="42.0" prefWidth="112.0"
+                        text="Routine" textFill="WHITE">-->
+                        <!--                            <items>-->
+                        <!--                                <MenuItem mnemonicParsing="false" text="Action 1" />-->
+                        <!--                                <MenuItem mnemonicParsing="false" text="Action 2" />-->
+                        <!--                            </items>-->
+                        <!--                            <cursor>-->
+                        <!--                                <Cursor fx:constant="HAND" />-->
+                        <!--                            </cursor>-->
+                        <!--                            <VBox.margin>-->
+                        <!--                                <Insets bottom="7.0" left="55.0" top="7.0" />-->
+                        <!--                            </VBox.margin>-->
+                        <!--                        </MenuButton>-->
                         <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
@@ -330,7 +339,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </DatePicker>
-                    <Button fx:id="register" mnemonicParsing="false" onAction="#submitHandler" style="-fx-background-color: #FFB900;" text="Register" textFill="#2e0984">
+                    <Button fx:id="register" mnemonicParsing="false" onAction="#submitHandler" stylesheets="@style.css" text="Register">
                         <StackPane.margin>
                             <Insets top="567.0" />
                         </StackPane.margin>
@@ -398,14 +407,14 @@
                             <DropShadow />
                         </effect>
                     </Button>
-               <TextField fx:id="designation" promptText="Enter your designation">
-                  <StackPane.margin>
-                     <Insets left="230.0" right="85.0" top="-90.0" />
-                  </StackPane.margin>
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </TextField>
+                    <TextField fx:id="designation" promptText="Enter your designation">
+                        <StackPane.margin>
+                            <Insets left="230.0" right="85.0" top="-90.0" />
+                        </StackPane.margin>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </TextField>
                 </children>
             </StackPane>
             <StackPane.margin>

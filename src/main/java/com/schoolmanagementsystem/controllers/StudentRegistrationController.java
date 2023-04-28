@@ -130,7 +130,7 @@ public class StudentRegistrationController extends Controller implements Initial
                     Connection con = db.getCon();
 
                     String query = "SELECT * FROM studentInfo WHERE studentID = ?";
-                    id = 100000 * year + 10000 * clas + rand.nextInt(1000, 9999);
+                    id = 100000 * year + 10000 * clas + rand.nextInt(9000) + 1000;
 
                     PreparedStatement statement = con.prepareStatement(query);
                     statement.setInt(1, id);

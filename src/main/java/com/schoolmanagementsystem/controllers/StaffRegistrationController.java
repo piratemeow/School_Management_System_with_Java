@@ -183,7 +183,7 @@ public class StaffRegistrationController extends Controller implements Initializ
                     Connection con = db.getCon();
 
                     String query = "SELECT * FROM loginInfo WHERE ID = ?";
-                    id = 1000 * year + rand.nextInt(100, 999);
+                    id = 1000 * year + rand.nextInt(900) + 100;
 
                     PreparedStatement statement = con.prepareStatement(query);
                     statement.setInt(1, id);

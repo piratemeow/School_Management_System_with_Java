@@ -346,7 +346,7 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </DatePicker>
-               <Button fx:id="register" mnemonicParsing="false" onAction="#submitHandler" style="-fx-background-color: #FFB900;" text="Register" textFill="#2e0984">
+               <Button fx:id="register" mnemonicParsing="false" onAction="#submitHandler" stylesheets="@style.css" text="Register">
                   <StackPane.margin>
                      <Insets top="567.0" />
                   </StackPane.margin>
