@@ -516,6 +516,9 @@
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
             </Button>
             <Label fx:id="invalid" alignment="CENTER" layoutX="270.0" layoutY="307.0" prefHeight="40.0" prefWidth="206.0" text="Invalid input" textFill="#990606">
                <font>

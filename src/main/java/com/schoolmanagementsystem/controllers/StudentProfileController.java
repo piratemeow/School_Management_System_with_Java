@@ -6,10 +6,12 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,6 +22,14 @@ import java.util.Objects;
 
 public class StudentProfileController extends Controller {
 
+    public StackPane getStudentProfile() {
+        return studentProfile;
+    }
+
+    @FXML
+    private StackPane studentProfile;
+    @FXML
+    private Label studentFees;
     @FXML
     private Label address;
 
@@ -156,4 +166,19 @@ public class StudentProfileController extends Controller {
         }
     }
 
+    @FXML
+    void handleStudentFees(Event mouseEvent) throws IOException, SQLException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fee.fxml"));
+        Parent feePage = loader.load();
+
+        feePage.setLayoutX(studentProfile.getWidth() / 2 - feePage.prefWidth(-1) / 2);
+        feePage.setLayoutY(studentProfile.getHeight() / 2 - feePage.prefHeight(-1) / 2);
+        feePage.setTranslateX(0);
+        feePage.setTranslateY(0);
+
+        // Add the new page as a child node to the root pane
+        studentProfile.getChildren().add(feePage);
+        FeeController feeController = new FeeController();
+        feeController.handleFeePage(loader);
+    }
 }
