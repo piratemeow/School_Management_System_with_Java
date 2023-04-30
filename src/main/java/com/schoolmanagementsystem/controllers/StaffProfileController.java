@@ -23,6 +23,9 @@ import java.util.Objects;
 public class StaffProfileController extends Controller {
 
     @FXML
+    private Label salary;
+
+    @FXML
     private Label staffName;
 
     @FXML
@@ -152,5 +155,11 @@ public class StaffProfileController extends Controller {
             loginCRUD.deleteLoginInfo(Controller.requiredID);
             handleStaffProfile(mouseEvent, Controller.requiredID);
         }
+    }
+
+    @FXML
+    void handleSalary(MouseEvent mouseEvent) throws IOException, SQLException {
+        SalaryController controller = new SalaryController();
+        controller.handleSalaryPage(mouseEvent);
     }
 }

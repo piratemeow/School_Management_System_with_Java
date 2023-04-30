@@ -53,6 +53,7 @@ public class ChooseProfileController extends Controller implements Initializable
             type = "employee";
         } else if (id.length() == 9) {
             type = "Student";
+            Controller.requiredType = "Student";
         } else {
             invalid.setVisible(true);
             return;
@@ -84,6 +85,7 @@ public class ChooseProfileController extends Controller implements Initializable
             return;
         } else if (type.equals("employee")) {
             type = r.getString("userType");
+            Controller.requiredType = r.getString("userType");
         }
         Controller.requiredID = ID;
 

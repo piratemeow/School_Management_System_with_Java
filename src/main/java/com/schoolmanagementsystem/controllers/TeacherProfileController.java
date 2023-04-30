@@ -23,6 +23,9 @@ import java.util.Objects;
 public class TeacherProfileController extends Controller {
 
     @FXML
+    private Label salary;
+
+    @FXML
     private Label teacherName;
 
     @FXML
@@ -144,12 +147,14 @@ public class TeacherProfileController extends Controller {
         }
     }
 
-    public void handleUpdate(MouseEvent mouseEvent) throws IOException, SQLException {
+    @FXML
+    void handleUpdate(MouseEvent mouseEvent) throws IOException, SQLException {
         TeacherRegistrationController controller = new TeacherRegistrationController();
         controller.updateHelp(mouseEvent);
     }
 
-    public void handleDelete(MouseEvent mouseEvent) throws IOException, SQLException {
+    @FXML
+    void handleDelete(MouseEvent mouseEvent) throws IOException, SQLException {
         if(handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
             TeacherCRUD crud = new TeacherCRUD();
             crud.deleteTeacher(Controller.requiredID);
@@ -158,5 +163,11 @@ public class TeacherProfileController extends Controller {
             loginCRUD.deleteLoginInfo(Controller.requiredID);
             handleTeacherProfile(mouseEvent, Controller.requiredID);
         }
+    }
+
+    @FXML
+    void handleSalary(MouseEvent mouseEvent) throws IOException, SQLException {
+        SalaryController controller = new SalaryController();
+        controller.handleSalaryPage(mouseEvent);
     }
 }

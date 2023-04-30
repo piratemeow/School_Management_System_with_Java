@@ -69,6 +69,8 @@ public class Controller {
 
     protected static int requiredID;
 
+    protected static String requiredType;
+
     protected static boolean routineFlag;
 
     @FXML
@@ -120,6 +122,7 @@ public class Controller {
             if(handleAlert(m1,m2)){
                 loginController.setLoggedInPerson(null);
                 loginController.setLoggedInID(0);
+                Controller.requiredID = 0;
                 RoutineController.setSelectedClass(0);
                 RoutineController.setSelectedSection(null);
                 handleHome(event);
