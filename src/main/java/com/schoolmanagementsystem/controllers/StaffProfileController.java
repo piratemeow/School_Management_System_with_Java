@@ -3,8 +3,6 @@ package com.schoolmanagementsystem.controllers;
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.LoginCRUD;
 import com.schoolmanagementsystem.database.StaffCRUD;
-import com.schoolmanagementsystem.database.StudentCRUD;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -92,6 +92,7 @@ public class loginController extends Controller implements Initializable {
             }
         } else {
             loginController.setLoggedInPerson(null);
+            loginController.setLoggedInID(0);
             controller.handleHome(event);
         }
 

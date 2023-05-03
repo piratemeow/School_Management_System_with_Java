@@ -94,7 +94,7 @@
                                 <Insets bottom="7.0" left="55.0" top="7.0" />
                             </VBox.margin>
                         </Button>
-                        <MenuButton fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleResult" prefHeight="42.0" prefWidth="109.0" text="Result" textFill="WHITE">
+                        <MenuButton fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleResult" prefHeight="42.0" prefWidth="109.0" text="Result" textFill="WHITE">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="Action 1" />
                                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -129,7 +129,7 @@
                                 <Insets bottom="7.0" left="55.0" top="7.0" />
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleNotice" prefHeight="44.0" prefWidth="109.0" text="Notice" textFill="WHITE">
+                        <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleNotice" prefHeight="44.0" prefWidth="109.0" text="Notice" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -137,21 +137,14 @@
                                 <Insets bottom="7.0" left="55.0" top="7.0" />
                             </VBox.margin>
                         </Button>
-                        <MenuButton fx:id="other" layoutX="55.0" layoutY="547.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handleOthers" prefHeight="46.0" prefWidth="112.0" text="Others" textFill="WHITE">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Action 1" />
-                                <MenuItem mnemonicParsing="false" text="Action 2" />
-                            </items>
+                        <Button fx:id="club" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClub" prefHeight="44.0" prefWidth="109.0" text="Club" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
-                            <padding>
-                                <Insets bottom="5.0" top="5.0" />
-                            </padding>
                             <VBox.margin>
                                 <Insets bottom="7.0" left="55.0" top="7.0" />
                             </VBox.margin>
-                        </MenuButton>
+                        </Button>
                     </children>
                 </VBox>
             </left>

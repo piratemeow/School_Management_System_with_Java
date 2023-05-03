@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -20,19 +19,12 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class Controller {
 
@@ -144,12 +136,18 @@ public class Controller {
     }
 
     @FXML
-    void handleOthers(MouseEvent event) {
-
+    void handleClub(Event event) throws SQLException, IOException {
+        if(loginController.getLoggedInPerson() == null){
+            handleAlert("Alert", "Log in first to view your profile.");
+        }
+        else {
+            ClubController cont = new ClubController();
+            cont.handleClubPage(event);
+        }
     }
 
     @FXML
-    void handleResult(MouseEvent event) {
+    void handleResult(Event event) {
 
     }
 
