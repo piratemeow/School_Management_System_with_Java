@@ -324,8 +324,9 @@ public class ClubController extends Controller implements Initializable {
     }
 
     @FXML
-    void handleAllMembers(ActionEvent event) throws SQLException {
-
+    void handleAllMembers(ActionEvent event) throws SQLException, IOException {
+        ClubMemberController controller = new ClubMemberController();
+        controller.handleClubMemberPage(event);
     }
 
     @FXML

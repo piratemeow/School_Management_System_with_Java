@@ -476,7 +476,7 @@ text="CONFIRM">-->
                         </children>
                     </HBox>
 
-                    <BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+                    <BorderPane fx:id="clubNameLabel" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
                     <center>
 
                     <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="never" styleClass="color" stylesheets="@club.css" vbarPolicy="never">
@@ -489,29 +489,12 @@ text="CONFIRM">-->
                            <Insets bottom="5.0" />
                         </VBox.margin>
                         <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                           <Label fx:id="id_1" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
                            </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 1" textFill="WHITE">
-                              <font>
-                                 <Font size="18.0" />
-                              </font>
-                           </Label>
-                        </children>
-                     </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                        <VBox.margin>
-                           <Insets bottom="5.0" />
-                        </VBox.margin>
-                        <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                              <font>
-                                 <Font size="18.0" />
-                              </font>
-                           </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 2" textFill="WHITE">
+                           <Label fx:id="name_1" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
@@ -523,29 +506,12 @@ text="CONFIRM">-->
                            <Insets bottom="5.0" />
                         </VBox.margin>
                         <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                           <Label fx:id="id_2" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
                            </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 3" textFill="WHITE">
-                              <font>
-                                 <Font size="18.0" />
-                              </font>
-                           </Label>
-                        </children>
-                     </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                        <VBox.margin>
-                           <Insets bottom="5.0" />
-                        </VBox.margin>
-                        <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                              <font>
-                                 <Font size="18.0" />
-                              </font>
-                           </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 4" textFill="WHITE">
+                           <Label fx:id="name_2" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
@@ -557,29 +523,12 @@ text="CONFIRM">-->
                            <Insets bottom="5.0" />
                         </VBox.margin>
                         <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                           <Label fx:id="id_3" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
                            </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 5" textFill="WHITE">
-                              <font>
-                                 <Font size="18.0" />
-                              </font>
-                           </Label>
-                        </children>
-                     </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                        <VBox.margin>
-                           <Insets bottom="5.0" />
-                        </VBox.margin>
-                        <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                              <font>
-                                 <Font size="18.0" />
-                              </font>
-                           </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 6" textFill="WHITE">
+                           <Label fx:id="name_3" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
@@ -591,29 +540,12 @@ text="CONFIRM">-->
                            <Insets bottom="5.0" />
                         </VBox.margin>
                         <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                           <Label fx:id="id_4" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
                            </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 7" textFill="WHITE">
-                              <font>
-                                 <Font size="18.0" />
-                              </font>
-                           </Label>
-                        </children>
-                     </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                        <VBox.margin>
-                           <Insets bottom="5.0" />
-                        </VBox.margin>
-                        <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                              <font>
-                                 <Font size="18.0" />
-                              </font>
-                           </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 8" textFill="WHITE">
+                           <Label fx:id="name_4" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
@@ -625,12 +557,80 @@ text="CONFIRM">-->
                            <Insets bottom="5.0" />
                         </VBox.margin>
                         <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                           <Label fx:id="id_5" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
                            </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 9" textFill="WHITE">
+                           <Label fx:id="name_5" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <VBox.margin>
+                           <Insets bottom="5.0" />
+                        </VBox.margin>
+                        <children>
+                           <Label fx:id="id_6" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="name_6" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <VBox.margin>
+                           <Insets bottom="5.0" />
+                        </VBox.margin>
+                        <children>
+                           <Label fx:id="id_7" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="name_7" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <VBox.margin>
+                           <Insets bottom="5.0" />
+                        </VBox.margin>
+                        <children>
+                           <Label fx:id="id_8" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="name_8" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <VBox.margin>
+                           <Insets bottom="5.0" />
+                        </VBox.margin>
+                        <children>
+                           <Label fx:id="id_9" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="name_9" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
@@ -639,12 +639,12 @@ text="CONFIRM">-->
                      </HBox>
                      <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
                         <children>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                           <Label fx:id="id_10" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
                            </Label>
-                           <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 10" textFill="WHITE">
+                           <Label fx:id="name_10" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                               <font>
                                  <Font size="18.0" />
                               </font>
@@ -661,29 +661,12 @@ text="CONFIRM">-->
                                 <Insets bottom="5.0" />
                             </VBox.margin>
                             <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                                <Label fx:id="id_11" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 11" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                            <VBox.margin>
-                                <Insets bottom="5.0" />
-                            </VBox.margin>
-                            <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 12" textFill="WHITE">
+                                <Label fx:id="name_11" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -695,29 +678,12 @@ text="CONFIRM">-->
                                 <Insets bottom="5.0" />
                             </VBox.margin>
                             <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                                <Label fx:id="id_12" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text=" 13" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                            <VBox.margin>
-                                <Insets bottom="5.0" />
-                            </VBox.margin>
-                            <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 14" textFill="WHITE">
+                                <Label fx:id="name_12" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -729,29 +695,12 @@ text="CONFIRM">-->
                                 <Insets bottom="5.0" />
                             </VBox.margin>
                             <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                                <Label fx:id="id_13" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 15" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                            <VBox.margin>
-                                <Insets bottom="5.0" />
-                            </VBox.margin>
-                            <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 16" textFill="WHITE">
+                                <Label fx:id="name_13" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -763,29 +712,12 @@ text="CONFIRM">-->
                                 <Insets bottom="5.0" />
                             </VBox.margin>
                             <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                                <Label fx:id="id_14" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 17" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                            <VBox.margin>
-                                <Insets bottom="5.0" />
-                            </VBox.margin>
-                            <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 18" textFill="WHITE">
+                                <Label fx:id="name_14" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -797,35 +729,103 @@ text="CONFIRM">-->
                                 <Insets bottom="5.0" />
                             </VBox.margin>
                             <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
+                                <Label fx:id="id_15" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 19" textFill="WHITE">
+                                <Label fx:id="name_15" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
-                            <children>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 20" textFill="WHITE">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                            <VBox.margin>
-                                <Insets bottom="5.0" />
-                            </VBox.margin>
-                        </HBox>
+<!--                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">-->
+<!--                            <VBox.margin>-->
+<!--                                <Insets bottom="5.0" />-->
+<!--                            </VBox.margin>-->
+<!--                            <children>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 16" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                            </children>-->
+<!--                        </HBox>-->
+<!--                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">-->
+<!--                            <VBox.margin>-->
+<!--                                <Insets bottom="5.0" />-->
+<!--                            </VBox.margin>-->
+<!--                            <children>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 17" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                            </children>-->
+<!--                        </HBox>-->
+<!--                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">-->
+<!--                            <VBox.margin>-->
+<!--                                <Insets bottom="5.0" />-->
+<!--                            </VBox.margin>-->
+<!--                            <children>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 18" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                            </children>-->
+<!--                        </HBox>-->
+<!--                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">-->
+<!--                            <VBox.margin>-->
+<!--                                <Insets bottom="5.0" />-->
+<!--                            </VBox.margin>-->
+<!--                            <children>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 19" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                            </children>-->
+<!--                        </HBox>-->
+<!--                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">-->
+<!--                            <children>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" text="Label" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                                <Label alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" text="Label 20" textFill="WHITE">-->
+<!--                                    <font>-->
+<!--                                        <Font size="18.0" />-->
+<!--                                    </font>-->
+<!--                                </Label>-->
+<!--                            </children>-->
+<!--                            <VBox.margin>-->
+<!--                                <Insets bottom="5.0" />-->
+<!--                            </VBox.margin>-->
+<!--                        </HBox>-->
 
 
 
@@ -870,8 +870,14 @@ text="CONFIRM">-->
                      </Label>
                   </children>
                </HBox>
-               <Button layoutX="49.0" layoutY="565.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="96.0" stylesheets="@style.css" text="Previous" />
-               <Button layoutX="591.0" layoutY="565.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="96.0" stylesheets="@style.css" text="Next" />
+               <Button fx:id="previous" layoutX="49.0" layoutY="565.0" mnemonicParsing="false" onAction="#handlePrevious" prefHeight="37.0" prefWidth="96.0" stylesheets="@style.css" text="Previous">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor></Button>
+               <Button fx:id="next" layoutX="591.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="37.0" prefWidth="96.0" stylesheets="@style.css" text="Next">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor></Button>
                 </children>
             </AnchorPane>
             <StackPane.margin>
