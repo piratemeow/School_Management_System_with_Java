@@ -1,5 +1,6 @@
 package com.schoolmanagementsystem.controllers;
 
+import com.schoolmanagementsystem.co_curricular.Club;
 import com.schoolmanagementsystem.database.ClubCRUD;
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import javafx.event.ActionEvent;
@@ -7,8 +8,10 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,6 +31,37 @@ public class ClubController extends Controller implements Initializable {
 
     private static boolean updateClubFlag;
 
+    private static boolean fundFlag;
+
+    private static boolean addMemberFlag;
+
+    private static boolean deleteMemberFlag;
+    @FXML
+    private AnchorPane clubPage;
+
+    public static boolean isFundFlag() {
+        return fundFlag;
+    }
+
+    public static void setFundFlag(boolean fundFlag) {
+        ClubController.fundFlag = fundFlag;
+    }
+
+    public static boolean isAddMemberFlag() {
+        return addMemberFlag;
+    }
+
+    public static void setAddMemberFlag(boolean addMemberFlag) {
+        ClubController.addMemberFlag = addMemberFlag;
+    }
+
+    public static boolean isDeleteMemberFlag() {
+        return deleteMemberFlag;
+    }
+
+    public static void setDeleteMemberFlag(boolean deleteMemberFlag) {
+        ClubController.deleteMemberFlag = deleteMemberFlag;
+    }
 
     public static int getSelectedClub() {
         return selectedClub;
@@ -155,8 +189,21 @@ public class ClubController extends Controller implements Initializable {
     }
 
     @FXML
-    void handleAddMember(ActionEvent event) {
+    void handleAddMember(ActionEvent event) throws IOException {
+        ClubController.addMemberFlag = true;
+        ClubController.fundFlag = false;
+        ClubController.deleteMemberFlag = false;
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/clubMemberEntry.fxml"));
+        Parent clubMemberEntryPage = loader.load();
+
+        clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
+        clubMemberEntryPage.setLayoutY(clubPage.getHeight() / 2 - clubMemberEntryPage.prefHeight(-1) / 2);
+        clubMemberEntryPage.setTranslateX(0);
+        clubMemberEntryPage.setTranslateY(0);
+
+        // Add the new page as a child node to the root pane
+        clubPage.getChildren().add(clubMemberEntryPage);
     }
 
     @FXML
@@ -259,18 +306,44 @@ public class ClubController extends Controller implements Initializable {
     }
 
     @FXML
-    void handleDeleteMember(ActionEvent event) {
+    void handleDeleteMember(ActionEvent event) throws IOException {
+        ClubController.addMemberFlag = false;
+        ClubController.fundFlag = false;
+        ClubController.deleteMemberFlag = true;
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/clubMemberEntry.fxml"));
+        Parent clubMemberEntryPage = loader.load();
+
+        clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
+        clubMemberEntryPage.setLayoutY(clubPage.getHeight() / 2 - clubMemberEntryPage.prefHeight(-1) / 2);
+        clubMemberEntryPage.setTranslateX(0);
+        clubMemberEntryPage.setTranslateY(0);
+
+        // Add the new page as a child node to the root pane
+        clubPage.getChildren().add(clubMemberEntryPage);
+    }
+
+    @FXML
+    void handleAllMembers(ActionEvent event) throws SQLException {
 
     }
 
     @FXML
-    void handleAllMembers(ActionEvent event) {
+    void handleFund(ActionEvent event) throws IOException {
+        ClubController.fundFlag = true;
+        ClubController.addMemberFlag = false;
+        ClubController.deleteMemberFlag = false;
 
-    }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/clubMemberEntry.fxml"));
+        Parent clubMemberEntryPage = loader.load();
 
-    @FXML
-    void handleFund(ActionEvent event) {
+        clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
+        clubMemberEntryPage.setLayoutY(clubPage.getHeight() / 2 - clubMemberEntryPage.prefHeight(-1) / 2);
+        clubMemberEntryPage.setTranslateX(0);
+        clubMemberEntryPage.setTranslateY(0);
 
+        // Add the new page as a child node to the root pane
+        clubPage.getChildren().add(clubMemberEntryPage);
     }
 
     public String fetchData(int id) throws SQLException {

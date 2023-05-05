@@ -22,7 +22,10 @@
 }
 .mygridStyle Line {
   -fx-stroke: rgba(140, 0, 143, 0.9);
-  -fx-stroke-width: 8px;
+  -fx-stroke-width: 6px;
+}
+.myGridID {
+  -fx-background-color: linear-gradient(to bottom right, #d26591, #b642a6);
 }
 .extracolor {
   -fx-background-color: linear-gradient(to bottom right, #03001e, #03001e);
@@ -40,4 +43,16 @@
 .labelHbox {
   -fx-background-color: linear-gradient(to bottom, #ff4b2b, #f37335, #fdc830);
   -fx-background-radius: 10px;
+}
+#menuButton .text {
+  -fx-fill: #fff;
+}
+#menuButton .menu-item .text {
+  -fx-fill: #000;
+}
+#menuButton .arrow {
+  -fx-background-color: #baaaaa;
+}
+#clubMemberEntry {
+  -fx-background-color: linear-gradient(to right, #90ee90, #3cb371);
 }

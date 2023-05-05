@@ -28,8 +28,10 @@ public class StudentProfileController extends Controller {
 
     @FXML
     private StackPane studentProfile;
+
     @FXML
     private Label studentFees;
+
     @FXML
     private Label address;
 

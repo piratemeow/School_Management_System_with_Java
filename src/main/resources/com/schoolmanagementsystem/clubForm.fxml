@@ -485,84 +485,84 @@ text="CONFIRM">-->
                             </HBox>
                         </children>
                     </HBox>
-                    <VBox layoutX="10.0" layoutY="128.0" prefHeight="417.0" prefWidth="708.0" styleClass="extracolor" stylesheets="@club.css">
-                        <children>
-                            <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="10.0" layoutY="128.0" maxHeight="417.6" maxWidth="708.0" minHeight="417.6" minWidth="708.0" prefHeight="417.6" prefWidth="708.0" styleClass="mygridStyle" stylesheets="@club.css">
+<!--                    <VBox layoutX="10.0" layoutY="128.0" prefHeight="417.0" prefWidth="708.0" styleClass="extracolor" stylesheets="@club.css">-->
+<!--                        <children>-->
+                            <GridPane fx:id="gridPane" layoutX="10.0" layoutY="128.0" minHeight="425.0" prefHeight="417.6" prefWidth="708.0" stylesheets="@club.css">
                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="349.0" minWidth="10.0" prefWidth="239.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="469.0" minWidth="10.0" prefWidth="469.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="239.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="469.0" />
                                 </columnConstraints>
                                 <rowConstraints>
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="36" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                 <children>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="ASSISTANT GS" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="5">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="ASSISTANT GS" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="5">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="VICE PRESIDENT" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="235.0" styleClass="myGridID" text="VICE PRESIDENT" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="CLUB MODERATOR" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="CLUB MODERATOR" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="TREASURER" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="TREASURER" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="GENERAL SECRETARY" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="GENERAL SECRETARY" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="204.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="EXECUTIVE" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="10">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="EXECUTIVE" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="10">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="204.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="EXECUTIVE" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="8">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="EXECUTIVE" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="8">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="204.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="EXECUTIVE" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="9">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="EXECUTIVE" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="9">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="204.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="SECRETARY" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="7">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="SECRETARY" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="7">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="204.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="PUBLIC RELATIONS" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="6">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="PUBLIC RELATIONS" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="6">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="48.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="PRESIDENT" textAlignment="CENTER" textFill="WHITE">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="PRESIDENT" textAlignment="CENTER" textFill="WHITE">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="13.0" prefHeight="25.0" prefWidth="235.0" stylesheets="@club.css" text="FUND" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="11">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="235.0" styleClass="myGridID" text="FUND" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="11">
                                         <font>
                                             <Font size="17.0" />
                                         </font>
@@ -575,7 +575,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="fund" alignment="CENTER" layoutX="249.0" layoutY="357.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER FUND" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                    <TextField fx:id="fund" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER FUND" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="11">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -583,7 +583,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="clubModerator" alignment="CENTER" layoutX="10.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER TEACHER ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <TextField fx:id="clubModerator" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER TEACHER ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -591,7 +591,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="executive_3" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                    <TextField fx:id="executive_3" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="10">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -599,7 +599,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="executive_2" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                    <TextField fx:id="executive_2" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -607,7 +607,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="executive_1" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                    <TextField fx:id="executive_1" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -615,7 +615,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="secretary" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                    <TextField fx:id="secretary" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -623,7 +623,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="publicRelations" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                    <TextField fx:id="publicRelations" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -631,7 +631,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="assistantGS" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                    <TextField fx:id="assistantGS" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -639,7 +639,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="treasurer" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <TextField fx:id="treasurer" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -647,7 +647,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="generalSecretary" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="47.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <TextField fx:id="generalSecretary" alignment="CENTER" prefHeight="0.0" prefWidth="310.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -655,7 +655,7 @@ text="CONFIRM">-->
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <TextField fx:id="vicePresident" alignment="CENTER" layoutX="249.0" layoutY="8.0" prefHeight="36.0" prefWidth="424.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <TextField fx:id="vicePresident" alignment="CENTER" prefHeight="0.0" prefWidth="424.0" promptText="ENTER STUDENT ID" style="-fx-background-radius: 30;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                         <font>
                                             <Font size="15.0" />
                                         </font>
@@ -665,8 +665,8 @@ text="CONFIRM">-->
                                     </TextField>
                                 </children>
                             </GridPane>
-                        </children>
-                    </VBox>
+<!--                        </children>-->
+<!--                    </VBox>-->
                     <HBox layoutX="7.0" layoutY="128.0" prefHeight="39.0" prefWidth="172.0" />
                     <HBox alignment="CENTER" layoutX="9.0" layoutY="551.0" prefHeight="39.0" prefWidth="708.0">
                         <children>
@@ -690,7 +690,7 @@ text="CONFIRM">-->
                 <Insets left="237" />
             </StackPane.margin>
             <cursor>
-                <Cursor fx:constant="HAND" />
+                <Cursor fx:constant="DEFAULT" />
             </cursor>
             <effect>
                 <DropShadow />

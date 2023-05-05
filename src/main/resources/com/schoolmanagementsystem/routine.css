@@ -19,9 +19,9 @@
     rgba(140, 0, 160, 0.3)
   );
 }
-.mygridStyle Line {
+/* .mygridStyle Line {
   -fx-stroke: #00dbde;
-}
+} */
 .extracolor {
   -fx-background-color: linear-gradient(to bottom right, #ee0979, #ff6a00);
   -fx-background-radius: 17px;

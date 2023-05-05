@@ -33,7 +33,6 @@ public class loginController extends Controller implements Initializable {
         loginController.loggedInID = loggedInID;
     }
 
-    private Controller controller;
     @FXML
     private Button loginbutton;
 
@@ -58,7 +57,7 @@ public class loginController extends Controller implements Initializable {
     }
 
     public loginController() {
-        controller = new Controller();
+
     }
 
     public loginController(int id, String pass) {
@@ -85,7 +84,7 @@ public class loginController extends Controller implements Initializable {
                     loggable.setText("Invalid password. Try again");
                 } else {
                     loggable.setText("");
-                    controller.handleHome(event);
+                    handleHome(event);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -93,7 +92,7 @@ public class loginController extends Controller implements Initializable {
         } else {
             loginController.setLoggedInPerson(null);
             loginController.setLoggedInID(0);
-            controller.handleHome(event);
+            handleHome(event);
         }
 
     }
@@ -142,10 +141,10 @@ public class loginController extends Controller implements Initializable {
         if (Objects.equals(adminPassword, correctPass)) {
 
             if (Objects.equals(role, "Teacher")) {
-                controller.loadPage("hyperLink", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml",
+                loadPage("hyperLink", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml",
                         actionEvent);
             } else {
-                controller.loadPage("hyperLink", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", actionEvent);
+                loadPage("hyperLink", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", actionEvent);
             }
         } else {
             // handleAlert("Incorrect password", "Without correct password you cannot

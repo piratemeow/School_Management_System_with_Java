@@ -26,7 +26,7 @@ import java.time.format.DateTimeParseException;
 import java.util.Objects;
 import java.util.Optional;
 
-public class Controller {
+public abstract class Controller {
 
     @FXML
     protected Button home;

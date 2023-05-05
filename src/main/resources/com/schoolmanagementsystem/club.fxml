@@ -624,7 +624,7 @@ text="DELETE CLUB">-->
 
       <StackPane prefHeight="620.0" prefWidth="630">
 
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="728.0" styleClass="color" stylesheets="@club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+            <AnchorPane fx:id="clubPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="728.0" styleClass="color" stylesheets="@club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
                <children>
                   <HBox layoutX="7.0" layoutY="4.0" prefHeight="46.0" prefWidth="714.0">
                      <children>
@@ -1041,7 +1041,7 @@ text="DELETE CLUB">-->
                <Insets left="235" top="-5" />
             </StackPane.margin>
             <cursor>
-               <Cursor fx:constant="HAND" />
+               <Cursor fx:constant="DEFAULT" />
             </cursor>
 
       </StackPane>

@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +21,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -86,50 +88,82 @@ public class ClubFormController extends Controller implements Initializable {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
-        String query = "SELECT * FROM club WHERE clubID = ?";
+//        String query = "SELECT * FROM club WHERE clubID = ?";
+//        PreparedStatement statement = con.prepareStatement(query);
+//        statement.setInt(1, ClubController.getSelectedClub() + 1);
+//        ResultSet r = statement.executeQuery();
+//
+//        if(r.next()) {
+//            if(r.getInt("president") != 0) {
+//                controller.president.setText(String.valueOf(r.getInt("president")));
+//            }
+//            if(r.getInt("vicePresident") != 0) {
+//                controller.vicePresident.setText(String.valueOf(r.getInt("vicePresident")));
+//            }
+//            if(r.getInt("generalSecretary") != 0) {
+//                controller.generalSecretary.setText(String.valueOf(r.getInt("generalSecretary")));
+//            }
+//            if(r.getInt("treasurer") != 0) {
+//                controller.treasurer.setText(String.valueOf(r.getInt("treasurer")));
+//            }
+//            if(r.getInt("clubModerator") != 0) {
+//                controller.clubModerator.setText(String.valueOf(r.getInt("clubModerator")));
+//            }
+//            if(r.getInt("assistantGS") != 0) {
+//                controller.assistantGS.setText(String.valueOf(r.getInt("assistantGS")));
+//            }
+//            if(r.getInt("publicRelations") != 0) {
+//                controller.publicRelations.setText(String.valueOf(r.getInt("publicRelations")));
+//            }
+//            if(r.getInt("secretary") != 0) {
+//                controller.secretary.setText(String.valueOf(r.getInt("secretary")));
+//            }
+//            if(r.getInt("executive_1") != 0) {
+//                controller.executive_1.setText(String.valueOf(r.getInt("executive_1")));
+//            }
+//            if(r.getInt("executive_2") != 0) {
+//                controller.executive_2.setText(String.valueOf(r.getInt("executive_2")));
+//            }
+//            if(r.getInt("executive_3") != 0) {
+//                controller.executive_3.setText(String.valueOf(r.getInt("executive_3")));
+//            }
+//            if(r.getString("fund") != null) {
+//                controller.fund.setText(r.getString("fund"));
+//            }
+//            if(r.getString("clubName") != null) {
+//                controller.clubName.setText(r.getString("clubName"));
+//            }
+//        }
+
+        String query = "SELECT clubName,fund FROM club WHERE clubID = ?";
         PreparedStatement statement = con.prepareStatement(query);
         statement.setInt(1, ClubController.getSelectedClub() + 1);
         ResultSet r = statement.executeQuery();
 
         if(r.next()) {
-            if(r.getInt("president") != 0) {
-                controller.president.setText(String.valueOf(r.getInt("president")));
-            }
-            if(r.getInt("vicePresident") != 0) {
-                controller.vicePresident.setText(String.valueOf(r.getInt("vicePresident")));
-            }
-            if(r.getInt("generalSecretary") != 0) {
-                controller.generalSecretary.setText(String.valueOf(r.getInt("generalSecretary")));
-            }
-            if(r.getInt("treasurer") != 0) {
-                controller.treasurer.setText(String.valueOf(r.getInt("treasurer")));
-            }
-            if(r.getInt("clubModerator") != 0) {
-                controller.clubModerator.setText(String.valueOf(r.getInt("clubModerator")));
-            }
-            if(r.getInt("assistantGS") != 0) {
-                controller.assistantGS.setText(String.valueOf(r.getInt("assistantGS")));
-            }
-            if(r.getInt("publicRelations") != 0) {
-                controller.publicRelations.setText(String.valueOf(r.getInt("publicRelations")));
-            }
-            if(r.getInt("secretary") != 0) {
-                controller.secretary.setText(String.valueOf(r.getInt("secretary")));
-            }
-            if(r.getInt("executive_1") != 0) {
-                controller.executive_1.setText(String.valueOf(r.getInt("executive_1")));
-            }
-            if(r.getInt("executive_2") != 0) {
-                controller.executive_2.setText(String.valueOf(r.getInt("executive_2")));
-            }
-            if(r.getInt("executive_3") != 0) {
-                controller.executive_3.setText(String.valueOf(r.getInt("executive_3")));
-            }
             if(r.getString("fund") != null) {
                 controller.fund.setText(r.getString("fund"));
             }
             if(r.getString("clubName") != null) {
                 controller.clubName.setText(r.getString("clubName"));
+            }
+        }
+
+        Club club = new Club();
+        ArrayList<Pair<String, Integer>> executivePanel = club.ecPanel();
+        for (int i = 0; i < executivePanel.size(); i++) {
+            if(executivePanel.get(i).getValue() != 0) {
+                if(i==0) controller.president.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==1) controller.vicePresident.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==2) controller.generalSecretary.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==3) controller.treasurer.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==4) controller.clubModerator.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==5) controller.assistantGS.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==6) controller.publicRelations.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==7) controller.secretary.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==8) controller.executive_1.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==9) controller.executive_2.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if(i==10) controller.executive_3.setText(String.valueOf(executivePanel.get(i).getValue()));
             }
         }
     }
@@ -178,6 +212,7 @@ public class ClubFormController extends Controller implements Initializable {
 
         if(clubName.getText().isEmpty()) {
             handleAlert("Club Name cannot be empty", "");
+            ClubFormController.confirmFlag = false;
         } else {
             if(!president.getText().isEmpty()) {
                 if(validateNum(president.getText())) {
@@ -189,7 +224,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!vicePresident.getText().isEmpty()) {
+            if(!vicePresident.getText().isEmpty()) {
                 if(validateNum(vicePresident.getText())) {
                     handleAlert("ID must be a number", "");
                 } else {
@@ -199,7 +234,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!generalSecretary.getText().isEmpty()) {
+            if(!generalSecretary.getText().isEmpty()) {
                 if(validateNum(generalSecretary.getText())) {
                     handleAlert("ID must be a number", "");
                 } else {
@@ -209,7 +244,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!treasurer.getText().isEmpty()) {
+            if(!treasurer.getText().isEmpty()) {
                 if(validateNum(treasurer.getText())) {
                     handleAlert("ID must be a number", "");
                 } else {
@@ -229,7 +264,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!publicRelations.getText().isEmpty()) {
+            if(!publicRelations.getText().isEmpty()) {
                 if(validateNum(publicRelations.getText())) {
                     handleAlert("ID must be a number", "");
                 } else {
@@ -239,7 +274,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!secretary.getText().isEmpty()) {
+            if(!secretary.getText().isEmpty()) {
                 if(validateNum(secretary.getText())) {
                     handleAlert("ID must be a number", "");
                 } else {
@@ -249,7 +284,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!executive_1.getText().isEmpty()) {
+            if(!executive_1.getText().isEmpty()) {
                 if(validateNum(executive_1.getText())) {
                     handleAlert("ID must be a number", "");
                 } else {
@@ -259,7 +294,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!executive_2.getText().isEmpty()) {
+            if(!executive_2.getText().isEmpty()) {
                 if(validateNum(executive_2.getText())) {
                     handleAlert("ID must be a number", "");
                 } else {
@@ -269,7 +304,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!executive_3.getText().isEmpty()) {
+            if(!executive_3.getText().isEmpty()) {
                 if(validateNum(executive_3.getText())) {
                     handleAlert("ID must be a number", "");
                 } else {
@@ -279,7 +314,7 @@ public class ClubFormController extends Controller implements Initializable {
                     }
                 }
             }
-            else if(!clubModerator.getText().isEmpty()){
+            if(!clubModerator.getText().isEmpty()){
 
                 if(validateNum(clubModerator.getText())) {
                     handleAlert("ID must be a number", "");

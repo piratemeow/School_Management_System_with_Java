@@ -1,5 +1,16 @@
 package com.schoolmanagementsystem.co_curricular;
 
+import com.schoolmanagementsystem.controllers.ClubController;
+import com.schoolmanagementsystem.database.ClubCRUD;
+import com.schoolmanagementsystem.database.ConnectDatabase;
+import javafx.util.Pair;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class Club implements CoCurricular{
 
     private String nameOfClub;
@@ -15,6 +26,7 @@ public class Club implements CoCurricular{
     private String executive_2_ID;
     private String executive_3_ID;
     private String fundAmount;
+    private ClubCRUD crud;
 
     public String getNameOfClub() {
         return nameOfClub;
@@ -83,35 +95,89 @@ public class Club implements CoCurricular{
         this.executive_2_ID = executive_2_ID;
         this.executive_3_ID = executive_3_ID;
         this.fundAmount = fundAmount;
+
+        this.crud = new ClubCRUD();
+    }
+
+    public Club() {
+        this.crud = new ClubCRUD();
     }
 
     @Override
-    public void addFund() {
-
+    public void addFund(String fund) throws SQLException {
+        crud.addFund(fund);
     }
 
     @Override
-    public void spendFund() {
-
+    public boolean spendFund(String fund) throws SQLException {
+        return crud.spendFund(fund);
     }
 
     @Override
-    public void addMember() {
-
+    public String addMember(int id) throws SQLException {
+        return crud.addMember(id);
     }
 
     @Override
-    public void removeMember() {
-
+    public String removeMember(int id) throws SQLException {
+        return crud.deleteMember(id);
     }
 
     @Override
-    public void ecPanel() {
+    public ArrayList<Pair<String, Integer>> ecPanel() throws SQLException {
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
 
+        String query = "SELECT * FROM club WHERE clubID = ?";
+        PreparedStatement statement = con.prepareStatement(query);
+        statement.setInt(1, ClubController.getSelectedClub() + 1);
+        ResultSet r = statement.executeQuery();
+
+        ArrayList<Pair<String, Integer>> executivePanel = new ArrayList<>();
+
+        if(r.next()) {
+            executivePanel.add(new Pair<>("president", r.getInt("president")));
+            executivePanel.add(new Pair<>("vicePresident", r.getInt("vicePresident")));
+            executivePanel.add(new Pair<>("generalSecretary", r.getInt("generalSecretary")));
+            executivePanel.add(new Pair<>("treasurer", r.getInt("treasurer")));
+            executivePanel.add(new Pair<>("clubModerator", r.getInt("clubModerator")));
+            executivePanel.add(new Pair<>("assistantGS", r.getInt("assistantGS")));
+            executivePanel.add(new Pair<>("publicRelations", r.getInt("publicRelations")));
+            executivePanel.add(new Pair<>("secretary", r.getInt("secretary")));
+            executivePanel.add(new Pair<>("executive_1", r.getInt("executive_1")));
+            executivePanel.add(new Pair<>("executive_2", r.getInt("executive_2")));
+            executivePanel.add(new Pair<>("executive_3", r.getInt("executive_3")));
+
+        }
+        return executivePanel;
     }
 
     @Override
-    public void allMember() {
+    public ArrayList<Integer> allMember() throws SQLException {
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
 
+        String query = "SELECT clubName FROM club WHERE clubID = ?";
+        PreparedStatement statement = con.prepareStatement(query);
+        statement.setInt(1, ClubController.getSelectedClub() + 1);
+        ResultSet resultSet = statement.executeQuery();
+        String clubName = "";
+        if(resultSet.next()) {
+            clubName = resultSet.getString("clubName");
+        }
+
+        query = "SELECT studentID FROM clubMembers WHERE " + clubName + " = ?";
+        statement = con.prepareStatement(query);
+        statement.setBoolean(1, true);
+        ResultSet r = statement.executeQuery();
+
+        ArrayList<Integer> records = new ArrayList<>();
+
+        while (r.next()) {
+            int record = r.getInt("studentID");
+            records.add(record);
+        }
+
+        return records;
     }
 }

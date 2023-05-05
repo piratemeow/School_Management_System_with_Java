@@ -225,7 +225,7 @@
          <Insets left="250" />
       </StackPane.margin>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="DEFAULT" />
          </cursor>
          <effect>
             <DropShadow />
