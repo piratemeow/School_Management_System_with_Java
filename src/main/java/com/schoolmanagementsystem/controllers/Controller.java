@@ -197,6 +197,10 @@ public abstract class Controller {
 //    }
 
 
+    public static int getRequiredID() {
+        return requiredID;
+    }
+
     public FXMLLoader loadPage(String buttonType, String str, Event event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(str));
         Parent root = fxmlLoader.load();

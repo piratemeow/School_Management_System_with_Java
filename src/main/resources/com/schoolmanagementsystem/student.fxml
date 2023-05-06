@@ -265,7 +265,7 @@
                                        <Insets left="20.0" />
                                     </HBox.margin>
                                  </ImageView>
-                                 <Label prefHeight="42.0" prefWidth="146.0" text="Result" textFill="#fcfcfc">
+                                 <Label onMouseClicked="#handleStudentResult" prefHeight="42.0" prefWidth="146.0" text="Result" textFill="#fcfcfc">
                                     <font>
                                        <Font size="18.0" />
                                     </font>
@@ -275,6 +275,9 @@
                                     <opaqueInsets>
                                        <Insets />
                                     </opaqueInsets>
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
                                  </Label>
                               </children>
                               <opaqueInsets>

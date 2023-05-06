@@ -86,6 +86,16 @@ public class StudentProfileController extends Controller {
     @FXML
     private ImageView deleteIcon;
 
+    private static boolean resultLabelFlag;
+
+    public static boolean isResultLabelFlag() {
+        return resultLabelFlag;
+    }
+
+    public static void setResultLabelFlag(boolean resultLabelFlag) {
+        StudentProfileController.resultLabelFlag = resultLabelFlag;
+    }
+
     public void handleStudentProfile(Event event, int id) throws IOException, SQLException {
         // loadPage("button","/com/schoolmanagementsystem/student.fxml",event);
         Controller.requiredID = id;
@@ -182,5 +192,12 @@ public class StudentProfileController extends Controller {
         studentProfile.getChildren().add(feePage);
         FeeController feeController = new FeeController();
         feeController.handleFeePage(loader);
+    }
+
+    @FXML
+    void handleStudentResult(Event mouseEvent) throws SQLException, IOException {
+        StudentProfileController.resultLabelFlag = true;
+        StudentResultController con = new StudentResultController();
+        con.handleStudentResultPage(mouseEvent);
     }
 }
