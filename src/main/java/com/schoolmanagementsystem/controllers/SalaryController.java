@@ -13,7 +13,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -89,7 +88,7 @@ public class SalaryController extends Controller implements Initializable {
 
     public void handleSalaryPage(Event event) throws IOException, SQLException {
 
-        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/salary.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/salary.fxml", event);
 
         SalaryController controller = fxmlLoader.getController();
 

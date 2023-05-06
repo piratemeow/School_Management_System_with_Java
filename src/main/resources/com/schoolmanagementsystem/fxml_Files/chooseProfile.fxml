@@ -23,14 +23,14 @@
 
         <BorderPane fx:id="borderpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
             <stylesheets>
-                <URL value="@home.css" />
+                <URL value="@../css_Files/home.css" />
             </stylesheets>
             <left>
                 <VBox fx:id="vbox" prefHeight="620.0" prefWidth="234.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
                     <children>
                         <ImageView fitHeight="92.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@image/icon.png" />
+                                <Image url="@../image/icon.png" />
                             </image>
                             <VBox.margin>
                                 <Insets bottom="10.0" left="66.0" top="20.0" />
@@ -44,24 +44,7 @@
                                 <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
                             </VBox.margin>
                         </Button>
-                        <!--                        <MenuButton fx:id="profile" layoutX="55.0" layoutY="201.0"
-                        maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false"
-                        prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">-->
-                        <!--                            <items>-->
-                        <!--                                <MenuItem mnemonicParsing="false" onAction="#handleStudentProfile"
-                        text="Student" />-->
-                        <!--                                <MenuItem mnemonicParsing="false" onAction="#handleTeacherProfile"
-                        text="Teacher" />-->
-                        <!--                                <MenuItem mnemonicParsing="false" onAction="#handleStaffProfile"
-                        text="Staff" />-->
-                        <!--                            </items>-->
-                        <!--                            <cursor>-->
-                        <!--                                <Cursor fx:constant="HAND" />-->
-                        <!--                            </cursor>-->
-                        <!--                            <VBox.margin>-->
-                        <!--                                <Insets bottom="7.0" left="55.0" top="7.0" />-->
-                        <!--                            </VBox.margin>-->
-                        <!--                        </MenuButton>-->
+
                         <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
@@ -99,21 +82,7 @@
                                 <Insets bottom="7.0" left="55.0" top="7.0" />
                             </VBox.margin>
                         </Button>
-                        <!--                        <MenuButton fx:id="routine" layoutX="55.0" layoutY="430.0"
-                        maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false"
-                        onMouseClicked="#handleRoutine" prefHeight="42.0" prefWidth="112.0"
-                        text="Routine" textFill="WHITE">-->
-                        <!--                            <items>-->
-                        <!--                                <MenuItem mnemonicParsing="false" text="Action 1" />-->
-                        <!--                                <MenuItem mnemonicParsing="false" text="Action 2" />-->
-                        <!--                            </items>-->
-                        <!--                            <cursor>-->
-                        <!--                                <Cursor fx:constant="HAND" />-->
-                        <!--                            </cursor>-->
-                        <!--                            <VBox.margin>-->
-                        <!--                                <Insets bottom="7.0" left="55.0" top="7.0" />-->
-                        <!--                            </VBox.margin>-->
-                        <!--                        </MenuButton>-->
+
                         <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
@@ -144,7 +113,7 @@
             <center>
                 <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="25.0" pickOnBounds="true" preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;" BorderPane.alignment="CENTER">
                     <image>
-                        <Image url="@image/anotherBg.jpg" />
+                        <Image url="@../image/anotherBg.jpg" />
                     </image>
                     <effect>
                         <DropShadow />
@@ -162,7 +131,7 @@
                 <children>
                     <AnchorPane maxHeight="316.0" maxWidth="289.0" prefHeight="316.0" prefWidth="289.0" style="-fx-background-color: linear-gradient(to right, #DAA520, #8B6914);">
                         <stylesheets>
-                            <URL value="@style.css" />
+                            <URL value="@../css_Files/style.css" />
                         </stylesheets>
                         <children>
                             <Button fx:id="self" layoutX="94.0" layoutY="42.0" maxHeight="36.8" maxWidth="106.4" mnemonicParsing="false" onAction="#handleSelf" text="Own profile">

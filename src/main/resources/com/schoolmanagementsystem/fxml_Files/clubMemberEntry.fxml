@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="clubMemberEntry" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="389.0" prefWidth="523.0" stylesheets="@club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.ClubMemberEntryController">
+<AnchorPane id="clubMemberEntry" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="389.0" prefWidth="523.0" stylesheets="@../css_Files/club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.ClubMemberEntryController">
    <children>
-      <Button fx:id="cross" layoutX="508.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@salary.css" text="X">
+      <Button fx:id="cross" layoutX="508.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@../css_Files/salary.css" text="X">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -20,7 +20,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <MenuButton id="menuButton" fx:id="selectMenu" alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="77.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="168.0" stylesheets="@club.css" text="Add or spend">
+      <MenuButton id="menuButton" fx:id="selectMenu" alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="77.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="168.0" stylesheets="@../css_Files/club.css" text="Add or spend">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#handleAddFund" text="Add Fund" />
           <MenuItem mnemonicParsing="false" onAction="#handleSpendFund" text="Spend Fund" />
@@ -54,7 +54,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="apply" layoutX="235.0" layoutY="302.0" mnemonicParsing="false" onAction="#handleApply" prefHeight="38.0" prefWidth="110.0" stylesheets="@style.css" text="Apply">
+      <Button fx:id="apply" layoutX="235.0" layoutY="302.0" mnemonicParsing="false" onAction="#handleApply" prefHeight="38.0" prefWidth="110.0" stylesheets="@../css_Files/style.css" text="Apply">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

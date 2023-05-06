@@ -145,10 +145,10 @@ public class loginController extends Controller implements Initializable {
         if (Objects.equals(adminPassword, correctPass)) {
 
             if (Objects.equals(role, "Teacher")) {
-                loadPage("hyperLink", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml",
+                loadPage("hyperLink", "/com/schoolmanagementsystem/fxml_Files/teacherRegistrationForm.fxml",
                         actionEvent);
             } else {
-                loadPage("hyperLink", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", actionEvent);
+                loadPage("hyperLink", "/com/schoolmanagementsystem/fxml_Files/staffRegistrationForm.fxml", actionEvent);
             }
         } else {
             // handleAlert("Incorrect password", "Without correct password you cannot

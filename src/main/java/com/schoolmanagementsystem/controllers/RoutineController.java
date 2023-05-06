@@ -357,7 +357,7 @@ public class RoutineController extends Controller implements Initializable {
             }
         }
 
-        FXMLLoader fxmlLoader = loadPage(buttonType,"/com/schoolmanagementsystem/routine.fxml",event);
+        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/routine.fxml",event);
         RoutineController controller = fxmlLoader.getController();
 
         if(RoutineController.selectedSection != null) {

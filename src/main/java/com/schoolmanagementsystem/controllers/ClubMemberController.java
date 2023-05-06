@@ -133,7 +133,7 @@ public class ClubMemberController extends Controller implements Initializable {
     }
 
     public void handleClubMemberPage(Event event) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/clubMembers.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/clubMembers.fxml", event);
         ClubMemberController controller = fxmlLoader.getController();
         Club club = new Club();
         ClubController clubController = new ClubController();

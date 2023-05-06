@@ -62,11 +62,6 @@ public class ChooseProfileController extends Controller implements Initializable
             invalid.setVisible(true);
             return;
         }
-        // if(type.equals("student")) {
-        // StudentProfileController cont = new StudentProfileController();
-        // cont.handleStudentProfile(actionEvent);
-        // return;
-        // }
         int ID = Integer.parseInt(id);
 
         ConnectDatabase db = new ConnectDatabase();

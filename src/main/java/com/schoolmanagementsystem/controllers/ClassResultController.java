@@ -13,8 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.util.Pair;
 
 import java.io.IOException;
@@ -499,7 +497,7 @@ public class ClassResultController extends Controller{
 
     @FXML
     void handleCalculate(ActionEvent event) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/resultAlgorithm.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/resultAlgorithm.fxml"));
         Parent algorithmPage = loader.load();
 
         algorithmPage.setLayoutX(classResult.getWidth() / 2 - algorithmPage.prefWidth(-1) / 2);
@@ -567,7 +565,7 @@ public class ClassResultController extends Controller{
             buttonType = "menuButton";
         }
 
-        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/classResult.fxml", event);
+        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/classResult.fxml", event);
         ClassResultController controller = fxmlLoader.getController();
 
         if(ClassResultController.selectedSection != null) {

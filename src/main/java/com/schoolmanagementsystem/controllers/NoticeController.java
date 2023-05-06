@@ -63,7 +63,7 @@ public class NoticeController extends Controller implements Initializable {
 
     public void handleNoticePage(Event event) throws IOException, SQLException {
 
-        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/notice.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/notice.fxml", event);
 
         NoticeController controller = fxmlLoader.getController();
 

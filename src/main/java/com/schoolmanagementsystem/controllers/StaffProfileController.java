@@ -75,7 +75,7 @@ public class StaffProfileController extends Controller {
     private ImageView deleteIcon;
 
     public void handleStaffProfile(Event event, int id) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/staff.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/staff.fxml", event);
 
         StaffProfileController controller = fxmlLoader.getController();
 

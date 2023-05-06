@@ -1,6 +1,5 @@
 package com.schoolmanagementsystem.users;
 
-import com.schoolmanagementsystem.controllers.ClubController;
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import javafx.util.Pair;
 

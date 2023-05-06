@@ -93,68 +93,6 @@ public class StaffRegistrationController extends Controller implements Initializ
 
     public void submitHandler(ActionEvent event) throws SQLException, IOException {
 
-        // if (religion.getText().isEmpty() || ename.getText().isEmpty() ||
-        // fname.getText().isEmpty()
-        // || mname.getText().isEmpty() || password.getText().isEmpty() ||
-        // contact.getText().isEmpty()
-        // || address.getText().isEmpty() || designation.getText().isEmpty() || imgPath
-        // == null) {
-        // wrongInput.setText("Incorrect Input. Please give correct information");
-        // cross.setVisible(true);
-        // } else if (gender.getValue() == null || marital.getValue() == null
-        // || dob.getValue() == null) {
-        // wrongInput.setText("Incorrect Input. Please give correct information");
-        // cross.setVisible(true);
-        // } else if (validateNum(contact.getText()) || contact.getText().length() != 11
-        // || validateDate(dob)) {
-        // wrongInput.setText("Incorrect Input. Please give correct information");
-        // cross.setVisible(true);
-        // } else {
-        // int year = Year.now().getValue();
-        //
-        // Random rand = new Random();
-        //
-        // int id;
-        //
-        // while(true){
-        //
-        // ConnectDatabase db = new ConnectDatabase();
-        // Connection con = db.getCon();
-        //
-        // String query = "SELECT * FROM loginInfo WHERE ID = ?";
-        // id = 1000 * year + rand.nextInt(100, 999);
-        //
-        // PreparedStatement statement = con.prepareStatement(query);
-        // statement.setInt(1, id);
-        //
-        // ResultSet r = statement.executeQuery();
-        //
-        // if (!r.next()) {
-        // break;
-        // }
-        // }
-        // String message1 = "You are about to register.";
-        // String message2 = "Your id is " + id + "\nPlease remember this id for further
-        // access.";
-        //
-        // if (handleAlert(message1,message2)) {
-        // wrongInput.setText("Congratulation. You have successfully Registered");
-        // cross.setVisible(true);
-        //
-        // Staff staff = new Staff(id, ename.getText(), contact.getText(),
-        // address.getText(), dob.getValue(),
-        // gender.getValue(), fname.getText(), mname.getText(), religion.getText(),
-        // designation.getText(),
-        // password.getText());
-        //
-        // StaffCRUD staffCrud = new StaffCRUD();
-        // staffCrud.addStaff(staff, imgPath);
-        //
-        // LoginCRUD loginCRUD = new LoginCRUD();
-        // loginCRUD.addNewLoginInfo(staff, "Staff");
-        // }
-        // }
-
         if (religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty()
                 || address.getText().isEmpty() || designation.getText().isEmpty()) {
@@ -262,7 +200,7 @@ public class StaffRegistrationController extends Controller implements Initializ
 
         Controller.isUpdate = true;
 
-        FXMLLoader fxmlLoader = loadPage("label", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("label", "/com/schoolmanagementsystem/fxml_Files/staffRegistrationForm.fxml", event);
 
         StaffRegistrationController controller = fxmlLoader.getController();
 

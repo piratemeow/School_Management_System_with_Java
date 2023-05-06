@@ -192,6 +192,10 @@ public class StudentResultController extends Controller {
     @FXML
     private Label totalMark;
 
+    @FXML
+    private Button crossButton;
+
+
     private static int selectedExam;
 
     private static boolean editFlag;
@@ -499,7 +503,7 @@ public class StudentResultController extends Controller {
         } else {
             buttonType = "menuButton";
         }
-        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/studentResult.fxml", event);
+        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/studentResult.fxml", event);
         StudentResultController controller = fxmlLoader.getController();
         if(!StudentResultController.editFlag) {
             controller.confirm.setVisible(false);
@@ -526,79 +530,6 @@ public class StudentResultController extends Controller {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
-//        String query = "SELECT class FROM studentInfo WHERE studentID = ?";
-//        PreparedStatement statement = con.prepareStatement(query);
-//        statement.setInt(1, Controller.requiredID);
-//        ResultSet r = statement.executeQuery();
-//        if(r.next()) {
-//            StudentResultController.studentClass = r.getInt("class");
-//        }
-//
-//        query = "SELECT * FROM subjectInfo WHERE Class = ?";
-//        statement = con.prepareStatement(query);
-//        statement.setInt(1, StudentResultController.studentClass);
-//        r = statement.executeQuery();
-//
-//        ArrayList<String> allSubjects = new ArrayList<>();
-//        String subject = null;
-//        if(r.next()) {
-//            subject = r.getString("sub1");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub2");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub3");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub4");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub5");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub6");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub7");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub8");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub9");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub10");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub11");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub12");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub13");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//            subject = r.getString("sub14");
-//            if(subject != null) {
-//                allSubjects.add(subject);
-//            }
-//        }
 
         String query = null;
         PreparedStatement statement;
@@ -829,5 +760,13 @@ public class StudentResultController extends Controller {
                 }
             }
         }
+    }
+    @FXML
+    void handleCrossButton(Event event) throws SQLException, IOException {
+        StudentResultController.editFlag = false;
+        StudentResultController.selectedExam = 0;
+        StudentResultController.studentClass = 0;
+        StudentProfileController controller = new StudentProfileController();
+        controller.handleStudentProfile(event, Controller.requiredID);
     }
 }

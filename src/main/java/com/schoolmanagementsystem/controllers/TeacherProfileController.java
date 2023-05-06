@@ -2,9 +2,7 @@ package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.LoginCRUD;
-import com.schoolmanagementsystem.database.StudentCRUD;
 import com.schoolmanagementsystem.database.TeacherCRUD;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -82,7 +80,7 @@ public class TeacherProfileController extends Controller {
     public void handleTeacherProfile(Event event, int id) throws IOException, SQLException {
         // loadPage("button","/com/schoolmanagementsystem/teacher.fxml",event);
 
-        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/teacher.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/teacher.fxml", event);
 
         TeacherProfileController controller = fxmlLoader.getController();
 
@@ -134,16 +132,6 @@ public class TeacherProfileController extends Controller {
         if (image != null) {
             controller.profilePic.setImage(image);
 
-            // Circle clip = new Circle();
-            // clip.setCenterX(controller.profilePic.getFitWidth() / 2);
-            // clip.setCenterY(controller.profilePic.getFitHeight() / 2 - 15);
-            // clip.setRadius(Math.min(controller.profilePic.getFitWidth(),
-            // controller.profilePic.getFitHeight()) / 2 - 15);
-            //
-            // controller.profilePic.setClip(clip);
-            //
-            // controller.profilePic.setStyle("-fx-border-radius: " + clip.getRadius() +
-            // "px;");
         }
     }
 

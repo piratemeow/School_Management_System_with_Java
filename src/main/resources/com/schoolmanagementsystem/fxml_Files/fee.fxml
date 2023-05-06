@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="anchor" stylesheets="@salary.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.FeeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="anchor" stylesheets="@../css_Files/salary.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.FeeController">
    <children>
-      <GridPane gridLinesVisible="true" layoutX="134.0" layoutY="145.0" prefHeight="96.0" prefWidth="353.0" styleClass="grid" stylesheets="@salary.css">
+      <GridPane gridLinesVisible="true" layoutX="134.0" layoutY="145.0" prefHeight="96.0" prefWidth="353.0" styleClass="grid" stylesheets="@../css_Files/salary.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -62,7 +62,7 @@
             </DatePicker>
          </children>
       </GridPane>
-      <Label alignment="CENTER" layoutX="145.0" layoutY="71.0" prefHeight="58.0" prefWidth="331.0" styleClass="heading" stylesheets="@salary.css" text="Fee Information" textFill="#310484">
+      <Label alignment="CENTER" layoutX="145.0" layoutY="71.0" prefHeight="58.0" prefWidth="331.0" styleClass="heading" stylesheets="@../css_Files/salary.css" text="Fee Information" textFill="#310484">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
@@ -72,7 +72,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="update" layoutX="255.0" layoutY="307.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="38.0" prefWidth="110.0" stylesheets="@style.css" text="Update">
+      <Button fx:id="update" layoutX="255.0" layoutY="307.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="38.0" prefWidth="110.0" stylesheets="@../css_Files/style.css" text="Update">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -80,7 +80,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="cross" layoutX="540.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@salary.css" text="X">
+      <Button fx:id="cross" layoutX="540.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@../css_Files/salary.css" text="X">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

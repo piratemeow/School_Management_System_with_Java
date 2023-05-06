@@ -1,6 +1,5 @@
 package com.schoolmanagementsystem.controllers;
 
-import com.schoolmanagementsystem.co_curricular.Club;
 import com.schoolmanagementsystem.database.ClubCRUD;
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import javafx.event.ActionEvent;
@@ -194,7 +193,7 @@ public class ClubController extends Controller implements Initializable {
         ClubController.fundFlag = false;
         ClubController.deleteMemberFlag = false;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/clubMemberEntry.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
         Parent clubMemberEntryPage = loader.load();
 
         clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
@@ -311,7 +310,7 @@ public class ClubController extends Controller implements Initializable {
         ClubController.fundFlag = false;
         ClubController.deleteMemberFlag = true;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/clubMemberEntry.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
         Parent clubMemberEntryPage = loader.load();
 
         clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
@@ -335,7 +334,7 @@ public class ClubController extends Controller implements Initializable {
         ClubController.addMemberFlag = false;
         ClubController.deleteMemberFlag = false;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/clubMemberEntry.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
         Parent clubMemberEntryPage = loader.load();
 
         clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
@@ -376,7 +375,7 @@ public class ClubController extends Controller implements Initializable {
     }
 
     public void handleClubPage(Event event) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/club.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/club.fxml", event);
 
         ClubController controller = fxmlLoader.getController();
 

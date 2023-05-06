@@ -74,7 +74,7 @@ public abstract class Controller {
             handleAlert("Registration Alert", "Only Admin has the right to add new teacher");
         }
         else {
-            loadPage("menuButton", "/com/schoolmanagementsystem/teacherRegistrationForm.fxml", event);
+            loadPage("menuButton", "/com/schoolmanagementsystem/fxml_Files/teacherRegistrationForm.fxml", event);
         }
     }
 
@@ -85,7 +85,7 @@ public abstract class Controller {
             handleAlert("Registration Alert", "Only Admin has the right to add new staff");
         }
         else {
-            loadPage("menuButton", "/com/schoolmanagementsystem/staffRegistrationForm.fxml", event);
+            loadPage("menuButton", "/com/schoolmanagementsystem/fxml_Files/staffRegistrationForm.fxml", event);
         }
     }
 
@@ -96,19 +96,19 @@ public abstract class Controller {
             handleAlert("Registration Alert", "Only Admin has the right to add new student");
         }
         else {
-            loadPage("menuButton", "/com/schoolmanagementsystem/studentRegistrationForm.fxml", event);
+            loadPage("menuButton", "/com/schoolmanagementsystem/fxml_Files/studentRegistrationForm.fxml", event);
         }
     }
 
     @FXML
     void handleHome(ActionEvent event) throws IOException {
-        loadPage("button","/com/schoolmanagementsystem/home.fxml",event);
+        loadPage("button", "/com/schoolmanagementsystem/fxml_Files/home.fxml",event);
     }
 
     @FXML
     void handleLogin(ActionEvent event) throws IOException {
         if(loginController.getLoggedInPerson() == null){
-            loadPage("button","/com/schoolmanagementsystem/login.fxml",event);
+            loadPage("button", "/com/schoolmanagementsystem/fxml_Files/login.fxml",event);
         }
         else{
             String m1 = "You are about to log out.";
@@ -123,7 +123,6 @@ public abstract class Controller {
             }
         }
 
-//        loadPage("button","/com/schoolmanagementsystem/login.fxml",event);
     }
 
     @FXML
@@ -186,24 +185,11 @@ public abstract class Controller {
             cont.handleStaffProfile(actionEvent, loginController.getLoggedInID());
         }
         else if(loginController.getLoggedInPerson().equals("Admin")){
-            loadPage("button", "/com/schoolmanagementsystem/chooseProfile.fxml", actionEvent);
+            loadPage("button", "/com/schoolmanagementsystem/fxml_Files/chooseProfile.fxml", actionEvent);
         }
     }
 
-//    @FXML
-//    public void handleStaffProfile(ActionEvent event) throws IOException {
-//        loadPage("button","/com/schoolmanagementsystem/staff.fxml",event);
-//    }
 
-//    @FXML
-//    public void handleStudentProfile(ActionEvent event) throws IOException {
-//        loadPage("button","/com/schoolmanagementsystem/student.fxml",event);
-//    }
-
-//    @FXML
-//    public void handleTeacherProfile(ActionEvent event) throws IOException {
-//        loadPage("button","/com/schoolmanagementsystem/teacher.fxml",event);
-//    }
 
 
     public static int getRequiredID() {

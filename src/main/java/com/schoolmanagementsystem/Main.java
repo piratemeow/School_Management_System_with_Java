@@ -18,15 +18,9 @@ public class Main extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-//        HomeController controller = new HomeController();
         try {
-//            controller.loadFXML();
-////            controller.getStage().show();
-//            Platform.runLater(() -> controller.getStage().show());
 
-
-
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml_Files/home.fxml"));
             Parent root = fxmlLoader.load();
 
             Scene scene = new Scene(root);

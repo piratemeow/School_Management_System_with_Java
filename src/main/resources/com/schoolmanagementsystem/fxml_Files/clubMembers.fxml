@@ -24,14 +24,14 @@
 
         <BorderPane fx:id="borderpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
             <stylesheets>
-                <URL value="@home.css" />
+                <URL value="@../css_Files/home.css" />
             </stylesheets>
             <left>
                 <VBox fx:id="vbox" prefHeight="620.0" prefWidth="234.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
                     <children>
                         <ImageView fitHeight="92.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@image/icon.png" />
+                                <Image url="@../image/icon.png" />
                             </image>
                             <VBox.margin>
                                 <Insets bottom="10.0" left="66.0" top="20.0" />
@@ -114,7 +114,7 @@
             <center>
                 <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="25.0" pickOnBounds="true" preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;" BorderPane.alignment="CENTER">
                     <image>
-                        <Image url="@image/anotherBg.jpg" />
+                        <Image url="@../image/anotherBg.jpg" />
                     </image>
                     <effect>
                         <DropShadow />
@@ -131,7 +131,7 @@
 
 
         <StackPane prefHeight="620.0" prefWidth="630">
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="730.0" styleClass="color" stylesheets="@club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="730.0" styleClass="color" stylesheets="@../css_Files/club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
                 <children>
                     <HBox layoutX="4.0" layoutY="62.0" prefHeight="57.0" prefWidth="721.0">
                         <children>
@@ -140,7 +140,7 @@
                                     <Insets left="20.0" />
                                 </HBox.margin>
                         <children>
-                           <Label alignment="CENTER" prefHeight="38.0" prefWidth="544.0" style="-fx-background-radius: 30;" styleClass="dark" stylesheets="@club.css" textFill="WHITE">
+                           <Label alignment="CENTER" prefHeight="38.0" prefWidth="544.0" style="-fx-background-radius: 30;" styleClass="dark" stylesheets="@../css_Files/club.css" textFill="WHITE">
                               <font>
                                  <Font size="29.0" />
                               </font>
@@ -156,12 +156,12 @@
                     <BorderPane fx:id="clubNameLabel" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
                     <center>
 
-                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="never" styleClass="color" stylesheets="@club.css" vbarPolicy="never">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="never" styleClass="color" stylesheets="@../css_Files/club.css" vbarPolicy="never">
                         <content>
-                    <VBox layoutX="11.0" layoutY="168.0" prefHeight="380.0" prefWidth="708.0" styleClass="extracolor" stylesheets="@club.css">
+                    <VBox layoutX="11.0" layoutY="168.0" prefHeight="380.0" prefWidth="708.0" styleClass="extracolor" stylesheets="@../css_Files/club.css">
                     <children>
 
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -178,7 +178,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -195,7 +195,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -212,7 +212,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -229,7 +229,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -246,7 +246,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -263,7 +263,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -280,7 +280,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -297,7 +297,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <VBox.margin>
                            <Insets bottom="5.0" />
                         </VBox.margin>
@@ -314,7 +314,7 @@
                            </Label>
                         </children>
                      </HBox>
-                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                     <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                         <children>
                            <Label fx:id="id_10" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
                               <font>
@@ -333,7 +333,7 @@
                      </HBox>
 
 
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
                             </VBox.margin>
@@ -350,7 +350,7 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
                             </VBox.margin>
@@ -367,7 +367,7 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
                             </VBox.margin>
@@ -384,7 +384,7 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
                             </VBox.margin>
@@ -401,7 +401,7 @@
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@club.css">
+                        <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/club.css">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
                             </VBox.margin>
@@ -433,12 +433,12 @@
                     </center>
                     </BorderPane>
 
-               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="11.0" prefHeight="26.0" prefWidth="456.0" style="-fx-background-radius: 30;" styleClass="dark" stylesheets="@club.css" text="CLUB MEMBERS" textAlignment="CENTER" textFill="WHITE">
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="11.0" prefHeight="26.0" prefWidth="456.0" style="-fx-background-radius: 30;" styleClass="dark" stylesheets="@../css_Files/club.css" text="CLUB MEMBERS" textAlignment="CENTER" textFill="WHITE">
                   <font>
                      <Font size="39.0" />
                   </font>
                </Label>
-               <Button fx:id="cross" layoutX="670.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@salary.css" text="X">
+               <Button fx:id="cross" layoutX="670.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@../css_Files/salary.css" text="X">
                   <font>
                      <Font name="System Bold" size="18.0" />
                   </font>
@@ -446,7 +446,7 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
-               <HBox layoutX="14.0" layoutY="111.0" prefHeight="47.0" prefWidth="701.0" style="-fx-background-radius: 10;" styleClass="dark" stylesheets="@club.css">
+               <HBox layoutX="14.0" layoutY="111.0" prefHeight="47.0" prefWidth="701.0" style="-fx-background-radius: 10;" styleClass="dark" stylesheets="@../css_Files/club.css">
                   <children>
                      <Label alignment="CENTER" prefHeight="47.0" prefWidth="258.0" text="Student ID" textFill="WHITE">
                         <font>
@@ -460,11 +460,11 @@
                      </Label>
                   </children>
                </HBox>
-               <Button fx:id="previous" layoutX="49.0" layoutY="565.0" mnemonicParsing="false" onAction="#handlePrevious" prefHeight="37.0" prefWidth="96.0" stylesheets="@style.css" text="Previous">
+               <Button fx:id="previous" layoutX="49.0" layoutY="565.0" mnemonicParsing="false" onAction="#handlePrevious" prefHeight="37.0" prefWidth="96.0" stylesheets="@../css_Files/style.css" text="Previous">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor></Button>
-               <Button fx:id="next" layoutX="591.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="37.0" prefWidth="96.0" stylesheets="@style.css" text="Next">
+               <Button fx:id="next" layoutX="591.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="37.0" prefWidth="96.0" stylesheets="@../css_Files/style.css" text="Next">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor></Button>

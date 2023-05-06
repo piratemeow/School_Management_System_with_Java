@@ -2,7 +2,6 @@ package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.StudentCRUD;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -100,7 +99,7 @@ public class StudentProfileController extends Controller {
         // loadPage("button","/com/schoolmanagementsystem/student.fxml",event);
         Controller.requiredID = id;
 
-        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/student.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/student.fxml", event);
 
         StudentProfileController controller = fxmlLoader.getController();
 
@@ -151,17 +150,6 @@ public class StudentProfileController extends Controller {
 
         if (image != null) {
             controller.profilePic.setImage(image);
-
-            // Circle clip = new Circle();
-            // clip.setCenterX(controller.profilePic.getFitWidth() / 2);
-            // clip.setCenterY(controller.profilePic.getFitHeight() / 2 - 15);
-            // clip.setRadius(Math.min(controller.profilePic.getFitWidth(),
-            // controller.profilePic.getFitHeight()) / 2 - 15);
-            //
-            // controller.profilePic.setClip(clip);
-            //
-            // controller.profilePic.setStyle("-fx-border-radius: " + clip.getRadius() +
-            // "px;");
         }
     }
 
@@ -180,7 +168,7 @@ public class StudentProfileController extends Controller {
 
     @FXML
     void handleStudentFees(Event mouseEvent) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fee.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/fee.fxml"));
         Parent feePage = loader.load();
 
         feePage.setLayoutX(studentProfile.getWidth() / 2 - feePage.prefWidth(-1) / 2);

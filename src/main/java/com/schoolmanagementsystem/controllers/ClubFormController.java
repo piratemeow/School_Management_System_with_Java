@@ -76,7 +76,7 @@ public class ClubFormController extends Controller implements Initializable {
     private Label heading;
 
     public void handleClubFormPage(Event event) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/clubForm.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/clubForm.fxml", event);
 
         if(ClubController.isAddClubFlag()) {
             return;
@@ -87,53 +87,6 @@ public class ClubFormController extends Controller implements Initializable {
 
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
-
-//        String query = "SELECT * FROM club WHERE clubID = ?";
-//        PreparedStatement statement = con.prepareStatement(query);
-//        statement.setInt(1, ClubController.getSelectedClub() + 1);
-//        ResultSet r = statement.executeQuery();
-//
-//        if(r.next()) {
-//            if(r.getInt("president") != 0) {
-//                controller.president.setText(String.valueOf(r.getInt("president")));
-//            }
-//            if(r.getInt("vicePresident") != 0) {
-//                controller.vicePresident.setText(String.valueOf(r.getInt("vicePresident")));
-//            }
-//            if(r.getInt("generalSecretary") != 0) {
-//                controller.generalSecretary.setText(String.valueOf(r.getInt("generalSecretary")));
-//            }
-//            if(r.getInt("treasurer") != 0) {
-//                controller.treasurer.setText(String.valueOf(r.getInt("treasurer")));
-//            }
-//            if(r.getInt("clubModerator") != 0) {
-//                controller.clubModerator.setText(String.valueOf(r.getInt("clubModerator")));
-//            }
-//            if(r.getInt("assistantGS") != 0) {
-//                controller.assistantGS.setText(String.valueOf(r.getInt("assistantGS")));
-//            }
-//            if(r.getInt("publicRelations") != 0) {
-//                controller.publicRelations.setText(String.valueOf(r.getInt("publicRelations")));
-//            }
-//            if(r.getInt("secretary") != 0) {
-//                controller.secretary.setText(String.valueOf(r.getInt("secretary")));
-//            }
-//            if(r.getInt("executive_1") != 0) {
-//                controller.executive_1.setText(String.valueOf(r.getInt("executive_1")));
-//            }
-//            if(r.getInt("executive_2") != 0) {
-//                controller.executive_2.setText(String.valueOf(r.getInt("executive_2")));
-//            }
-//            if(r.getInt("executive_3") != 0) {
-//                controller.executive_3.setText(String.valueOf(r.getInt("executive_3")));
-//            }
-//            if(r.getString("fund") != null) {
-//                controller.fund.setText(r.getString("fund"));
-//            }
-//            if(r.getString("clubName") != null) {
-//                controller.clubName.setText(r.getString("clubName"));
-//            }
-//        }
 
         String query = "SELECT clubName,fund FROM club WHERE clubID = ?";
         PreparedStatement statement = con.prepareStatement(query);

@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="clubMemberEntry" prefHeight="400.0" prefWidth="476.0" stylesheets="@club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.ResultAlgorithmController">
+<AnchorPane id="clubMemberEntry" prefHeight="400.0" prefWidth="476.0" stylesheets="@../css_Files/club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.ResultAlgorithmController">
    <children>
       <Label fx:id="invalid" alignment="CENTER" layoutX="62.0" layoutY="269.0" maxHeight="30.0" maxWidth="351.0" prefHeight="30.0" prefWidth="351.0" textFill="#c90c0c">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="cross" layoutX="413.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@salary.css" text="X">
+      <Button fx:id="cross" layoutX="413.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@../css_Files/salary.css" text="X">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -51,7 +51,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <MenuButton id="menuButton" fx:id="selectPriority" alignment="CENTER" contentDisplay="CENTER" layoutX="163.0" layoutY="194.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="168.0" stylesheets="@club.css" text="Select priority">
+      <MenuButton id="menuButton" fx:id="selectPriority" alignment="CENTER" contentDisplay="CENTER" layoutX="163.0" layoutY="194.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="168.0" stylesheets="@../css_Files/club.css" text="Select priority">
          <items>
             <MenuItem mnemonicParsing="false" onAction="#handleGPA" text="G.P.A." />
             <MenuItem mnemonicParsing="false" onAction="#handleMarks" text="Marks" />
@@ -67,7 +67,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuButton>
-      <Button fx:id="apply" layoutX="192.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleApply" prefHeight="38.0" prefWidth="110.0" stylesheets="@style.css" text="Apply">
+      <Button fx:id="apply" layoutX="192.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleApply" prefHeight="38.0" prefWidth="110.0" stylesheets="@../css_Files/style.css" text="Apply">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
