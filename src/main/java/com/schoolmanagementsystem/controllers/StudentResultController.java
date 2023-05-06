@@ -785,5 +785,49 @@ public class StudentResultController extends Controller {
                 }
             }
         }
+        if(!r.next() && StudentResultController.editFlag) {
+            for (int i = 0; i < allSubjects.size(); i++) {
+
+                if (i == 0) {
+                    controller.input_1.setVisible(true);
+                }
+                if (i == 1) {
+                    controller.input_2.setVisible(true);
+                }
+                if (i == 2) {
+                    controller.input_3.setVisible(true);
+                }
+                if (i == 3) {
+                    controller.input_4.setVisible(true);
+                }
+                if (i == 4) {
+                    controller.input_5.setVisible(true);
+                }
+                if (i == 5) {
+                    controller.input_6.setVisible(true);
+                }
+                if (i == 6) {
+                    controller.input_7.setVisible(true);
+                }
+                if (i == 7) {
+                    controller.input_8.setVisible(true);
+                }
+                if (i == 8) {
+                    controller.input_9.setVisible(true);
+                }
+                if (i == 9) {
+                    controller.input_10.setVisible(true);
+                }
+                if (i == 10) {
+                    controller.input_11.setVisible(true);
+                }
+                if (i == 11) {
+                    controller.input_12.setVisible(true);
+                }
+                if (i == 12) {
+                    controller.input_13.setVisible(true);
+                }
+            }
+        }
     }
 }

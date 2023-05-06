@@ -54,7 +54,7 @@ public class ClubCRUD {
         addOrUpdateHelp(club.getExecutive_3_ID(),"UPDATE club SET executive_3 = ? WHERE clubName = ?", club.getNameOfClub());
 
         if(club.getFundAmount() != null) {
-            query = "UPDATE club SET president = ? WHERE clubName = ?";
+            query = "UPDATE club SET fund = ? WHERE clubName = ?";
             statement = con.prepareStatement(query);
             statement.setString(2,club.getNameOfClub());
             statement.setString(1,club.getFundAmount());

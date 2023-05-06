@@ -47,7 +47,7 @@ public abstract class Controller {
     protected MenuButton reg;
 
     @FXML
-    private MenuButton result;
+    private Button result;
 
     @FXML
     protected Button routine;

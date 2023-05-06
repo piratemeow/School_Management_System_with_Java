@@ -217,6 +217,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!president.getText().isEmpty()) {
                 if(validateNum(president.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(president.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -227,6 +228,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!vicePresident.getText().isEmpty()) {
                 if(validateNum(vicePresident.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(vicePresident.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -237,6 +239,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!generalSecretary.getText().isEmpty()) {
                 if(validateNum(generalSecretary.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(generalSecretary.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -247,6 +250,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!treasurer.getText().isEmpty()) {
                 if(validateNum(treasurer.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(treasurer.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -257,6 +261,7 @@ public class ClubFormController extends Controller implements Initializable {
             else if(!assistantGS.getText().isEmpty()) {
                 if(validateNum(assistantGS.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(assistantGS.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -267,6 +272,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!publicRelations.getText().isEmpty()) {
                 if(validateNum(publicRelations.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(publicRelations.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -277,6 +283,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!secretary.getText().isEmpty()) {
                 if(validateNum(secretary.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(secretary.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -287,6 +294,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!executive_1.getText().isEmpty()) {
                 if(validateNum(executive_1.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(executive_1.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -297,6 +305,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!executive_2.getText().isEmpty()) {
                 if(validateNum(executive_2.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(executive_2.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -307,6 +316,7 @@ public class ClubFormController extends Controller implements Initializable {
             if(!executive_3.getText().isEmpty()) {
                 if(validateNum(executive_3.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     if(fetchData(Integer.parseInt(executive_3.getText()))) {
                         handleAlert("This id doesn't exist", "");
@@ -318,6 +328,7 @@ public class ClubFormController extends Controller implements Initializable {
 
                 if(validateNum(clubModerator.getText())) {
                     handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 } else {
                     query = "SELECT * FROM loginInfo where ID = ?";
                     statement = con.prepareStatement(query);
@@ -326,12 +337,19 @@ public class ClubFormController extends Controller implements Initializable {
 
                     if(!r.next()) {
                         handleAlert("This id doesn't exist", "");
+                        ClubFormController.confirmFlag = false;
                     } else {
                         if(!Objects.equals(r.getString("userType"), "Teacher")) {
                             handleAlert("Invalid Teacher ID", "");
                             ClubFormController.confirmFlag = false;
                         }
                     }
+                }
+            }
+            if(!fund.getText().isEmpty()) {
+                if(validateNum(fund.getText())) {
+                    handleAlert("fund must be a number", "");
+                    ClubFormController.confirmFlag = false;
                 }
             }
         }
