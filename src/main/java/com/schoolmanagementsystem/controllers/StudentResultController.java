@@ -411,13 +411,13 @@ public class StudentResultController extends Controller {
         return "0.00";
     }
 
-    public ArrayList<String> allSubjects() throws SQLException {
+    public ArrayList<String> allSubjects(int id) throws SQLException {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
         String query = "SELECT class FROM studentInfo WHERE studentID = ?";
         PreparedStatement statement = con.prepareStatement(query);
-        statement.setInt(1, Controller.requiredID);
+        statement.setInt(1, id);
         ResultSet r = statement.executeQuery();
         if (r.next()) {
             StudentResultController.studentClass = r.getInt("class");
@@ -603,7 +603,7 @@ public class StudentResultController extends Controller {
         String query = null;
         PreparedStatement statement;
         ResultSet r;
-        ArrayList<String> allSubjects = allSubjects();
+        ArrayList<String> allSubjects = allSubjects(Controller.requiredID);
 
         for (int i = 0; i < allSubjects.size(); i++) {
             if(i == 0) {

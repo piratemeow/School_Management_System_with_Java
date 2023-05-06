@@ -65,6 +65,8 @@ public abstract class Controller {
 
     protected static boolean routineFlag;
 
+    protected static boolean resultFlag;
+
     @FXML
     void teacherReg(ActionEvent event) throws IOException {
         Controller.isUpdate = false;
@@ -127,7 +129,7 @@ public abstract class Controller {
     @FXML
     void handleNotice(Event event) throws IOException, SQLException {
         if(loginController.getLoggedInPerson() == null){
-            handleAlert("Alert", "Log in first to view your profile.");
+            handleAlert("Alert", "Log in first to view notice");
         }
         else {
             NoticeController cont = new NoticeController();
@@ -138,7 +140,7 @@ public abstract class Controller {
     @FXML
     void handleClub(Event event) throws SQLException, IOException {
         if(loginController.getLoggedInPerson() == null){
-            handleAlert("Alert", "Log in first to view your profile.");
+            handleAlert("Alert", "Log in first to view club.");
         }
         else {
             ClubController cont = new ClubController();
@@ -147,8 +149,15 @@ public abstract class Controller {
     }
 
     @FXML
-    void handleResult(Event event) {
-
+    void handleResult(Event event) throws SQLException, IOException {
+        if(loginController.getLoggedInPerson() == null){
+            handleAlert("Alert", "Log in first to view result.");
+        }
+        else {
+            Controller.resultFlag = true;
+            ClassResultController cont = new ClassResultController();
+            cont.handleClassResultPage(event);
+        }
     }
 
     @FXML

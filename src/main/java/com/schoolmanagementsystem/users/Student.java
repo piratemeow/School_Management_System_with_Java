@@ -1,6 +1,15 @@
 package com.schoolmanagementsystem.users;
 
+import com.schoolmanagementsystem.controllers.ClubController;
+import com.schoolmanagementsystem.database.ConnectDatabase;
+import javafx.util.Pair;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Student extends People {
     private int clas;
@@ -48,5 +57,28 @@ public class Student extends People {
     public int getRoll()
     {
         return this.roll;
+    }
+
+    public ArrayList<Pair<Integer, Integer>> allStudents(int classNum, String sectionNum) throws SQLException {
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String query = "SELECT studentID, roll FROM studentInfo WHERE class = ? AND section = ?";
+        PreparedStatement statement = con.prepareStatement(query);
+        statement.setInt(1, classNum);
+        statement.setString(2, sectionNum);
+        ResultSet r = statement.executeQuery();
+
+        ArrayList<Pair<Integer, Integer>> records = new ArrayList<>();
+
+        while (r.next()) {
+            Pair<Integer, Integer> record;
+            int id = r.getInt("studentID");
+            int roll = r.getInt("roll");
+            record = new Pair<>(id, roll);
+            records.add(record);
+        }
+
+        return records;
     }
 }

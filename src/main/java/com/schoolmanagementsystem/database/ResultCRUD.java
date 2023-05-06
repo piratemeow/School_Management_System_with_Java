@@ -28,7 +28,7 @@ public class ResultCRUD {
 
         String query;
         StudentResultController controller = new StudentResultController();
-        ArrayList<String> allSubjects = controller.allSubjects();
+        ArrayList<String> allSubjects = controller.allSubjects(Controller.getRequiredID());
 
         if (!r.next()) {
             if(StudentResultController.getSelectedExam() == 1) {
@@ -58,5 +58,33 @@ public class ResultCRUD {
                 statement.executeUpdate();
             }
         }
+    }
+
+    public void resultAlgoCrud(int halfYearlyWeight, int yearFinalWeight, String priority) throws SQLException {
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String query = "SELECT * FROM resultAlgo WHERE demoID = ?";
+
+        PreparedStatement statement = con.prepareStatement(query);
+
+        statement.setInt(1, 1);
+
+        ResultSet r = statement.executeQuery();
+
+        if(!r.next()) {
+            query = "INSERT INTO resultAlgo (demoID) VALUES (?)";
+            statement = con.prepareStatement(query);
+            statement.setInt(1, 1);
+            statement.executeUpdate();
+        }
+
+        query = "UPDATE resultAlgo SET halfYearlyWeight = ?, yearFinalWeight = ?, priority = ? WHERE demoID = ?";
+        statement = con.prepareStatement(query);
+        statement.setInt(1, halfYearlyWeight);
+        statement.setInt(2, yearFinalWeight);
+        statement.setString(3, priority);
+        statement.setInt(4, 1);
+        statement.executeUpdate();
     }
 }
