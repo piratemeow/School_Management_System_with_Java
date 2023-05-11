@@ -119,6 +119,8 @@ public abstract class Controller {
                 Controller.requiredID = 0;
                 RoutineController.setSelectedClass(0);
                 RoutineController.setSelectedSection(null);
+                AllMembersController.setCurrentIndex(0);
+                AllMembersController.setCurrentList(null);
                 handleHome(event);
             }
         }
@@ -133,6 +135,18 @@ public abstract class Controller {
         else {
             NoticeController cont = new NoticeController();
             cont.handleNoticePage(event);
+        }
+    }
+
+    @FXML
+    void handleAll(Event event) throws IOException, SQLException {
+        if(loginController.getLoggedInPerson() == null){
+            handleAlert("Alert", "Log in first to view All users");
+        }
+        else {
+            AllMembersController cont  = new AllMembersController();
+            AllMembersController.setAllUserFlag(true);
+            cont.handleAllMemberPage(event);
         }
     }
 

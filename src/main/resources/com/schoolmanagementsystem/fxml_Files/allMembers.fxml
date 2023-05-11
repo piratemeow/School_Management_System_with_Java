@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.AllMembersController">
+    <children>
+        <!--   <fx:include source="home.fxml" />-->
+
+        <BorderPane fx:id="borderpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+            <stylesheets>
+                <URL value="@../css_Files/home.css" />
+            </stylesheets>
+            <left>
+                <VBox fx:id="vbox" prefHeight="620.0" prefWidth="234.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+                    <children>
+                        <ImageView fitHeight="92.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/icon.png" />
+                            </image>
+                            <VBox.margin>
+                                <Insets bottom="7.0" left="66.0" top="10.0" />
+                            </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHome" prefHeight="43.0" prefWidth="112.0" text="Home" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="allUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAll" prefHeight="43.0" prefWidth="112.0" text="All User" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
+                            </VBox.margin>
+                        </Button>
+                        <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#studReg" text="Student" />
+                                <MenuItem mnemonicParsing="false" onAction="#teacherReg" text="Teacher" />
+                                <MenuItem mnemonicParsing="false" onAction="#staffReg" text="Staff" />
+                            </items>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                            </VBox.margin>
+                        </MenuButton>
+                        <Button fx:id="login" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0" prefWidth="112.0" text="Log in" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleResult" prefHeight="42.0" prefWidth="112.0" text="Result" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleNotice" prefHeight="44.0" prefWidth="109.0" text="Notice" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button fx:id="club" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClub" prefHeight="44.0" prefWidth="109.0" text="Club" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <VBox.margin>
+                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </left>
+            <center>
+                <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="25.0" pickOnBounds="true" preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;" BorderPane.alignment="CENTER">
+                    <image>
+                        <Image url="@../image/anotherBg.jpg" />
+                    </image>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </ImageView>
+            </center>
+            <effect>
+                <DropShadow />
+            </effect>
+        </BorderPane>
+
+
+        <StackPane prefHeight="620.0" prefWidth="630">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="730.0" styleClass="color3" stylesheets="@../css_Files/club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+                <children>
+
+                    <MenuButton fx:id="select" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="595.0" layoutY="56.0" maxHeight="44.0" maxWidth="118.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="118.0" styleClass="extracolor" stylesheets="@../css_Files/routine.css" text="SELECT" textFill="WHITE">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleStudentList" text="Student" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleTeacherList" text="Teacher" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleStaffList" text="Staff" />
+                        </items>
+                        <font>
+                            <Font size="15.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <DropShadow />
+                        </effect>
+                    </MenuButton>
+                    <AnchorPane layoutX="11" layoutY="168" >
+
+
+                                                <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="never" styleClass="color" stylesheets="@../css_Files/club.css" vbarPolicy="never">
+                                                    <content>
+                                                        <VBox layoutX="11.0" layoutY="168.0" prefHeight="380.0" prefWidth="708.0" styleClass="extracolor" stylesheets="@../css_Files/club.css">
+                                                            <children>
+
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_1" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_1" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_2" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_2" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_3" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_3" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_4" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_4" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_5" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_5" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_6" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_6" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_7" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_7" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_8" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_8" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_9" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_9" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <children>
+                                                                        <Label fx:id="id_10" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_10" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                </HBox>
+
+
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_11" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_11" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_12" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_12" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_13" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_13" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_14" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_14" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="dark" stylesheets="@../css_Files/allMembers.css">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                    </VBox.margin>
+                                                                    <children>
+                                                                        <Label fx:id="id_15" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label fx:id="name_15" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
+                                                                            <font>
+                                                                                <Font size="18.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </HBox>
+
+                                                            </children>
+
+
+                                                        </VBox>
+
+                                                    </content>
+                                                    <BorderPane.margin>
+                                                        <Insets left="10.0" top="170.0" />
+                                                    </BorderPane.margin>
+                                                </ScrollPane>
+
+
+                    </AnchorPane>
+
+
+                    <Label fx:id="listID" alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="11.0" prefHeight="26.0" prefWidth="456.0" style="-fx-background-radius: 30;" styleClass="labelHbox2" stylesheets="@../css_Files/club.css" text="All Users" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                            <Font size="39.0" />
+                        </font>
+                    </Label>
+                    <Button fx:id="cross" layoutX="670.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@../css_Files/salary.css" text="X">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                    <HBox fx:id="hbox" layoutX="14.0" layoutY="111.0" prefHeight="47.0" prefWidth="701.0" style="-fx-background-radius: 10;" styleClass="labelHbox2" stylesheets="@../css_Files/club.css">
+                        <children>
+                            <Label fx:id="id" alignment="CENTER" prefHeight="47.0" prefWidth="258.0" text="Student ID" textFill="WHITE">
+                                <font>
+                                    <Font size="22.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="name" alignment="CENTER" prefHeight="46.0" prefWidth="441.0" text="Student Name" textFill="WHITE">
+                                <font>
+                                    <Font size="22.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </HBox>
+                    <Button fx:id="previous" layoutX="49.0" layoutY="565.0" mnemonicParsing="false" onAction="#handlePrevious" prefHeight="37.0" prefWidth="96.0" stylesheets="@../css_Files/style.css" text="Previous">
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor></Button>
+                    <Button fx:id="next" layoutX="591.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="37.0" prefWidth="96.0" stylesheets="@../css_Files/style.css" text="Next">
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor></Button>
+                </children>
+            </AnchorPane>
+            <StackPane.margin>
+                <Insets left="237" />
+            </StackPane.margin>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <effect>
+                <DropShadow />
+            </effect>
+        </StackPane>
+    </children>
+</StackPane>

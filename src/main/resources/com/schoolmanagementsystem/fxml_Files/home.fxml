@@ -24,7 +24,7 @@
                   <Image url="@../image/icon.png" />
                </image>
                <VBox.margin>
-                  <Insets bottom="10.0" left="66.0" top="20.0" />
+                  <Insets bottom="7.0" left="66.0" top="10.0" />
                </VBox.margin>
             </ImageView>
             <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHome" prefHeight="43.0" prefWidth="112.0" text="Home" textFill="WHITE">
@@ -32,7 +32,15 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
-                  <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
+                  <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="allUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAll" prefHeight="43.0" prefWidth="112.0" text="All User" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
                </VBox.margin>
             </Button>
             <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
@@ -40,7 +48,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
-                  <Insets bottom="7.0" left="55.0" right="25.0" top="7.0" />
+                  <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
                </VBox.margin>
             </Button>
             <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
@@ -53,7 +61,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
-                  <Insets bottom="7.0" left="55.0" top="7.0" />
+                  <Insets bottom="6.0" left="55.0" top="6.0" />
                </VBox.margin>
             </MenuButton>
             <Button fx:id="login" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0" prefWidth="112.0" text="Log in" textFill="WHITE">
@@ -61,7 +69,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
-                  <Insets bottom="7.0" left="55.0" top="7.0" />
+                  <Insets bottom="6.0" left="55.0" top="6.0" />
                </VBox.margin>
             </Button>
             <Button fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleResult" prefHeight="42.0" prefWidth="112.0" text="Result" textFill="WHITE">
@@ -69,7 +77,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
-                  <Insets bottom="7.0" left="55.0" top="7.0" />
+                  <Insets bottom="6.0" left="55.0" top="6.0" />
                </VBox.margin>
             </Button>
             <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
@@ -77,7 +85,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
-                  <Insets bottom="7.0" left="55.0" top="7.0" />
+                  <Insets bottom="6.0" left="55.0" top="6.0" />
                </VBox.margin>
             </Button>
             <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleNotice" prefHeight="44.0" prefWidth="109.0" text="Notice" textFill="WHITE">
@@ -85,7 +93,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
-                  <Insets bottom="7.0" left="55.0" top="7.0" />
+                  <Insets bottom="6.0" left="55.0" top="6.0" />
                </VBox.margin>
             </Button>
             <Button fx:id="club" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClub" prefHeight="44.0" prefWidth="109.0" text="Club" textFill="WHITE">
@@ -93,7 +101,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <VBox.margin>
-                  <Insets bottom="7.0" left="55.0" top="7.0" />
+                  <Insets bottom="6.0" left="55.0" top="6.0" />
                </VBox.margin>
             </Button>
          </children>
