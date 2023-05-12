@@ -23,19 +23,23 @@
 <?import javafx.scene.text.Font?>
 
 
-
-<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.StudentResultController">
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000"
+   xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="com.schoolmanagementsystem.controllers.StudentResultController">
    <children>
       <!--   <fx:include source="home.fxml" />-->
 
-      <BorderPane fx:id="borderpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
+      <BorderPane fx:id="borderpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0"
+         prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
          <stylesheets>
             <URL value="@../css_Files/home.css" />
          </stylesheets>
          <left>
-            <VBox fx:id="vbox" prefHeight="620.0" prefWidth="234.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+            <VBox fx:id="vbox" prefHeight="620.0" prefWidth="234.0" BorderPane.alignment="CENTER"
+               xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
                <children>
-                  <ImageView fitHeight="92.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="92.0" fitWidth="108.0" pickOnBounds="true"
+                     preserveRatio="true">
                      <image>
                         <Image url="@../image/icon.png" />
                      </image>
@@ -43,7 +47,10 @@
                         <Insets bottom="7.0" left="66.0" top="10.0" />
                      </VBox.margin>
                   </ImageView>
-                  <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHome" prefHeight="43.0" prefWidth="112.0" text="Home" textFill="WHITE">
+                  <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity"
+                     minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                     onAction="#handleHome" prefHeight="43.0" prefWidth="112.0" text="Home"
+                     textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -51,7 +58,10 @@
                         <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="allUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAll" prefHeight="43.0" prefWidth="112.0" text="All User" textFill="WHITE">
+                  <Button fx:id="allUsers" maxHeight="-Infinity" maxWidth="-Infinity"
+                     minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                     onAction="#handleAll" prefHeight="43.0" prefWidth="112.0" text="All User"
+                     textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -59,7 +69,10 @@
                         <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
+                  <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity"
+                     minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                     onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile"
+                     textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -67,7 +80,9 @@
                         <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
                      </VBox.margin>
                   </Button>
-                  <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
+                  <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity"
+                     maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0"
+                     prefWidth="112.0" text="Register" textFill="WHITE">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#studReg" text="Student" />
                         <MenuItem mnemonicParsing="false" onAction="#teacherReg" text="Teacher" />
@@ -80,7 +95,10 @@
                         <Insets bottom="6.0" left="55.0" top="6.0" />
                      </VBox.margin>
                   </MenuButton>
-                  <Button fx:id="login" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0" prefWidth="112.0" text="Log in" textFill="WHITE">
+                  <Button fx:id="login" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity"
+                     maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                     mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0"
+                     prefWidth="112.0" text="Log in" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -88,7 +106,10 @@
                         <Insets bottom="6.0" left="55.0" top="6.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleResult" prefHeight="42.0" prefWidth="112.0" text="Result" textFill="WHITE">
+                  <Button fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity"
+                     maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                     mnemonicParsing="false" onAction="#handleResult" prefHeight="42.0"
+                     prefWidth="112.0" text="Result" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -96,7 +117,10 @@
                         <Insets bottom="6.0" left="55.0" top="6.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
+                  <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity"
+                     maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                     mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0"
+                     prefWidth="112.0" text="Routine" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -104,7 +128,10 @@
                         <Insets bottom="6.0" left="55.0" top="6.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleNotice" prefHeight="44.0" prefWidth="109.0" text="Notice" textFill="WHITE">
+                  <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity"
+                     maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                     mnemonicParsing="false" onAction="#handleNotice" prefHeight="44.0"
+                     prefWidth="109.0" text="Notice" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -112,7 +139,10 @@
                         <Insets bottom="6.0" left="55.0" top="6.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="club" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClub" prefHeight="44.0" prefWidth="109.0" text="Club" textFill="WHITE">
+                  <Button fx:id="club" maxHeight="-Infinity" maxWidth="-Infinity"
+                     minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                     onAction="#handleClub" prefHeight="44.0" prefWidth="109.0" text="Club"
+                     textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -124,7 +154,9 @@
             </VBox>
          </left>
          <center>
-            <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="25.0" pickOnBounds="true" preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="25.0" pickOnBounds="true"
+               preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;"
+               BorderPane.alignment="CENTER">
                <image>
                   <Image url="@../image/anotherBg.jpg" />
                </image>
@@ -140,13 +172,19 @@
 
 
       <StackPane prefHeight="620.0" prefWidth="630">
-         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="615.0" prefWidth="630.0"
+            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-               <VBox layoutX="-2.0" layoutY="-5.0" prefHeight="620.0" prefWidth="636.0" style="-fx-background-color: #37023F;">
+               <VBox layoutX="-2.0" layoutY="-5.0" prefHeight="620.0" prefWidth="636.0"
+                  style="-fx-background-color: #37023F;">
                   <children>
                      <VBox alignment="CENTER" prefHeight="45.0" prefWidth="570.0">
                         <children>
-                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="600.0" style="-fx-background-radius: 90;" styleClass="darker" stylesheets="@../css_Files/result.css" text=" TEST RESULT" textFill="WHITE">
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                              prefWidth="600.0" style="-fx-background-radius: 90;"
+                              styleClass="darker" stylesheets="@../css_Files/result.css"
+                              text=" TEST RESULT" textFill="WHITE">
                               <font>
                                  <Font name="Times New Roman" size="40.0" />
                               </font>
@@ -163,7 +201,10 @@
                         <children>
                            <HBox prefHeight="27.0" prefWidth="610.0">
                               <children>
-                                 <Button fx:id="editResult" mnemonicParsing="false" onAction="#handleEditResult" prefHeight="39.0" prefWidth="171.0" styleClass="revcolor" stylesheets="@../css_Files/result.css" text="EDIT RESULT">
+                                 <Button fx:id="editResult" mnemonicParsing="false"
+                                    onAction="#handleEditResult" prefHeight="39.0" prefWidth="171.0"
+                                    styleClass="revcolor" stylesheets="@../css_Files/result.css"
+                                    text="EDIT RESULT">
                                     <font>
                                        <Font name="Cambria Bold" size="18.0" />
                                     </font>
@@ -171,10 +212,17 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </Button>
-                                 <MenuButton fx:id="selectExam" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="44.0" maxWidth="168.0" mnemonicParsing="false" onAction="#handleSelectExam" prefHeight="34.0" prefWidth="165.0" styleClass="extracolor" stylesheets="@../css_Files/routine.css" text="SELECT EXAM" textFill="WHITE">
+                                 <MenuButton fx:id="selectExam" alignment="CENTER_RIGHT"
+                                    contentDisplay="RIGHT" maxHeight="44.0" maxWidth="168.0"
+                                    mnemonicParsing="false" onAction="#handleSelectExam"
+                                    prefHeight="34.0" prefWidth="165.0" styleClass="extracolor"
+                                    stylesheets="@../css_Files/routine.css" text="SELECT EXAM"
+                                    textFill="WHITE">
                                     <items>
-                                       <MenuItem mnemonicParsing="false" onAction="#handleHalfYearly" text="Half Yearly" />
-                                       <MenuItem mnemonicParsing="false" onAction="#handleYearFinal" text="Year Final" />
+                                       <MenuItem mnemonicParsing="false"
+                                          onAction="#handleHalfYearly" text="Half Yearly" />
+                                       <MenuItem mnemonicParsing="false" onAction="#handleYearFinal"
+                                          text="Year Final" />
                                     </items>
                                     <font>
                                        <Font size="15.0" />
@@ -191,56 +239,93 @@
                                  </MenuButton>
                               </children>
                            </HBox>
-                           <GridPane prefHeight="400.0" prefWidth="610.0" stylesheets="@../css_Files/result.css">
+                           <GridPane prefHeight="400.0" prefWidth="610.0"
+                              stylesheets="@../css_Files/result.css">
                               <columnConstraints>
-                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.0" minWidth="10.0" prefWidth="223.6000244140625" />
-                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0" minWidth="10.0" prefWidth="206.19997558593752" />
-                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0" minWidth="10.0" prefWidth="187.00002441406252" />
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.0"
+                                    minWidth="10.0" prefWidth="223.6000244140625" />
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0"
+                                    minWidth="10.0" prefWidth="206.19997558593752" />
+                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0"
+                                    minWidth="10.0" prefWidth="187.00002441406252" />
                               </columnConstraints>
                               <rowConstraints>
-                                 <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="40.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                    vgrow="SOMETIMES" />
                               </rowConstraints>
                               <children>
-                                 <Label fx:id="sub_6" alignment="CENTER" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="6">
+                                 <Label fx:id="sub_6" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="218.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.rowIndex="6">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_4" alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="4">
+                                 <Label fx:id="sub_4" alignment="CENTER" layoutX="10.0"
+                                    layoutY="20.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="4">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_3" alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="3">
+                                 <Label fx:id="sub_3" alignment="CENTER" layoutX="10.0"
+                                    layoutY="20.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="3">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_2" alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="2">
+                                 <Label fx:id="sub_2" alignment="CENTER" layoutX="10.0"
+                                    layoutY="20.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="2">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_1" alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="1">
+                                 <Label fx:id="sub_1" alignment="CENTER" layoutX="10.0"
+                                    layoutY="20.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="1">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label alignment="CENTER" layoutX="10.0" layoutY="199.0" prefHeight="26.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" text="Subject" textFill="WHITE">
+                                 <Label alignment="CENTER" layoutX="10.0" layoutY="199.0"
+                                    prefHeight="26.0" prefWidth="218.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" text="Subject"
+                                    textFill="WHITE">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
@@ -248,22 +333,33 @@
                                        <Font name="System Bold" size="13.0" />
                                     </font>
                                  </Label>
-                                 <Label fx:id="sub_10" alignment="CENTER" layoutX="10.0" layoutY="164.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="10">
+                                 <Label fx:id="sub_10" alignment="CENTER" layoutX="10.0"
+                                    layoutY="164.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="10">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_9" alignment="CENTER" layoutX="10.0" layoutY="164.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="9">
+                                 <Label fx:id="sub_9" alignment="CENTER" layoutX="10.0"
+                                    layoutY="164.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="9">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_8" alignment="CENTER" layoutX="10.0" layoutY="164.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="8">
+                                 <Label fx:id="sub_8" alignment="CENTER" layoutX="10.0"
+                                    layoutY="164.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="8">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label alignment="CENTER" prefHeight="26.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" text="Marks" textFill="WHITE" GridPane.columnIndex="1">
+                                 <Label alignment="CENTER" prefHeight="26.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    text="Marks" textFill="WHITE" GridPane.columnIndex="1">
                                     <font>
                                        <Font name="System Bold" size="13.0" />
                                     </font>
@@ -271,7 +367,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_1" alignment="CENTER" layoutX="203.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label fx:id="mark_1" alignment="CENTER" layoutX="203.0"
+                                    layoutY="26.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -279,7 +378,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_8" alignment="CENTER" layoutX="203.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <Label fx:id="mark_8" alignment="CENTER" layoutX="203.0"
+                                    layoutY="26.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -287,7 +389,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_9" alignment="CENTER" layoutX="10.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <Label fx:id="mark_9" alignment="CENTER" layoutX="10.0"
+                                    layoutY="26.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -295,7 +400,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_10" alignment="CENTER" layoutX="10.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                 <Label fx:id="mark_10" alignment="CENTER" layoutX="10.0"
+                                    layoutY="26.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="10">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -303,7 +411,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_3" alignment="CENTER" layoutX="10.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <Label fx:id="mark_3" alignment="CENTER" layoutX="10.0"
+                                    layoutY="26.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -311,7 +422,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_4" alignment="CENTER" layoutX="10.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <Label fx:id="mark_4" alignment="CENTER" layoutX="10.0"
+                                    layoutY="26.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -319,7 +433,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_2" alignment="CENTER" layoutX="10.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <Label fx:id="mark_2" alignment="CENTER" layoutX="10.0"
+                                    layoutY="26.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -327,7 +444,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_6" alignment="CENTER" layoutX="203.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <Label fx:id="mark_6" alignment="CENTER" layoutX="203.0"
+                                    layoutY="26.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -335,12 +455,19 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label alignment="CENTER" layoutX="10.0" layoutY="236.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" text="Total Score &amp; Avg G.P.A." textFill="WHITE" GridPane.rowIndex="14">
+                                 <Label alignment="CENTER" layoutX="10.0" layoutY="236.0"
+                                    prefHeight="18.0" prefWidth="218.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css"
+                                    text="Total Score &amp; Avg G.P.A." textFill="WHITE"
+                                    GridPane.rowIndex="14">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="totalMark" alignment="CENTER" layoutX="199.0" layoutY="234.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                                 <Label fx:id="totalMark" alignment="CENTER" layoutX="199.0"
+                                    layoutY="234.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="14">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -348,32 +475,50 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_5" alignment="CENTER" layoutX="10.0" layoutY="105.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="5">
+                                 <Label fx:id="sub_5" alignment="CENTER" layoutX="10.0"
+                                    layoutY="105.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="5">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_7" alignment="CENTER" layoutX="10.0" layoutY="151.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="7">
+                                 <Label fx:id="sub_7" alignment="CENTER" layoutX="10.0"
+                                    layoutY="151.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="7">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_13" alignment="CENTER" layoutX="10.0" layoutY="221.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="13">
+                                 <Label fx:id="sub_13" alignment="CENTER" layoutX="10.0"
+                                    layoutY="221.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="13">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_12" alignment="CENTER" layoutX="10.0" layoutY="82.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="12">
+                                 <Label fx:id="sub_12" alignment="CENTER" layoutX="10.0"
+                                    layoutY="82.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="12">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="sub_11" alignment="CENTER" layoutX="10.0" layoutY="82.0" prefHeight="18.0" prefWidth="218.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.rowIndex="11">
+                                 <Label fx:id="sub_11" alignment="CENTER" layoutX="10.0"
+                                    layoutY="82.0" prefHeight="18.0" prefWidth="218.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.rowIndex="11">
                                     <padding>
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_5" alignment="CENTER" layoutX="199.0" layoutY="104.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <Label fx:id="mark_5" alignment="CENTER" layoutX="199.0"
+                                    layoutY="104.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -381,7 +526,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_7" alignment="CENTER" layoutX="199.0" layoutY="127.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <Label fx:id="mark_7" alignment="CENTER" layoutX="199.0"
+                                    layoutY="127.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -389,7 +537,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_11" alignment="CENTER" layoutX="199.0" layoutY="173.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                 <Label fx:id="mark_11" alignment="CENTER" layoutX="199.0"
+                                    layoutY="173.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="11">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -397,7 +548,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_12" alignment="CENTER" layoutX="199.0" layoutY="267.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                 <Label fx:id="mark_12" alignment="CENTER" layoutX="199.0"
+                                    layoutY="267.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="12">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -405,7 +559,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="mark_13" alignment="CENTER" layoutX="199.0" layoutY="291.0" prefHeight="18.0" prefWidth="204.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                 <Label fx:id="mark_13" alignment="CENTER" layoutX="199.0"
+                                    layoutY="291.0" prefHeight="18.0" prefWidth="204.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="13">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -413,84 +570,10 @@
                                        <Insets left="10.0" />
                                     </padding>
                                  </Label>
-                                 <Label fx:id="gpa_1" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                    <font>
-                                       <Font size="13.0" />
-                                    </font>
-                                    <padding>
-                                       <Insets left="10.0" />
-                                    </padding>
-                                    <GridPane.margin>
-                                       <Insets left="3.0" />
-                                    </GridPane.margin>
-                                 </Label>
-                                 <Label fx:id="gpa_2" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                    <font>
-                                       <Font size="13.0" />
-                                    </font>
-                                    <padding>
-                                       <Insets left="10.0" />
-                                    </padding>
-                                    <GridPane.margin>
-                                       <Insets left="3.0" />
-                                    </GridPane.margin>
-                                 </Label>
-                                 <Label fx:id="gpa_3" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                    <font>
-                                       <Font size="13.0" />
-                                    </font>
-                                    <padding>
-                                       <Insets left="10.0" />
-                                    </padding>
-                                    <GridPane.margin>
-                                       <Insets left="3.0" />
-                                    </GridPane.margin>
-                                 </Label>
-                                 <Label fx:id="gpa_4" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                                    <font>
-                                       <Font size="13.0" />
-                                    </font>
-                                    <padding>
-                                       <Insets left="10.0" />
-                                    </padding>
-                                    <GridPane.margin>
-                                       <Insets left="3.0" />
-                                    </GridPane.margin>
-                                 </Label>
-                                 <Label fx:id="gpa_5" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5">
-                                    <font>
-                                       <Font size="13.0" />
-                                    </font>
-                                    <padding>
-                                       <Insets left="10.0" />
-                                    </padding>
-                                    <GridPane.margin>
-                                       <Insets left="3.0" />
-                                    </GridPane.margin>
-                                 </Label>
-                                 <Label fx:id="gpa_6" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="6">
-                                    <font>
-                                       <Font size="13.0" />
-                                    </font>
-                                    <padding>
-                                       <Insets left="10.0" />
-                                    </padding>
-                                    <GridPane.margin>
-                                       <Insets left="3.0" />
-                                    </GridPane.margin>
-                                 </Label>
-                                 <Label fx:id="gpa_7" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="7">
-                                    <font>
-                                       <Font size="13.0" />
-                                    </font>
-                                    <padding>
-                                       <Insets left="10.0" />
-                                    </padding>
-                                    <GridPane.margin>
-                                       <Insets left="3.0" />
-                                    </GridPane.margin>
-                                 </Label>
-                                 <Label fx:id="gpa_8" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                 <Label fx:id="gpa_1" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="1">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -501,7 +584,10 @@
                                        <Insets left="3.0" />
                                     </GridPane.margin>
                                  </Label>
-                                 <Label fx:id="gpa_9" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                 <Label fx:id="gpa_2" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="2">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -512,7 +598,10 @@
                                        <Insets left="3.0" />
                                     </GridPane.margin>
                                  </Label>
-                                 <Label fx:id="gpa_10" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                                 <Label fx:id="gpa_3" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="3">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -523,7 +612,10 @@
                                        <Insets left="3.0" />
                                     </GridPane.margin>
                                  </Label>
-                                 <Label fx:id="gpa_11" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                                 <Label fx:id="gpa_4" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="4">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -534,7 +626,10 @@
                                        <Insets left="3.0" />
                                     </GridPane.margin>
                                  </Label>
-                                 <Label fx:id="gpa_12" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                                 <Label fx:id="gpa_5" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="5">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -545,7 +640,10 @@
                                        <Insets left="3.0" />
                                     </GridPane.margin>
                                  </Label>
-                                 <Label fx:id="gpa_13" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="13">
+                                 <Label fx:id="gpa_6" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="6">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -556,7 +654,10 @@
                                        <Insets left="3.0" />
                                     </GridPane.margin>
                                  </Label>
-                                 <Label fx:id="avgGPA" alignment="CENTER" prefHeight="18.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="14">
+                                 <Label fx:id="gpa_7" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="7">
                                     <font>
                                        <Font size="13.0" />
                                     </font>
@@ -567,7 +668,107 @@
                                        <Insets left="3.0" />
                                     </GridPane.margin>
                                  </Label>
-                                 <Label alignment="CENTER" prefHeight="26.0" prefWidth="191.0" styleClass="myGridID" stylesheets="@../css_Files/club.css" text="G.P.A." textFill="WHITE" GridPane.columnIndex="2">
+                                 <Label fx:id="gpa_8" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                    <font>
+                                       <Font size="13.0" />
+                                    </font>
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                       <Insets left="3.0" />
+                                    </GridPane.margin>
+                                 </Label>
+                                 <Label fx:id="gpa_9" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                    <font>
+                                       <Font size="13.0" />
+                                    </font>
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                       <Insets left="3.0" />
+                                    </GridPane.margin>
+                                 </Label>
+                                 <Label fx:id="gpa_10" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="10">
+                                    <font>
+                                       <Font size="13.0" />
+                                    </font>
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                       <Insets left="3.0" />
+                                    </GridPane.margin>
+                                 </Label>
+                                 <Label fx:id="gpa_11" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="11">
+                                    <font>
+                                       <Font size="13.0" />
+                                    </font>
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                       <Insets left="3.0" />
+                                    </GridPane.margin>
+                                 </Label>
+                                 <Label fx:id="gpa_12" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="12">
+                                    <font>
+                                       <Font size="13.0" />
+                                    </font>
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                       <Insets left="3.0" />
+                                    </GridPane.margin>
+                                 </Label>
+                                 <Label fx:id="gpa_13" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="13">
+                                    <font>
+                                       <Font size="13.0" />
+                                    </font>
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                       <Insets left="3.0" />
+                                    </GridPane.margin>
+                                 </Label>
+                                 <Label fx:id="avgGPA" alignment="CENTER" prefHeight="18.0"
+                                    prefWidth="191.0" styleClass="myGridID"
+                                    stylesheets="@../css_Files/club.css" textFill="WHITE"
+                                    GridPane.columnIndex="2" GridPane.rowIndex="14">
+                                    <font>
+                                       <Font size="13.0" />
+                                    </font>
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                    <GridPane.margin>
+                                       <Insets left="3.0" />
+                                    </GridPane.margin>
+                                 </Label>
+                                 <Label alignment="CENTER" prefHeight="26.0" prefWidth="191.0"
+                                    styleClass="myGridID" stylesheets="@../css_Files/club.css"
+                                    text="G.P.A." textFill="WHITE" GridPane.columnIndex="2">
                                     <font>
                                        <Font name="System Bold" size="13.0" />
                                     </font>
@@ -578,7 +779,8 @@
                                        <Insets left="3.0" />
                                     </GridPane.margin>
                                  </Label>
-                                 <TextField fx:id="input_1" alignment="CENTER" prefHeight="17.0" prefWidth="206.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <TextField fx:id="input_1" alignment="CENTER" prefHeight="17.0"
+                                    prefWidth="206.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -586,7 +788,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_2" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <TextField fx:id="input_2" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="2">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -594,7 +797,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_3" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <TextField fx:id="input_3" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -602,7 +806,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_4" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <TextField fx:id="input_4" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="4">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -610,7 +815,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_5" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <TextField fx:id="input_5" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="5">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -618,7 +824,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_6" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <TextField fx:id="input_6" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="6">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -626,7 +833,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_7" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <TextField fx:id="input_7" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="7">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -634,7 +842,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_8" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <TextField fx:id="input_8" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="8">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -642,7 +851,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_9" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <TextField fx:id="input_9" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="9">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -650,7 +860,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_10" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                 <TextField fx:id="input_10" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="10">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -658,7 +869,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_11" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                 <TextField fx:id="input_11" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="11">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -666,7 +878,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_12" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                 <TextField fx:id="input_12" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="12">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -674,7 +887,8 @@
                                        <Cursor fx:constant="HAND" />
                                     </cursor>
                                  </TextField>
-                                 <TextField fx:id="input_13" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                 <TextField fx:id="input_13" alignment="CENTER"
+                                    GridPane.columnIndex="1" GridPane.rowIndex="13">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -695,7 +909,10 @@
                      </VBox>
                      <VBox alignment="TOP_CENTER" prefHeight="66.0" prefWidth="630.0">
                         <children>
-                           <Button fx:id="confirm" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleConfirm" prefHeight="39.0" prefWidth="171.0" styleClass="revcolor" stylesheets="@../css_Files/result.css" text="CONFIRM">
+                           <Button fx:id="confirm" contentDisplay="CENTER" mnemonicParsing="false"
+                              onAction="#handleConfirm" prefHeight="39.0" prefWidth="171.0"
+                              styleClass="revcolor" stylesheets="@../css_Files/result.css"
+                              text="CONFIRM">
                               <font>
                                  <Font name="Cambria Bold" size="18.0" />
                               </font>
@@ -710,7 +927,10 @@
                      </VBox>
                   </children>
                </VBox>
-               <Button fx:id="crossButton" layoutX="572.0" maxHeight="37.0" maxWidth="54.0" mnemonicParsing="false" onAction="#handleCrossButton" prefHeight="37.0" prefWidth="54.0" styleClass="crossButton" stylesheets="@../css_Files/salary.css" text="X">
+               <Button fx:id="crossButton" layoutX="572.0" maxHeight="37.0" maxWidth="54.0"
+                  mnemonicParsing="false" onAction="#handleCrossButton" prefHeight="37.0"
+                  prefWidth="54.0" styleClass="crossButton" stylesheets="@../css_Files/salary.css"
+                  text="X">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>

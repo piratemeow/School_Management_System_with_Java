@@ -202,7 +202,8 @@ public class TeacherRegistrationController extends Controller implements Initial
 
         Controller.isUpdate = true;
 
-        FXMLLoader fxmlLoader = loadPage("label", "/com/schoolmanagementsystem/fxml_Files/teacherRegistrationForm.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("label", "/com/schoolmanagementsystem/fxml_Files/teacherRegistrationForm.fxml",
+                event);
 
         TeacherRegistrationController controller = fxmlLoader.getController();
 

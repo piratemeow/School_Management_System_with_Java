@@ -24,7 +24,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Objects;
 
-
 public class FeeController extends Controller {
 
     @FXML
@@ -70,7 +69,7 @@ public class FeeController extends Controller {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
-        if(!FeeController.updateFlag) {
+        if (!FeeController.updateFlag) {
             update.setText("Apply");
             FeeController.updateFlag = true;
             FeeController.applyFlag = false;
@@ -91,16 +90,16 @@ public class FeeController extends Controller {
             statement.setInt(1, Controller.requiredID);
             ResultSet r = statement.executeQuery();
 
-            if(r.next()) {
+            if (r.next()) {
                 feeInput.setText(String.valueOf(r.getInt("feeAmount")));
                 dateInput.setValue(LocalDate.parse(String.valueOf(r.getDate("paymentDate"))));
             }
 
         } else {
-            if(feeInput.getText().isEmpty() || dateInput.getValue() == null) {
+            if (feeInput.getText().isEmpty() || dateInput.getValue() == null) {
                 invalid.setVisible(true);
                 invalid.setManaged(true);
-            } else if(validateNum(feeInput.getText()) || validateDate(dateInput)){
+            } else if (validateNum(feeInput.getText()) || validateDate(dateInput)) {
                 invalid.setVisible(true);
                 invalid.setManaged(true);
             } else {
@@ -130,7 +129,7 @@ public class FeeController extends Controller {
                 statement.setInt(1, Controller.requiredID);
                 ResultSet r = statement.executeQuery();
 
-                if(r.next()) {
+                if (r.next()) {
                     feeLabel.setText(String.valueOf(r.getInt("feeAmount")));
                     dateLabel.setText(String.valueOf(LocalDate.parse(String.valueOf(r.getDate("paymentDate")))));
                 }
@@ -151,7 +150,6 @@ public class FeeController extends Controller {
         controller.dateInput.setVisible(false);
         controller.dateInput.setManaged(false);
 
-
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
@@ -161,7 +159,7 @@ public class FeeController extends Controller {
         statement.setInt(1, Controller.requiredID);
         ResultSet r = statement.executeQuery();
 
-        if(r.next()) {
+        if (r.next()) {
             controller.feeLabel.setText(String.valueOf(r.getInt("feeAmount")));
             controller.dateLabel.setText(String.valueOf(r.getDate("paymentDate")));
         }

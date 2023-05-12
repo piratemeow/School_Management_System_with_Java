@@ -195,7 +195,6 @@ public class StudentResultController extends Controller {
     @FXML
     private Button crossButton;
 
-
     private static int selectedExam;
 
     private static boolean editFlag;
@@ -213,8 +212,8 @@ public class StudentResultController extends Controller {
     @FXML
     void handleConfirm(ActionEvent event) throws SQLException, IOException {
         ArrayList<Integer> allMarks = new ArrayList<>();
-        if(input_1.isVisible()) {
-            if(input_1.getText().isEmpty()) {
+        if (input_1.isVisible()) {
+            if (input_1.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_1.getText())) {
@@ -225,8 +224,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_2.isVisible()) {
-            if(input_2.getText().isEmpty()) {
+        if (input_2.isVisible()) {
+            if (input_2.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_2.getText())) {
@@ -237,8 +236,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_3.isVisible()) {
-            if(input_3.getText().isEmpty()) {
+        if (input_3.isVisible()) {
+            if (input_3.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_3.getText())) {
@@ -249,8 +248,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_4.isVisible()) {
-            if(input_4.getText().isEmpty()) {
+        if (input_4.isVisible()) {
+            if (input_4.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_4.getText())) {
@@ -261,8 +260,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_5.isVisible()) {
-            if(input_5.getText().isEmpty()) {
+        if (input_5.isVisible()) {
+            if (input_5.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_5.getText())) {
@@ -273,8 +272,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_6.isVisible()) {
-            if(input_6.getText().isEmpty()) {
+        if (input_6.isVisible()) {
+            if (input_6.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_6.getText())) {
@@ -285,8 +284,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_7.isVisible()) {
-            if(input_7.getText().isEmpty()) {
+        if (input_7.isVisible()) {
+            if (input_7.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_7.getText())) {
@@ -297,8 +296,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_8.isVisible()) {
-            if(input_8.getText().isEmpty()) {
+        if (input_8.isVisible()) {
+            if (input_8.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_8.getText())) {
@@ -309,8 +308,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_9.isVisible()) {
-            if(input_9.getText().isEmpty()) {
+        if (input_9.isVisible()) {
+            if (input_9.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_9.getText())) {
@@ -321,8 +320,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_10.isVisible()) {
-            if(input_10.getText().isEmpty()) {
+        if (input_10.isVisible()) {
+            if (input_10.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_10.getText())) {
@@ -333,8 +332,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_11.isVisible()) {
-            if(input_11.getText().isEmpty()) {
+        if (input_11.isVisible()) {
+            if (input_11.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_11.getText())) {
@@ -345,8 +344,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_12.isVisible()) {
-            if(input_12.getText().isEmpty()) {
+        if (input_12.isVisible()) {
+            if (input_12.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_12.getText())) {
@@ -357,8 +356,8 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(input_13.isVisible()) {
-            if(input_13.getText().isEmpty()) {
+        if (input_13.isVisible()) {
+            if (input_13.getText().isEmpty()) {
                 allMarks.add(0);
             } else {
                 if (validateNum(input_13.getText())) {
@@ -378,7 +377,8 @@ public class StudentResultController extends Controller {
 
     @FXML
     void handleEditResult(ActionEvent event) throws SQLException, IOException {
-        if(StudentResultController.selectedExam == 0) return;
+        if (StudentResultController.selectedExam == 0)
+            return;
         StudentResultController.editFlag = true;
         StudentProfileController.setResultLabelFlag(true);
         handleStudentResultPage(event);
@@ -407,11 +407,16 @@ public class StudentResultController extends Controller {
     }
 
     public String getGPA(int num) {
-        if(num >= 80) return "5.00";
-        if(num >= 70) return "4.00";
-        if(num >= 60) return "3.50";
-        if(num >= 50) return "3.00";
-        if(num >= 40) return "2.00";
+        if (num >= 80)
+            return "5.00";
+        if (num >= 70)
+            return "4.00";
+        if (num >= 60)
+            return "3.50";
+        if (num >= 50)
+            return "3.00";
+        if (num >= 40)
+            return "2.00";
         return "0.00";
     }
 
@@ -494,18 +499,18 @@ public class StudentResultController extends Controller {
         }
         return allSubjects;
     }
-    
 
     public void handleStudentResultPage(Event event) throws IOException, SQLException {
         String buttonType;
-        if(StudentProfileController.isResultLabelFlag()) {
+        if (StudentProfileController.isResultLabelFlag()) {
             buttonType = "button";
         } else {
             buttonType = "menuButton";
         }
-        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/studentResult.fxml", event);
+        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/studentResult.fxml",
+                event);
         StudentResultController controller = fxmlLoader.getController();
-        if(!StudentResultController.editFlag) {
+        if (!StudentResultController.editFlag) {
             controller.confirm.setVisible(false);
         }
         controller.input_1.setVisible(false);
@@ -522,14 +527,12 @@ public class StudentResultController extends Controller {
         controller.input_12.setVisible(false);
         controller.input_13.setVisible(false);
 
-
-        if(StudentResultController.selectedExam == 0) {
+        if (StudentResultController.selectedExam == 0) {
             return;
         }
 
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
-
 
         String query = null;
         PreparedStatement statement;
@@ -537,51 +540,51 @@ public class StudentResultController extends Controller {
         ArrayList<String> allSubjects = allSubjects(Controller.requiredID);
 
         for (int i = 0; i < allSubjects.size(); i++) {
-            if(i == 0) {
+            if (i == 0) {
                 controller.sub_1.setText(allSubjects.get(i));
             }
-            if(i == 1) {
+            if (i == 1) {
                 controller.sub_2.setText(allSubjects.get(i));
             }
-            if(i == 2) {
+            if (i == 2) {
                 controller.sub_3.setText(allSubjects.get(i));
             }
-            if(i == 3) {
+            if (i == 3) {
                 controller.sub_4.setText(allSubjects.get(i));
             }
-            if(i == 4) {
+            if (i == 4) {
                 controller.sub_5.setText(allSubjects.get(i));
             }
-            if(i == 5) {
+            if (i == 5) {
                 controller.sub_6.setText(allSubjects.get(i));
             }
-            if(i == 6) {
+            if (i == 6) {
                 controller.sub_7.setText(allSubjects.get(i));
             }
-            if(i == 7) {
+            if (i == 7) {
                 controller.sub_8.setText(allSubjects.get(i));
             }
-            if(i == 8) {
+            if (i == 8) {
                 controller.sub_9.setText(allSubjects.get(i));
             }
-            if(i == 9) {
+            if (i == 9) {
                 controller.sub_10.setText(allSubjects.get(i));
             }
-            if(i == 10) {
+            if (i == 10) {
                 controller.sub_11.setText(allSubjects.get(i));
             }
-            if(i == 11) {
+            if (i == 11) {
                 controller.sub_12.setText(allSubjects.get(i));
             }
-            if(i == 12) {
+            if (i == 12) {
                 controller.sub_13.setText(allSubjects.get(i));
             }
         }
 
-        if(StudentResultController.selectedExam == 1) {
+        if (StudentResultController.selectedExam == 1) {
             query = "SELECT * FROM resultinfo_HalfYearly WHERE ID = ?";
             controller.selectExam.setText("Half Yearly");
-        } else if(StudentResultController.selectedExam == 2) {
+        } else if (StudentResultController.selectedExam == 2) {
             query = "SELECT * FROM resultinfo_YearFinal WHERE ID = ?";
             controller.selectExam.setText("Year Final");
         }
@@ -593,8 +596,8 @@ public class StudentResultController extends Controller {
         float totalGPA = 0;
         float averageGPA = 0;
 
-        if(r.next()) {
-            if(!StudentResultController.editFlag) {
+        if (r.next()) {
+            if (!StudentResultController.editFlag) {
                 for (int i = 0; i < allSubjects.size(); i++) {
 
                     total += r.getInt(allSubjects.get(i));
@@ -654,7 +657,7 @@ public class StudentResultController extends Controller {
                     }
                 }
                 controller.totalMark.setText(String.valueOf(total));
-                averageGPA = totalGPA/allSubjects.size();
+                averageGPA = totalGPA / allSubjects.size();
                 DecimalFormat df = new DecimalFormat("#.##");
                 String formatted = df.format(averageGPA);
                 controller.avgGPA.setText(formatted);
@@ -716,7 +719,7 @@ public class StudentResultController extends Controller {
                 }
             }
         }
-        if(!r.next() && StudentResultController.editFlag) {
+        if (!r.next() && StudentResultController.editFlag) {
             for (int i = 0; i < allSubjects.size(); i++) {
 
                 if (i == 0) {
@@ -761,6 +764,7 @@ public class StudentResultController extends Controller {
             }
         }
     }
+
     @FXML
     void handleCrossButton(Event event) throws SQLException, IOException {
         StudentResultController.editFlag = false;

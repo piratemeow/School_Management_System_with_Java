@@ -67,7 +67,7 @@ public class NoticeController extends Controller implements Initializable {
 
         NoticeController controller = fxmlLoader.getController();
 
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             controller.add.setVisible(false);
             controller.edit.setVisible(false);
             controller.done.setVisible(false);

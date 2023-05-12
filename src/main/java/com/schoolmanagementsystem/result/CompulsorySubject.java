@@ -8,13 +8,11 @@ public class CompulsorySubject extends Student {
     private double Eng1;
     private double Eng2;
 
-    public CompulsorySubject ()
-    {
+    public CompulsorySubject() {
         super();
     }
 
-    public CompulsorySubject(int id, double Ban1, double Ban2, double Eng1, double Eng2)
-    {
+    public CompulsorySubject(int id, double Ban1, double Ban2, double Eng1, double Eng2) {
         this.Ban1 = Ban1;
         this.Ban2 = Ban2;
         this.Eng1 = Eng1;
@@ -22,25 +20,21 @@ public class CompulsorySubject extends Student {
 
     }
 
-
-    public void setBan1(double Ban1)
-    {
+    public void setBan1(double Ban1) {
         this.Ban1 = Ban1;
     }
 
-    private void setBan2(double Ban2)
-    {
+    private void setBan2(double Ban2) {
         this.Ban2 = Ban2;
     }
-    private  void setEng1(double Eng1)
-    {
+
+    private void setEng1(double Eng1) {
         this.Eng1 = Eng1;
     }
-    private void setEng2(double Eng2)
-    {
+
+    private void setEng2(double Eng2) {
         this.Eng2 = Eng2;
     }
-
 
     public double getBan1() {
         return Ban1;

@@ -13,7 +13,8 @@ public class People {
     private String mother;
     private String religion;
 
-    public People(int id, String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion) {
+    public People(int id, String name, String contact, String address, LocalDate date_of_birth, String gender,
+            String father, String mother, String religion) {
         this.id = id;
         this.name = name;
         this.contact = contact;
@@ -25,47 +26,39 @@ public class People {
         this.religion = religion;
     }
 
-    public People()
-    {
+    public People() {
 
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
-    public void setId(int id)
-    {
+
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setContact (String contact)
-    {
+    public void setContact(String contact) {
         this.contact = contact;
     }
 
-    public void setAddress (String address)
-    {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public void setDateofbirth(LocalDate date_of_birth)
-    {
+    public void setDateofbirth(LocalDate date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 
-    public void setGender(String gender)
-    {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public void setFather(String father)
-    {
+    public void setFather(String father) {
         this.father = father;
     }
 
-    public void setMother(String mother)
-    {
+    public void setMother(String mother) {
         this.mother = mother;
     }
 
@@ -73,49 +66,40 @@ public class People {
         this.religion = religion;
     }
 
-
-    public String getName ()
-    {
+    public String getName() {
         return this.name;
     }
 
-    public int getId()
-    {
+    public int getId() {
         return this.id;
     }
 
-    public String getContact()
-    {
+    public String getContact() {
         return this.contact;
     }
 
-    public String getAdderss()
-    {
+    public String getAdderss() {
         return this.address;
     }
 
-    public LocalDate getDateofbirth()
-    {
+    public LocalDate getDateofbirth() {
         return this.date_of_birth;
     }
 
-    public String getGender()
-    {
+    public String getGender() {
         return this.gender;
     }
 
-    public String getFather()
-    {
+    public String getFather() {
         return this.father;
     }
-    public String getMother()
-    {
+
+    public String getMother() {
         return this.mother;
     }
 
     public String getReligion() {
         return religion;
     }
-
 
 }

@@ -12,7 +12,7 @@ import javafx.scene.input.KeyEvent;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class ResultAlgorithmController extends Controller{
+public class ResultAlgorithmController extends Controller {
 
     @FXML
     private Button apply;
@@ -42,18 +42,19 @@ public class ResultAlgorithmController extends Controller{
 
     @FXML
     void handleApply(ActionEvent event) throws SQLException {
-        if(halfYearlyInput.getText().isEmpty() || yearFinalInput.getText().isEmpty()) {
+        if (halfYearlyInput.getText().isEmpty() || yearFinalInput.getText().isEmpty()) {
             invalid.setText("Empty input");
-        } else if(ResultAlgorithmController.priority == null) {
+        } else if (ResultAlgorithmController.priority == null) {
             invalid.setText("Select priority");
-        } else if(validateNum(halfYearlyInput.getText()) || validateNum(yearFinalInput.getText())) {
+        } else if (validateNum(halfYearlyInput.getText()) || validateNum(yearFinalInput.getText())) {
             invalid.setText("Weight must be integer");
-        } else if(Integer.parseInt(halfYearlyInput.getText()) + Integer.parseInt(yearFinalInput.getText()) != 100) {
+        } else if (Integer.parseInt(halfYearlyInput.getText()) + Integer.parseInt(yearFinalInput.getText()) != 100) {
             invalid.setText("Sum is not 100");
         } else {
             invalid.setText("Algorithm is set");
             ResultCRUD crud = new ResultCRUD();
-            crud.resultAlgoCrud(Integer.parseInt(halfYearlyInput.getText()), Integer.parseInt(yearFinalInput.getText()), ResultAlgorithmController.priority);
+            crud.resultAlgoCrud(Integer.parseInt(halfYearlyInput.getText()), Integer.parseInt(yearFinalInput.getText()),
+                    ResultAlgorithmController.priority);
         }
     }
 

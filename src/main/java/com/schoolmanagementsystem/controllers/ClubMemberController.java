@@ -140,75 +140,60 @@ public class ClubMemberController extends Controller implements Initializable {
 
         ArrayList<Integer> allMember = club.allMember();
         for (int i = ClubMemberController.currentIndex; i < ClubMemberController.currentIndex + 15; i++) {
-            if(i==allMember.size()) {
+            if (i == allMember.size()) {
                 break;
-            }
-            else if(i == ClubMemberController.currentIndex) {
+            } else if (i == ClubMemberController.currentIndex) {
                 controller.id_1.setText(String.valueOf(allMember.get(i)));
                 controller.name_1.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 1) {
+            } else if (i == ClubMemberController.currentIndex + 1) {
                 controller.id_2.setText(String.valueOf(allMember.get(i)));
                 controller.name_2.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 2) {
+            } else if (i == ClubMemberController.currentIndex + 2) {
                 controller.id_3.setText(String.valueOf(allMember.get(i)));
                 controller.name_3.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 3) {
+            } else if (i == ClubMemberController.currentIndex + 3) {
                 controller.id_4.setText(String.valueOf(allMember.get(i)));
                 controller.name_4.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 4) {
+            } else if (i == ClubMemberController.currentIndex + 4) {
                 controller.id_5.setText(String.valueOf(allMember.get(i)));
                 controller.name_5.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 5) {
+            } else if (i == ClubMemberController.currentIndex + 5) {
                 controller.id_6.setText(String.valueOf(allMember.get(i)));
                 controller.name_6.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 6) {
+            } else if (i == ClubMemberController.currentIndex + 6) {
                 controller.id_7.setText(String.valueOf(allMember.get(i)));
                 controller.name_7.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 7) {
+            } else if (i == ClubMemberController.currentIndex + 7) {
                 controller.id_8.setText(String.valueOf(allMember.get(i)));
                 controller.name_8.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 8) {
+            } else if (i == ClubMemberController.currentIndex + 8) {
                 controller.id_9.setText(String.valueOf(allMember.get(i)));
                 controller.name_9.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 9) {
+            } else if (i == ClubMemberController.currentIndex + 9) {
                 controller.id_10.setText(String.valueOf(allMember.get(i)));
                 controller.name_10.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 10) {
+            } else if (i == ClubMemberController.currentIndex + 10) {
                 controller.id_11.setText(String.valueOf(allMember.get(i)));
                 controller.name_11.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 11) {
+            } else if (i == ClubMemberController.currentIndex + 11) {
                 controller.id_12.setText(String.valueOf(allMember.get(i)));
                 controller.name_12.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 12) {
+            } else if (i == ClubMemberController.currentIndex + 12) {
                 controller.id_13.setText(String.valueOf(allMember.get(i)));
                 controller.name_13.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 13) {
+            } else if (i == ClubMemberController.currentIndex + 13) {
                 controller.id_14.setText(String.valueOf(allMember.get(i)));
                 controller.name_14.setText(clubController.fetchData(allMember.get(i)));
-            }
-            else if(i == ClubMemberController.currentIndex + 14) {
+            } else if (i == ClubMemberController.currentIndex + 14) {
                 controller.id_15.setText(String.valueOf(allMember.get(i)));
                 controller.name_15.setText(clubController.fetchData(allMember.get(i)));
             }
         }
 
-        if(ClubMemberController.currentIndex == 0) {
+        if (ClubMemberController.currentIndex == 0) {
             controller.previous.setVisible(false);
         }
-        if(ClubMemberController.currentIndex + 15 >= allMember.size()) {
+        if (ClubMemberController.currentIndex + 15 >= allMember.size()) {
             controller.next.setVisible(false);
         }
     }

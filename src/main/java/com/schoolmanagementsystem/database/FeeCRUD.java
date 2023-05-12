@@ -25,9 +25,9 @@ public class FeeCRUD {
         }
 
         PreparedStatement state = con.prepareStatement(query);
-        state.setInt(1,fee.getFee());
+        state.setInt(1, fee.getFee());
         state.setDate(2, Date.valueOf(fee.getPaymentDate()));
-        state.setInt(3,fee.getStudentID());
+        state.setInt(3, fee.getStudentID());
 
         state.executeUpdate();
     }

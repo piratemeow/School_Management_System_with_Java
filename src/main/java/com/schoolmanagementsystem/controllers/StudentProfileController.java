@@ -103,7 +103,7 @@ public class StudentProfileController extends Controller {
 
         StudentProfileController controller = fxmlLoader.getController();
 
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             controller.updateIcon.setVisible(false);
             controller.updateIcon.setManaged(false);
             controller.update.setVisible(false);
@@ -159,7 +159,7 @@ public class StudentProfileController extends Controller {
     }
 
     public void handleDelete(MouseEvent mouseEvent) throws IOException, SQLException {
-        if(handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
+        if (handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
             StudentCRUD crud = new StudentCRUD();
             crud.deleteStudent(Controller.requiredID);
             handleStudentProfile(mouseEvent, Controller.requiredID);

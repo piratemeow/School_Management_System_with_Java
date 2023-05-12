@@ -2,7 +2,7 @@ package com.schoolmanagementsystem.result;
 
 import com.schoolmanagementsystem.users.Student;
 
-public class Result implements Comparable<Result>{
+public class Result implements Comparable<Result> {
     private int roll;
     private int halfYearlyMark;
     private int yearFinalMark;
@@ -22,7 +22,8 @@ public class Result implements Comparable<Result>{
 
     private static String sortBy = null;
 
-    public Result(int roll, int halfYearlyMark, int yearFinalMark, float halfYearlyGpa, float yearFinalGpa, float wAvgMark, float wAvgGpa) {
+    public Result(int roll, int halfYearlyMark, int yearFinalMark, float halfYearlyGpa, float yearFinalGpa,
+            float wAvgMark, float wAvgGpa) {
         this.roll = roll;
         this.halfYearlyMark = halfYearlyMark;
         this.yearFinalMark = yearFinalMark;
@@ -32,7 +33,8 @@ public class Result implements Comparable<Result>{
         this.wAvgGpa = wAvgGpa;
     }
 
-    public Result(int roll, int halfYearlyMark, int yearFinalMark, float halfYearlyGpa, float yearFinalGpa, float wAvgMark, float wAvgGpa, int rank) {
+    public Result(int roll, int halfYearlyMark, int yearFinalMark, float halfYearlyGpa, float yearFinalGpa,
+            float wAvgMark, float wAvgGpa, int rank) {
         this.roll = roll;
         this.halfYearlyMark = halfYearlyMark;
         this.yearFinalMark = yearFinalMark;

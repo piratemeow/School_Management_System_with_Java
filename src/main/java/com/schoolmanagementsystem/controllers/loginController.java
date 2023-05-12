@@ -70,7 +70,7 @@ public class loginController extends Controller implements Initializable {
     @FXML
     void loginVerify(ActionEvent event) throws IOException {
 
-        if(validateNum(loginid.getText())) {
+        if (validateNum(loginid.getText())) {
             loggable.setText("ID must be integer");
             return;
         }

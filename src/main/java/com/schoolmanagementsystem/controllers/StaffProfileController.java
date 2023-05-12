@@ -79,7 +79,7 @@ public class StaffProfileController extends Controller {
 
         StaffProfileController controller = fxmlLoader.getController();
 
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             controller.updateIcon.setVisible(false);
             controller.updateIcon.setManaged(false);
             controller.update.setVisible(false);
@@ -126,16 +126,6 @@ public class StaffProfileController extends Controller {
         if (image != null) {
             controller.profilePic.setImage(image);
 
-            // Circle clip = new Circle();
-            // clip.setCenterX(controller.profilePic.getFitWidth() / 2);
-            // clip.setCenterY(controller.profilePic.getFitHeight() / 2 - 15);
-            // clip.setRadius(Math.min(controller.profilePic.getFitWidth(),
-            // controller.profilePic.getFitHeight()) / 2 - 15);
-            //
-            // controller.profilePic.setClip(clip);
-            //
-            // controller.profilePic.setStyle("-fx-border-radius: " + clip.getRadius() +
-            // "px;");
         }
     }
 
@@ -145,7 +135,7 @@ public class StaffProfileController extends Controller {
     }
 
     public void handleDelete(MouseEvent mouseEvent) throws IOException, SQLException {
-        if(handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
+        if (handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
             StaffCRUD crud = new StaffCRUD();
             crud.deleteStaff(Controller.requiredID);
 

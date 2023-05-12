@@ -10,45 +10,39 @@ public class Teacher extends Employee {
     int iclas = 0;
     int isec = 0;
 
-    Teacher()
-    {
+    Teacher() {
 
     }
 
-    public void setSubject(String subject)
-    {
+    public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public void setClas(int cl)
-    {
+    public void setClas(int cl) {
         this.clas[iclas] = cl;
         iclas++;
     }
 
-    public void setSection(String sec)
-    {
+    public void setSection(String sec) {
         this.section[isec] = sec;
         isec++;
     }
 
-    public Teacher(int id, String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion, String designation, String pass, String subject) {
+    public Teacher(int id, String name, String contact, String address, LocalDate date_of_birth, String gender,
+            String father, String mother, String religion, String designation, String pass, String subject) {
         super(id, name, contact, address, date_of_birth, gender, father, mother, religion, designation, pass);
         this.subject = subject;
     }
 
-    public String getSubject()
-    {
+    public String getSubject() {
         return this.subject;
     }
 
-    public int[] getClas()
-    {
+    public int[] getClas() {
         return this.clas;
     }
 
-    public String[] getSection ()
-    {
+    public String[] getSection() {
         return this.section;
     }
 

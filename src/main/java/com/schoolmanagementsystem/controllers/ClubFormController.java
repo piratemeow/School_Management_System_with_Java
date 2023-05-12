@@ -1,6 +1,5 @@
 package com.schoolmanagementsystem.controllers;
 
-
 import com.schoolmanagementsystem.co_curricular.Club;
 import com.schoolmanagementsystem.database.ClubCRUD;
 import com.schoolmanagementsystem.database.ConnectDatabase;
@@ -78,7 +77,7 @@ public class ClubFormController extends Controller implements Initializable {
     public void handleClubFormPage(Event event) throws IOException, SQLException {
         FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/clubForm.fxml", event);
 
-        if(ClubController.isAddClubFlag()) {
+        if (ClubController.isAddClubFlag()) {
             return;
         }
 
@@ -93,11 +92,11 @@ public class ClubFormController extends Controller implements Initializable {
         statement.setInt(1, ClubController.getSelectedClub() + 1);
         ResultSet r = statement.executeQuery();
 
-        if(r.next()) {
-            if(r.getString("fund") != null) {
+        if (r.next()) {
+            if (r.getString("fund") != null) {
                 controller.fund.setText(r.getString("fund"));
             }
-            if(r.getString("clubName") != null) {
+            if (r.getString("clubName") != null) {
                 controller.clubName.setText(r.getString("clubName"));
             }
         }
@@ -105,18 +104,29 @@ public class ClubFormController extends Controller implements Initializable {
         Club club = new Club();
         ArrayList<Pair<String, Integer>> executivePanel = club.ecPanel();
         for (int i = 0; i < executivePanel.size(); i++) {
-            if(executivePanel.get(i).getValue() != 0) {
-                if(i==0) controller.president.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==1) controller.vicePresident.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==2) controller.generalSecretary.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==3) controller.treasurer.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==4) controller.clubModerator.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==5) controller.assistantGS.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==6) controller.publicRelations.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==7) controller.secretary.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==8) controller.executive_1.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==9) controller.executive_2.setText(String.valueOf(executivePanel.get(i).getValue()));
-                if(i==10) controller.executive_3.setText(String.valueOf(executivePanel.get(i).getValue()));
+            if (executivePanel.get(i).getValue() != 0) {
+                if (i == 0)
+                    controller.president.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 1)
+                    controller.vicePresident.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 2)
+                    controller.generalSecretary.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 3)
+                    controller.treasurer.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 4)
+                    controller.clubModerator.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 5)
+                    controller.assistantGS.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 6)
+                    controller.publicRelations.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 7)
+                    controller.secretary.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 8)
+                    controller.executive_1.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 9)
+                    controller.executive_2.setText(String.valueOf(executivePanel.get(i).getValue()));
+                if (i == 10)
+                    controller.executive_3.setText(String.valueOf(executivePanel.get(i).getValue()));
             }
         }
     }
@@ -127,10 +137,10 @@ public class ClubFormController extends Controller implements Initializable {
 
         String q = "SELECT * FROM studentInfo WHERE studentID = ?";
         PreparedStatement s = con.prepareStatement(q);
-        s.setInt(1,id);
+        s.setInt(1, id);
         ResultSet resultSet = s.executeQuery();
 
-        if(resultSet.next()) {
+        if (resultSet.next()) {
             try {
                 resultSet.close();
                 s.close();
@@ -163,123 +173,122 @@ public class ClubFormController extends Controller implements Initializable {
 
         ClubFormController.confirmFlag = true;
 
-        if(clubName.getText().isEmpty()) {
+        if (clubName.getText().isEmpty()) {
             handleAlert("Club Name cannot be empty", "");
             ClubFormController.confirmFlag = false;
         } else {
-            if(!president.getText().isEmpty()) {
-                if(validateNum(president.getText())) {
+            if (!president.getText().isEmpty()) {
+                if (validateNum(president.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(president.getText()))) {
+                    if (fetchData(Integer.parseInt(president.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            if(!vicePresident.getText().isEmpty()) {
-                if(validateNum(vicePresident.getText())) {
+            if (!vicePresident.getText().isEmpty()) {
+                if (validateNum(vicePresident.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(vicePresident.getText()))) {
+                    if (fetchData(Integer.parseInt(vicePresident.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            if(!generalSecretary.getText().isEmpty()) {
-                if(validateNum(generalSecretary.getText())) {
+            if (!generalSecretary.getText().isEmpty()) {
+                if (validateNum(generalSecretary.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(generalSecretary.getText()))) {
+                    if (fetchData(Integer.parseInt(generalSecretary.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            if(!treasurer.getText().isEmpty()) {
-                if(validateNum(treasurer.getText())) {
+            if (!treasurer.getText().isEmpty()) {
+                if (validateNum(treasurer.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(treasurer.getText()))) {
+                    if (fetchData(Integer.parseInt(treasurer.getText()))) {
+                        handleAlert("This id doesn't exist", "");
+                        ClubFormController.confirmFlag = false;
+                    }
+                }
+            } else if (!assistantGS.getText().isEmpty()) {
+                if (validateNum(assistantGS.getText())) {
+                    handleAlert("ID must be a number", "");
+                    ClubFormController.confirmFlag = false;
+                } else {
+                    if (fetchData(Integer.parseInt(assistantGS.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            else if(!assistantGS.getText().isEmpty()) {
-                if(validateNum(assistantGS.getText())) {
+            if (!publicRelations.getText().isEmpty()) {
+                if (validateNum(publicRelations.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(assistantGS.getText()))) {
+                    if (fetchData(Integer.parseInt(publicRelations.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            if(!publicRelations.getText().isEmpty()) {
-                if(validateNum(publicRelations.getText())) {
+            if (!secretary.getText().isEmpty()) {
+                if (validateNum(secretary.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(publicRelations.getText()))) {
+                    if (fetchData(Integer.parseInt(secretary.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            if(!secretary.getText().isEmpty()) {
-                if(validateNum(secretary.getText())) {
+            if (!executive_1.getText().isEmpty()) {
+                if (validateNum(executive_1.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(secretary.getText()))) {
+                    if (fetchData(Integer.parseInt(executive_1.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            if(!executive_1.getText().isEmpty()) {
-                if(validateNum(executive_1.getText())) {
+            if (!executive_2.getText().isEmpty()) {
+                if (validateNum(executive_2.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(executive_1.getText()))) {
+                    if (fetchData(Integer.parseInt(executive_2.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            if(!executive_2.getText().isEmpty()) {
-                if(validateNum(executive_2.getText())) {
+            if (!executive_3.getText().isEmpty()) {
+                if (validateNum(executive_3.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
-                    if(fetchData(Integer.parseInt(executive_2.getText()))) {
+                    if (fetchData(Integer.parseInt(executive_3.getText()))) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     }
                 }
             }
-            if(!executive_3.getText().isEmpty()) {
-                if(validateNum(executive_3.getText())) {
-                    handleAlert("ID must be a number", "");
-                    ClubFormController.confirmFlag = false;
-                } else {
-                    if(fetchData(Integer.parseInt(executive_3.getText()))) {
-                        handleAlert("This id doesn't exist", "");
-                        ClubFormController.confirmFlag = false;
-                    }
-                }
-            }
-            if(!clubModerator.getText().isEmpty()){
+            if (!clubModerator.getText().isEmpty()) {
 
-                if(validateNum(clubModerator.getText())) {
+                if (validateNum(clubModerator.getText())) {
                     handleAlert("ID must be a number", "");
                     ClubFormController.confirmFlag = false;
                 } else {
@@ -288,19 +297,19 @@ public class ClubFormController extends Controller implements Initializable {
                     statement.setInt(1, Integer.parseInt(clubModerator.getText()));
                     r = statement.executeQuery();
 
-                    if(!r.next()) {
+                    if (!r.next()) {
                         handleAlert("This id doesn't exist", "");
                         ClubFormController.confirmFlag = false;
                     } else {
-                        if(!Objects.equals(r.getString("userType"), "Teacher")) {
+                        if (!Objects.equals(r.getString("userType"), "Teacher")) {
                             handleAlert("Invalid Teacher ID", "");
                             ClubFormController.confirmFlag = false;
                         }
                     }
                 }
             }
-            if(!fund.getText().isEmpty()) {
-                if(validateNum(fund.getText())) {
+            if (!fund.getText().isEmpty()) {
+                if (validateNum(fund.getText())) {
                     handleAlert("fund must be a number", "");
                     ClubFormController.confirmFlag = false;
                 }
@@ -321,33 +330,35 @@ public class ClubFormController extends Controller implements Initializable {
         String executive_3_ID = (executive_3.getText().isEmpty() ? null : executive_3.getText());
         String fundAmount = (fund.getText().isEmpty() ? null : fund.getText());
 
-        Club club = new Club(nameOfClub,presidentID,vicePresidentID,generalSecretaryID,treasurerID,clubModeratorID,assistantGSID,publicRelationsID,secretaryID,executive_1_ID,executive_2_ID,executive_3_ID,fundAmount);
+        Club club = new Club(nameOfClub, presidentID, vicePresidentID, generalSecretaryID, treasurerID, clubModeratorID,
+                assistantGSID, publicRelationsID, secretaryID, executive_1_ID, executive_2_ID, executive_3_ID,
+                fundAmount);
 
-        if(ClubFormController.confirmFlag) {
-            if(ClubController.isAddClubFlag()) {
+        if (ClubFormController.confirmFlag) {
+            if (ClubController.isAddClubFlag()) {
                 String query2 = "SELECT * FROM club WHERE clubName = ?";
                 PreparedStatement statement2 = con.prepareStatement(query2);
                 statement2.setString(1, nameOfClub);
                 ResultSet r1 = statement2.executeQuery();
 
-                if(r1.next()) {
+                if (r1.next()) {
                     ClubFormController.confirmFlag = false;
                     handleAlert("This club already exists", "");
                 }
             }
         }
 
-        if(ClubFormController.confirmFlag) {
+        if (ClubFormController.confirmFlag) {
             ClubCRUD crud = new ClubCRUD();
             crud.addOrUpdateClub(club);
             String message;
-            if(ClubController.isAddClubFlag()) {
+            if (ClubController.isAddClubFlag()) {
                 message = "Club is added successfully";
             } else {
                 message = "Club is updated successfully";
             }
             ClubController clubController = new ClubController();
-            if(handleAlert(message,"")) {
+            if (handleAlert(message, "")) {
                 clubController.handleClubPage(event);
             } else {
                 clubController.handleClubPage(event);

@@ -11,11 +11,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Club implements CoCurricular{
+public class Club implements CoCurricular {
 
     private String nameOfClub;
-    private  String presidentID;
-    private  String vicePresidentID;
+    private String presidentID;
+    private String vicePresidentID;
     private String generalSecretaryID;
     private String treasurerID;
     private String clubModeratorID;
@@ -80,8 +80,10 @@ public class Club implements CoCurricular{
         return fundAmount;
     }
 
-
-    public Club(String nameOfClub, String presidentID, String vicePresidentID, String generalSecretaryID, String treasurerID, String clubModeratorID, String assistantGSID, String publicRelationsID, String secretaryID, String executive_1_ID, String executive_2_ID, String executive_3_ID, String fundAmount) {
+    public Club(String nameOfClub, String presidentID, String vicePresidentID, String generalSecretaryID,
+            String treasurerID, String clubModeratorID, String assistantGSID, String publicRelationsID,
+            String secretaryID, String executive_1_ID, String executive_2_ID, String executive_3_ID,
+            String fundAmount) {
         this.nameOfClub = nameOfClub;
         this.presidentID = presidentID;
         this.vicePresidentID = vicePresidentID;
@@ -135,7 +137,7 @@ public class Club implements CoCurricular{
 
         ArrayList<Pair<String, Integer>> executivePanel = new ArrayList<>();
 
-        if(r.next()) {
+        if (r.next()) {
             executivePanel.add(new Pair<>("president", r.getInt("president")));
             executivePanel.add(new Pair<>("vicePresident", r.getInt("vicePresident")));
             executivePanel.add(new Pair<>("generalSecretary", r.getInt("generalSecretary")));
@@ -162,7 +164,7 @@ public class Club implements CoCurricular{
         statement.setInt(1, ClubController.getSelectedClub() + 1);
         ResultSet resultSet = statement.executeQuery();
         String clubName = "";
-        if(resultSet.next()) {
+        if (resultSet.next()) {
             clubName = resultSet.getString("clubName");
         }
 

@@ -8,12 +8,12 @@ public class Employee extends People {
     private LocalDate joining_date;
     private String pass;
 
-
     Employee() {
         super();
     }
 
-    public Employee(int id, String name, String contact, String address, LocalDate date_of_birth, String gender, String father, String mother, String religion, String designation, String pass) {
+    public Employee(int id, String name, String contact, String address, LocalDate date_of_birth, String gender,
+            String father, String mother, String religion, String designation, String pass) {
         super(id, name, contact, address, date_of_birth, gender, father, mother, religion);
         this.designation = designation;
         this.pass = pass;
@@ -26,7 +26,6 @@ public class Employee extends People {
     public void setDesignation(String designation) {
         this.designation = designation;
     }
-
 
     public void setSalary(int salary) {
         this.salary = salary;

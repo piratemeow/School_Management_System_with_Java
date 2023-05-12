@@ -48,7 +48,7 @@ public class ChooseProfileController extends Controller implements Initializable
 
     public void handleOk(ActionEvent actionEvent) throws IOException, SQLException {
         String id = input.getText();
-        if(validateNum(id)) {
+        if (validateNum(id)) {
             invalid.setVisible(true);
             return;
         }

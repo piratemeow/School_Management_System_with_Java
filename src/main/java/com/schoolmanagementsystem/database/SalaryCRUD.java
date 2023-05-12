@@ -25,12 +25,12 @@ public class SalaryCRUD {
         }
 
         PreparedStatement state = con.prepareStatement(query);
-        state.setInt(1,salary.getBaseSalary());
-        state.setInt(2,salary.getRentPercentage());
-        state.setInt(3,salary.getMedicalAllowance());
-        state.setInt(4,salary.getNoOfChildren());
+        state.setInt(1, salary.getBaseSalary());
+        state.setInt(2, salary.getRentPercentage());
+        state.setInt(3, salary.getMedicalAllowance());
+        state.setInt(4, salary.getNoOfChildren());
         state.setDate(5, Date.valueOf(salary.getDate()));
-        state.setInt(6,id);
+        state.setInt(6, id);
 
         state.executeUpdate();
     }

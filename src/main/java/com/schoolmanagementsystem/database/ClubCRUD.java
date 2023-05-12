@@ -13,7 +13,7 @@ public class ClubCRUD {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
 
-        if(ID == null) {
+        if (ID == null) {
             return;
         }
 
@@ -23,6 +23,7 @@ public class ClubCRUD {
         statement.setString(2, clubName);
         statement.executeUpdate();
     }
+
     public void addOrUpdateClub(Club club) throws SQLException {
         ConnectDatabase db = new ConnectDatabase();
         Connection con = db.getCon();
@@ -30,10 +31,10 @@ public class ClubCRUD {
         String query;
         PreparedStatement statement;
 
-        if(ClubController.isAddClubFlag()) {
+        if (ClubController.isAddClubFlag()) {
             query = "INSERT INTO club (clubName) VALUES (?)";
             statement = con.prepareStatement(query);
-            statement.setString(1,club.getNameOfClub());
+            statement.setString(1, club.getNameOfClub());
             statement.executeUpdate();
 
             query = "ALTER TABLE clubMembers ADD COLUMN " + club.getNameOfClub() + " BOOLEAN NOT NULL DEFAULT FALSE";
@@ -41,23 +42,34 @@ public class ClubCRUD {
             statement.executeUpdate();
         }
 
-        addOrUpdateHelp(club.getPresidentID(),"UPDATE club SET president = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getVicePresidentID(),"UPDATE club SET vicePresident = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getTreasurerID(),"UPDATE club SET treasurer = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getGeneralSecretaryID(),"UPDATE club SET generalSecretary = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getClubModeratorID(),"UPDATE club SET clubModerator = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getAssistantGSID(),"UPDATE club SET assistantGS = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getPublicRelationsID(),"UPDATE club SET publicRelations = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getSecretaryID(),"UPDATE club SET secretary = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getExecutive_1_ID(),"UPDATE club SET executive_1 = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getExecutive_2_ID(),"UPDATE club SET executive_2 = ? WHERE clubName = ?", club.getNameOfClub());
-        addOrUpdateHelp(club.getExecutive_3_ID(),"UPDATE club SET executive_3 = ? WHERE clubName = ?", club.getNameOfClub());
+        addOrUpdateHelp(club.getPresidentID(), "UPDATE club SET president = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getVicePresidentID(), "UPDATE club SET vicePresident = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getTreasurerID(), "UPDATE club SET treasurer = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getGeneralSecretaryID(), "UPDATE club SET generalSecretary = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getClubModeratorID(), "UPDATE club SET clubModerator = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getAssistantGSID(), "UPDATE club SET assistantGS = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getPublicRelationsID(), "UPDATE club SET publicRelations = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getSecretaryID(), "UPDATE club SET secretary = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getExecutive_1_ID(), "UPDATE club SET executive_1 = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getExecutive_2_ID(), "UPDATE club SET executive_2 = ? WHERE clubName = ?",
+                club.getNameOfClub());
+        addOrUpdateHelp(club.getExecutive_3_ID(), "UPDATE club SET executive_3 = ? WHERE clubName = ?",
+                club.getNameOfClub());
 
-        if(club.getFundAmount() != null) {
+        if (club.getFundAmount() != null) {
             query = "UPDATE club SET fund = ? WHERE clubName = ?";
             statement = con.prepareStatement(query);
-            statement.setString(2,club.getNameOfClub());
-            statement.setString(1,club.getFundAmount());
+            statement.setString(2, club.getNameOfClub());
+            statement.setString(1, club.getFundAmount());
             statement.executeUpdate();
         }
 
@@ -100,15 +112,15 @@ public class ClubCRUD {
         st.setInt(1, ClubController.getSelectedClub() + 1);
         ResultSet r = st.executeQuery();
         int currentFund = 0;
-        if(r.next()) {
-            if(r.getString("fund") != null) {
+        if (r.next()) {
+            if (r.getString("fund") != null) {
                 currentFund = Integer.parseInt(r.getString("fund"));
             }
         }
         currentFund += Integer.parseInt(fund);
         String query = "UPDATE club SET fund = ? WHERE clubID = ?";
         PreparedStatement statement = con.prepareStatement(query);
-        statement.setString(1,String.valueOf(currentFund));
+        statement.setString(1, String.valueOf(currentFund));
         statement.setInt(2, ClubController.getSelectedClub() + 1);
         statement.executeUpdate();
     }
@@ -122,19 +134,19 @@ public class ClubCRUD {
         st.setInt(1, ClubController.getSelectedClub() + 1);
         ResultSet r = st.executeQuery();
         int currentFund = 0;
-        if(r.next()) {
-            if(r.getString("fund") != null) {
+        if (r.next()) {
+            if (r.getString("fund") != null) {
                 currentFund = Integer.parseInt(r.getString("fund"));
             }
         }
         int deductedFund = Integer.parseInt(fund);
-        if(deductedFund > currentFund) {
+        if (deductedFund > currentFund) {
             return false;
         }
         currentFund -= Integer.parseInt(fund);
         String query = "UPDATE club SET fund = ? WHERE clubID = ?";
         PreparedStatement statement = con.prepareStatement(query);
-        statement.setString(1,String.valueOf(currentFund));
+        statement.setString(1, String.valueOf(currentFund));
         statement.setInt(2, ClubController.getSelectedClub() + 1);
         statement.executeUpdate();
         return true;
@@ -149,7 +161,7 @@ public class ClubCRUD {
         st.setInt(1, id);
         ResultSet r = st.executeQuery();
 
-        if(!r.next()) {
+        if (!r.next()) {
             return "This id doesn't exist";
         }
 
@@ -166,7 +178,7 @@ public class ClubCRUD {
         statement.setInt(1, ClubController.getSelectedClub() + 1);
         ResultSet resultSet = statement.executeQuery();
         String clubName = "";
-        if(resultSet.next()) {
+        if (resultSet.next()) {
             clubName = resultSet.getString("clubName");
         }
 
@@ -175,8 +187,8 @@ public class ClubCRUD {
         st.setInt(1, id);
         r = st.executeQuery();
 
-        if(r.next()) {
-            if(r.getBoolean(clubName)) {
+        if (r.next()) {
+            if (r.getBoolean(clubName)) {
                 return "This is already a member";
             } else {
                 String q = "UPDATE clubMembers SET " + clubName + " = ? WHERE studentID = ?";
@@ -205,7 +217,7 @@ public class ClubCRUD {
         st.setInt(1, id);
         ResultSet r = st.executeQuery();
 
-        if(!r.next()) {
+        if (!r.next()) {
             return "This id doesn't exist";
         }
 
@@ -222,7 +234,7 @@ public class ClubCRUD {
         statement.setInt(1, ClubController.getSelectedClub() + 1);
         ResultSet resultSet = statement.executeQuery();
         String clubName = "";
-        if(resultSet.next()) {
+        if (resultSet.next()) {
             clubName = resultSet.getString("clubName");
         }
 
@@ -231,8 +243,8 @@ public class ClubCRUD {
         st.setInt(1, id);
         r = st.executeQuery();
 
-        if(r.next()) {
-            if(!r.getBoolean(clubName)) {
+        if (r.next()) {
+            if (!r.getBoolean(clubName)) {
                 return "This is not a member";
             } else {
                 String q = "UPDATE clubMembers SET " + clubName + " = ? WHERE studentID = ?";

@@ -219,7 +219,7 @@ public class AllMembersController extends Controller implements Initializable {
 
     public void handleAllMemberPage(Event event) throws IOException, SQLException {
         String buttonType;
-        if(AllMembersController.allUserFlag) {
+        if (AllMembersController.allUserFlag) {
             buttonType = "button";
         } else {
             buttonType = "menuButton";
@@ -227,7 +227,7 @@ public class AllMembersController extends Controller implements Initializable {
         FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/allMembers.fxml", event);
         AllMembersController controller = fxmlLoader.getController();
 
-        if(AllMembersController.currentList == null) {
+        if (AllMembersController.currentList == null) {
             controller.scrollPane.setVisible(false);
             controller.hbox.setVisible(false);
             controller.previous.setVisible(false);
@@ -235,15 +235,15 @@ public class AllMembersController extends Controller implements Initializable {
             return;
         }
 
-        if(AllMembersController.currentList.equals("student")) {
+        if (AllMembersController.currentList.equals("student")) {
             controller.select.setText("STUDENT");
         }
 
-        if(AllMembersController.currentList.equals("Staff")) {
+        if (AllMembersController.currentList.equals("Staff")) {
             controller.select.setText("STAFF");
         }
 
-        if(AllMembersController.currentList.equals("Teacher")) {
+        if (AllMembersController.currentList.equals("Teacher")) {
             controller.select.setText("TEACHER");
         }
 
@@ -255,14 +255,14 @@ public class AllMembersController extends Controller implements Initializable {
         PreparedStatement statement, preparedStatement;
         ResultSet r, resultSet;
 
-        if(Objects.equals(AllMembersController.currentList, "student")) {
+        if (Objects.equals(AllMembersController.currentList, "student")) {
             query = "SELECT studentID, name FROM studentInfo";
             statement = con.prepareStatement(query);
             r = statement.executeQuery();
-            while(r.next()) {
+            while (r.next()) {
                 int id = r.getInt("studentID");
                 String name = r.getString("name");
-                Pair<Integer, String> p = new Pair<>(id,name);
+                Pair<Integer, String> p = new Pair<>(id, name);
                 allMember.add(p);
             }
         } else {
@@ -277,10 +277,10 @@ public class AllMembersController extends Controller implements Initializable {
                 preparedStatement.setInt(1, id);
                 resultSet = preparedStatement.executeQuery();
                 String name = "";
-                if(resultSet.next()) {
+                if (resultSet.next()) {
                     name = resultSet.getString("name");
                 }
-                Pair<Integer, String> p = new Pair<>(id,name);
+                Pair<Integer, String> p = new Pair<>(id, name);
                 allMember.add(p);
             }
         }

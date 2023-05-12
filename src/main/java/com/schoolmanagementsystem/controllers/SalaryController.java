@@ -92,7 +92,7 @@ public class SalaryController extends Controller implements Initializable {
 
         SalaryController controller = fxmlLoader.getController();
 
-        if(!SalaryController.updateFlag) {
+        if (!SalaryController.updateFlag) {
             controller.medicalInput.setVisible(false);
             controller.medicalInput.setManaged(false);
             controller.childInput.setVisible(false);
@@ -118,7 +118,7 @@ public class SalaryController extends Controller implements Initializable {
             controller.invalid.setManaged(false);
         }
 
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             controller.update.setVisible(false);
         }
 
@@ -129,7 +129,7 @@ public class SalaryController extends Controller implements Initializable {
         PreparedStatement statement = con.prepareStatement(query);
 
         int id;
-        if(Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             id = Controller.requiredID;
         } else {
             id = loginController.getLoggedInID();
@@ -141,32 +141,32 @@ public class SalaryController extends Controller implements Initializable {
 
         if (r.next()) {
 
-            if(String.valueOf(r.getInt("baseSalary")) != null) {
+            if (String.valueOf(r.getInt("baseSalary")) != null) {
                 base = r.getInt("baseSalary");
             }
-            if(String.valueOf(r.getInt("houseRent")) != null) {
+            if (String.valueOf(r.getInt("houseRent")) != null) {
                 percentageOfRent = r.getInt("houseRent");
             }
-            if(String.valueOf(r.getInt("noOfChild")) != null) {
+            if (String.valueOf(r.getInt("noOfChild")) != null) {
                 childNo = r.getInt("noOfChild");
             }
-            if(String.valueOf(r.getInt("medical")) != null) {
+            if (String.valueOf(r.getInt("medical")) != null) {
                 medicalFee = r.getInt("medical");
             }
 
             boolean dateFlag = false;
 
-            if(r.getDate("receivedDate") != null) {
+            if (r.getDate("receivedDate") != null) {
                 dateFlag = true;
             }
 
             int rentValue = (int) (base * percentageOfRent) / 100;
 
-            if(!SalaryController.updateFlag) {
+            if (!SalaryController.updateFlag) {
                 controller.update.setText("Update");
-//                if(SalaryController.applyFlag) {
-//                    controller.update.setText("Apply");
-//                }
+                // if(SalaryController.applyFlag) {
+                // controller.update.setText("Apply");
+                // }
                 controller.rentPercentage.setText(r.getInt("houseRent") + "% of Base Salary");
                 controller.noOfChild.setText("for " + r.getInt("noOfChild") + " children");
                 controller.baseSalary.setText(String.valueOf(r.getInt("baseSalary")));
@@ -183,8 +183,10 @@ public class SalaryController extends Controller implements Initializable {
                 }
 
                 int childEducation = 0;
-                if(childNo == 1) childEducation = 500;
-                else if(childNo == 2) childEducation = 1000;
+                if (childNo == 1)
+                    childEducation = 500;
+                else if (childNo == 2)
+                    childEducation = 1000;
 
                 int totalSalary = base + rentValue + medicalFee + childEducation;
 
@@ -199,15 +201,15 @@ public class SalaryController extends Controller implements Initializable {
                 controller.rentInput.setText(String.valueOf(percentageOfRent));
                 controller.medicalInput.setText(String.valueOf(medicalFee));
 
-                if(childNo == 0) {
+                if (childNo == 0) {
                     controller.childInput.setValue("0 child");
-                } else if(childNo == 1) {
+                } else if (childNo == 1) {
                     controller.childInput.setValue("1 child");
                 } else {
                     controller.childInput.setValue("More than 1");
                 }
 
-                if(dateFlag) {
+                if (dateFlag) {
                     controller.dateInput.setValue(LocalDate.parse(String.valueOf(r.getDate("receivedDate"))));
                 }
 
@@ -222,15 +224,17 @@ public class SalaryController extends Controller implements Initializable {
 
     @FXML
     void handleUpdate(ActionEvent event) throws SQLException, IOException {
-        if(!SalaryController.updateFlag) {
+        if (!SalaryController.updateFlag) {
             SalaryController.updateFlag = true;
             SalaryController.applyFlag = false;
             handleSalaryPage(event);
         } else {
-            if(baseSalaryInput.getText().isEmpty() || rentInput.getText().isEmpty() || medicalInput.getText().isEmpty() || childInput.getValue() == null || dateInput.getValue() == null) {
+            if (baseSalaryInput.getText().isEmpty() || rentInput.getText().isEmpty() || medicalInput.getText().isEmpty()
+                    || childInput.getValue() == null || dateInput.getValue() == null) {
                 invalid.setVisible(true);
                 invalid.setManaged(true);
-            } else if(validateNum(baseSalaryInput.getText()) || validateNum(rentInput.getText()) || validateNum(medicalInput.getText()) || validateDate(dateInput)){
+            } else if (validateNum(baseSalaryInput.getText()) || validateNum(rentInput.getText())
+                    || validateNum(medicalInput.getText()) || validateDate(dateInput)) {
                 invalid.setVisible(true);
                 invalid.setManaged(true);
             } else {
@@ -238,24 +242,26 @@ public class SalaryController extends Controller implements Initializable {
                 SalaryController.applyFlag = true;
 
                 int child = 0;
-                if(Objects.equals(childInput.getValue(), "0 child")) {
+                if (Objects.equals(childInput.getValue(), "0 child")) {
                     child = 0;
-                } else if(Objects.equals(childInput.getValue(), "1 child")) {
+                } else if (Objects.equals(childInput.getValue(), "1 child")) {
                     child = 1;
                 } else {
                     child = 2;
                 }
 
-                Salary salary = new Salary(Integer.parseInt(baseSalaryInput.getText()),Integer.parseInt(rentInput.getText()),Integer.parseInt(medicalInput.getText()),child,dateInput.getValue());
+                Salary salary = new Salary(Integer.parseInt(baseSalaryInput.getText()),
+                        Integer.parseInt(rentInput.getText()), Integer.parseInt(medicalInput.getText()), child,
+                        dateInput.getValue());
                 int id;
-                if(Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+                if (Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
                     id = Controller.requiredID;
                 } else {
                     id = loginController.getLoggedInID();
                 }
 
                 SalaryCRUD crud = new SalaryCRUD();
-                crud.addOrUpdateSalary(salary,id);
+                crud.addOrUpdateSalary(salary, id);
 
                 handleSalaryPage(event);
             }
@@ -268,14 +274,14 @@ public class SalaryController extends Controller implements Initializable {
         SalaryController.updateFlag = false;
         SalaryController.applyFlag = false;
 
-        if(Objects.equals(loginController.getLoggedInPerson(), "Teacher")) {
+        if (Objects.equals(loginController.getLoggedInPerson(), "Teacher")) {
             TeacherProfileController controller = new TeacherProfileController();
             controller.handleTeacherProfile(event, loginController.getLoggedInID());
-        } else if(Objects.equals(loginController.getLoggedInPerson(), "Staff")) {
+        } else if (Objects.equals(loginController.getLoggedInPerson(), "Staff")) {
             StaffProfileController controller = new StaffProfileController();
             controller.handleStaffProfile(event, loginController.getLoggedInID());
         } else {
-            if(Objects.equals(Controller.requiredType, "Teacher")) {
+            if (Objects.equals(Controller.requiredType, "Teacher")) {
                 TeacherProfileController controller = new TeacherProfileController();
                 controller.handleTeacherProfile(event, Controller.requiredID);
             } else {

@@ -20,18 +20,25 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schoolmanagementsystem.controllers.StaffRegistrationController">
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000"
+    xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="com.schoolmanagementsystem.controllers.StaffRegistrationController">
     <children>
         <!--        <fx:include source="home.fxml" />-->
 
-        <BorderPane fx:id="borderpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
+        <BorderPane fx:id="borderpane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0"
+            prefWidth="1000.0" xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1">
             <stylesheets>
                 <URL value="@../css_Files/home.css" />
             </stylesheets>
             <left>
-                <VBox fx:id="vbox" prefHeight="620.0" prefWidth="234.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+                <VBox fx:id="vbox" prefHeight="620.0" prefWidth="234.0"
+                    BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/19"
+                    xmlns:fx="http://javafx.com/fxml/1">
                     <children>
-                        <ImageView fitHeight="92.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="92.0" fitWidth="108.0" pickOnBounds="true"
+                            preserveRatio="true">
                             <image>
                                 <Image url="@../image/icon.png" />
                             </image>
@@ -39,7 +46,10 @@
                                 <Insets bottom="7.0" left="66.0" top="10.0" />
                             </VBox.margin>
                         </ImageView>
-                        <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHome" prefHeight="43.0" prefWidth="112.0" text="Home" textFill="WHITE">
+                        <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#handleHome" prefHeight="43.0" prefWidth="112.0" text="Home"
+                            textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -47,7 +57,10 @@
                                 <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="allUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAll" prefHeight="43.0" prefWidth="112.0" text="All User" textFill="WHITE">
+                        <Button fx:id="allUsers" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#handleAll" prefHeight="43.0" prefWidth="112.0"
+                            text="All User" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -55,7 +68,10 @@
                                 <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
+                        <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0"
+                            text="Profile" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -63,10 +79,13 @@
                                 <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
                             </VBox.margin>
                         </Button>
-                        <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
+                        <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0"
+                            prefWidth="112.0" text="Register" textFill="WHITE">
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#studReg" text="Student" />
-                                <MenuItem mnemonicParsing="false" onAction="#teacherReg" text="Teacher" />
+                                <MenuItem mnemonicParsing="false" onAction="#teacherReg"
+                                    text="Teacher" />
                                 <MenuItem mnemonicParsing="false" onAction="#staffReg" text="Staff" />
                             </items>
                             <cursor>
@@ -76,7 +95,10 @@
                                 <Insets bottom="6.0" left="55.0" top="6.0" />
                             </VBox.margin>
                         </MenuButton>
-                        <Button fx:id="login" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0" prefWidth="112.0" text="Log in" textFill="WHITE">
+                        <Button fx:id="login" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                            mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0"
+                            prefWidth="112.0" text="Log in" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -84,7 +106,10 @@
                                 <Insets bottom="6.0" left="55.0" top="6.0" />
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleResult" prefHeight="42.0" prefWidth="112.0" text="Result" textFill="WHITE">
+                        <Button fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                            mnemonicParsing="false" onAction="#handleResult" prefHeight="42.0"
+                            prefWidth="112.0" text="Result" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -92,7 +117,10 @@
                                 <Insets bottom="6.0" left="55.0" top="6.0" />
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
+                        <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                            mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0"
+                            prefWidth="112.0" text="Routine" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -100,7 +128,10 @@
                                 <Insets bottom="6.0" left="55.0" top="6.0" />
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleNotice" prefHeight="44.0" prefWidth="109.0" text="Notice" textFill="WHITE">
+                        <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                            mnemonicParsing="false" onAction="#handleNotice" prefHeight="44.0"
+                            prefWidth="109.0" text="Notice" textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -108,7 +139,10 @@
                                 <Insets bottom="6.0" left="55.0" top="6.0" />
                             </VBox.margin>
                         </Button>
-                        <Button fx:id="club" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClub" prefHeight="44.0" prefWidth="109.0" text="Club" textFill="WHITE">
+                        <Button fx:id="club" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#handleClub" prefHeight="44.0" prefWidth="109.0" text="Club"
+                            textFill="WHITE">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -120,7 +154,9 @@
                 </VBox>
             </left>
             <center>
-                <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="25.0" pickOnBounds="true" preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;" BorderPane.alignment="CENTER">
+                <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="25.0" pickOnBounds="true"
+                    preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;"
+                    BorderPane.alignment="CENTER">
                     <image>
                         <Image url="@../image/anotherBg.jpg" />
                     </image>
@@ -136,9 +172,12 @@
 
 
         <StackPane fx:id="employ" prefHeight="620.0" prefWidth="630">
-            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                minWidth="-Infinity" prefHeight="620.0" prefWidth="630.0"
+                xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
                 <children>
-                    <ImageView fitHeight="630.0" fitWidth="727.0" pickOnBounds="true" preserveRatio="true" scaleX="0.865" scaleY="1.13">
+                    <ImageView fitHeight="630.0" fitWidth="727.0" pickOnBounds="true"
+                        preserveRatio="true" scaleX="0.865" scaleY="1.13">
                         <image>
                             <Image url="@../image/staffBG.jpg" />
                         </image>
@@ -146,7 +185,8 @@
                             <Insets />
                         </StackPane.margin>
                     </ImageView>
-                    <ImageView fx:id="Img" fitHeight="135.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fx:id="Img" fitHeight="135.0" fitWidth="170.0" pickOnBounds="true"
+                        preserveRatio="true">
                         <StackPane.margin>
                             <Insets top="-410.0" />
                         </StackPane.margin>
@@ -231,7 +271,8 @@
                             <Insets left="-330.0" top="490.0" />
                         </StackPane.margin>
                     </Label>
-                    <TextField fx:id="ename" maxHeight="25.0" maxWidth="315.0" promptText="Enter your name">
+                    <TextField fx:id="ename" maxHeight="25.0" maxWidth="315.0"
+                        promptText="Enter your name">
                         <StackPane.margin>
                             <Insets left="230.0" right="85.0" top="-155.0" />
                         </StackPane.margin>
@@ -239,7 +280,8 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </TextField>
-                    <TextField fx:id="fname" maxHeight="25.0" maxWidth="310.4" promptText="Enter your father's name">
+                    <TextField fx:id="fname" maxHeight="25.0" maxWidth="310.4"
+                        promptText="Enter your father's name">
                         <StackPane.margin>
                             <Insets left="235.0" right="85.0" top="165.0" />
                         </StackPane.margin>
@@ -247,7 +289,8 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </TextField>
-                    <TextField fx:id="mname" maxHeight="25.0" maxWidth="305.6" promptText="Enter your mother's name">
+                    <TextField fx:id="mname" maxHeight="25.0" maxWidth="305.6"
+                        promptText="Enter your mother's name">
                         <StackPane.margin>
                             <Insets left="240.0" right="85.0" top="230.0" />
                         </StackPane.margin>
@@ -255,7 +298,8 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </TextField>
-                    <TextField fx:id="address" maxHeight="25.0" maxWidth="370.4" promptText="Enter your address">
+                    <TextField fx:id="address" maxHeight="25.0" maxWidth="370.4"
+                        promptText="Enter your address">
                         <StackPane.margin>
                             <Insets left="175.0" right="85.0" top="425.0" />
                         </StackPane.margin>
@@ -263,7 +307,8 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </TextField>
-                    <TextField fx:id="contact" maxHeight="25.0" maxWidth="295.2" promptText="Enter your contact number">
+                    <TextField fx:id="contact" maxHeight="25.0" maxWidth="295.2"
+                        promptText="Enter your contact number">
                         <StackPane.margin>
                             <Insets left="250.0" right="85.0" top="490.0" />
                         </StackPane.margin>
@@ -306,7 +351,8 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </DatePicker>
-                    <Button fx:id="register" mnemonicParsing="false" onAction="#submitHandler" stylesheets="@../css_Files/style.css" text="Register">
+                    <Button fx:id="register" mnemonicParsing="false" onAction="#submitHandler"
+                        stylesheets="@../css_Files/style.css" text="Register">
                         <StackPane.margin>
                             <Insets top="567.0" />
                         </StackPane.margin>
@@ -320,7 +366,8 @@
                             <InnerShadow />
                         </effect>
                     </Button>
-                    <Label fx:id="wrongInput" maxHeight="21.6" maxWidth="460.0" textAlignment="CENTER" textFill="#a90b0b">
+                    <Label fx:id="wrongInput" maxHeight="21.6" maxWidth="460.0"
+                        textAlignment="CENTER" textFill="#a90b0b">
                         <StackPane.margin>
                             <Insets top="-230.0" />
                         </StackPane.margin>
@@ -328,7 +375,8 @@
                             <Font size="17.0" />
                         </font>
                     </Label>
-                    <PasswordField fx:id="password" maxHeight="24.0" maxWidth="350.4" promptText="Enter your password">
+                    <PasswordField fx:id="password" maxHeight="24.0" maxWidth="350.4"
+                        promptText="Enter your password">
                         <StackPane.margin>
                             <Insets left="195.0" right="85.0" top="37.0" />
                         </StackPane.margin>
@@ -336,7 +384,8 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </PasswordField>
-                    <Button fx:id="cross" mnemonicParsing="false" onMouseClicked="#handleCross" text="x">
+                    <Button fx:id="cross" mnemonicParsing="false" onMouseClicked="#handleCross"
+                        text="x">
                         <StackPane.margin>
                             <Insets right="-433.0" top="-230.0" />
                         </StackPane.margin>
@@ -347,7 +396,8 @@
                             <InnerShadow />
                         </effect>
                     </Button>
-                    <TextField fx:id="religion" maxHeight="24.0" maxWidth="370.4" promptText="Enter your religion">
+                    <TextField fx:id="religion" maxHeight="24.0" maxWidth="370.4"
+                        promptText="Enter your religion">
                         <StackPane.margin>
                             <Insets left="175.0" right="85.0" top="100.0" />
                         </StackPane.margin>
@@ -363,7 +413,8 @@
                             <Insets left="-330.0" top="100.0" />
                         </StackPane.margin>
                     </Label>
-                    <Button fx:id="imgButton" maxHeight="24.0" maxWidth="107.2" mnemonicParsing="false" onAction="#handleImgUpload" text="upload image">
+                    <Button fx:id="imgButton" maxHeight="24.0" maxWidth="107.2"
+                        mnemonicParsing="false" onAction="#handleImgUpload" text="upload image">
                         <StackPane.margin>
                             <Insets top="-415.0" />
                         </StackPane.margin>

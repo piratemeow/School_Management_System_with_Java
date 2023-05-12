@@ -200,7 +200,8 @@ public class StaffRegistrationController extends Controller implements Initializ
 
         Controller.isUpdate = true;
 
-        FXMLLoader fxmlLoader = loadPage("label", "/com/schoolmanagementsystem/fxml_Files/staffRegistrationForm.fxml", event);
+        FXMLLoader fxmlLoader = loadPage("label", "/com/schoolmanagementsystem/fxml_Files/staffRegistrationForm.fxml",
+                event);
 
         StaffRegistrationController controller = fxmlLoader.getController();
 

@@ -1,4 +1,5 @@
 package com.schoolmanagementsystem.database.routineDB;
+
 import java.sql.*;
 
 public class ConnectRoutineDB {

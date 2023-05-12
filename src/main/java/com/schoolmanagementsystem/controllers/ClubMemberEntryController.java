@@ -39,24 +39,24 @@ public class ClubMemberEntryController extends Controller implements Initializab
 
     @FXML
     void handleApply(ActionEvent event) throws SQLException {
-        if(inputField.getText().isEmpty()) {
+        if (inputField.getText().isEmpty()) {
             invalid.setText("Empty input");
         } else {
 
             Club club = new Club();
 
-            if(ClubController.isFundFlag()) {
-                if(validateNum(inputField.getText())) {
+            if (ClubController.isFundFlag()) {
+                if (validateNum(inputField.getText())) {
                     invalid.setText("Fund must be a number");
                 } else {
-                    if(!ClubMemberEntryController.addFund && !ClubMemberEntryController.spendFund) {
+                    if (!ClubMemberEntryController.addFund && !ClubMemberEntryController.spendFund) {
                         invalid.setText("Select add or spend");
                     } else {
-                        if(ClubMemberEntryController.addFund) {
+                        if (ClubMemberEntryController.addFund) {
                             club.addFund(inputField.getText());
                             invalid.setText("Fund added successfully");
                         } else {
-                            if(club.spendFund(inputField.getText())) {
+                            if (club.spendFund(inputField.getText())) {
                                 invalid.setText("Amount deducted successfully");
                             } else {
                                 invalid.setText("Insufficient fund");
@@ -65,12 +65,12 @@ public class ClubMemberEntryController extends Controller implements Initializab
                     }
                 }
             } else {
-                if(validateNum(inputField.getText())) {
+                if (validateNum(inputField.getText())) {
                     invalid.setText("ID must be a number");
                 } else {
-                    if(ClubController.isAddMemberFlag()) {
+                    if (ClubController.isAddMemberFlag()) {
                         invalid.setText(club.addMember(Integer.parseInt(inputField.getText())));
-                    } else if(ClubController.isDeleteMemberFlag()) {
+                    } else if (ClubController.isDeleteMemberFlag()) {
                         invalid.setText(club.removeMember(Integer.parseInt(inputField.getText())));
                     }
                 }
@@ -105,7 +105,7 @@ public class ClubMemberEntryController extends Controller implements Initializab
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if(!ClubController.isFundFlag()) {
+        if (!ClubController.isFundFlag()) {
             selectMenu.setVisible(false);
         } else {
             label.setText("Enter fund amount");

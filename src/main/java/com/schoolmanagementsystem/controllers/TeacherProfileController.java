@@ -84,7 +84,7 @@ public class TeacherProfileController extends Controller {
 
         TeacherProfileController controller = fxmlLoader.getController();
 
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             controller.updateIcon.setVisible(false);
             controller.updateIcon.setManaged(false);
             controller.update.setVisible(false);
@@ -143,7 +143,7 @@ public class TeacherProfileController extends Controller {
 
     @FXML
     void handleDelete(MouseEvent mouseEvent) throws IOException, SQLException {
-        if(handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
+        if (handleAlert("The profile will be permanently deleted from the record", "Are you sure to proceed ?")) {
             TeacherCRUD crud = new TeacherCRUD();
             crud.deleteTeacher(Controller.requiredID);
 

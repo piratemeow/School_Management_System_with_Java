@@ -15,7 +15,7 @@ public class ResultCRUD {
         Connection con = db.getCon();
 
         String selectQuery;
-        if(StudentResultController.getSelectedExam() == 1) {
+        if (StudentResultController.getSelectedExam() == 1) {
             selectQuery = "SELECT * FROM resultinfo_HalfYearly WHERE ID = ?";
         } else {
             selectQuery = "SELECT * FROM resultinfo_YearFinal WHERE ID = ?";
@@ -31,7 +31,7 @@ public class ResultCRUD {
         ArrayList<String> allSubjects = controller.allSubjects(Controller.getRequiredID());
 
         if (!r.next()) {
-            if(StudentResultController.getSelectedExam() == 1) {
+            if (StudentResultController.getSelectedExam() == 1) {
                 query = "INSERT INTO resultinfo_HalfYearly (ID) VALUES (?)";
             } else {
                 query = "INSERT INTO resultinfo_YearFinal (ID) VALUES (?)";
@@ -41,20 +41,20 @@ public class ResultCRUD {
             statement.executeUpdate();
         }
 
-        if(StudentResultController.getSelectedExam() == 1) {
+        if (StudentResultController.getSelectedExam() == 1) {
             for (int i = 0; i < allSubjects.size(); i++) {
                 query = "UPDATE resultinfo_HalfYearly SET " + allSubjects.get(i) + " = ? WHERE ID = ?";
                 statement = con.prepareStatement(query);
-                statement.setInt(2,Controller.getRequiredID());
-                statement.setInt(1,allMarks.get(i));
+                statement.setInt(2, Controller.getRequiredID());
+                statement.setInt(1, allMarks.get(i));
                 statement.executeUpdate();
             }
         } else {
             for (int i = 0; i < allSubjects.size(); i++) {
                 query = "UPDATE resultinfo_YearFinal SET " + allSubjects.get(i) + " = ? WHERE ID = ?";
                 statement = con.prepareStatement(query);
-                statement.setInt(2,Controller.getRequiredID());
-                statement.setInt(1,allMarks.get(i));
+                statement.setInt(2, Controller.getRequiredID());
+                statement.setInt(1, allMarks.get(i));
                 statement.executeUpdate();
             }
         }
@@ -72,7 +72,7 @@ public class ResultCRUD {
 
         ResultSet r = statement.executeQuery();
 
-        if(!r.next()) {
+        if (!r.next()) {
             query = "INSERT INTO resultAlgo (demoID) VALUES (?)";
             statement = con.prepareStatement(query);
             statement.setInt(1, 1);

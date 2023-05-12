@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
 
-public class ClassResultController extends Controller{
+public class ClassResultController extends Controller {
 
     @FXML
     private Button calculate;
@@ -414,7 +414,6 @@ public class ClassResultController extends Controller{
 
     private static int currentIndex;
 
-
     @FXML
     void class_1(ActionEvent event) throws IOException, SQLException {
         ClassResultController.selectedClass = 1;
@@ -497,7 +496,8 @@ public class ClassResultController extends Controller{
 
     @FXML
     void handleCalculate(ActionEvent event) throws IOException, SQLException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/resultAlgorithm.fxml"));
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/schoolmanagementsystem/fxml_Files/resultAlgorithm.fxml"));
         Parent algorithmPage = loader.load();
 
         algorithmPage.setLayoutX(classResult.getWidth() / 2 - algorithmPage.prefWidth(-1) / 2);
@@ -559,7 +559,7 @@ public class ClassResultController extends Controller{
 
     public void handleClassResultPage(Event event) throws IOException, SQLException {
         String buttonType;
-        if(Controller.resultFlag) {
+        if (Controller.resultFlag) {
             buttonType = "button";
         } else {
             buttonType = "menuButton";
@@ -568,14 +568,14 @@ public class ClassResultController extends Controller{
         FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/classResult.fxml", event);
         ClassResultController controller = fxmlLoader.getController();
 
-        if(ClassResultController.selectedSection != null) {
+        if (ClassResultController.selectedSection != null) {
             controller.selectSection.setText("Section " + ClassResultController.selectedSection);
         }
-        if(ClassResultController.selectedClass != 0) {
+        if (ClassResultController.selectedClass != 0) {
             controller.selectClass.setText("Class " + ClassResultController.selectedClass);
         }
 
-        if(ClassResultController.selectedClass == 0 || ClassResultController.selectedSection == null) {
+        if (ClassResultController.selectedClass == 0 || ClassResultController.selectedSection == null) {
             controller.resultScroll.setVisible(false);
             controller.previous.setVisible(false);
             controller.next.setVisible(false);
@@ -584,11 +584,12 @@ public class ClassResultController extends Controller{
         }
 
         Student student = new Student();
-        ArrayList<Pair<Integer, Integer>> allStudents = student.allStudents(ClassResultController.selectedClass, ClassResultController.selectedSection);
+        ArrayList<Pair<Integer, Integer>> allStudents = student.allStudents(ClassResultController.selectedClass,
+                ClassResultController.selectedSection);
 
         ArrayList<String> allSubjects = null;
         StudentResultController controller1 = new StudentResultController();
-        if(allStudents.size() > 0) {
+        if (allStudents.size() > 0) {
             allSubjects = controller1.allSubjects(allStudents.get(0).getKey());
         }
 
@@ -609,7 +610,7 @@ public class ClassResultController extends Controller{
         int w1 = 50, w2 = 50;
         String priority = "gpa";
 
-        if(r.next()) {
+        if (r.next()) {
             w1 = r.getInt("halfYearlyWeight");
             w2 = r.getInt("yearFinalWeight");
             priority = r.getString("priority");
@@ -630,17 +631,17 @@ public class ClassResultController extends Controller{
 
             query = "SELECT * FROM resultinfo_HalfYearly WHERE ID = ?";
             statement = con.prepareStatement(query);
-            statement.setInt(1,studentID);
+            statement.setInt(1, studentID);
             r = statement.executeQuery();
 
-            if(r.next()) {
+            if (r.next()) {
                 for (int j = 0; j < (Objects.requireNonNull(allSubjects)).size(); j++) {
                     total += r.getInt(allSubjects.get(j));
                     totalGPA += Float.parseFloat(controller1.getGPA(r.getInt(allSubjects.get(j))));
                 }
             }
             assert allSubjects != null;
-            averageGPA = Float.parseFloat(df.format(totalGPA/allSubjects.size()));
+            averageGPA = Float.parseFloat(df.format(totalGPA / allSubjects.size()));
             result.setHalfYearlyGpa(averageGPA);
             result.setHalfYearlyMark(total);
 
@@ -649,21 +650,23 @@ public class ClassResultController extends Controller{
 
             query = "SELECT * FROM resultinfo_YearFinal WHERE ID = ?";
             statement = con.prepareStatement(query);
-            statement.setInt(1,studentID);
+            statement.setInt(1, studentID);
             r = statement.executeQuery();
 
-            if(r.next()) {
+            if (r.next()) {
                 for (int j = 0; j < Objects.requireNonNull(allSubjects).size(); j++) {
                     total += r.getInt(allSubjects.get(j));
                     totalGPA += Float.parseFloat(controller1.getGPA(r.getInt(allSubjects.get(j))));
                 }
             }
-            averageGPA = Float.parseFloat(df.format(totalGPA/allSubjects.size()));
+            averageGPA = Float.parseFloat(df.format(totalGPA / allSubjects.size()));
             result.setYearFinalGpa(averageGPA);
             result.setYearFinalMark(total);
 
-            result.setwAvgGpa(Float.parseFloat(df.format((result.getHalfYearlyGpa() * w1 + result.getYearFinalGpa() * w2)/100)));
-            result.setwAvgMark(Float.parseFloat(df.format((result.getHalfYearlyMark() * w1 + result.getYearFinalMark() * w2)/100.0f)));
+            result.setwAvgGpa(Float
+                    .parseFloat(df.format((result.getHalfYearlyGpa() * w1 + result.getYearFinalGpa() * w2) / 100)));
+            result.setwAvgMark(Float.parseFloat(
+                    df.format((result.getHalfYearlyMark() * w1 + result.getYearFinalMark() * w2) / 100.0f)));
 
             allResults.add(result);
         }
@@ -671,19 +674,18 @@ public class ClassResultController extends Controller{
         Collections.sort(allResults);
 
         for (int i = 0; i < allResults.size(); i++) {
-            allResults.get(i).setRank(i+1);
+            allResults.get(i).setRank(i + 1);
         }
 
         Result.setSortBy(null);
 
         Collections.sort(allResults);
-//        if(allStudents.size() == )
+        // if(allStudents.size() == )
 
         for (int i = ClassResultController.currentIndex; i < ClassResultController.currentIndex + 15; i++) {
-            if(i>=allResults.size()) {
+            if (i >= allResults.size()) {
                 break;
-            }
-            else if(i == ClassResultController.currentIndex) {
+            } else if (i == ClassResultController.currentIndex) {
                 controller.roll_1.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_1.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_1.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -692,8 +694,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_1.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_1.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_1.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 1) {
+            } else if (i == ClassResultController.currentIndex + 1) {
                 controller.roll_2.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_2.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_2.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -702,8 +703,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_2.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_2.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_2.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 2) {
+            } else if (i == ClassResultController.currentIndex + 2) {
                 controller.roll_3.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_3.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_3.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -712,8 +712,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_3.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_3.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_3.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 3) {
+            } else if (i == ClassResultController.currentIndex + 3) {
                 controller.roll_4.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_4.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_4.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -722,8 +721,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_4.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_4.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_4.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 4) {
+            } else if (i == ClassResultController.currentIndex + 4) {
                 controller.roll_5.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_5.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_5.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -732,8 +730,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_5.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_5.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_5.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 5) {
+            } else if (i == ClassResultController.currentIndex + 5) {
                 controller.roll_6.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_6.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_6.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -742,8 +739,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_6.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_6.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_6.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 6) {
+            } else if (i == ClassResultController.currentIndex + 6) {
                 controller.roll_7.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_7.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_7.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -752,8 +748,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_7.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_7.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_7.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 7) {
+            } else if (i == ClassResultController.currentIndex + 7) {
                 controller.roll_8.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_8.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_8.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -762,8 +757,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_8.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_8.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_8.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 8) {
+            } else if (i == ClassResultController.currentIndex + 8) {
                 controller.roll_9.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_9.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_9.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -772,8 +766,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_9.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_9.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_9.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 9) {
+            } else if (i == ClassResultController.currentIndex + 9) {
                 controller.roll_10.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_10.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_10.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -782,8 +775,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_10.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_10.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_10.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 10) {
+            } else if (i == ClassResultController.currentIndex + 10) {
                 controller.roll_11.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_11.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_11.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -792,8 +784,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_11.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_11.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_11.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 11) {
+            } else if (i == ClassResultController.currentIndex + 11) {
                 controller.roll_12.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_12.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_12.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -802,8 +793,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_12.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_12.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_12.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 12) {
+            } else if (i == ClassResultController.currentIndex + 12) {
                 controller.roll_13.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_13.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_13.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -812,8 +802,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_13.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_13.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_13.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 13) {
+            } else if (i == ClassResultController.currentIndex + 13) {
                 controller.roll_14.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_14.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_14.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -822,8 +811,7 @@ public class ClassResultController extends Controller{
                 controller.wAvgMark_14.setText(String.valueOf(allResults.get(i).getwAvgMark()));
                 controller.wAvgGpa_14.setText(String.valueOf(allResults.get(i).getwAvgGpa()));
                 controller.rank_14.setText(String.valueOf(allResults.get(i).getRank()));
-            }
-            else if(i == ClassResultController.currentIndex + 14) {
+            } else if (i == ClassResultController.currentIndex + 14) {
                 controller.roll_15.setText(String.valueOf(allResults.get(i).getRoll()));
                 controller.exam_1_mark_15.setText(String.valueOf(allResults.get(i).getHalfYearlyMark()));
                 controller.exam_1_gpa_15.setText(String.valueOf(allResults.get(i).getHalfYearlyGpa()));
@@ -835,10 +823,10 @@ public class ClassResultController extends Controller{
             }
         }
 
-        if(ClassResultController.currentIndex == 0) {
+        if (ClassResultController.currentIndex == 0) {
             controller.previous.setVisible(false);
         }
-        if(ClassResultController.currentIndex + 15 >= allResults.size()) {
+        if (ClassResultController.currentIndex + 15 >= allResults.size()) {
             controller.next.setVisible(false);
         }
 

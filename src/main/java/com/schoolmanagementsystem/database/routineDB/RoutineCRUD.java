@@ -12,10 +12,11 @@ public class RoutineCRUD {
         ConnectRoutineDB db = new ConnectRoutineDB();
         Connection con = db.getCon();
 
-        String tableName = "class_" + RoutineController.getSelectedClass() + "_" + RoutineController.getSelectedSection();
+        String tableName = "class_" + RoutineController.getSelectedClass() + "_"
+                + RoutineController.getSelectedSection();
 
         int i;
-        for(i = 1; i <= 25; i++) {
+        for (i = 1; i <= 25; i++) {
             String updateQuery = "UPDATE " + tableName + " SET subject = ?, teacher = ? where periodNo = ?";
             PreparedStatement statement = con.prepareStatement(updateQuery);
             statement.setString(1, sub[i]);

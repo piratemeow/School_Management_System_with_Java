@@ -193,7 +193,8 @@ public class ClubController extends Controller implements Initializable {
         ClubController.fundFlag = false;
         ClubController.deleteMemberFlag = false;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
         Parent clubMemberEntryPage = loader.load();
 
         clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
@@ -295,8 +296,9 @@ public class ClubController extends Controller implements Initializable {
         statement.setInt(1, ClubController.selectedClub + 1);
         ResultSet r = statement.executeQuery();
 
-        if(r.next()) {
-            if (handleAlert("The club " + r.getString("clubName") + " will be deleted permanently", "Are you sure to proceed")) {
+        if (r.next()) {
+            if (handleAlert("The club " + r.getString("clubName") + " will be deleted permanently",
+                    "Are you sure to proceed")) {
                 ClubCRUD crud = new ClubCRUD();
                 crud.deleteClub(r.getString("clubName"));
                 handleClubPage(event);
@@ -310,7 +312,8 @@ public class ClubController extends Controller implements Initializable {
         ClubController.fundFlag = false;
         ClubController.deleteMemberFlag = true;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
         Parent clubMemberEntryPage = loader.load();
 
         clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
@@ -334,7 +337,8 @@ public class ClubController extends Controller implements Initializable {
         ClubController.addMemberFlag = false;
         ClubController.deleteMemberFlag = false;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/schoolmanagementsystem/fxml_Files/clubMemberEntry.fxml"));
         Parent clubMemberEntryPage = loader.load();
 
         clubMemberEntryPage.setLayoutX(clubPage.getWidth() / 2 - clubMemberEntryPage.prefWidth(-1) / 2);
@@ -352,12 +356,12 @@ public class ClubController extends Controller implements Initializable {
 
         String q = "SELECT name FROM studentInfo WHERE studentID = ?";
         PreparedStatement s = con.prepareStatement(q);
-        s.setInt(1,id);
+        s.setInt(1, id);
         ResultSet resultSet = s.executeQuery();
 
         String str = "";
 
-        if(resultSet.next()) {
+        if (resultSet.next()) {
             str = resultSet.getString("name");
         }
 
@@ -379,7 +383,7 @@ public class ClubController extends Controller implements Initializable {
 
         ClubController controller = fxmlLoader.getController();
 
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             controller.addClub.setVisible(false);
             controller.fund.setVisible(false);
             controller.deleteClub.setVisible(false);
@@ -405,129 +409,118 @@ public class ClubController extends Controller implements Initializable {
         int size = records.size();
         int i = 0;
 
-        if(i < size) {
+        if (i < size) {
             controller.club_1.setText(records.get(i++));
         } else {
             controller.club_1.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_2.setText(records.get(i++));
         } else {
             controller.club_2.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_3.setText(records.get(i++));
         } else {
             controller.club_3.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_4.setText(records.get(i++));
         } else {
             controller.club_4.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_5.setText(records.get(i++));
         } else {
             controller.club_5.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_6.setText(records.get(i++));
         } else {
             controller.club_6.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_7.setText(records.get(i++));
         } else {
             controller.club_7.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_8.setText(records.get(i++));
         } else {
             controller.club_8.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_9.setText(records.get(i++));
         } else {
             controller.club_9.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_10.setText(records.get(i++));
         } else {
             controller.club_10.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_11.setText(records.get(i++));
         } else {
             controller.club_11.setDisable(true);
             i++;
         }
-        if(i < size) {
+        if (i < size) {
             controller.club_12.setText(records.get(i));
         } else {
             controller.club_12.setDisable(true);
         }
 
-        if(ClubController.selectedClub == 0) {
+        if (ClubController.selectedClub == 0) {
             controller.club_1.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 1) {
+        } else if (ClubController.selectedClub == 1) {
             controller.club_2.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 2) {
+        } else if (ClubController.selectedClub == 2) {
             controller.club_3.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 3) {
+        } else if (ClubController.selectedClub == 3) {
             controller.club_4.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 4) {
+        } else if (ClubController.selectedClub == 4) {
             controller.club_5.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 5) {
+        } else if (ClubController.selectedClub == 5) {
             controller.club_6.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 6) {
+        } else if (ClubController.selectedClub == 6) {
             controller.club_7.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 7) {
+        } else if (ClubController.selectedClub == 7) {
             controller.club_8.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 8) {
+        } else if (ClubController.selectedClub == 8) {
             controller.club_9.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 9) {
+        } else if (ClubController.selectedClub == 9) {
             controller.club_10.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 10) {
+        } else if (ClubController.selectedClub == 10) {
             controller.club_11.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
-        }
-        else if(ClubController.selectedClub == 11) {
+        } else if (ClubController.selectedClub == 11) {
             controller.club_12.setStyle("-fx-background-color: #ff4b2b; -fx-background-radius: 30px;");
         }
 
-        if(ClubController.selectedClub < records.size()) {
+        if (ClubController.selectedClub < records.size()) {
 
             String query2 = "SELECT * FROM club WHERE clubName = ?";
             PreparedStatement statement2 = con.prepareStatement(query2);
 
             statement2.setString(1, records.get(ClubController.selectedClub));
 
-            ResultSet r2= statement2.executeQuery();
+            ResultSet r2 = statement2.executeQuery();
 
             String q;
             PreparedStatement s;
             ResultSet resultSet;
 
-            if(r2.next()) {
+            if (r2.next()) {
 
                 q = "SELECT name FROM employeeInfo WHERE employeeID = ?";
                 s = con.prepareStatement(q);

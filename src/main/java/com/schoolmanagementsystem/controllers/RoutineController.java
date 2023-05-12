@@ -346,52 +346,53 @@ public class RoutineController extends Controller implements Initializable {
 
         String buttonType;
 
-        if(Controller.routineFlag) {
+        if (Controller.routineFlag) {
             buttonType = "button";
             Controller.routineFlag = false;
         } else {
-            if(editFlag || applyFlag) {
+            if (editFlag || applyFlag) {
                 buttonType = "label";
             } else {
                 buttonType = "menuButton";
             }
         }
 
-        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/routine.fxml",event);
+        FXMLLoader fxmlLoader = loadPage(buttonType, "/com/schoolmanagementsystem/fxml_Files/routine.fxml", event);
         RoutineController controller = fxmlLoader.getController();
 
-        if(RoutineController.selectedSection != null) {
+        if (RoutineController.selectedSection != null) {
             controller.selectSection.setText("Section " + RoutineController.selectedSection);
         }
-        if(RoutineController.selectedClass != 0) {
+        if (RoutineController.selectedClass != 0) {
             controller.selectClass.setText("Class " + RoutineController.selectedClass);
         }
 
-        if(RoutineController.selectedSection == null || RoutineController.selectedClass == 0) {
+        if (RoutineController.selectedSection == null || RoutineController.selectedClass == 0) {
             return;
         }
 
         controller.grid.setVisible(true);
         controller.editButton.setVisible(true);
 
-        if(RoutineController.editFlag) {
+        if (RoutineController.editFlag) {
             controller.editButton.setText("APPLY CHANGE");
         } else {
             controller.editButton.setText("EDIT ROUTINE");
         }
 
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             controller.editButton.setVisible(false);
         }
 
         ConnectRoutineDB db = new ConnectRoutineDB();
         Connection con = db.getCon();
 
-        String tableName = "class_" + RoutineController.getSelectedClass() + "_" + RoutineController.getSelectedSection();
+        String tableName = "class_" + RoutineController.getSelectedClass() + "_"
+                + RoutineController.getSelectedSection();
 
         int i;
 
-        if(!RoutineController.editFlag) {
+        if (!RoutineController.editFlag) {
             controller.subInput1.setVisible(false);
             controller.subInput1.setManaged(false);
             controller.subInput2.setVisible(false);
@@ -494,111 +495,87 @@ public class RoutineController extends Controller implements Initializable {
             controller.teacherInput25.setVisible(false);
             controller.teacherInput25.setManaged(false);
 
-            for(i = 1; i <= 25; i++) {
+            for (i = 1; i <= 25; i++) {
                 String query = "SELECT * FROM " + tableName + " WHERE periodNo = ?";
                 PreparedStatement statement = con.prepareStatement(query);
                 statement.setInt(1, i);
 
                 ResultSet r = statement.executeQuery();
 
-                if(r.next()) {
-                    if(i == 1) {
+                if (r.next()) {
+                    if (i == 1) {
                         controller.sub1.setText(r.getString("subject"));
                         controller.teacher1.setText(r.getString("teacher"));
-                    }
-                    else if (i == 2){
+                    } else if (i == 2) {
                         controller.sub2.setText(r.getString("subject"));
                         controller.teacher2.setText(r.getString("teacher"));
-                    }
-                    else if (i == 3){
+                    } else if (i == 3) {
                         controller.sub3.setText(r.getString("subject"));
                         controller.teacher3.setText(r.getString("teacher"));
-                    }
-                    else if (i == 4){
+                    } else if (i == 4) {
                         controller.sub4.setText(r.getString("subject"));
                         controller.teacher4.setText(r.getString("teacher"));
-                    }
-                    else if (i == 5){
+                    } else if (i == 5) {
                         controller.sub5.setText(r.getString("subject"));
                         controller.teacher5.setText(r.getString("teacher"));
-                    }
-                    else if (i == 6){
+                    } else if (i == 6) {
                         controller.sub6.setText(r.getString("subject"));
                         controller.teacher6.setText(r.getString("teacher"));
-                    }
-                    else if (i == 7){
+                    } else if (i == 7) {
                         controller.sub7.setText(r.getString("subject"));
                         controller.teacher7.setText(r.getString("teacher"));
-                    }
-                    else if (i == 8){
+                    } else if (i == 8) {
                         controller.sub8.setText(r.getString("subject"));
                         controller.teacher8.setText(r.getString("teacher"));
-                    }
-                    else if (i == 9){
+                    } else if (i == 9) {
                         controller.sub9.setText(r.getString("subject"));
                         controller.teacher9.setText(r.getString("teacher"));
-                    }
-                    else if (i == 10){
+                    } else if (i == 10) {
                         controller.sub10.setText(r.getString("subject"));
                         controller.teacher10.setText(r.getString("teacher"));
-                    }
-                    else if (i == 11){
+                    } else if (i == 11) {
                         controller.sub11.setText(r.getString("subject"));
                         controller.teacher11.setText(r.getString("teacher"));
-                    }
-                    else if (i == 12){
+                    } else if (i == 12) {
                         controller.sub12.setText(r.getString("subject"));
                         controller.teacher12.setText(r.getString("teacher"));
-                    }
-                    else if (i == 13){
+                    } else if (i == 13) {
                         controller.sub13.setText(r.getString("subject"));
                         controller.teacher13.setText(r.getString("teacher"));
-                    }
-                    else if (i == 14){
+                    } else if (i == 14) {
                         controller.sub14.setText(r.getString("subject"));
                         controller.teacher14.setText(r.getString("teacher"));
-                    }
-                    else if (i == 15){
+                    } else if (i == 15) {
                         controller.sub15.setText(r.getString("subject"));
                         controller.teacher15.setText(r.getString("teacher"));
-                    }
-                    else if (i == 16){
+                    } else if (i == 16) {
                         controller.sub16.setText(r.getString("subject"));
                         controller.teacher16.setText(r.getString("teacher"));
-                    }
-                    else if (i == 17){
+                    } else if (i == 17) {
                         controller.sub17.setText(r.getString("subject"));
                         controller.teacher17.setText(r.getString("teacher"));
-                    }
-                    else if (i == 18){
+                    } else if (i == 18) {
                         controller.sub18.setText(r.getString("subject"));
                         controller.teacher18.setText(r.getString("teacher"));
-                    }
-                    else if (i == 19){
+                    } else if (i == 19) {
                         controller.sub19.setText(r.getString("subject"));
                         controller.teacher19.setText(r.getString("teacher"));
-                    }
-                    else if (i == 20){
+                    } else if (i == 20) {
                         controller.sub20.setText(r.getString("subject"));
                         controller.teacher20.setText(r.getString("teacher"));
-                    }
-                    else if (i == 21){
+                    } else if (i == 21) {
                         controller.sub21.setText(r.getString("subject"));
                         controller.teacher21.setText(r.getString("teacher"));
-                    }
-                    else if (i == 22){
+                    } else if (i == 22) {
                         controller.sub22.setText(r.getString("subject"));
                         controller.teacher22.setText(r.getString("teacher"));
-                    }
-                    else if (i == 23){
+                    } else if (i == 23) {
                         controller.sub23.setText(r.getString("subject"));
                         controller.teacher23.setText(r.getString("teacher"));
-                    }
-                    else if (i == 24){
+                    } else if (i == 24) {
                         controller.sub24.setText(r.getString("subject"));
                         controller.teacher24.setText(r.getString("teacher"));
-                    }
-                    else if (i == 25){
+                    } else if (i == 25) {
                         controller.sub25.setText(r.getString("subject"));
                         controller.teacher25.setText(r.getString("teacher"));
                     }
@@ -708,111 +685,87 @@ public class RoutineController extends Controller implements Initializable {
             controller.teacher25.setVisible(false);
             controller.teacher25.setManaged(false);
 
-            for(i = 1; i <= 25; i++) {
+            for (i = 1; i <= 25; i++) {
                 String query = "SELECT * FROM " + tableName + " WHERE periodNo = ?";
                 PreparedStatement statement = con.prepareStatement(query);
                 statement.setInt(1, i);
 
                 ResultSet r = statement.executeQuery();
 
-                if(r.next()) {
-                    if(i == 1) {
+                if (r.next()) {
+                    if (i == 1) {
                         controller.subInput1.setText(r.getString("subject"));
                         controller.teacherInput1.setText(r.getString("teacher"));
-                    }
-                    else if (i == 2){
+                    } else if (i == 2) {
                         controller.subInput2.setText(r.getString("subject"));
                         controller.teacherInput2.setText(r.getString("teacher"));
-                    }
-                    else if (i == 3){
+                    } else if (i == 3) {
                         controller.subInput3.setText(r.getString("subject"));
                         controller.teacherInput3.setText(r.getString("teacher"));
-                    }
-                    else if (i == 4){
+                    } else if (i == 4) {
                         controller.subInput4.setText(r.getString("subject"));
                         controller.teacherInput4.setText(r.getString("teacher"));
-                    }
-                    else if (i == 5){
+                    } else if (i == 5) {
                         controller.subInput5.setText(r.getString("subject"));
                         controller.teacherInput5.setText(r.getString("teacher"));
-                    }
-                    else if (i == 6){
+                    } else if (i == 6) {
                         controller.subInput6.setText(r.getString("subject"));
                         controller.teacherInput6.setText(r.getString("teacher"));
-                    }
-                    else if (i == 7){
+                    } else if (i == 7) {
                         controller.subInput7.setText(r.getString("subject"));
                         controller.teacherInput7.setText(r.getString("teacher"));
-                    }
-                    else if (i == 8){
+                    } else if (i == 8) {
                         controller.subInput8.setText(r.getString("subject"));
                         controller.teacherInput8.setText(r.getString("teacher"));
-                    }
-                    else if (i == 9){
+                    } else if (i == 9) {
                         controller.subInput9.setText(r.getString("subject"));
                         controller.teacherInput9.setText(r.getString("teacher"));
-                    }
-                    else if (i == 10){
+                    } else if (i == 10) {
                         controller.subInput10.setText(r.getString("subject"));
                         controller.teacherInput10.setText(r.getString("teacher"));
-                    }
-                    else if (i == 11){
+                    } else if (i == 11) {
                         controller.subInput11.setText(r.getString("subject"));
                         controller.teacherInput11.setText(r.getString("teacher"));
-                    }
-                    else if (i == 12){
+                    } else if (i == 12) {
                         controller.subInput12.setText(r.getString("subject"));
                         controller.teacherInput12.setText(r.getString("teacher"));
-                    }
-                    else if (i == 13){
+                    } else if (i == 13) {
                         controller.subInput13.setText(r.getString("subject"));
                         controller.teacherInput13.setText(r.getString("teacher"));
-                    }
-                    else if (i == 14){
+                    } else if (i == 14) {
                         controller.subInput14.setText(r.getString("subject"));
                         controller.teacherInput14.setText(r.getString("teacher"));
-                    }
-                    else if (i == 15){
+                    } else if (i == 15) {
                         controller.subInput15.setText(r.getString("subject"));
                         controller.teacherInput15.setText(r.getString("teacher"));
-                    }
-                    else if (i == 16){
+                    } else if (i == 16) {
                         controller.subInput16.setText(r.getString("subject"));
                         controller.teacherInput16.setText(r.getString("teacher"));
-                    }
-                    else if (i == 17){
+                    } else if (i == 17) {
                         controller.subInput17.setText(r.getString("subject"));
                         controller.teacherInput17.setText(r.getString("teacher"));
-                    }
-                    else if (i == 18){
+                    } else if (i == 18) {
                         controller.subInput18.setText(r.getString("subject"));
                         controller.teacherInput18.setText(r.getString("teacher"));
-                    }
-                    else if (i == 19){
+                    } else if (i == 19) {
                         controller.subInput19.setText(r.getString("subject"));
                         controller.teacherInput19.setText(r.getString("teacher"));
-                    }
-                    else if (i == 20){
+                    } else if (i == 20) {
                         controller.subInput20.setText(r.getString("subject"));
                         controller.teacherInput20.setText(r.getString("teacher"));
-                    }
-                    else if (i == 21){
+                    } else if (i == 21) {
                         controller.subInput21.setText(r.getString("subject"));
                         controller.teacherInput21.setText(r.getString("teacher"));
-                    }
-                    else if (i == 22){
+                    } else if (i == 22) {
                         controller.subInput22.setText(r.getString("subject"));
                         controller.teacherInput22.setText(r.getString("teacher"));
-                    }
-                    else if (i == 23){
+                    } else if (i == 23) {
                         controller.subInput23.setText(r.getString("subject"));
                         controller.teacherInput23.setText(r.getString("teacher"));
-                    }
-                    else if (i == 24){
+                    } else if (i == 24) {
                         controller.subInput24.setText(r.getString("subject"));
                         controller.teacherInput24.setText(r.getString("teacher"));
-                    }
-                    else if (i == 25){
+                    } else if (i == 25) {
                         controller.subInput25.setText(r.getString("subject"));
                         controller.teacherInput25.setText(r.getString("teacher"));
                     }
@@ -846,7 +799,7 @@ public class RoutineController extends Controller implements Initializable {
     @FXML
     void handleEdit(Event event) throws IOException, SQLException {
 
-        if(!RoutineController.editFlag) {
+        if (!RoutineController.editFlag) {
             RoutineController.editFlag = true;
             RoutineController.applyFlag = false;
         } else {

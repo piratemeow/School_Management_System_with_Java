@@ -55,6 +55,9 @@ public abstract class Controller {
     @FXML
     protected VBox vbox;
 
+    @FXML
+    protected Button allUsers;
+
     protected Stage stage;
 
     protected static boolean isUpdate;
@@ -70,10 +73,9 @@ public abstract class Controller {
     @FXML
     void teacherReg(ActionEvent event) throws IOException {
         Controller.isUpdate = false;
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             handleAlert("Registration Alert", "Only Admin has the right to add new teacher");
-        }
-        else {
+        } else {
             loadPage("menuButton", "/com/schoolmanagementsystem/fxml_Files/teacherRegistrationForm.fxml", event);
         }
     }
@@ -81,10 +83,9 @@ public abstract class Controller {
     @FXML
     void staffReg(ActionEvent event) throws IOException {
         Controller.isUpdate = false;
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             handleAlert("Registration Alert", "Only Admin has the right to add new staff");
-        }
-        else {
+        } else {
             loadPage("menuButton", "/com/schoolmanagementsystem/fxml_Files/staffRegistrationForm.fxml", event);
         }
     }
@@ -92,28 +93,26 @@ public abstract class Controller {
     @FXML
     void studReg(ActionEvent event) throws IOException {
         Controller.isUpdate = false;
-        if(!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             handleAlert("Registration Alert", "Only Admin has the right to add new student");
-        }
-        else {
+        } else {
             loadPage("menuButton", "/com/schoolmanagementsystem/fxml_Files/studentRegistrationForm.fxml", event);
         }
     }
 
     @FXML
     void handleHome(ActionEvent event) throws IOException {
-        loadPage("button", "/com/schoolmanagementsystem/fxml_Files/home.fxml",event);
+        loadPage("button", "/com/schoolmanagementsystem/fxml_Files/home.fxml", event);
     }
 
     @FXML
     void handleLogin(ActionEvent event) throws IOException {
-        if(loginController.getLoggedInPerson() == null){
-            loadPage("button", "/com/schoolmanagementsystem/fxml_Files/login.fxml",event);
-        }
-        else{
+        if (loginController.getLoggedInPerson() == null) {
+            loadPage("button", "/com/schoolmanagementsystem/fxml_Files/login.fxml", event);
+        } else {
             String m1 = "You are about to log out.";
             String m2 = "Your current session will be over. \nFor further use you need to log in again.";
-            if(handleAlert(m1,m2)){
+            if (handleAlert(m1, m2)) {
                 loginController.setLoggedInPerson(null);
                 loginController.setLoggedInID(0);
                 Controller.requiredID = 0;
@@ -129,10 +128,9 @@ public abstract class Controller {
 
     @FXML
     void handleNotice(Event event) throws IOException, SQLException {
-        if(loginController.getLoggedInPerson() == null){
+        if (loginController.getLoggedInPerson() == null) {
             handleAlert("Alert", "Log in first to view notice");
-        }
-        else {
+        } else {
             NoticeController cont = new NoticeController();
             cont.handleNoticePage(event);
         }
@@ -140,11 +138,10 @@ public abstract class Controller {
 
     @FXML
     void handleAll(Event event) throws IOException, SQLException {
-        if(loginController.getLoggedInPerson() == null){
+        if (loginController.getLoggedInPerson() == null) {
             handleAlert("Alert", "Log in first to view All users");
-        }
-        else {
-            AllMembersController cont  = new AllMembersController();
+        } else {
+            AllMembersController cont = new AllMembersController();
             AllMembersController.setAllUserFlag(true);
             cont.handleAllMemberPage(event);
         }
@@ -152,10 +149,9 @@ public abstract class Controller {
 
     @FXML
     void handleClub(Event event) throws SQLException, IOException {
-        if(loginController.getLoggedInPerson() == null){
+        if (loginController.getLoggedInPerson() == null) {
             handleAlert("Alert", "Log in first to view club.");
-        }
-        else {
+        } else {
             ClubController cont = new ClubController();
             cont.handleClubPage(event);
         }
@@ -163,10 +159,9 @@ public abstract class Controller {
 
     @FXML
     void handleResult(Event event) throws SQLException, IOException {
-        if(loginController.getLoggedInPerson() == null){
+        if (loginController.getLoggedInPerson() == null) {
             handleAlert("Alert", "Log in first to view result.");
-        }
-        else {
+        } else {
             Controller.resultFlag = true;
             ClassResultController cont = new ClassResultController();
             cont.handleClassResultPage(event);
@@ -175,10 +170,9 @@ public abstract class Controller {
 
     @FXML
     void handleRoutine(Event event) throws SQLException, IOException {
-        if(loginController.getLoggedInPerson() == null){
+        if (loginController.getLoggedInPerson() == null) {
             handleAlert("Alert", "Log in first to view routine.");
-        }
-        else {
+        } else {
             Controller.routineFlag = true;
             RoutineController cont = new RoutineController();
             cont.handleRoutinePage(event);
@@ -187,24 +181,18 @@ public abstract class Controller {
 
     @FXML
     void handleProfile(ActionEvent actionEvent) throws IOException, SQLException {
-        if(loginController.getLoggedInPerson() == null) {
+        if (loginController.getLoggedInPerson() == null) {
             handleAlert("Alert", "Log in first to view your profile.");
-        }
-        else if(loginController.getLoggedInPerson().equals("Teacher")){
+        } else if (loginController.getLoggedInPerson().equals("Teacher")) {
             TeacherProfileController cont = new TeacherProfileController();
             cont.handleTeacherProfile(actionEvent, loginController.getLoggedInID());
-        }
-        else if(loginController.getLoggedInPerson().equals("Staff")){
+        } else if (loginController.getLoggedInPerson().equals("Staff")) {
             StaffProfileController cont = new StaffProfileController();
             cont.handleStaffProfile(actionEvent, loginController.getLoggedInID());
-        }
-        else if(loginController.getLoggedInPerson().equals("Admin")){
+        } else if (loginController.getLoggedInPerson().equals("Admin")) {
             loadPage("button", "/com/schoolmanagementsystem/fxml_Files/chooseProfile.fxml", actionEvent);
         }
     }
-
-
-
 
     public static int getRequiredID() {
         return requiredID;
@@ -214,29 +202,30 @@ public abstract class Controller {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(str));
         Parent root = fxmlLoader.load();
 
-        if(Objects.equals(buttonType, "menuButton")){
-            stage = (Stage)((MenuItem)event.getSource()).getParentPopup().getOwnerWindow();
-        }
-        else if(Objects.equals(buttonType, "button")){
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        }
-        else if(Objects.equals(buttonType, "hyperLink")){
-            stage = (Stage)((Hyperlink)event.getSource()).getScene().getWindow();
-        }
-        else if(Objects.equals(buttonType, "label")) {
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        if (Objects.equals(buttonType, "menuButton")) {
+            stage = (Stage) ((MenuItem) event.getSource()).getParentPopup().getOwnerWindow();
+        } else if (Objects.equals(buttonType, "button")) {
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        } else if (Objects.equals(buttonType, "hyperLink")) {
+            stage = (Stage) ((Hyperlink) event.getSource()).getScene().getWindow();
+        } else if (Objects.equals(buttonType, "label")) {
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         }
 
         Controller controller = fxmlLoader.getController();
 
-        if(Objects.equals(loginController.getLoggedInPerson(), "Teacher")) {
+        if (Objects.equals(loginController.getLoggedInPerson(), "Teacher")) {
             controller.reg.setVisible(false);
             controller.reg.setManaged(false);
+
+            controller.allUsers.setVisible(false);
+            controller.allUsers.setManaged(false);
+
             controller.login.setText("Log out");
             controller.vbox.setStyle("-fx-background-color:  #720D05;");
         }
 
-        if(Objects.equals(loginController.getLoggedInPerson(), "Staff")) {
+        if (Objects.equals(loginController.getLoggedInPerson(), "Staff")) {
             controller.reg.setVisible(false);
             controller.reg.setManaged(false);
 
@@ -246,11 +235,14 @@ public abstract class Controller {
             controller.routine.setVisible(false);
             controller.routine.setManaged(false);
 
+            controller.allUsers.setVisible(false);
+            controller.allUsers.setManaged(false);
+
             controller.login.setText("Log out");
             controller.vbox.setStyle("-fx-background-color:  #044C05;");
         }
 
-        if(Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
+        if (Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
             controller.login.setText("Log out");
         }
 
@@ -260,12 +252,12 @@ public abstract class Controller {
 
         return fxmlLoader;
     }
+
     public boolean validateNum(String str) {
         for (int i = 0; i < str.length(); i++) {
-            if(str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+            if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
                 continue;
-            }
-            else {
+            } else {
                 return true;
             }
         }
@@ -293,7 +285,6 @@ public abstract class Controller {
         alert.setTitle("Alert");
         alert.setHeaderText(message1);
         alert.setContentText(message2);
-
 
         if (alert.showAndWait().get() == ButtonType.OK) {
             return true;
@@ -335,6 +326,7 @@ public abstract class Controller {
 
         return result.orElse(null);
     }
+
     public String uploadImage(Stage stage, ImageView Img, Button imgButton) {
         String imagePath = "";
         FileChooser fileChooser = new FileChooser();
@@ -342,8 +334,7 @@ public abstract class Controller {
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
 
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif")
-        );
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif"));
 
         File selectedFile = fileChooser.showOpenDialog(stage);
 
