@@ -155,7 +155,7 @@
                preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;"
                BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../image/anotherBg.jpg" />
+                  <Image url="@../image/anotherBg.png" />
                </image>
                <effect>
                   <DropShadow />

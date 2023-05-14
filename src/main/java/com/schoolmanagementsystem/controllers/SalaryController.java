@@ -116,6 +116,8 @@ public class SalaryController extends Controller implements Initializable {
             controller.rentAmount.setManaged(false);
             controller.invalid.setVisible(false);
             controller.invalid.setManaged(false);
+            controller.rentPercentage.setText("% of Base Salary");
+            controller.noOfChild.setText("");
         }
 
         if (!Objects.equals(loginController.getLoggedInPerson(), "Admin")) {

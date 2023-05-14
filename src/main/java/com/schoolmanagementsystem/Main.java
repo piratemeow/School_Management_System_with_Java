@@ -28,7 +28,7 @@ public class Main extends Application {
             String url = getClass().getResource("image/icon.png").toExternalForm();
             Image icon = new Image(url);
             stage.getIcons().add(icon);
-
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

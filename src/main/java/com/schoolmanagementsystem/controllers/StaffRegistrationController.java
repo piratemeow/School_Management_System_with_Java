@@ -96,16 +96,16 @@ public class StaffRegistrationController extends Controller implements Initializ
         if (religion.getText().isEmpty() || ename.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || password.getText().isEmpty() || contact.getText().isEmpty()
                 || address.getText().isEmpty() || designation.getText().isEmpty()) {
-            wrongInput.setText("Incorrect Input. Please give correct information");
+            wrongInput.setText("Incorrect or empty Input. Give correct information");
             cross.setVisible(true);
         } else if (gender.getValue() == null || marital.getValue() == null || dob.getValue() == null) {
-            wrongInput.setText("Incorrect Input. Please give correct information");
+            wrongInput.setText("Incorrect or empty Input. Give correct information");
             cross.setVisible(true);
         } else if (validateNum(contact.getText()) || contact.getText().length() != 11 || validateDate(dob)) {
-            wrongInput.setText("Incorrect Input. Please give correct information");
+            wrongInput.setText("Incorrect or empty Input. Give correct information");
             cross.setVisible(true);
         } else if (!Controller.isUpdate && imgPath == null) {
-            wrongInput.setText("Incorrect Input. Please give correct information");
+            wrongInput.setText("Incorrect or empty Input. Give correct information");
             cross.setVisible(true);
         } else {
             int year = Year.now().getValue();
@@ -154,6 +154,8 @@ public class StaffRegistrationController extends Controller implements Initializ
 
                     LoginCRUD loginCRUD = new LoginCRUD();
                     loginCRUD.addNewLoginInfo(staff, "Staff");
+
+                    handleHome(event);
                 }
             } else {
                 message1 = "The data will be permanently updated.";

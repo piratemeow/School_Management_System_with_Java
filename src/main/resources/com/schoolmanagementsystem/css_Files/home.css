@@ -1,6 +1,6 @@
 .button {
   /* -fx-background-color: #007bff; */
-  -fx-background-color: linear-gradient(to right, #87ceeb, #1e90ff);
+  -fx-background-color: linear-gradient(to bottom, #ff4b2b, #f37335, #fdc830);
   -fx-text-fill: #fff;
   -fx-font-size: 13px;
   -fx-font-weight: bold;
@@ -12,12 +12,15 @@
 
 .button:hover {
   /* -fx-background-color: #0056b3; */
-  -fx-background-color: linear-gradient(to right, #4fa04f, #da70d6);
+  -fx-background-color: #fdc830;
   -fx-effect: dropshadow(three-pass-box, #006400, 10, 0.5, 0, 0);
+}
+.button:focused {
+  -fx-background-color: #ff4b2b;
 }
 
 .menu-button {
-  -fx-background-color: linear-gradient(to right, #87ceeb, #1e90ff);
+  -fx-background-color: linear-gradient(to bottom, #ff4b2b, #f37335, #fdc830);
   -fx-text-fill: #fff;
   -fx-font-size: 13px;
   -fx-font-weight: bold;
@@ -28,8 +31,11 @@
 }
 
 .menu-button:hover {
-  -fx-background-color: linear-gradient(to right, #4fa04f, #da70d6);
+  -fx-background-color: #fdc830;
   -fx-effect: dropshadow(three-pass-box, #006400, 10, 0.5, 0, 0);
+}
+.menu-button:focused {
+  -fx-background-color: #ff4b2b;
 }
 
 .menu-button .arrow {
@@ -54,6 +60,6 @@
 
 #vbox {
   /* -fx-background-color: #add8e6; */
-  -fx-background-color: linear-gradient(to right, #d2b48c, #00ff00);
+  -fx-background-color: linear-gradient(to bottom,#03001e,rgba(140, 0, 143, 0.6),#03001e);
   -fx-effect: dropshadow(three-pass-box, #000000, 10, 0.5, 0, 0);
 }

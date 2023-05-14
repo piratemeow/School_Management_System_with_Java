@@ -414,6 +414,30 @@ public class ClassResultController extends Controller {
 
     private static int currentIndex;
 
+    public static int getSelectedClass() {
+        return selectedClass;
+    }
+
+    public static void setSelectedClass(int selectedClass) {
+        ClassResultController.selectedClass = selectedClass;
+    }
+
+    public static String getSelectedSection() {
+        return selectedSection;
+    }
+
+    public static void setSelectedSection(String selectedSection) {
+        ClassResultController.selectedSection = selectedSection;
+    }
+
+    public static int getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public static void setCurrentIndex(int currentIndex) {
+        ClassResultController.currentIndex = currentIndex;
+    }
+
     @FXML
     void class_1(ActionEvent event) throws IOException, SQLException {
         ClassResultController.selectedClass = 1;

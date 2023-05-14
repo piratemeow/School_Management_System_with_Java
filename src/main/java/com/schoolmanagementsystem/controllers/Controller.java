@@ -120,6 +120,12 @@ public abstract class Controller {
                 RoutineController.setSelectedSection(null);
                 AllMembersController.setCurrentIndex(0);
                 AllMembersController.setCurrentList(null);
+                ClubController.setSelectedClub(0);
+                ClassResultController.setSelectedClass(0);
+                ClassResultController.setSelectedSection(null);
+                ClassResultController.setCurrentIndex(0);
+                ClubMemberController.setCurrentIndex(0);
+                NoticeController.setCurrentNotice(NoticeController.getLastNotice());
                 handleHome(event);
             }
         }
@@ -218,11 +224,8 @@ public abstract class Controller {
             controller.reg.setVisible(false);
             controller.reg.setManaged(false);
 
-            controller.allUsers.setVisible(false);
-            controller.allUsers.setManaged(false);
-
             controller.login.setText("Log out");
-            controller.vbox.setStyle("-fx-background-color:  #720D05;");
+//            controller.vbox.setStyle("-fx-background-color:  #720D05;");
         }
 
         if (Objects.equals(loginController.getLoggedInPerson(), "Staff")) {
@@ -235,11 +238,8 @@ public abstract class Controller {
             controller.routine.setVisible(false);
             controller.routine.setManaged(false);
 
-            controller.allUsers.setVisible(false);
-            controller.allUsers.setManaged(false);
-
             controller.login.setText("Log out");
-            controller.vbox.setStyle("-fx-background-color:  #044C05;");
+//            controller.vbox.setStyle("-fx-background-color:  #044C05;");
         }
 
         if (Objects.equals(loginController.getLoggedInPerson(), "Admin")) {
@@ -248,6 +248,7 @@ public abstract class Controller {
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
         return fxmlLoader;
@@ -328,7 +329,7 @@ public abstract class Controller {
     }
 
     public String uploadImage(Stage stage, ImageView Img, Button imgButton) {
-        String imagePath = "";
+        String imagePath = null;
         FileChooser fileChooser = new FileChooser();
 
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));

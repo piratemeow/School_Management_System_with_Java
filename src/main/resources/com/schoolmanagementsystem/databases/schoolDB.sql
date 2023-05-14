@@ -198,3 +198,20 @@ CREATE TABLE `SchoolManagementSystem`.`resultAlgo` (
     `priority` VARCHAR(100) NULL,
     PRIMARY KEY (`demoID`)
 );
+
+
+
+
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5) Values (1, "Bangla", "English", "Religion", "Science", "Math");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5) Values (2, "Bangla", "English", "Religion", "Science", "Math");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5) Values (3, "Bangla", "English", "Religion", "Science", "Math");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5) Values (4, "Bangla", "English", "Religion", "Science", "Math");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5) Values (5, "Bangla", "English", "Religion", "Science", "Math");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9) Values (6, "Bangla_1", "Bangla_2", "English_1", "English_2", "Social_Science", "Science", "Math", "Well_Being", "Craft");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9) Values (7, "Bangla_1", "Bangla_2", "English_1", "English_2", "Social_Science", "Science", "Math", "Well_Being", "Craft");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9) Values (8, "Bangla_1", "Bangla_2", "English_1", "English_2", "Social_Science", "Science", "Math", "Well_Being", "Craft");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9, sub10, sub11) Values (9, "Bangla_1", "Bangla_2", "English_1", "English_2", "Social_Science", "Science", "Math", "History", "Logic", "Economics", "Business");
+INSERT INTO SchoolManagementSystem.subjectInfo (class, sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9, sub10, sub11) Values (10, "Bangla_1", "Bangla_2", "English_1", "English_2", "Social_Science", "Science", "Math", "History", "Logic", "Economics", "Business");
+
+INSERT INTO SchoolManagementSystem.employeeInfo (employeeID, name, profession, fatherName, motherName, address, dateOfBirth, joiningDate, gender, contactNumber, religion) VALUES ('1111111', 'AdminName', 'Staff', 'a', 'b', 'c', '2023-04-01', '2023-04-01', 'Male', '11111111111', 'e');
+INSERT INTO SchoolManagementSystem.loginInfo Values (1111111, "Admin", "a");

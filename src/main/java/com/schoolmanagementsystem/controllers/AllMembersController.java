@@ -241,10 +241,14 @@ public class AllMembersController extends Controller implements Initializable {
 
         if (AllMembersController.currentList.equals("Staff")) {
             controller.select.setText("STAFF");
+            controller.id.setText("Staff ID");
+            controller.name.setText("Staff Name");
         }
 
         if (AllMembersController.currentList.equals("Teacher")) {
             controller.select.setText("TEACHER");
+            controller.id.setText("Teacher ID");
+            controller.name.setText("Teacher Name");
         }
 
         ConnectDatabase db = new ConnectDatabase();

@@ -1,6 +1,7 @@
 package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.co_curricular.Club;
+import com.schoolmanagementsystem.database.ConnectDatabase;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -11,11 +12,18 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ClubMemberController extends Controller implements Initializable {
+
+    @FXML
+    private Label nameOfSelectedClub;
+
     @FXML
     private Label id_1;
 
@@ -132,9 +140,25 @@ public class ClubMemberController extends Controller implements Initializable {
         handleClubMemberPage(event);
     }
 
+    public static void setCurrentIndex(int currentIndex) {
+        ClubMemberController.currentIndex = currentIndex;
+    }
+
     public void handleClubMemberPage(Event event) throws IOException, SQLException {
         FXMLLoader fxmlLoader = loadPage("button", "/com/schoolmanagementsystem/fxml_Files/clubMembers.fxml", event);
         ClubMemberController controller = fxmlLoader.getController();
+
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = db.getCon();
+
+        String query = "SELECT clubName FROM club WHERE clubID = ?";
+        PreparedStatement statement = con.prepareStatement(query);
+        statement.setInt(1, ClubController.getSelectedClub() + 1);
+        ResultSet r = statement.executeQuery();
+        if(r.next()) {
+            controller.nameOfSelectedClub.setText(r.getString("clubName"));
+        }
+
         Club club = new Club();
         ClubController clubController = new ClubController();
 

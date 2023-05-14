@@ -101,18 +101,18 @@ public class StudentRegistrationController extends Controller implements Initial
         if (religion.getText().isEmpty() || sname.getText().isEmpty() || fname.getText().isEmpty()
                 || mname.getText().isEmpty() || roll.getText().isEmpty() || contact.getText().isEmpty()
                 || address.getText().isEmpty()) {
-            wrongInput.setText("Incorrect Input. Please give correct information");
+            wrongInput.setText("Incorrect or empty Input. Give correct information");
             cross.setVisible(true);
         } else if (gender.getValue() == null || classNumber.getValue() == null || section.getValue() == null
                 || dob.getValue() == null) {
-            wrongInput.setText("Incorrect Input. Please give correct information");
+            wrongInput.setText("Incorrect or empty Input. Give correct information");
             cross.setVisible(true);
         } else if (validateNum(roll.getText()) || validateNum(contact.getText())
                 || contact.getText().length() != 11 || validateDate(dob)) {
-            wrongInput.setText("Incorrect Input. Please give correct information");
+            wrongInput.setText("Incorrect or empty Input. Give correct information");
             cross.setVisible(true);
         } else if (!Controller.isUpdate && imgPath == null) {
-            wrongInput.setText("Incorrect Input. Please give correct information");
+            wrongInput.setText("Incorrect or empty Input. Give correct information");
             cross.setVisible(true);
         } else {
             int clas = Integer.parseInt(classNumber.getValue().toString());
@@ -158,6 +158,8 @@ public class StudentRegistrationController extends Controller implements Initial
                             section.getValue(), Integer.parseInt(roll.getText()));
                     StudentCRUD stCrud = new StudentCRUD();
                     stCrud.addStudent(st, imgPath);
+
+                    handleHome(event);
                 }
             } else {
                 message1 = "The data will be permanently updated.";
