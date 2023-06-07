@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -34,7 +35,7 @@
                                 <Image url="@../image/icon.png" />
                             </image>
                             <VBox.margin>
-                                <Insets bottom="7.0" left="66.0" top="10.0" />
+                                <Insets bottom="10.0" left="71.0" top="26.0" />
                             </VBox.margin>
                         </ImageView>
                         <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleHome" prefHeight="43.0" prefWidth="112.0" text="Home" textFill="WHITE">
@@ -42,15 +43,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
-                            </VBox.margin>
-                        </Button>
-                        <Button fx:id="allUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAll" prefHeight="43.0" prefWidth="112.0" text="All User" textFill="WHITE">
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                            <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
+                                <Insets bottom="8.0" left="61.0" right="25.0" top="7.0" />
                             </VBox.margin>
                         </Button>
                         <Button fx:id="profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleProfile" prefHeight="43.0" prefWidth="112.0" text="Profile" textFill="WHITE">
@@ -58,7 +51,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" right="25.0" top="6.0" />
+                                <Insets bottom="8.0" left="61.0" right="25.0" top="7.0" />
                             </VBox.margin>
                         </Button>
                         <MenuButton fx:id="reg" layoutX="55.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" text="Register" textFill="WHITE">
@@ -71,7 +64,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                                <Insets bottom="8.0" left="61.0" top="7.0" />
                             </VBox.margin>
                         </MenuButton>
                         <Button fx:id="login" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0" prefWidth="112.0" text="Log in" textFill="WHITE">
@@ -79,7 +72,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                                <Insets bottom="8.0" left="61.0" top="7.0" />
                             </VBox.margin>
                         </Button>
                         <Button fx:id="result" layoutX="56.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleResult" prefHeight="42.0" prefWidth="112.0" text="Result" textFill="WHITE">
@@ -87,7 +80,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                                <Insets bottom="8.0" left="61.0" top="7.0" />
                             </VBox.margin>
                         </Button>
                         <Button fx:id="routine" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRoutine" prefHeight="42.0" prefWidth="112.0" text="Routine" textFill="WHITE">
@@ -95,7 +88,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                                <Insets bottom="8.0" left="61.0" top="7.0" />
                             </VBox.margin>
                         </Button>
                         <Button fx:id="notice" layoutX="56.0" layoutY="489.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleNotice" prefHeight="44.0" prefWidth="109.0" text="Notice" textFill="WHITE">
@@ -103,7 +96,7 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                                <Insets bottom="8.0" left="61.0" top="7.0" />
                             </VBox.margin>
                         </Button>
                         <Button fx:id="club" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClub" prefHeight="44.0" prefWidth="109.0" text="Club" textFill="WHITE">
@@ -111,14 +104,14 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                             <VBox.margin>
-                                <Insets bottom="6.0" left="55.0" top="6.0" />
+                                <Insets bottom="8.0" left="61.0" top="7.0" />
                             </VBox.margin>
                         </Button>
                     </children>
                 </VBox>
             </left>
             <center>
-                <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="25.0" pickOnBounds="true" preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;" BorderPane.alignment="CENTER">
+                <ImageView fitHeight="620.0" fitWidth="734.0" layoutX="595.0" pickOnBounds="true" preserveRatio="true" scaleX="1.065" style="-fx-background-color:#b2beb5;" BorderPane.alignment="CENTER">
                     <image>
                         <Image url="@../image/anotherBg.png" />
                     </image>
@@ -137,11 +130,36 @@
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="730.0" styleClass="color" stylesheets="@../css_Files/club.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
                 <children>
 
-                    <MenuButton fx:id="select" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="595.0" layoutY="56.0" maxHeight="44.0" maxWidth="118.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="118.0" styleClass="extracolor" stylesheets="@../css_Files/routine.css" text="SELECT" textFill="WHITE">
+                    <MenuButton fx:id="select" alignment="CENTER" contentDisplay="RIGHT" layoutX="245.0" layoutY="18.0" maxHeight="47.0" maxWidth="258.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="258.0" styleClass="extracolor" stylesheets="@../css_Files/routine.css" text="SELECT USER" textFill="WHITE">
                         <items>
                             <MenuItem mnemonicParsing="false" onAction="#handleStudentList" text="Student" />
                             <MenuItem mnemonicParsing="false" onAction="#handleTeacherList" text="Teacher" />
                             <MenuItem mnemonicParsing="false" onAction="#handleStaffList" text="Staff" />
+                        </items>
+                        <font>
+                            <Font size="22.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <DropShadow />
+                        </effect>
+                    </MenuButton>
+
+                    <MenuButton fx:id="Class" alignment="CENTER" contentDisplay="RIGHT" layoutX="25.0" layoutY="56.0" maxHeight="44.0" maxWidth="118.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="118.0" styleClass="extracolor" stylesheets="@../css_Files/routine.css" text="Class" textFill="WHITE">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_1" text="Class 1" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_2" text="Class 2" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_3" text="Class 3" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_4" text="Class 4" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_5" text="Class 5" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_6" text="Class 6" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_7" text="Class 7" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_8" text="Class 8" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_9" text="Class 9" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClass_10" text="Class 10" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleClassNone" text="None" />
                         </items>
                         <font>
                             <Font size="15.0" />
@@ -153,9 +171,27 @@
                             <DropShadow />
                         </effect>
                     </MenuButton>
+
+                    <MenuButton fx:id="section" alignment="CENTER" contentDisplay="RIGHT" layoutX="595.0" layoutY="56.0" maxHeight="44.0" maxWidth="118.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="118.0" styleClass="extracolor" stylesheets="@../css_Files/routine.css" text="Section" textFill="WHITE">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleSection_A" text="Section A" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleSection_B" text="Section B" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleSection_C" text="Section C" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleSectionNone" text="None" />
+                        </items>
+                        <font>
+                            <Font size="15.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <DropShadow />
+                        </effect>
+                    </MenuButton>
+
+
                     <AnchorPane layoutX="11" layoutY="168">
-
-
                         <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="never" styleClass="color" stylesheets="@../css_Files/club.css" vbarPolicy="never">
                             <content>
                                 <VBox layoutX="11.0" layoutY="168.0" prefHeight="380.0" prefWidth="708.0" styleClass="extracolor" stylesheets="@../css_Files/club.css">
@@ -166,11 +202,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_1" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
-                                                    <font>
-                                                        <Font size="18.0" />
-                                                    </font>
-                                                </Label>
+                                                <Hyperlink fx:id="id_1" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_1" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Hyperlink>
                                                 <Label fx:id="name_1" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -183,11 +219,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_2" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_2" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_2" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_2" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -200,11 +236,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_3" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_3" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_3" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_3" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -217,11 +253,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_4" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_4" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_4" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_4" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -234,11 +270,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_5" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_5" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_5" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_5" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -251,11 +287,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_6" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_6" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_6" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_6" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -268,11 +304,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_7" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_7" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_7" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_7" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -285,11 +321,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_8" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_8" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_8" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_8" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -302,11 +338,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_9" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_9" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_9" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_9" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -316,11 +352,11 @@
                                         </HBox>
                                         <HBox minHeight="37.0" minWidth="708.0" prefHeight="37.0" prefWidth="708.0" styleClass="labelHbox" stylesheets="@../css_Files/allMembers.css">
                                             <children>
-                                                <Label fx:id="id_10" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_10" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_10" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_10" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -338,11 +374,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_11" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_11" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_11" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_11" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -355,11 +391,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_12" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_12" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_12" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_12" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -372,11 +408,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_13" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_13" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_13" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_13" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -389,11 +425,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_14" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_14" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_14" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_14" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -406,11 +442,11 @@
                                                 <Insets bottom="5.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Label fx:id="id_15" alignment="CENTER" minHeight="38.0" minWidth="258.0" prefHeight="38.0" prefWidth="258.0" textFill="WHITE">
+                                                <Hyperlink fx:id="id_15" alignment="CENTER" minHeight="38.0" minWidth="258.0" onAction="#handleLink_15" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
                                                     </font>
-                                                </Label>
+                                                </Hyperlink>
                                                 <Label fx:id="name_15" alignment="CENTER" minHeight="38.0" minWidth="452.0" prefHeight="38.0" prefWidth="452.0" textFill="WHITE">
                                                     <font>
                                                         <Font size="18.0" />
@@ -432,13 +468,6 @@
 
 
                     </AnchorPane>
-
-
-                    <Label fx:id="listID" alignment="CENTER" contentDisplay="CENTER" layoutX="145.0" layoutY="11.0" prefHeight="26.0" prefWidth="456.0" style="-fx-background-radius: 30;" styleClass="dark" stylesheets="@../css_Files/club.css" text="All Users" textAlignment="CENTER" textFill="WHITE">
-                        <font>
-                            <Font size="39.0" />
-                        </font>
-                    </Label>
                     <Button fx:id="cross" layoutX="670.0" mnemonicParsing="false" onAction="#handleCross" prefHeight="27.0" prefWidth="59.0" styleClass="crossButton" stylesheets="@../css_Files/salary.css" text="X">
                         <font>
                             <Font name="System Bold" size="18.0" />

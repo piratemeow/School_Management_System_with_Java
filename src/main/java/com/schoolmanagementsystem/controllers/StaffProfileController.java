@@ -3,6 +3,7 @@ package com.schoolmanagementsystem.controllers;
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.LoginCRUD;
 import com.schoolmanagementsystem.database.StaffCRUD;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -149,5 +150,16 @@ public class StaffProfileController extends Controller {
     void handleSalary(MouseEvent mouseEvent) throws IOException, SQLException {
         SalaryController controller = new SalaryController();
         controller.handleSalaryPage(mouseEvent);
+    }
+
+    @FXML
+    void handleCross(ActionEvent event) throws SQLException, IOException {
+        if(Controller.allUserFlag) {
+            AllMembersController.setAllUserFlag(true);
+            AllMembersController controller = new AllMembersController();
+            controller.handleAllMemberPage(event);
+        } else {
+            handleHome(event);
+        }
     }
 }

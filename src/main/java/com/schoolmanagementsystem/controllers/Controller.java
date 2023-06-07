@@ -70,6 +70,8 @@ public abstract class Controller {
 
     protected static boolean resultFlag;
 
+    protected static boolean allUserFlag;
+
     @FXML
     void teacherReg(ActionEvent event) throws IOException {
         Controller.isUpdate = false;
@@ -126,6 +128,8 @@ public abstract class Controller {
                 ClassResultController.setCurrentIndex(0);
                 ClubMemberController.setCurrentIndex(0);
                 NoticeController.setCurrentNotice(NoticeController.getLastNotice());
+                AllMembersController.setSelectedClass(0);
+                AllMembersController.setSelectedSection(null);
                 handleHome(event);
             }
         }
@@ -139,17 +143,6 @@ public abstract class Controller {
         } else {
             NoticeController cont = new NoticeController();
             cont.handleNoticePage(event);
-        }
-    }
-
-    @FXML
-    void handleAll(Event event) throws IOException, SQLException {
-        if (loginController.getLoggedInPerson() == null) {
-            handleAlert("Alert", "Log in first to view All users");
-        } else {
-            AllMembersController cont = new AllMembersController();
-            AllMembersController.setAllUserFlag(true);
-            cont.handleAllMemberPage(event);
         }
     }
 
@@ -190,9 +183,11 @@ public abstract class Controller {
         if (loginController.getLoggedInPerson() == null) {
             handleAlert("Alert", "Log in first to view your profile.");
         } else if (loginController.getLoggedInPerson().equals("Teacher")) {
+            Controller.allUserFlag = false;
             TeacherProfileController cont = new TeacherProfileController();
             cont.handleTeacherProfile(actionEvent, loginController.getLoggedInID());
         } else if (loginController.getLoggedInPerson().equals("Staff")) {
+            Controller.allUserFlag = false;
             StaffProfileController cont = new StaffProfileController();
             cont.handleStaffProfile(actionEvent, loginController.getLoggedInID());
         } else if (loginController.getLoggedInPerson().equals("Admin")) {

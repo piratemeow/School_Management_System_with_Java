@@ -48,6 +48,10 @@ public class loginController extends Controller implements Initializable {
     private int id;
     private String pass;
 
+    @FXML
+    private Hyperlink link;
+
+
     public static String getLoggedInPerson() {
         return loggedInPerson;
     }

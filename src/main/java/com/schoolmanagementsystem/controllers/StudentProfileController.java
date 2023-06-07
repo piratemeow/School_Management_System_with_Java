@@ -2,6 +2,7 @@ package com.schoolmanagementsystem.controllers;
 
 import com.schoolmanagementsystem.database.ConnectDatabase;
 import com.schoolmanagementsystem.database.StudentCRUD;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -187,5 +188,16 @@ public class StudentProfileController extends Controller {
         StudentProfileController.resultLabelFlag = true;
         StudentResultController con = new StudentResultController();
         con.handleStudentResultPage(mouseEvent);
+    }
+
+    @FXML
+    void handleCross(ActionEvent event) throws SQLException, IOException {
+        if(Controller.allUserFlag) {
+            AllMembersController.setAllUserFlag(true);
+            AllMembersController controller = new AllMembersController();
+            controller.handleAllMemberPage(event);
+        } else {
+            handleHome(event);
+        }
     }
 }

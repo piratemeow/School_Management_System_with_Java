@@ -7,10 +7,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.util.Pair;
 
@@ -39,49 +36,49 @@ public class AllMembersController extends Controller implements Initializable {
     private Label name;
 
     @FXML
-    private Label id_1;
+    private Hyperlink id_1;
 
     @FXML
-    private Label id_10;
+    private Hyperlink id_10;
 
     @FXML
-    private Label id_11;
+    private Hyperlink id_11;
 
     @FXML
-    private Label id_12;
+    private Hyperlink id_12;
 
     @FXML
-    private Label id_13;
+    private Hyperlink id_13;
 
     @FXML
-    private Label id_14;
+    private Hyperlink id_14;
 
     @FXML
-    private Label id_15;
+    private Hyperlink id_15;
 
     @FXML
-    private Label id_2;
+    private Hyperlink id_2;
 
     @FXML
-    private Label id_3;
+    private Hyperlink id_3;
 
     @FXML
-    private Label id_4;
+    private Hyperlink id_4;
 
     @FXML
-    private Label id_5;
+    private Hyperlink id_5;
 
     @FXML
-    private Label id_6;
+    private Hyperlink id_6;
 
     @FXML
-    private Label id_7;
+    private Hyperlink id_7;
 
     @FXML
-    private Label id_8;
+    private Hyperlink id_8;
 
     @FXML
-    private Label id_9;
+    private Hyperlink id_9;
 
     @FXML
     private Label name_1;
@@ -138,6 +135,12 @@ public class AllMembersController extends Controller implements Initializable {
     private HBox hbox;
 
     @FXML
+    private MenuButton Class;
+
+    @FXML
+    private MenuButton section;
+
+    @FXML
     private ScrollPane scrollPane;
 
     private static int currentIndex;
@@ -145,6 +148,26 @@ public class AllMembersController extends Controller implements Initializable {
     private static String currentList;
 
     private static boolean allUserFlag;
+
+    private static int selectedClass;
+
+    private static String selectedSection;
+
+    public static int getSelectedClass() {
+        return selectedClass;
+    }
+
+    public static void setSelectedClass(int selectedClass) {
+        AllMembersController.selectedClass = selectedClass;
+    }
+
+    public static String getSelectedSection() {
+        return selectedSection;
+    }
+
+    public static void setSelectedSection(String selectedSection) {
+        AllMembersController.selectedSection = selectedSection;
+    }
 
     public static boolean isAllUserFlag() {
         return allUserFlag;
@@ -175,7 +198,7 @@ public class AllMembersController extends Controller implements Initializable {
 
     @FXML
     void handleStudentList(Event event) throws SQLException, IOException {
-        AllMembersController.currentList = "student";
+        AllMembersController.currentList = "Student";
         AllMembersController.currentIndex = 0;
         AllMembersController.allUserFlag = false;
         handleAllMemberPage(event);
@@ -232,23 +255,35 @@ public class AllMembersController extends Controller implements Initializable {
             controller.hbox.setVisible(false);
             controller.previous.setVisible(false);
             controller.next.setVisible(false);
+            controller.Class.setVisible(false);
+            controller.section.setVisible(false);
             return;
         }
 
-        if (AllMembersController.currentList.equals("student")) {
+        if (AllMembersController.currentList.equals("Student")) {
             controller.select.setText("STUDENT");
+            if(AllMembersController.selectedClass != 0) {
+                controller.Class.setText("Class " + AllMembersController.selectedClass);
+            }
+            if(AllMembersController.selectedSection != null) {
+                controller.section.setText("Section " + AllMembersController.selectedSection);
+            }
         }
 
         if (AllMembersController.currentList.equals("Staff")) {
             controller.select.setText("STAFF");
             controller.id.setText("Staff ID");
             controller.name.setText("Staff Name");
+            controller.Class.setVisible(false);
+            controller.section.setVisible(false);
         }
 
         if (AllMembersController.currentList.equals("Teacher")) {
             controller.select.setText("TEACHER");
             controller.id.setText("Teacher ID");
             controller.name.setText("Teacher Name");
+            controller.Class.setVisible(false);
+            controller.section.setVisible(false);
         }
 
         ConnectDatabase db = new ConnectDatabase();
@@ -259,9 +294,24 @@ public class AllMembersController extends Controller implements Initializable {
         PreparedStatement statement, preparedStatement;
         ResultSet r, resultSet;
 
-        if (Objects.equals(AllMembersController.currentList, "student")) {
-            query = "SELECT studentID, name FROM studentInfo";
-            statement = con.prepareStatement(query);
+        if (Objects.equals(AllMembersController.currentList, "Student")) {
+            if(AllMembersController.selectedClass == 0 && AllMembersController.selectedSection == null) {
+                query = "SELECT studentID, name FROM studentInfo";
+                statement = con.prepareStatement(query);
+            } else if(AllMembersController.selectedClass != 0 && AllMembersController.selectedSection == null) {
+                query = "SELECT studentID, name FROM studentInfo WHERE class = ?";
+                statement = con.prepareStatement(query);
+                statement.setInt(1, AllMembersController.selectedClass);
+            } else if(AllMembersController.selectedClass == 0) {
+                query = "SELECT studentID, name FROM studentInfo WHERE section = ?";
+                statement = con.prepareStatement(query);
+                statement.setString(1, AllMembersController.selectedSection);
+            } else {
+                query = "SELECT studentID, name FROM studentInfo WHERE class = ? AND section = ?";
+                statement = con.prepareStatement(query);
+                statement.setInt(1, AllMembersController.selectedClass);
+                statement.setString(2, AllMembersController.selectedSection);
+            }
             r = statement.executeQuery();
             while (r.next()) {
                 int id = r.getInt("studentID");
@@ -347,4 +397,216 @@ public class AllMembersController extends Controller implements Initializable {
             controller.next.setVisible(false);
         }
     }
+
+    @FXML
+    void handleLink_1(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_1.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_2(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_2.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_3(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_3.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_4(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_4.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_5(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_5.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_6(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_6.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_7(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_7.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_8(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_8.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_9(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_9.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_10(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_10.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_11(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_11.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_12(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_12.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_13(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_13.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_14(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_14.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+    @FXML
+    void handleLink_15(ActionEvent event) throws SQLException, IOException {
+        Controller.requiredID = Integer.parseInt(id_15.getText());
+        Controller.requiredType = AllMembersController.currentList;
+        loadProfile(event);
+    }
+
+    public void loadProfile(ActionEvent event) throws SQLException, IOException {
+        if(AllMembersController.currentList.equals("Student")) {
+            StudentProfileController cont = new StudentProfileController();
+            cont.handleStudentProfile(event, Controller.requiredID);
+        }
+        if(AllMembersController.currentList.equals("Teacher")) {
+            TeacherProfileController cont = new TeacherProfileController();
+            cont.handleTeacherProfile(event, Controller.requiredID);
+        }
+        if(AllMembersController.currentList.equals("Staff")) {
+            StaffProfileController cont = new StaffProfileController();
+            cont.handleStaffProfile(event, Controller.requiredID);
+        }
+    }
+
+    @FXML
+    void handleClassNone(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 0;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_1(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 1;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_10(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 10;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_2(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 2;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_3(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 3;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_4(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 4;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_5(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 5;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_6(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 6;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_7(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 7;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_8(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 8;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleClass_9(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedClass = 9;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleSectionNone(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedSection = null;
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleSection_A(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedSection = "A";
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleSection_B(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedSection = "B";
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
+    @FXML
+    void handleSection_C(ActionEvent event) throws SQLException, IOException {
+        AllMembersController.selectedSection = "C";
+        AllMembersController.allUserFlag = false;
+        handleAllMemberPage(event);
+    }
+
 }
