@@ -508,6 +508,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClassNone(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 0;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -515,6 +516,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_1(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 1;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -522,6 +524,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_10(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 10;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -529,6 +532,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_2(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 2;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -536,6 +540,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_3(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 3;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -543,6 +548,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_4(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 4;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -550,6 +556,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_5(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 5;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -557,6 +564,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_6(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 6;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -564,6 +572,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_7(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 7;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -571,6 +580,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_8(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 8;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -578,6 +588,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleClass_9(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedClass = 9;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -585,6 +596,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleSectionNone(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedSection = null;
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -592,6 +604,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleSection_A(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedSection = "A";
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -599,6 +612,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleSection_B(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedSection = "B";
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
@@ -606,6 +620,7 @@ public class AllMembersController extends Controller implements Initializable {
     void handleSection_C(ActionEvent event) throws SQLException, IOException {
         AllMembersController.selectedSection = "C";
         AllMembersController.allUserFlag = false;
+        AllMembersController.currentIndex = 0;
         handleAllMemberPage(event);
     }
 
